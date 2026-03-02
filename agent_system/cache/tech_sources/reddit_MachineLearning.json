@@ -1,0 +1,110 @@
+{
+  "_ts": 1772460780.952545,
+  "items": [
+    {
+      "title": "[D] Self-Promotion Thread",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1rihows/d_selfpromotion_thread/",
+      "source": "Reddit r/MachineLearning",
+      "author": "/u/AutoModerator",
+      "date": "2026-03-02"
+    },
+    {
+      "title": "[D] Monthly Who's Hiring and Who wants to be Hired?",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1qrrayn/d_monthly_whos_hiring_and_who_wants_to_be_hired/",
+      "source": "Reddit r/MachineLearning",
+      "author": "/u/AutoModerator",
+      "date": "2026-01-31"
+    },
+    {
+      "title": "[R] TorchLean: Formalizing Neural Networks in Lean",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1riqzme/r_torchlean_formalizing_neural_networks_in_lean/",
+      "source": "Reddit r/MachineLearning",
+      "author": "/u/Nunki08",
+      "date": "2026-03-02"
+    },
+    {
+      "title": "[R] Toward Guarantees for Clinical Reasoning in Vision Language Models via Formal Verification",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1rih9kk/r_toward_guarantees_for_clinical_reasoning_in/",
+      "source": "Reddit r/MachineLearning",
+      "author": "/u/SufficientAd3564",
+      "date": "2026-03-02"
+    },
+    {
+      "title": "[D] ICLR 2026 Registration Process",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1ripleg/d_iclr_2026_registration_process/",
+      "source": "Reddit r/MachineLearning",
+      "author": "/u/ApartmentEither4838",
+      "date": "2026-03-02"
+    },
+    {
+      "title": "[P] easy-torch-tpu: Making it easy to train PyTorch-based models on Google TPUs",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1rigxhy/p_easytorchtpu_making_it_easy_to_train/",
+      "source": "Reddit r/MachineLearning",
+      "author": "/u/THE_ROCKS_MUST_LEARN",
+      "date": "2026-03-02"
+    },
+    {
+      "title": "[R] CVPR 2026 Camera Ready Paper",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1ri4zk2/r_cvpr_2026_camera_ready_paper/",
+      "source": "Reddit r/MachineLearning",
+      "author": "/u/One-Feeling03",
+      "date": "2026-03-01"
+    },
+    {
+      "title": "[R] Benchmarked 94 LLM endpoints for jan 2026. open source is now within 5 quality points of proprietary",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1rhuwyt/r_benchmarked_94_llm_endpoints_for_jan_2026_open/",
+      "source": "Reddit r/MachineLearning",
+      "author": "/u/ashersullivan",
+      "date": "2026-03-01"
+    },
+    {
+      "title": "[R] Detecting invariant manifolds in ReLU-based RNNs",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1ri6c62/r_detecting_invariant_manifolds_in_relubased_rnns/",
+      "source": "Reddit r/MachineLearning",
+      "author": "/u/DangerousFunny1371",
+      "date": "2026-03-01"
+    },
+    {
+      "title": "[D] Simple Questions Thread",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1ri0vz3/d_simple_questions_thread/",
+      "source": "Reddit r/MachineLearning",
+      "author": "/u/AutoModerator",
+      "date": "2026-03-01"
+    },
+    {
+      "title": "[P] R2IR & R2ID: Resolution Invariant Image Resampler and Diffuser - Trained on 1:1 32x32 images, generalized to arbitrary aspect ratio and resolution, diffuses 4MP images at 4 steps per second.",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1ri2rwx/p_r2ir_r2id_resolution_invariant_image_resampler/",
+      "source": "Reddit r/MachineLearning",
+      "author": "/u/Tripel_Meow",
+      "date": "2026-03-01"
+    },
+    {
+      "title": "[R] Tiny transformers (<100 params) can add two 10-digit numbers to 100% accuracy",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1rh84o0/r_tiny_transformers_100_params_can_add_two/",
+      "source": "Reddit r/MachineLearning",
+      "author": "/u/LetsTacoooo",
+      "date": "2026-02-28"
+    },
+    {
+      "title": "[P] Building A Tensor micrograd",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1rhyjp1/p_building_a_tensor_micrograd/",
+      "source": "Reddit r/MachineLearning",
+      "author": "/u/bjjonin",
+      "date": "2026-03-01"
+    },
+    {
+      "title": "[D] ICLR Workshop Results",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1rhl1to/d_iclr_workshop_results/",
+      "source": "Reddit r/MachineLearning",
+      "author": "/u/Klutzy-Childhood-126",
+      "date": "2026-03-01"
+    },
+    {
+      "title": "[D] Geospatial ML for humanitarian drought/flood forecasting: critique my approach / ideas for predictive urgency index",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1rhr3ef/d_geospatial_ml_for_humanitarian_droughtflood/",
+      "source": "Reddit r/MachineLearning",
+      "author": "/u/AvailableGuidance765",
+      "date": "2026-03-01"
+    }
+  ]
+}

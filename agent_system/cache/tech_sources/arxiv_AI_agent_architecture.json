@@ -1,0 +1,75 @@
+{
+  "_ts": 1772460793.776337,
+  "items": [
+    {
+      "title": "DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science",
+      "url": "http://arxiv.org/abs/2602.24288v1",
+      "source": "arXiv",
+      "abstract": "The fast-growing demands in using Large Language Models (LLMs) to tackle complex multi-step data science tasks create an emergent need for accurate benchmarking. There are two major gaps in existing b...",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation",
+      "url": "http://arxiv.org/abs/2602.24286v1",
+      "source": "arXiv",
+      "abstract": "GPU kernel optimization is fundamental to modern deep learning but remains a highly specialized task requiring deep hardware expertise. Despite strong performance in general programming, large languag...",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "Taming Momentum: Rethinking Optimizer States Through Low-Rank Approximation",
+      "url": "http://arxiv.org/abs/2602.24283v1",
+      "source": "arXiv",
+      "abstract": "Modern optimizers like Adam and Muon are central to training large language models, but their reliance on first- and second-order momenta introduces significant memory overhead, which constrains scala...",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "Memory Caching: RNNs with Growing Memory",
+      "url": "http://arxiv.org/abs/2602.24281v1",
+      "source": "arXiv",
+      "abstract": "Transformers have been established as the de-facto backbones for most recent advances in sequence modeling, mainly due to their growing memory capacity that scales with the context length. While plaus...",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "A Minimal Agent for Automated Theorem Proving",
+      "url": "http://arxiv.org/abs/2602.24273v1",
+      "source": "arXiv",
+      "abstract": "We propose a minimal agentic baseline that enables systematic comparison across different AI-based theorem prover architectures. This design implements the core features shared among state-of-the-art ...",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "NSHEDB: Noise-Sensitive Homomorphic Encrypted Database Query Engine",
+      "url": "http://arxiv.org/abs/2602.24271v1",
+      "source": "arXiv",
+      "abstract": "Homomorphic encryption (HE) enables computations directly on encrypted data, offering strong cryptographic guarantees for secure and privacy-preserving data storage and query execution. However, despi...",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "Shifting in-DRAM",
+      "url": "http://arxiv.org/abs/2602.24269v1",
+      "source": "arXiv",
+      "abstract": "Processing-in-Memory (PIM) architectures enable computation directly within DRAM and help combat the memory wall problem. Bit-shifting is a fundamental operation that enables PIM applications such as ...",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "Beyond the Click: A Framework for Inferring Cognitive Traces in Search",
+      "url": "http://arxiv.org/abs/2602.24265v1",
+      "source": "arXiv",
+      "abstract": "User simulators are essential for evaluating search systems, but they primarily copy user actions without understanding the underlying thought process. This gap exists since large-scale interaction lo...",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "A model of tuberculosis progression using CompuCell3D",
+      "url": "http://arxiv.org/abs/2602.24258v1",
+      "source": "arXiv",
+      "abstract": "Tuberculosis (TB) is an airborne disease caused by the bacterium Mycobacterium tuberculosis (M. tb). Prior to the COVID-19 pandemic, TB was the leading cause of death from an infectious agent globally...",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "FaultXformer: A Transformer-Encoder Based Fault Classification and Location Identification model in PMU-Integrated Active Electrical Distribution System",
+      "url": "http://arxiv.org/abs/2602.24254v1",
+      "source": "arXiv",
+      "abstract": "Accurate fault detection and localization in electrical distribution systems is crucial, especially with the increasing integration of distributed energy resources (DERs), which inject greater variabi...",
+      "date": "2026-02-27"
+    }
+  ]
+}

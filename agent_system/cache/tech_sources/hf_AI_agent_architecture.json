@@ -1,0 +1,75 @@
+{
+  "_ts": 1772460798.6402,
+  "items": [
+    {
+      "title": "CL4SE: A Context Learning Benchmark For Software Engineering Tasks",
+      "url": "https://huggingface.co/papers/2602.23047",
+      "source": "Hugging Face",
+      "date": "2026-02-26",
+      "abstract": "Context engineering has emerged as a pivotal paradigm for unlocking the potential of Large Language Models (LLMs) in Software Engineering (SE) tasks, enabling performance gains at test time without mo..."
+    },
+    {
+      "title": "Compositional Generalization Requires Linear, Orthogonal Representations in Vision Embedding Models",
+      "url": "https://huggingface.co/papers/2602.24264",
+      "source": "Hugging Face",
+      "date": "2026-02-27",
+      "abstract": "Compositional generalization, the ability to recognize familiar parts in novel contexts, is a defining property of intelligent systems. Although modern models are trained on massive datasets, they sti..."
+    },
+    {
+      "title": "LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding",
+      "url": "https://huggingface.co/papers/2602.23881",
+      "source": "Hugging Face",
+      "date": "2026-02-27",
+      "abstract": "Speculative decoding accelerates autoregressive large language model (LLM) inference by using a lightweight draft model to propose candidate tokens that are then verified in parallel by the target mod..."
+    },
+    {
+      "title": "LongVideo-R1: Smart Navigation for Low-cost Long Video Understanding",
+      "url": "https://huggingface.co/papers/2602.20913",
+      "source": "Hugging Face",
+      "date": "2026-02-24",
+      "abstract": "This paper addresses the critical and underexplored challenge of long video understanding with low computational budgets. We propose LongVideo-R1, an active, reasoning-equipped multimodal large langua..."
+    },
+    {
+      "title": "InfoNCE Induces Gaussian Distribution",
+      "url": "https://huggingface.co/papers/2602.24012",
+      "source": "Hugging Face",
+      "date": "2026-02-27",
+      "abstract": "Contrastive learning has become a cornerstone of modern representation learning, allowing training with massive unlabeled data for both task-specific and general (foundation) models. A prototypical lo..."
+    },
+    {
+      "title": "Recovered in Translation: Efficient Pipeline for Automated Translation of Benchmarks and Datasets",
+      "url": "https://huggingface.co/papers/2602.22207",
+      "source": "Hugging Face",
+      "date": "2026-02-25",
+      "abstract": "The reliability of multilingual Large Language Model (LLM) evaluation is currently compromised by the inconsistent quality of translated benchmarks. Existing resources often suffer from semantic drift..."
+    },
+    {
+      "title": "Mode Seeking meets Mean Seeking for Fast Long Video Generation",
+      "url": "https://huggingface.co/papers/2602.24289",
+      "source": "Hugging Face",
+      "date": "2026-02-27",
+      "abstract": "Scaling video generation from seconds to minutes faces a critical bottleneck: while short-video data is abundant and high-fidelity, coherent long-form data is scarce and limited to narrow domains. To ..."
+    },
+    {
+      "title": "CiteAudit: You Cited It, But Did You Read It? A Benchmark for Verifying Scientific References in the LLM Era",
+      "url": "https://huggingface.co/papers/2602.23452",
+      "source": "Hugging Face",
+      "date": "2026-02-26",
+      "abstract": "Scientific research relies on accurate citation for attribution and integrity, yet large language models (LLMs) introduce a new risk: fabricated references that appear plausible but correspond to no r..."
+    },
+    {
+      "title": "dLLM: Simple Diffusion Language Modeling",
+      "url": "https://huggingface.co/papers/2602.22661",
+      "source": "Hugging Face",
+      "date": "2026-02-26",
+      "abstract": "Although diffusion language models (DLMs) are evolving quickly, many recent models converge on a set of shared components. These components, however, are distributed across ad-hoc research codebases o..."
+    },
+    {
+      "title": "Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks",
+      "url": "https://huggingface.co/papers/2602.23898",
+      "source": "Hugging Face",
+      "date": "2026-02-27",
+      "abstract": "Referring Expression Comprehension (REC) links language to region level visual perception. Standard benchmarks (RefCOCO, RefCOCO+, RefCOCOg) have progressed rapidly with multimodal LLMs but remain wea..."
+    }
+  ]
+}

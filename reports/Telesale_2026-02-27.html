@@ -1,0 +1,1775 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>数据专家诊断 v2.2.0 - 2026-02-27</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8fafc;color:#1e293b;font-family:-apple-system,"PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif;line-height:1.5}
+.wrap{max-width:900px;margin:0 auto;padding:20px 16px}
+.card{background:#fff;border-radius:10px;padding:24px;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.card h2{font-size:15px;font-weight:700;color:#0f172a;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #f1f5f9}
+table{width:100%;border-collapse:collapse}
+th{font-size:11px;color:#94a3b8;font-weight:500;padding:8px 6px;text-align:center;border-bottom:1px solid #e2e8f0}
+th:first-child{text-align:left;padding-left:12px}
+</style></head>
+<body><div class="wrap">
+
+<!-- HEADER -->
+<div style="background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:12px;padding:28px 32px;margin-bottom:16px;color:#fff;">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;">
+<div>
+<div style="font-size:11px;color:#64748b;letter-spacing:3px;">DATA EXPERT AGENT · V2.2.0 · THREE-ENGINE</div>
+<div style="font-size:24px;font-weight:700;margin:6px 0 4px;">数据专家诊断报告</div>
+<div style="font-size:13px;color:#94a3b8;">
+2026-02-27 · 电销8部门 · 240人(在岗234) · 总发现34项
+</div>
+</div>
+<div style="text-align:right;">
+<div style="font-size:10px;color:#64748b;">知识库</div>
+<div style="font-size:18px;font-weight:700;">158</div>
+<div style="font-size:10px;color:#64748b;">本 · 10领域</div>
+</div>
+</div>
+<div style="margin-top:14px;padding-top:10px;border-top:1px solid #334155;">
+<div style="display:flex;gap:12px;flex-wrap:wrap;">
+<div style="padding:4px 12px;background:#6366f122;border-radius:6px;font-size:11px;color:#818cf8;">
+  数据对撞 16组</div>
+<div style="padding:4px 12px;background:#05966922;border-radius:6px;font-size:11px;color:#34d399;">
+  逻辑对撞 3假设 · 2因果链</div>
+<div style="padding:4px 12px;background:#a855f722;border-radius:6px;font-size:11px;color:#c084fc;">
+  跨领域对撞 15组 · 6领域</div>
+</div>
+<div style="font-size:10px;color:#475569;margin-top:8px;">
+方法论: SPIN Selling + 挑战式销售 + TOC约束 + 六西格玛 + Hook上瘾模型 + 进化心理学 + 贝叶斯迭代 + 损失厌恶
+</div>
+</div></div>
+
+<!-- KPI -->
+<div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;">
+<div style="flex:1;min-width:140px;background:#fff;border-radius:10px;padding:18px;box-shadow:0 1px 2px rgba(0,0,0,.04);">
+<div style="font-size:10px;color:#94a3b8;letter-spacing:1px;">总营收</div>
+<div style="font-size:24px;font-weight:800;color:#dc2626;margin:4px 0;">¥39.7<span style="font-size:12px;font-weight:400;">万</span></div>
+<div><span style="color:#dc2626;font-size:12px;">▼-0.5%</span></div><div style="margin-top:6px;"><svg width="100" height="36" style="vertical-align:middle;"><polyline points="0.0,24.9 7.7,31.8 15.4,25.5 23.1,36.0 30.8,28.6 38.5,23.7 46.2,21.3 53.8,20.7 61.5,21.6 69.2,10.4 76.9,17.2 84.6,10.5 92.3,6.0 100.0,7.1" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/></svg></div></div>
+<div style="flex:1;min-width:140px;background:#fff;border-radius:10px;padding:18px;box-shadow:0 1px 2px rgba(0,0,0,.04);">
+<div style="font-size:10px;color:#94a3b8;letter-spacing:1px;">人均产值</div>
+<div style="font-size:24px;font-weight:800;color:#0f172a;margin:4px 0;">¥1,698</div>
+<div><span style="color:#dc2626;font-size:12px;">▼-2.2%</span></div><div style="margin-top:6px;"><svg width="100" height="36" style="vertical-align:middle;"><polyline points="0.0,25.4 7.7,30.2 15.4,22.9 23.1,36.0 30.8,32.5 38.5,26.0 46.2,20.1 53.8,21.6 61.5,27.6 69.2,7.7 76.9,15.5 84.6,7.9 92.3,6.0 100.0,11.5" fill="none" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round"/></svg></div></div>
+<div style="flex:1;min-width:140px;background:#fff;border-radius:10px;padding:18px;box-shadow:0 1px 2px rgba(0,0,0,.04);">
+<div style="font-size:10px;color:#94a3b8;letter-spacing:1px;">接通率</div>
+<div style="font-size:24px;font-weight:800;color:#dc2626;margin:4px 0;">42.2%</div>
+<div style="font-size:11px;">红线43% ⚠</div><div style="margin-top:6px;"><svg width="100" height="36" style="vertical-align:middle;"><polyline points="0.0,18.0 7.7,30.0 15.4,16.0 23.1,20.0 30.8,12.0 38.5,18.0 46.2,22.0 53.8,16.0 61.5,6.0 69.2,26.0 76.9,26.0 84.6,24.0 92.3,36.0 100.0,28.0" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round"/></svg></div></div>
+<div style="flex:1;min-width:140px;background:#fff;border-radius:10px;padding:18px;box-shadow:0 1px 2px rgba(0,0,0,.04);">
+<div style="font-size:10px;color:#94a3b8;letter-spacing:1px;">转化率</div>
+<div style="font-size:24px;font-weight:800;color:#0f172a;margin:4px 0;">2.28%</div>
+<div style="font-size:11px;">签单84笔</div><div style="margin-top:6px;"><svg width="100" height="36" style="vertical-align:middle;"><polyline points="0.0,11.6 7.7,21.0 15.4,17.2 23.1,36.0 30.8,28.5 38.5,21.0 46.2,24.8 53.8,19.1 61.5,21.0 69.2,6.0 76.9,19.1 84.6,17.2 92.3,15.4 100.0,11.6" fill="none" stroke="#16a34a" stroke-width="1.5" stroke-linejoin="round"/></svg></div></div>
+</div>
+
+<!-- 经营背景提示条 -->
+<div style="background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border-radius:10px;padding:14px 20px;margin-bottom:16px;
+border:1px solid #0ea5e944;display:flex;align-items:center;gap:14px;">
+<div style="font-size:28px;">📊</div>
+<div style="flex:1;">
+<div style="font-size:12px;font-weight:700;color:#0c4a6e;margin-bottom:3px;">
+建议原则: 弱依赖 · 强闭环 · 轻投入 · 快见效</div>
+<div style="font-size:11px;color:#075985;line-height:1.6;">
+所有改善建议均经可行性校验，优先推荐业务团队可自行落地的方案，确保务实可执行。
+</div>
+</div>
+</div>
+
+<!-- 漏斗 -->
+<div class="card">
+<h2>转化漏斗 (Dial→Connect→Conversation→Close)</h2>
+<div style="margin-bottom:12px;">
+<div style="display:flex;justify-content:space-between;font-size:12px;color:#64748b;margin-bottom:3px;">
+<span>分配→拨打</span><span>3.1 (标杆 3.0)</span></div>
+<div style="background:#f1f5f9;border-radius:3px;height:8px;">
+<div style="background:#16a34a;height:8px;border-radius:3px;width:50.916395810762005%;"></div></div></div><div style="margin-bottom:12px;">
+<div style="display:flex;justify-content:space-between;font-size:12px;color:#64748b;margin-bottom:3px;">
+<span>拨打→接通</span><span>13.8 (标杆 15)</span></div>
+<div style="background:#f1f5f9;border-radius:3px;height:8px;">
+<div style="background:#d97706;height:8px;border-radius:3px;width:46.07382451162928%;"></div></div></div><div style="margin-bottom:12px;">
+<div style="display:flex;justify-content:space-between;font-size:12px;color:#64748b;margin-bottom:3px;">
+<span>接通→深沟</span><span>18.5 (标杆 20)</span></div>
+<div style="background:#f1f5f9;border-radius:3px;height:8px;">
+<div style="background:#d97706;height:8px;border-radius:3px;width:46.18345093008339%;"></div></div></div><div style="margin-bottom:12px;">
+<div style="display:flex;justify-content:space-between;font-size:12px;color:#64748b;margin-bottom:3px;">
+<span>深沟→签单</span><span>29.2 (标杆 10)</span></div>
+<div style="background:#f1f5f9;border-radius:3px;height:8px;">
+<div style="background:#16a34a;height:8px;border-radius:3px;width:100%;"></div></div></div>
+</div>
+
+<!-- 全局诊断(全部门级别) -->
+<div class="card">
+<h2>🔬 全局诊断 · 20项发现(全部门级别汇总)</h2>
+<div style="font-size:11px;color:#64748b;margin-bottom:12px;">
+以下发现基于全部门数据汇总分析，属于团队整体层面问题，非针对单一部门。
+</div>
+<div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fef2f2;border-left:3px solid #dc2626;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#dc2626;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P0</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">漏斗瓶颈</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">漏斗最薄弱环节: 拨打→接通(当前13.8，标杆15)。根据TOC约束理论，优先修复此环节可获最高边际ROI。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>集中资源修复'拨打→接通'环节</li><li>建立漏斗日监控看板，每日追踪各环节转化率</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 O04:目标-TOC约束理论 · A01:增长黑客-AARRR漏斗</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">新人断崖</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥24,509/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">新人(≤3月)96人均产值仅¥678，为全员均值的39.9%(远低于70%及格线)。爬坡期过长。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>前3月实行'老带新'1对1制度</li><li>建立新人21天通关地图:Day1-7基础/Day8-14实战/Day15-21独立</li><li>新人首月设定保底指标，降低考核压力但强化学习</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 T06:可复制的销售力-SOP标准化 · T08:销售冠军-通关培训体系 · L16:高绩效教练-GROW模型</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#059669;
+padding:1px 6px;border-radius:3px;margin-right:6px;">逻辑对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">假设验证: 部分推翻</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥20,681/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">假设'TOP20%占比过高是因为底部员工销售能力不足' → 部分推翻。替代解释: 底部员工能力不差但转化效率低，可能是'挖需求→谈方案'环节缺失</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>针对底部30%进行分类诊断:是能力问题还是意愿问题</li><li>能力问题→话术通关+AI模拟训练；意愿问题→激励机制+淘汰预警</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 S02:挑战式销售 · L03:Q12敬业度</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#059669;
+padding:1px 6px;border-radius:3px;margin-right:6px;">逻辑对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">因果链追溯</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">人均产值¥1,698偏低，反向追溯发现1个可能原因，主因: 接通率42.2%<43% 。正反向因果链一致。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>按因果链顺序逐个修复，优先修复最上游瓶颈</li><li>瓶颈修复后重新评估下游指标，避免'头痛医头'</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 O04:目标-TOC约束理论 · O12:系统之美-杠杆点</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">影响力社会认同×从众效应</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">TOP20%占53.9%业绩，中腰部缺乏'社会认同'驱动力。双重社会压力话术'跟你同龄的用户中85%选了这个方案'可提升转化。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>中腰部员工配备'社会认同话术卡':同龄人数据+成功案例</li><li>每日晨会分享1个真实成交故事，激活从众效应</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 S04:影响力-社会认同 · C07:乌合之众-从众效应</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">质检AI化×复盘四步法</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">AI均分71.8未达标(标杆75)，质检发现问题但缺少'复盘→改善'闭环。每日AI质检→每周个人复盘→月度团队复盘=持续提升认知。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>每日AI质检报告推送到个人(含TOP3改善点)</li><li>每周五个人复盘:本周AI评分变化+改善行动+下周目标</li><li>月度团队复盘:四步法(回顾目标→评估结果→分析原因→总结经验)</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 T22:电销新思维-AI质检 · L13:复盘-四步法</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">用户分层运营×孤独经济消费</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">不同年龄段付费逻辑不同:30+走'焦虑→效率'路线(愿意花钱买时间),25-走'社交→娱乐'路线(愿意为体验付费)。电销话术需针对性调整。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>按年龄段建立差异化话术:30+强调效率/成功率，25-强调社交乐趣/体验</li><li>资源分配优化:高付费潜力客户(30+/高收入)优先分配给TOP销售</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 A09:用户增长方法论-分层 · D06:孤独经济-消费画像</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">271法则×自然代谢替代裁员</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">TOP20%占53.9%业绩，底部30%拖累整体。应避免大规模裁员，采用'联盟式管理':明确绩效任期→达不到自然淘汰→避免行政对抗。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>设定3个月绩效任期:月均产值<团队60%者进入辅导期</li><li>辅导期1个月仍无改善→自然调岗/转岗，避免直接裁员引发索赔</li><li>同步用'进步最大奖'激活中腰部，避免只罚不奖</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 R31:打造销售铁军-271法则 · R33:联盟-任期制 · R29:奈飞文化手册</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">战时CEO×20英里行军</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">珍爱网处于'战时CEO'阶段，需要快速决策、强力执行。但同时需要Collins的'20英里行军'——保持稳定节奏，不急不缓。战时不等于冲刺，而是在混乱中保持纪律性前进。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>每日/每周设定固定数量的推进目标(20英里行军)</li><li>拒绝'大跃进'式KPI:每周改善目标不超过当前值的5%</li><li>管理层每日15分钟站会:红黄绿灯汇报(学Ford)</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 R17:创业维艰-战时CEO · R04:选择卓越-20英里行军 · R08:Ford-One Ford</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">飞轮效应×困境六悖论</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">存在低产部门，但困境企业不能简单'加压'。飞轮思维:线索→建信→签单→服务→口碑→线索。找到飞轮卡住的环节，一次只修一个。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>诊断飞轮卡点:是线索质量差?建信不到位?话术弱?服务跟不上?</li><li>集中100%改善资源到卡点环节(TOC)，不分散</li><li>每周检查飞轮是否'转得更快了'</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 R01:从优秀到卓越-飞轮效应 · R05:转动飞轮 · R03:巨人如何倒下</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">退费风险×认知失调×沉没成本设计</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">退费问题需从心理学视角解决:签单后48h回访预防'购后认知失调'，同时设计沉没成本机制(首次服务体验/专属资料/匹配报告)让客户感受到已投入的价值，降低退费意愿。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>签单后2h内发送'专属匹配报告'(沉没成本)</li><li>48h内回访确认期望值，及早发现退费苗头</li><li>退费与销售提成绑定考核:退费率>8%的个人提成系数×0.8</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 C02:怪诞行为学-认知失调 · S04:影响力-承诺一致性 · S15:客户成功-LTV</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#eff6ff;border-left:3px solid #2563eb;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#2563eb;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#059669;
+padding:1px 6px;border-radius:3px;margin-right:6px;">逻辑对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">验证: 漏斗瓶颈</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">数据对撞发现'漏斗瓶颈'的替代解释: 漏斗瓶颈可能随时间动态变化，需观察至少7日确认是持续性问题。需进一步数据验证以排除替代解释。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>对P0级发现进行深入根因分析</li><li>用AB测试或自然实验验证因果关系</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 DA09:AB测试 · DA04:思考快与慢-确认偏差</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#eff6ff;border-left:3px solid #2563eb;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#2563eb;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">挑战式销售×锚定效应</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">客单价¥4,730偏低，缺少'先教育再报价'的锚定策略。先讲行业数据(交友成功率仅3%)再介绍服务，锚定点更高。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>通话前60秒植入行业数据教育:匹配成功率/平均寻找时间</li><li>报价时先呈现高价方案(锚定)，再推荐中间档(对比效应)</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 S02:挑战式销售-教学裁剪掌控 · C02:怪诞行为学-锚定效应</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#eff6ff;border-left:3px solid #2563eb;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#2563eb;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">信任构建×非暴力沟通共情</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">首通转化率仅0.58%，首次通话缺乏信任基础。先听客户倾诉5分钟再推方案='信任+共情=最强签单基础'。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>首通SOP:前5分钟共情倾听(不推产品)+后续方案匹配</li><li>录音抽检'打断次数'指标:优秀≤2次/通话</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 S07:销售圣经-信任 · C09:非暴力沟通-共情</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#eff6ff;border-left:3px solid #2563eb;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#2563eb;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">狼性PK×内在动机驱动力</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">外在PK(奖金/排名)提供短期刺激，但内在动机(意义/成长/自主)才是持久动力。PK奖金+冠军故事+客户感谢信=外在激励×内在意义的完美融合。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>每月冠军颁奖增加'客户感谢信/感谢视频'环节</li><li>设置'进步最大奖'(非绝对值)激励中腰部员工</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 T09:打造狼性销售团队 · L07:驱动力-自主专精目的</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#eff6ff;border-left:3px solid #2563eb;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#2563eb;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">指标陷阱×TOC约束瓶颈</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">考核什么就得到什么(指标陷阱) vs 瓶颈决定系统产出(TOC)。指标应对准瓶颈而非分散考核，否则员工优化'被考核的指标'而忽视真正瓶颈。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>每月重新评估KPI是否对准当前瓶颈</li><li>警惕'拨打量至上'导致质量下降的指标反噬</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 DA10:指标陷阱-度量反噬 · O04:目标-TOC约束理论</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#eff6ff;border-left:3px solid #2563eb;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#2563eb;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">辛普森悖论×二八法则</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">整体数据可能掩盖局部真相(辛普森悖论)。大盘指标必须下钻到部门/个人级别，结合二八法则聚焦TOP20%和BOTTOM30%的差异。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>所有大盘报告必须附带部门/个人下钻视图</li><li>每周异常检测:部门指标偏离大盘均值>1.5倍标准差自动预警</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 DA07:统计学的世界-辛普森悖论 · PE02:关键绩效指标</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#eff6ff;border-left:3px solid #2563eb;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#2563eb;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">Hook上瘾模型×社交天性连接需求</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">交友APP天然具备Hook模型四要素(触发→行动→不确定酬赏→投入)。强化'谁喜欢了我'的悬念设计可利用社交天性的连接需求。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>APP端强化'谁看了你/谁喜欢了你'的悬念推送</li><li>电销话术引用APP互动数据:'已有X人对你表示感兴趣'增强价值感知</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 A03:上瘾-Hook模型 · D01:社交天性-连接需求</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#eff6ff;border-left:3px solid #2563eb;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#2563eb;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">AARRR漏斗×进化心理学择偶差异</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">男女激活路径应不同(进化心理学):男性→引导发消息(广撒网策略),女性→引导完善资料(精筛选策略)。单一激活路径损失一半效率。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>电销面向男性客户强调'优质女性资源数量多/匹配效率高'</li><li>电销面向女性客户强调'严格筛选机制/安全可靠/红娘一对一把关'</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 A01:增长黑客-AARRR · D03:进化心理学-择偶差异</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#eff6ff;border-left:3px solid #2563eb;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#2563eb;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">杠铃策略×现金流红线</span>
+</div>
+
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">10亿现金是生命线(反脆弱-杠铃策略)。运营预算90%用于稳健的基本盘,10%用于创新实验。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>建立'创新实验池':每月最多3个小实验，每个预算<50万</li><li>实验必须设定明确的北极星指标和止损线</li><li>基本盘运营追求'每日正现金流'</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 R27:反脆弱-杠铃策略 · R38:增长黑客-ICE评分 · R39:精益创业-MVP</div></div>
+</div>
+
+<!-- 部门级诊断(按部门+负责人) -->
+<div class="card">
+<h2>📋 部门级诊断 · 14项发现(按部门归属)</h2>
+<div style="font-size:11px;color:#64748b;margin-bottom:12px;">
+以下发现针对具体部门，关联负责人姓名，并推断管理视角缺失。
+</div>
+<div style="margin-bottom:16px;">
+<div style="font-size:13px;font-weight:700;color:#0f172a;padding:8px 12px;
+background:#f1f5f9;border-radius:6px;margin-bottom:8px;">
+电销一部 · 负责人: 何丹丹</div>
+<div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fef2f2;border-left:3px solid #dc2626;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#dc2626;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P0</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">持续不达标预警</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥68,368/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">电销一部(何丹丹) 接通率已连续约12天低于43%红线，当前42.3%，无明显改善趋势。管理者可能未采取有效干预措施。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>今日发出正式预警通知给何丹丹</li><li>连续3日仍无管理动作(数据无改善波动)，绩效分数扣减5分/日，直接体现薪酬变化</li><li>要求提交书面改善计划:排查号码标记+调整外呼时段+每日复盘</li></ul></div><div style="font-size:11px;color:#b45309;margin-top:6px;padding:6px 10px;background:#fef3c7;border-radius:4px;"><strong>管理视角评估 [何丹丹]</strong>: 该管理者已连续多日未采取有效管理动作改善问题指标，执行力或管理意识存在严重缺失</div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 PE02:关键绩效指标-红线管理 · L02:OKR工作法-对齐</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">高拨打·低质量</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥21,237/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">电销一部 人均拨打47通(高活动量)但有质量会话仅1.3通/人(2.7%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>优秀团队质量会话占比应>6%</li><li>从'追拨打量'转向'追有效会话数'考核</li><li>每日晨会分享优质会话录音，建立质量标杆</li></ul></div><div style="font-size:11px;color:#b45309;margin-top:6px;padding:6px 10px;background:#fef3c7;border-radius:4px;"><strong>管理视角评估 [何丹丹]</strong>: 该管理者可能只追拨打量不追质量，团队在'刷量'而非做有效会话</div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div></div></div><div style="margin-bottom:16px;">
+<div style="font-size:13px;font-weight:700;color:#0f172a;padding:8px 12px;
+background:#f1f5f9;border-radius:6px;margin-bottom:8px;">
+电销七部</div>
+<div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fef2f2;border-left:3px solid #dc2626;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#dc2626;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P0</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">持续不达标预警</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥47,401/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">电销七部 接通率已连续约12天低于43%红线，当前37.0%，无明显改善趋势。管理者可能未采取有效干预措施。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>今日发出正式预警通知给部门负责人</li><li>连续3日仍无管理动作(数据无改善波动)，绩效分数扣减5分/日，直接体现薪酬变化</li><li>要求提交书面改善计划:排查号码标记+调整外呼时段+每日复盘</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 PE02:关键绩效指标-红线管理 · L02:OKR工作法-对齐</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">高拨打·低质量</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥14,614/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">电销七部 人均拨打46通(高活动量)但有质量会话仅0.8通/人(1.7%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>优秀团队质量会话占比应>6%</li><li>从'追拨打量'转向'追有效会话数'考核</li><li>每日晨会分享优质会话录音，建立质量标杆</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div></div></div><div style="margin-bottom:16px;">
+<div style="font-size:13px;font-weight:700;color:#0f172a;padding:8px 12px;
+background:#f1f5f9;border-radius:6px;margin-bottom:8px;">
+电销三部 · 负责人: 朱晓园</div>
+<div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">高拨打·低质量</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥26,877/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">电销三部 人均拨打48通(高活动量)但有质量会话仅1.8通/人(3.7%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>优秀团队质量会话占比应>6%</li><li>从'追拨打量'转向'追有效会话数'考核</li><li>每日晨会分享优质会话录音，建立质量标杆</li></ul></div><div style="font-size:11px;color:#b45309;margin-top:6px;padding:6px 10px;background:#fef3c7;border-radius:4px;"><strong>管理视角评估 [朱晓园]</strong>: 该管理者可能只追拨打量不追质量，团队在'刷量'而非做有效会话</div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">高签单·高退费</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥4,228/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">电销三部 签单17笔(高于均值10)，但退费率9.4%(>6%)。典型过度承诺循环。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>签单后48h回访确认制度</li><li>建立'过度承诺黑名单':连续2月退费率>8%的个人进入辅导期</li><li>质检重点抽查高签单员工的成交话术</li></ul></div><div style="font-size:11px;color:#b45309;margin-top:6px;padding:6px 10px;background:#fef3c7;border-radius:4px;"><strong>管理视角评估 [朱晓园]</strong>: 该管理者可能对签单话术合规性监管不足，团队存在过度承诺倾向</div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 S15:客户成功-LTV管理 · T10:极致服务-ICARE</div></div></div><div style="margin-bottom:16px;">
+<div style="font-size:13px;font-weight:700;color:#0f172a;padding:8px 12px;
+background:#f1f5f9;border-radius:6px;margin-bottom:8px;">
+电销二部 · 负责人: 赵梅</div>
+<div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fef2f2;border-left:3px solid #dc2626;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#dc2626;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P0</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">持续不达标预警</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥59,719/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">电销二部(赵梅) 接通率已连续约12天低于43%红线，当前40.9%，无明显改善趋势。管理者可能未采取有效干预措施。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>今日发出正式预警通知给赵梅</li><li>连续3日仍无管理动作(数据无改善波动)，绩效分数扣减5分/日，直接体现薪酬变化</li><li>要求提交书面改善计划:排查号码标记+调整外呼时段+每日复盘</li></ul></div><div style="font-size:11px;color:#b45309;margin-top:6px;padding:6px 10px;background:#fef3c7;border-radius:4px;"><strong>管理视角评估 [赵梅]</strong>: 该管理者已连续多日未采取有效管理动作改善问题指标，执行力或管理意识存在严重缺失</div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 PE02:关键绩效指标-红线管理 · L02:OKR工作法-对齐</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">高拨打·低质量</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥19,534/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">电销二部 人均拨打45通(高活动量)但有质量会话仅1.0通/人(2.2%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>优秀团队质量会话占比应>6%</li><li>从'追拨打量'转向'追有效会话数'考核</li><li>每日晨会分享优质会话录音，建立质量标杆</li></ul></div><div style="font-size:11px;color:#b45309;margin-top:6px;padding:6px 10px;background:#fef3c7;border-radius:4px;"><strong>管理视角评估 [赵梅]</strong>: 该管理者可能只追拨打量不追质量，团队在'刷量'而非做有效会话</div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div></div></div><div style="margin-bottom:16px;">
+<div style="font-size:13px;font-weight:700;color:#0f172a;padding:8px 12px;
+background:#f1f5f9;border-radius:6px;margin-bottom:8px;">
+电销五部 · 负责人: 吴胜悍</div>
+<div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fef2f2;border-left:3px solid #dc2626;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#dc2626;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P0</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">持续不达标预警</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥53,896/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">电销五部(吴胜悍) 接通率已连续约12天低于43%红线，当前40.2%，无明显改善趋势。管理者可能未采取有效干预措施。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>今日发出正式预警通知给吴胜悍</li><li>连续3日仍无管理动作(数据无改善波动)，绩效分数扣减5分/日，直接体现薪酬变化</li><li>要求提交书面改善计划:排查号码标记+调整外呼时段+每日复盘</li></ul></div><div style="font-size:11px;color:#b45309;margin-top:6px;padding:6px 10px;background:#fef3c7;border-radius:4px;"><strong>管理视角评估 [吴胜悍]</strong>: 该管理者已连续多日未采取有效管理动作改善问题指标，执行力或管理意识存在严重缺失</div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 PE02:关键绩效指标-红线管理 · L02:OKR工作法-对齐</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">高拨打·低质量</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥16,883/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">电销五部 人均拨打51通(高活动量)但有质量会话仅1.2通/人(2.3%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>优秀团队质量会话占比应>6%</li><li>从'追拨打量'转向'追有效会话数'考核</li><li>每日晨会分享优质会话录音，建立质量标杆</li></ul></div><div style="font-size:11px;color:#b45309;margin-top:6px;padding:6px 10px;background:#fef3c7;border-radius:4px;"><strong>管理视角评估 [吴胜悍]</strong>: 该管理者可能只追拨打量不追质量，团队在'刷量'而非做有效会话</div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div></div></div><div style="margin-bottom:16px;">
+<div style="font-size:13px;font-weight:700;color:#0f172a;padding:8px 12px;
+background:#f1f5f9;border-radius:6px;margin-bottom:8px;">
+电销八部</div>
+<div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">高拨打·低质量</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥21,501/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">电销八部 人均拨打48通(高活动量)但有质量会话仅1.2通/人(2.5%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>优秀团队质量会话占比应>6%</li><li>从'追拨打量'转向'追有效会话数'考核</li><li>每日晨会分享优质会话录音，建立质量标杆</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div></div></div><div style="margin-bottom:16px;">
+<div style="font-size:13px;font-weight:700;color:#0f172a;padding:8px 12px;
+background:#f1f5f9;border-radius:6px;margin-bottom:8px;">
+电销六部 · 负责人: 游云清</div>
+<div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">高拨打·低质量</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥23,650/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">电销六部 人均拨打51通(高活动量)但有质量会话仅1.6通/人(3.1%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>优秀团队质量会话占比应>6%</li><li>从'追拨打量'转向'追有效会话数'考核</li><li>每日晨会分享优质会话录音，建立质量标杆</li></ul></div><div style="font-size:11px;color:#b45309;margin-top:6px;padding:6px 10px;background:#fef3c7;border-radius:4px;"><strong>管理视角评估 [游云清]</strong>: 该管理者可能只追拨打量不追质量，团队在'刷量'而非做有效会话</div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div></div></div><div style="margin-bottom:16px;">
+<div style="font-size:13px;font-weight:700;color:#0f172a;padding:8px 12px;
+background:#f1f5f9;border-radius:6px;margin-bottom:8px;">
+电销四部 · 负责人: 宋晓鹏</div>
+<div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fef2f2;border-left:3px solid #dc2626;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#dc2626;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P0</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">持续不达标预警</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥60,449/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">电销四部(宋晓鹏) 接通率已连续约12天低于43%红线，当前38.2%，无明显改善趋势。管理者可能未采取有效干预措施。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>今日发出正式预警通知给宋晓鹏</li><li>连续3日仍无管理动作(数据无改善波动)，绩效分数扣减5分/日，直接体现薪酬变化</li><li>要求提交书面改善计划:排查号码标记+调整外呼时段+每日复盘</li></ul></div><div style="font-size:11px;color:#b45309;margin-top:6px;padding:6px 10px;background:#fef3c7;border-radius:4px;"><strong>管理视角评估 [宋晓鹏]</strong>: 该管理者已连续多日未采取有效管理动作改善问题指标，执行力或管理意识存在严重缺失</div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 PE02:关键绩效指标-红线管理 · L02:OKR工作法-对齐</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fffbeb;border-left:3px solid #d97706;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#6366f1;
+padding:1px 6px;border-radius:3px;margin-right:6px;">数据对撞</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">高拨打·低质量</span>
+</div>
+<span style="font-size:13px;font-weight:700;color:#dc2626;">+¥19,130/日</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">电销四部 人均拨打48通(高活动量)但有质量会话仅0.8通/人(1.7%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>优秀团队质量会话占比应>6%</li><li>从'追拨打量'转向'追有效会话数'考核</li><li>每日晨会分享优质会话录音，建立质量标杆</li></ul></div><div style="font-size:11px;color:#b45309;margin-top:6px;padding:6px 10px;background:#fef3c7;border-radius:4px;"><strong>管理视角评估 [宋晓鹏]</strong>: 该管理者可能只追拨打量不追质量，团队在'刷量'而非做有效会话</div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div></div></div>
+</div>
+
+<!-- 假设验证 -->
+<div class="card">
+<h2>🧠 假设验证台(逻辑对撞核心)</h2>
+<div style="padding:12px;margin-bottom:8px;border-radius:8px;
+background:#f8fafc;border:1px solid #e2e8f0;">
+<div style="font-size:13px;font-weight:600;color:#1e293b;margin-bottom:6px;">
+H1: 营收下降的主驱动力是接通率变化
+<span style="font-size:11px;font-weight:700;color:#dc2626;
+margin-left:8px;padding:1px 8px;background:#dc262622;border-radius:4px;">推翻</span>
+</div>
+<div style="font-size:11px;color:#475569;line-height:1.6;">
+
+<div style="color:#dc2626;">✗ 接通率变动仅+0.4pp，幅度不大</div>
+<div style="color:#d97706;margin-top:3px;">替代解释: 营收变动主因可能是:</div>
+</div></div><div style="padding:12px;margin-bottom:8px;border-radius:8px;
+background:#f8fafc;border:1px solid #e2e8f0;">
+<div style="font-size:13px;font-weight:600;color:#1e293b;margin-bottom:6px;">
+H2: TOP20%占比过高是因为底部员工销售能力不足
+<span style="font-size:11px;font-weight:700;color:#d97706;
+margin-left:8px;padding:1px 8px;background:#d9770622;border-radius:4px;">部分推翻</span>
+</div>
+<div style="font-size:11px;color:#475569;line-height:1.6;">
+
+<div style="color:#dc2626;">✗ TOP20% AI均分80.9 vs BOTTOM30% 69.4，差距仅11.5分，能力差距不大<br>✗ 拨打量接近(TOP 153 vs BOT 136)，非活动量问题</div>
+<div style="color:#d97706;margin-top:3px;">替代解释: 底部员工能力不差但转化效率低，可能是'挖需求→谈方案'环节缺失</div>
+</div></div><div style="padding:12px;margin-bottom:8px;border-radius:8px;
+background:#f8fafc;border:1px solid #e2e8f0;">
+<div style="font-size:13px;font-weight:600;color:#1e293b;margin-bottom:6px;">
+H3: 退费率高是因为电销过度承诺而非服务问题
+<span style="font-size:11px;font-weight:700;color:#16a34a;
+margin-left:8px;padding:1px 8px;background:#16a34a22;border-radius:4px;">支持</span>
+</div>
+<div style="font-size:11px;color:#475569;line-height:1.6;">
+<div style="color:#16a34a;">✓ 高退费部门均签单12笔 > 低退费部门9笔，支持'冲签单导致过度承诺'<br>✓ 高退费部门AI均分72.2反而更高，说明话术激进但不准确</div>
+
+
+</div></div>
+</div>
+
+<!-- 因果链 -->
+<div class="card">
+<h2>⛓ 因果链追溯</h2>
+<div style="margin-bottom:12px;">
+<div style="font-size:12px;font-weight:600;color:#1e293b;margin-bottom:6px;">营收因果链</div>
+<div style="overflow-x:auto;white-space:nowrap;"><div style="display:inline-flex;align-items:center;margin-right:4px;"><div style="padding:6px 12px;border-radius:6px;border:2px solid #16a34a;font-size:11px;"><strong>资源输入</strong><br><span style="color:#64748b;font-size:10px;">分配3,692条(率90%)</span></div><span style="margin:0 4px;color:#94a3b8;">→</span></div><div style="display:inline-flex;align-items:center;margin-right:4px;"><div style="padding:6px 12px;border-radius:6px;border:2px solid #dc2626;font-size:11px;"><strong>触达效率</strong><br><span style="color:#64748b;font-size:10px;">接通42.2% · 拨打11,279</span></div><span style="margin:0 4px;color:#94a3b8;">→</span></div><div style="display:inline-flex;align-items:center;margin-right:4px;"><div style="padding:6px 12px;border-radius:6px;border:2px solid #16a34a;font-size:11px;"><strong>会话深度</strong><br><span style="color:#64748b;font-size:10px;">深沟率18.5% · AI71.8分</span></div><span style="margin:0 4px;color:#94a3b8;">→</span></div><div style="display:inline-flex;align-items:center;margin-right:4px;"><div style="padding:6px 12px;border-radius:6px;border:2px solid #16a34a;font-size:11px;"><strong>转化产出</strong><br><span style="color:#64748b;font-size:10px;">转化2.28% · 签单84笔</span></div><span style="margin:0 4px;color:#94a3b8;">→</span></div><div style="display:inline-flex;align-items:center;margin-right:4px;"><div style="padding:6px 12px;border-radius:6px;border:2px solid #16a34a;font-size:11px;"><strong>营收结果</strong><br><span style="color:#64748b;font-size:10px;">¥397,287 · 人均¥1,698</span></div><span style="margin:0 4px;color:#94a3b8;">→</span></div><div style="display:inline-flex;align-items:center;margin-right:4px;"><div style="padding:6px 12px;border-radius:6px;border:2px solid #16a34a;font-size:11px;"><strong>质量保障</strong><br><span style="color:#64748b;font-size:10px;">退费3.8% · 投诉15件</span></div><span style="margin:0 4px;color:#94a3b8;">→</span></div></div>
+<div style="font-size:11px;color:#dc2626;margin-top:6px;">⚡ 因果链瓶颈定位于'触达效率'环节，上游的投入在此处被损耗。优先修复此环节可释放全链产能。</div>
+</div>
+</div>
+
+<!-- 跨领域对撞 -->
+<div class="card">
+<h2>🌐 跨领域对撞 · 15组碰撞 × 6个领域</h2>
+<div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+<span style="padding:4px 10px;background:#7c3aed22;border-radius:4px;font-size:10px;color:#7c3aed;">电销×团队管理</span><span style="padding:4px 10px;background:#7c3aed22;border-radius:4px;font-size:10px;color:#7c3aed;">数据分析×运营方法论</span><span style="padding:4px 10px;background:#7c3aed22;border-radius:4px;font-size:10px;color:#7c3aed;">超级对撞</span><span style="padding:4px 10px;background:#7c3aed22;border-radius:4px;font-size:10px;color:#7c3aed;">困境重建×经营现实</span><span style="padding:4px 10px;background:#7c3aed22;border-radius:4px;font-size:10px;color:#7c3aed;">APP增长×交友行业</span><span style="padding:4px 10px;background:#7c3aed22;border-radius:4px;font-size:10px;color:#7c3aed;">销售×心理学</span>
+</div>
+<div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#f0fdf4;border-left:3px solid #22c55e;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#22c55e;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">挑战式销售×锚定效应</span>
+</div>
+<span style="font-size:11px;color:#a855f7;font-weight:600;">客单价+8%</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">客单价¥4,730偏低，缺少'先教育再报价'的锚定策略。先讲行业数据(交友成功率仅3%)再介绍服务，锚定点更高。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>通话前60秒植入行业数据教育:匹配成功率/平均寻找时间</li><li>报价时先呈现高价方案(锚定)，再推荐中间档(对比效应)</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 S02:挑战式销售-教学裁剪掌控 · C02:怪诞行为学-锚定效应</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fdf4ff;border-left:3px solid #a855f7;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#a855f7;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">影响力社会认同×从众效应</span>
+</div>
+<span style="font-size:11px;color:#a855f7;font-weight:600;">中腰部转化率+5pp</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">TOP20%占53.9%业绩，中腰部缺乏'社会认同'驱动力。双重社会压力话术'跟你同龄的用户中85%选了这个方案'可提升转化。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>中腰部员工配备'社会认同话术卡':同龄人数据+成功案例</li><li>每日晨会分享1个真实成交故事，激活从众效应</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 S04:影响力-社会认同 · C07:乌合之众-从众效应</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#f0fdf4;border-left:3px solid #22c55e;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#22c55e;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">信任构建×非暴力沟通共情</span>
+</div>
+<span style="font-size:11px;color:#a855f7;font-weight:600;">首通转化率+2pp</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">首通转化率仅0.58%，首次通话缺乏信任基础。先听客户倾诉5分钟再推方案='信任+共情=最强签单基础'。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>首通SOP:前5分钟共情倾听(不推产品)+后续方案匹配</li><li>录音抽检'打断次数'指标:优秀≤2次/通话</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 S07:销售圣经-信任 · C09:非暴力沟通-共情</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fdf4ff;border-left:3px solid #a855f7;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#a855f7;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">质检AI化×复盘四步法</span>
+</div>
+<span style="font-size:11px;color:#a855f7;font-weight:600;">AI评分+5分/季度</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">AI均分71.8未达标(标杆75)，质检发现问题但缺少'复盘→改善'闭环。每日AI质检→每周个人复盘→月度团队复盘=持续提升认知。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>每日AI质检报告推送到个人(含TOP3改善点)</li><li>每周五个人复盘:本周AI评分变化+改善行动+下周目标</li><li>月度团队复盘:四步法(回顾目标→评估结果→分析原因→总结经验)</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 T22:电销新思维-AI质检 · L13:复盘-四步法</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#f0fdf4;border-left:3px solid #22c55e;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#22c55e;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">狼性PK×内在动机驱动力</span>
+</div>
+<span style="font-size:11px;color:#a855f7;font-weight:600;">团队活力+25%</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">外在PK(奖金/排名)提供短期刺激，但内在动机(意义/成长/自主)才是持久动力。PK奖金+冠军故事+客户感谢信=外在激励×内在意义的完美融合。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>每月冠军颁奖增加'客户感谢信/感谢视频'环节</li><li>设置'进步最大奖'(非绝对值)激励中腰部员工</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 T09:打造狼性销售团队 · L07:驱动力-自主专精目的</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#f0fdf4;border-left:3px solid #22c55e;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#22c55e;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">指标陷阱×TOC约束瓶颈</span>
+</div>
+<span style="font-size:11px;color:#a855f7;font-weight:600;">瓶颈修复速度+50%</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">考核什么就得到什么(指标陷阱) vs 瓶颈决定系统产出(TOC)。指标应对准瓶颈而非分散考核，否则员工优化'被考核的指标'而忽视真正瓶颈。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>每月重新评估KPI是否对准当前瓶颈</li><li>警惕'拨打量至上'导致质量下降的指标反噬</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 DA10:指标陷阱-度量反噬 · O04:目标-TOC约束理论</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#f0fdf4;border-left:3px solid #22c55e;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#22c55e;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">辛普森悖论×二八法则</span>
+</div>
+<span style="font-size:11px;color:#a855f7;font-weight:600;">异常发现速度+60%</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">整体数据可能掩盖局部真相(辛普森悖论)。大盘指标必须下钻到部门/个人级别，结合二八法则聚焦TOP20%和BOTTOM30%的差异。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>所有大盘报告必须附带部门/个人下钻视图</li><li>每周异常检测:部门指标偏离大盘均值>1.5倍标准差自动预警</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 DA07:统计学的世界-辛普森悖论 · PE02:关键绩效指标</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#f0fdf4;border-left:3px solid #22c55e;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#22c55e;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">Hook上瘾模型×社交天性连接需求</span>
+</div>
+<span style="font-size:11px;color:#a855f7;font-weight:600;">DAU留存+12%</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">交友APP天然具备Hook模型四要素(触发→行动→不确定酬赏→投入)。强化'谁喜欢了我'的悬念设计可利用社交天性的连接需求。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>APP端强化'谁看了你/谁喜欢了你'的悬念推送</li><li>电销话术引用APP互动数据:'已有X人对你表示感兴趣'增强价值感知</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 A03:上瘾-Hook模型 · D01:社交天性-连接需求</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#f0fdf4;border-left:3px solid #22c55e;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#22c55e;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">AARRR漏斗×进化心理学择偶差异</span>
+</div>
+<span style="font-size:11px;color:#a855f7;font-weight:600;">激活率+18%</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">男女激活路径应不同(进化心理学):男性→引导发消息(广撒网策略),女性→引导完善资料(精筛选策略)。单一激活路径损失一半效率。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>电销面向男性客户强调'优质女性资源数量多/匹配效率高'</li><li>电销面向女性客户强调'严格筛选机制/安全可靠/红娘一对一把关'</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 A01:增长黑客-AARRR · D03:进化心理学-择偶差异</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fdf4ff;border-left:3px solid #a855f7;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#a855f7;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">用户分层运营×孤独经济消费</span>
+</div>
+<span style="font-size:11px;color:#a855f7;font-weight:600;">ARPU+22%</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">不同年龄段付费逻辑不同:30+走'焦虑→效率'路线(愿意花钱买时间),25-走'社交→娱乐'路线(愿意为体验付费)。电销话术需针对性调整。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>按年龄段建立差异化话术:30+强调效率/成功率，25-强调社交乐趣/体验</li><li>资源分配优化:高付费潜力客户(30+/高收入)优先分配给TOP销售</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 A09:用户增长方法论-分层 · D06:孤独经济-消费画像</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fdf4ff;border-left:3px solid #a855f7;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#a855f7;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">271法则×自然代谢替代裁员</span>
+</div>
+<span style="font-size:11px;color:#a855f7;font-weight:600;">底部30%产能提升20%或自然代谢</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">TOP20%占53.9%业绩，底部30%拖累整体。应避免大规模裁员，采用'联盟式管理':明确绩效任期→达不到自然淘汰→避免行政对抗。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>设定3个月绩效任期:月均产值<团队60%者进入辅导期</li><li>辅导期1个月仍无改善→自然调岗/转岗，避免直接裁员引发索赔</li><li>同步用'进步最大奖'激活中腰部，避免只罚不奖</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 R31:打造销售铁军-271法则 · R33:联盟-任期制 · R29:奈飞文化手册</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fdf4ff;border-left:3px solid #a855f7;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#a855f7;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">战时CEO×20英里行军</span>
+</div>
+<span style="font-size:11px;color:#a855f7;font-weight:600;">执行稳定性+40%，避免崩盘风险</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">珍爱网处于'战时CEO'阶段，需要快速决策、强力执行。但同时需要Collins的'20英里行军'——保持稳定节奏，不急不缓。战时不等于冲刺，而是在混乱中保持纪律性前进。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>每日/每周设定固定数量的推进目标(20英里行军)</li><li>拒绝'大跃进'式KPI:每周改善目标不超过当前值的5%</li><li>管理层每日15分钟站会:红黄绿灯汇报(学Ford)</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 R17:创业维艰-战时CEO · R04:选择卓越-20英里行军 · R08:Ford-One Ford</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#f0fdf4;border-left:3px solid #22c55e;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#22c55e;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P2</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">杠铃策略×现金流红线</span>
+</div>
+<span style="font-size:11px;color:#a855f7;font-weight:600;">现金流安全+创新不停滞</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">10亿现金是生命线(反脆弱-杠铃策略)。运营预算90%用于稳健的基本盘,10%用于创新实验。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>建立'创新实验池':每月最多3个小实验，每个预算<50万</li><li>实验必须设定明确的北极星指标和止损线</li><li>基本盘运营追求'每日正现金流'</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 R27:反脆弱-杠铃策略 · R38:增长黑客-ICE评分 · R39:精益创业-MVP</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fdf4ff;border-left:3px solid #a855f7;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#a855f7;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">飞轮效应×困境六悖论</span>
+</div>
+<span style="font-size:11px;color:#a855f7;font-weight:600;">低产部门产能+25%</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">存在低产部门，但困境企业不能简单'加压'。飞轮思维:线索→建信→签单→服务→口碑→线索。找到飞轮卡住的环节，一次只修一个。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>诊断飞轮卡点:是线索质量差?建信不到位?话术弱?服务跟不上?</li><li>集中100%改善资源到卡点环节(TOC)，不分散</li><li>每周检查飞轮是否'转得更快了'</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 R01:从优秀到卓越-飞轮效应 · R05:转动飞轮 · R03:巨人如何倒下</div></div><div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;
+background:#fdf4ff;border-left:3px solid #a855f7;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+<div>
+<span style="font-size:10px;font-weight:700;color:#fff;background:#a855f7;
+padding:1px 8px;border-radius:4px;margin-right:6px;">P1</span>
+<span style="font-size:9px;color:#fff;background:#7c3aed;
+padding:1px 6px;border-radius:3px;margin-right:6px;">跨领域</span>
+<span style="font-size:13px;font-weight:600;color:#1e293b;">退费风险×认知失调×沉没成本设计</span>
+</div>
+<span style="font-size:11px;color:#a855f7;font-weight:600;">怪诞行为学:购后认知失调</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.6;">退费问题需从心理学视角解决:签单后48h回访预防'购后认知失调'，同时设计沉没成本机制(首次服务体验/专属资料/匹配报告)让客户感受到已投入的价值，降低退费意愿。</div>
+<div style="font-size:11px;color:#475569;margin-top:6px;"><ul style="margin:0;padding-left:16px;"><li>签单后2h内发送'专属匹配报告'(沉没成本)</li><li>48h内回访确认期望值，及早发现退费苗头</li><li>退费与销售提成绑定考核:退费率>8%的个人提成系数×0.8</li></ul></div><div style="font-size:10px;color:#94a3b8;margin-top:4px;">📚 C02:怪诞行为学-认知失调 · S04:影响力-承诺一致性 · S15:客户成功-LTV</div></div>
+</div>
+
+<!-- 7日趋势 -->
+<div class="card" style="overflow-x:auto;">
+<h2>7日趋势</h2>
+<table style="min-width:600px;"><thead><tr>
+<th style="text-align:left;padding-left:12px;">指标</th><th style="padding:7px;text-align:center;color:#94a3b8;font-size:11px;font-weight:400;border-bottom:1px solid #f1f5f9;">02-14</th><th style="padding:7px;text-align:center;color:#94a3b8;font-size:11px;font-weight:400;border-bottom:1px solid #f1f5f9;">02-15</th><th style="padding:7px;text-align:center;color:#94a3b8;font-size:11px;font-weight:400;border-bottom:1px solid #f1f5f9;">02-16</th><th style="padding:7px;text-align:center;color:#94a3b8;font-size:11px;font-weight:400;border-bottom:1px solid #f1f5f9;">02-17</th><th style="padding:7px;text-align:center;color:#94a3b8;font-size:11px;font-weight:400;border-bottom:1px solid #f1f5f9;">02-18</th><th style="padding:7px;text-align:center;color:#94a3b8;font-size:11px;font-weight:400;border-bottom:1px solid #f1f5f9;">02-19</th><th style="padding:7px;text-align:center;color:#94a3b8;font-size:11px;font-weight:400;border-bottom:1px solid #f1f5f9;">02-20</th><th style="padding:7px;text-align:center;color:#94a3b8;font-size:11px;font-weight:400;border-bottom:1px solid #f1f5f9;">02-21</th><th style="padding:7px;text-align:center;color:#94a3b8;font-size:11px;font-weight:400;border-bottom:1px solid #f1f5f9;">02-22</th><th style="padding:7px;text-align:center;color:#94a3b8;font-size:11px;font-weight:400;border-bottom:1px solid #f1f5f9;">02-23</th><th style="padding:7px;text-align:center;color:#94a3b8;font-size:11px;font-weight:400;border-bottom:1px solid #f1f5f9;">02-24</th><th style="padding:7px;text-align:center;color:#94a3b8;font-size:11px;font-weight:400;border-bottom:1px solid #f1f5f9;">02-25</th><th style="padding:7px;text-align:center;color:#94a3b8;font-size:11px;font-weight:400;border-bottom:1px solid #f1f5f9;">02-26</th><th style="padding:7px;text-align:center;color:#94a3b8;font-size:11px;font-weight:400;border-bottom:1px solid #f1f5f9;">02-27</th></tr></thead><tbody>
+<tr><td style="padding:7px 12px;font-size:12px;color:#64748b;">营收</td><td style="padding:7px;text-align:center;font-size:12px;">¥365,540</td><td style="padding:7px;text-align:center;font-size:12px;">¥353,263</td><td style="padding:7px;text-align:center;font-size:12px;">¥364,513</td><td style="padding:7px;text-align:center;font-size:12px;">¥345,851</td><td style="padding:7px;text-align:center;font-size:12px;">¥358,983</td><td style="padding:7px;text-align:center;font-size:12px;">¥367,701</td><td style="padding:7px;text-align:center;font-size:12px;">¥371,989</td><td style="padding:7px;text-align:center;font-size:12px;">¥373,020</td><td style="padding:7px;text-align:center;font-size:12px;">¥371,510</td><td style="padding:7px;text-align:center;font-size:12px;">¥391,359</td><td style="padding:7px;text-align:center;font-size:12px;">¥379,296</td><td style="padding:7px;text-align:center;font-size:12px;">¥391,113</td><td style="padding:7px;text-align:center;font-size:12px;font-weight:600;color:#dc2626;">¥399,199</td><td style="padding:7px;text-align:center;font-size:12px;">¥397,287</td></tr>
+<tr><td style="padding:7px 12px;font-size:12px;color:#64748b;">人均产值</td><td style="padding:7px;text-align:center;font-size:12px;">¥1,603</td><td style="padding:7px;text-align:center;font-size:12px;">¥1,570</td><td style="padding:7px;text-align:center;font-size:12px;">¥1,620</td><td style="padding:7px;text-align:center;font-size:12px;">¥1,530</td><td style="padding:7px;text-align:center;font-size:12px;">¥1,554</td><td style="padding:7px;text-align:center;font-size:12px;">¥1,599</td><td style="padding:7px;text-align:center;font-size:12px;">¥1,639</td><td style="padding:7px;text-align:center;font-size:12px;">¥1,629</td><td style="padding:7px;text-align:center;font-size:12px;">¥1,588</td><td style="padding:7px;text-align:center;font-size:12px;">¥1,724</td><td style="padding:7px;text-align:center;font-size:12px;">¥1,671</td><td style="padding:7px;text-align:center;font-size:12px;">¥1,723</td><td style="padding:7px;text-align:center;font-size:12px;font-weight:600;color:#dc2626;">¥1,736</td><td style="padding:7px;text-align:center;font-size:12px;">¥1,698</td></tr>
+<tr><td style="padding:7px 12px;font-size:12px;color:#64748b;">接通率</td><td style="padding:7px;text-align:center;font-size:12px;">42.7%</td><td style="padding:7px;text-align:center;font-size:12px;">42.1%</td><td style="padding:7px;text-align:center;font-size:12px;">42.8%</td><td style="padding:7px;text-align:center;font-size:12px;">42.6%</td><td style="padding:7px;text-align:center;font-size:12px;">43.0%</td><td style="padding:7px;text-align:center;font-size:12px;">42.7%</td><td style="padding:7px;text-align:center;font-size:12px;">42.5%</td><td style="padding:7px;text-align:center;font-size:12px;">42.8%</td><td style="padding:7px;text-align:center;font-size:12px;font-weight:600;color:#dc2626;">43.3%</td><td style="padding:7px;text-align:center;font-size:12px;">42.3%</td><td style="padding:7px;text-align:center;font-size:12px;">42.3%</td><td style="padding:7px;text-align:center;font-size:12px;">42.4%</td><td style="padding:7px;text-align:center;font-size:12px;">41.8%</td><td style="padding:7px;text-align:center;font-size:12px;">42.2%</td></tr>
+<tr><td style="padding:7px 12px;font-size:12px;color:#64748b;">转化率</td><td style="padding:7px;text-align:center;font-size:12px;">2.3%</td><td style="padding:7px;text-align:center;font-size:12px;">2.2%</td><td style="padding:7px;text-align:center;font-size:12px;">2.2%</td><td style="padding:7px;text-align:center;font-size:12px;">2.1%</td><td style="padding:7px;text-align:center;font-size:12px;">2.2%</td><td style="padding:7px;text-align:center;font-size:12px;">2.2%</td><td style="padding:7px;text-align:center;font-size:12px;">2.2%</td><td style="padding:7px;text-align:center;font-size:12px;">2.2%</td><td style="padding:7px;text-align:center;font-size:12px;">2.2%</td><td style="padding:7px;text-align:center;font-size:12px;font-weight:600;color:#dc2626;">2.3%</td><td style="padding:7px;text-align:center;font-size:12px;">2.2%</td><td style="padding:7px;text-align:center;font-size:12px;">2.2%</td><td style="padding:7px;text-align:center;font-size:12px;">2.3%</td><td style="padding:7px;text-align:center;font-size:12px;">2.3%</td></tr>
+<tr><td style="padding:7px 12px;font-size:12px;color:#64748b;">深沟率</td><td style="padding:7px;text-align:center;font-size:12px;">18.9%</td><td style="padding:7px;text-align:center;font-size:12px;">18.6%</td><td style="padding:7px;text-align:center;font-size:12px;">18.5%</td><td style="padding:7px;text-align:center;font-size:12px;">18.9%</td><td style="padding:7px;text-align:center;font-size:12px;">19.0%</td><td style="padding:7px;text-align:center;font-size:12px;">18.9%</td><td style="padding:7px;text-align:center;font-size:12px;">18.9%</td><td style="padding:7px;text-align:center;font-size:12px;">19.0%</td><td style="padding:7px;text-align:center;font-size:12px;">18.9%</td><td style="padding:7px;text-align:center;font-size:12px;">18.5%</td><td style="padding:7px;text-align:center;font-size:12px;">18.8%</td><td style="padding:7px;text-align:center;font-size:12px;font-weight:600;color:#dc2626;">19.1%</td><td style="padding:7px;text-align:center;font-size:12px;">18.7%</td><td style="padding:7px;text-align:center;font-size:12px;">18.5%</td></tr>
+<tr><td style="padding:7px 12px;font-size:12px;color:#64748b;">退费率</td><td style="padding:7px;text-align:center;font-size:12px;">3.1%</td><td style="padding:7px;text-align:center;font-size:12px;">3.5%</td><td style="padding:7px;text-align:center;font-size:12px;font-weight:600;color:#dc2626;">6.7%</td><td style="padding:7px;text-align:center;font-size:12px;">3.2%</td><td style="padding:7px;text-align:center;font-size:12px;">3.2%</td><td style="padding:7px;text-align:center;font-size:12px;">4.5%</td><td style="padding:7px;text-align:center;font-size:12px;">2.0%</td><td style="padding:7px;text-align:center;font-size:12px;">4.1%</td><td style="padding:7px;text-align:center;font-size:12px;">4.8%</td><td style="padding:7px;text-align:center;font-size:12px;">4.2%</td><td style="padding:7px;text-align:center;font-size:12px;">1.9%</td><td style="padding:7px;text-align:center;font-size:12px;">5.3%</td><td style="padding:7px;text-align:center;font-size:12px;">4.3%</td><td style="padding:7px;text-align:center;font-size:12px;">3.8%</td></tr>
+<tr><td style="padding:7px 12px;font-size:12px;color:#64748b;">人均拨打</td><td style="padding:7px;text-align:center;font-size:12px;">43.2</td><td style="padding:7px;text-align:center;font-size:12px;">44.2</td><td style="padding:7px;text-align:center;font-size:12px;">44.7</td><td style="padding:7px;text-align:center;font-size:12px;">44.8</td><td style="padding:7px;text-align:center;font-size:12px;">43.2</td><td style="padding:7px;text-align:center;font-size:12px;">44.7</td><td style="padding:7px;text-align:center;font-size:12px;">44.7</td><td style="padding:7px;text-align:center;font-size:12px;">45.7</td><td style="padding:7px;text-align:center;font-size:12px;">45.2</td><td style="padding:7px;text-align:center;font-size:12px;">47.4</td><td style="padding:7px;text-align:center;font-size:12px;">46.0</td><td style="padding:7px;text-align:center;font-size:12px;font-weight:600;color:#dc2626;">48.4</td><td style="padding:7px;text-align:center;font-size:12px;">47.9</td><td style="padding:7px;text-align:center;font-size:12px;">48.2</td></tr>
+</tbody></table></div>
+
+<!-- 改善建议 -->
+<div class="card">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;
+padding-bottom:8px;border-bottom:1px solid #f1f5f9;">
+<h2 style="margin:0;padding:0;border:0;">改善建议与增量预估</h2>
+<div style="background:#fef2f2;padding:4px 14px;border-radius:16px;font-size:12px;">
+全部落地 <strong style="color:#dc2626;font-size:16px;margin:0 4px;">
++¥654,363/日</strong> (月+¥1963.1万)
+</div></div>
+<div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#dc2626;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P0</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">接通率修复至43%</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">42.2% → 43%</div>
+<div style="font-size:12px;color:#475569;">排查号码标记+优化外呼时段(10:00-11:30/14:00-16:00黄金窗口)</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">增加有效接通29通→多签1单</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 全部门(接通率<43%的部门重点)</div>
+<div>每日执行: 每日排查号码标记比例+线路轮换检查+外呼时段数据复盘</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查改善趋势，第7天验收是否达标</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 T18:外呼营销实战-接通率 · T22:电销新思维-AI外呼</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥3,127</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥9.4万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#d97706;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P1</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">中腰部标杆复制</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">TOP20%占53.9% → <=50%</div>
+<div style="font-size:12px;color:#475569;">提取电销三部标杆录音→电销七部话术通关</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">后50%(117人)人均提升¥343</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 中腰部员工(后50%约117人)，重点电销七部</div>
+<div>每日执行: 每日晨会播放1条标杆录音+午间话术通关测试1轮</div>
+<div>坚持周期: 14天 | 里程碑: 第7天中期检查通关率，第14天验收人均产值变化</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 T06:可复制的销售力 · T08:通关培训体系</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥40,111</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥120.3万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#d97706;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P1</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">深沟率向标杆看齐</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">18.5% → 24.3%</div>
+<div style="font-size:12px;color:#475569;">梳理'痛点→解决方案→紧迫感'三段式深沟SOP</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">深沟率+5.8pp→多深沟90通→按12%签单率</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 深沟率低于均值的部门全员</div>
+<div>每日执行: 每日抽查3通深沟录音→评估是否按SOP推进→反馈改善</div>
+<div>坚持周期: 10天 | 里程碑: 第5天检查深沟率变化，第10天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 S01:SPIN Selling · T13:深度销售</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥51,084</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥153.3万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#2563eb;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P2</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">AI Score提升至75</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">71.8 → 75</div>
+<div style="font-size:12px;color:#475569;">ai_score<65员工每周话术训练营+录音回听AI评分闭环</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">每+1分约转化率+0.03pp，+3.2分→多签4单</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: AI评分<65的员工(约占30%)</div>
+<div>每日执行: 每日1小时话术训练+AI模拟通关，主管录音回听点评</div>
+<div>坚持周期: 21天 | 里程碑: 每周五检测AI评分变化，连续3周无提升调整培训方案</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 T22:电销新思维-AI质检</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥16,555</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥49.7万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#2563eb;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P2</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">建信调配转化率→18%</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">15.6% → 18%</div>
+<div style="font-size:12px;color:#475569;">CRM强制附带画像标签+核心抗拒点+双算机制</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">日转入443条→多签10单</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 建信→电销交接环节全员</div>
+<div>每日执行: 每笔调配资源强制录入画像标签+3分钟预热电话</div>
+<div>坚持周期: 14天 | 里程碑: 第7天检查转化率变化，第14天评估双算机制效果</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 S05:预测收入-SDR/BDR · L08:关键对话</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥47,300</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥141.9万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#2563eb;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P2</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">公海捞取转化→12%</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">6.2% → 12%</div>
+<div style="font-size:12px;color:#475569;">AI外呼预筛+历史行为精准分类+缩短沉淀周期至15天</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">日捞取64条→多签3单</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 公海资源管理+各部门捞取人员</div>
+<div>每日执行: 每日AI外呼清洗→意向分级→精准分配到部门→跟进反馈</div>
+<div>坚持周期: 14天 | 里程碑: 第7天检查捞取转化率，第14天评估AI预筛准确率</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 T22:电销新思维-AI外呼 · A13:数据驱动增长</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥14,190</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥42.6万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#d97706;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P1</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">[对撞] 新人断崖</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">- → 修复</div>
+<div style="font-size:12px;color:#475569;">新人(≤3月)96人均产值仅¥678，为全员均值的39.9%(远低于70%及格线)。爬坡期过长。</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">基于数据×逻辑双对撞发现</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 相关部门</div>
+<div>每日执行: 前3月实行'老带新'1对1制度</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查数据变化，第7天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 T06:可复制的销售力-SOP标准化 · T08:销售冠军-通关培训体系</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥24,509</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥73.5万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#d97706;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P1</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">[对撞] 高拨打·低质量</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">- → 修复</div>
+<div style="font-size:12px;color:#475569;">电销三部 人均拨打48通(高活动量)但有质量会话仅1.8通/人(3.7%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">基于数据×逻辑双对撞发现</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 电销三部(管理者:朱晓园)</div>
+<div>每日执行: 优秀团队质量会话占比应>6%</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查数据变化，第7天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥26,877</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥80.6万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#d97706;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P1</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">[对撞] 高拨打·低质量</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">- → 修复</div>
+<div style="font-size:12px;color:#475569;">电销六部 人均拨打51通(高活动量)但有质量会话仅1.6通/人(3.1%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">基于数据×逻辑双对撞发现</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 电销六部(管理者:游云清)</div>
+<div>每日执行: 优秀团队质量会话占比应>6%</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查数据变化，第7天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥23,650</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥71.0万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#d97706;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P1</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">[对撞] 高拨打·低质量</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">- → 修复</div>
+<div style="font-size:12px;color:#475569;">电销一部 人均拨打47通(高活动量)但有质量会话仅1.3通/人(2.7%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">基于数据×逻辑双对撞发现</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 电销一部(管理者:何丹丹)</div>
+<div>每日执行: 优秀团队质量会话占比应>6%</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查数据变化，第7天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥21,237</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥63.7万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#d97706;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P1</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">[对撞] 高拨打·低质量</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">- → 修复</div>
+<div style="font-size:12px;color:#475569;">电销八部 人均拨打48通(高活动量)但有质量会话仅1.2通/人(2.5%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">基于数据×逻辑双对撞发现</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 电销八部()</div>
+<div>每日执行: 优秀团队质量会话占比应>6%</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查数据变化，第7天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥21,501</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥64.5万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#d97706;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P1</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">[对撞] 高拨打·低质量</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">- → 修复</div>
+<div style="font-size:12px;color:#475569;">电销五部 人均拨打51通(高活动量)但有质量会话仅1.2通/人(2.3%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">基于数据×逻辑双对撞发现</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 电销五部(管理者:吴胜悍)</div>
+<div>每日执行: 优秀团队质量会话占比应>6%</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查数据变化，第7天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥16,883</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥50.6万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#d97706;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P1</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">[对撞] 高拨打·低质量</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">- → 修复</div>
+<div style="font-size:12px;color:#475569;">电销二部 人均拨打45通(高活动量)但有质量会话仅1.0通/人(2.2%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">基于数据×逻辑双对撞发现</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 电销二部(管理者:赵梅)</div>
+<div>每日执行: 优秀团队质量会话占比应>6%</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查数据变化，第7天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥19,534</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥58.6万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#d97706;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P1</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">[对撞] 高拨打·低质量</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">- → 修复</div>
+<div style="font-size:12px;color:#475569;">电销四部 人均拨打48通(高活动量)但有质量会话仅0.8通/人(1.7%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">基于数据×逻辑双对撞发现</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 电销四部(管理者:宋晓鹏)</div>
+<div>每日执行: 优秀团队质量会话占比应>6%</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查数据变化，第7天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥19,130</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥57.4万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#d97706;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P1</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">[对撞] 高拨打·低质量</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">- → 修复</div>
+<div style="font-size:12px;color:#475569;">电销七部 人均拨打46通(高活动量)但有质量会话仅0.8通/人(1.7%)。员工在'刷量'。</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">基于数据×逻辑双对撞发现</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 电销七部()</div>
+<div>每日执行: 优秀团队质量会话占比应>6%</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查数据变化，第7天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 T23:Fanatical Prospecting · PE08:因果链归因</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥14,614</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥43.8万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#d97706;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P1</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">[对撞] 高签单·高退费</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">- → 修复</div>
+<div style="font-size:12px;color:#475569;">电销三部 签单17笔(高于均值10)，但退费率9.4%(>6%)。典型过度承诺循环。</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">基于数据×逻辑双对撞发现</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 电销三部(管理者:朱晓园)</div>
+<div>每日执行: 签单后48h回访确认制度</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查数据变化，第7天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 S15:客户成功-LTV管理 · T10:极致服务-ICARE</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥4,228</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥12.7万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#dc2626;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P0</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">[对撞] 持续不达标预警</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">- → 修复</div>
+<div style="font-size:12px;color:#475569;">电销一部(何丹丹) 接通率已连续约12天低于43%红线，当前42.3%，无明显改善趋势。管理者可能未采取有效干预措施。</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">基于数据×逻辑双对撞发现</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 电销一部(管理者:何丹丹)</div>
+<div>每日执行: 今日发出正式预警通知给何丹丹</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查数据变化，第7天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 PE02:关键绩效指标-红线管理 · L02:OKR工作法-对齐</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥68,368</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥205.1万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#dc2626;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P0</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">[对撞] 持续不达标预警</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">- → 修复</div>
+<div style="font-size:12px;color:#475569;">电销五部(吴胜悍) 接通率已连续约12天低于43%红线，当前40.2%，无明显改善趋势。管理者可能未采取有效干预措施。</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">基于数据×逻辑双对撞发现</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 电销五部(管理者:吴胜悍)</div>
+<div>每日执行: 今日发出正式预警通知给吴胜悍</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查数据变化，第7天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 PE02:关键绩效指标-红线管理 · L02:OKR工作法-对齐</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥53,896</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥161.7万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#dc2626;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P0</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">[对撞] 持续不达标预警</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">- → 修复</div>
+<div style="font-size:12px;color:#475569;">电销二部(赵梅) 接通率已连续约12天低于43%红线，当前40.9%，无明显改善趋势。管理者可能未采取有效干预措施。</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">基于数据×逻辑双对撞发现</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 电销二部(管理者:赵梅)</div>
+<div>每日执行: 今日发出正式预警通知给赵梅</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查数据变化，第7天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 PE02:关键绩效指标-红线管理 · L02:OKR工作法-对齐</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥59,719</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥179.2万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#dc2626;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P0</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">[对撞] 持续不达标预警</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">- → 修复</div>
+<div style="font-size:12px;color:#475569;">电销四部(宋晓鹏) 接通率已连续约12天低于43%红线，当前38.2%，无明显改善趋势。管理者可能未采取有效干预措施。</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">基于数据×逻辑双对撞发现</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 电销四部(管理者:宋晓鹏)</div>
+<div>每日执行: 今日发出正式预警通知给宋晓鹏</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查数据变化，第7天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 PE02:关键绩效指标-红线管理 · L02:OKR工作法-对齐</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥60,449</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥181.3万</div>
+</div></div><div style="display:flex;gap:14px;padding:16px 0;
+border-bottom:1px solid #f1f5f9;align-items:flex-start;">
+<div style="min-width:32px;height:32px;background:#dc2626;color:#fff;border-radius:6px;
+display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">P0</div>
+<div style="flex:1;min-width:0;">
+<div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:4px;">[对撞] 持续不达标预警</div>
+<div style="font-size:12px;color:#64748b;margin-bottom:3px;">- → 修复</div>
+<div style="font-size:12px;color:#475569;">电销七部 接通率已连续约12天低于43%红线，当前37.0%，无明显改善趋势。管理者可能未采取有效干预措施。</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:2px;">基于数据×逻辑双对撞发现</div>
+<div style="margin-top:8px;padding:8px 10px;background:#f0fdf4;
+border-radius:6px;border:1px solid #bbf7d0;font-size:11px;color:#166534;">
+<div style="font-weight:700;margin-bottom:3px;">执行指令</div>
+<div>部署日期: 2026-02-28 | 对象: 电销七部()</div>
+<div>每日执行: 今日发出正式预警通知给部门负责人</div>
+<div>坚持周期: 7天 | 里程碑: 第3天检查数据变化，第7天验收</div>
+</div><div style="margin-top:6px;padding:6px 10px;background:#16a34a11;
+border-radius:5px;border:1px solid #16a34a33;font-size:11px;display:flex;align-items:center;gap:8px;">
+<span style="font-weight:700;color:#16a34a;white-space:nowrap;">可行性: 高可行</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#475569;">自闭环</span>
+<span style="color:#64748b;">|</span>
+<span style="color:#64748b;">弱依赖·强闭环，业务团队可自行推动落地</span>
+</div><div style="font-size:10px;color:#94a3b8;margin-top:2px;">📚 PE02:关键绩效指标-红线管理 · L02:OKR工作法-对齐</div>
+</div>
+<div style="min-width:90px;text-align:right;">
+<div style="font-size:10px;color:#94a3b8;">日增量</div>
+<div style="font-size:16px;font-weight:700;color:#dc2626;">+¥47,401</div>
+<div style="font-size:10px;color:#94a3b8;">月+¥142.2万</div>
+</div></div>
+</div>
+
+<!-- 司龄分析 -->
+<div class="card">
+<h2>司龄-产能成长曲线</h2>
+<table><thead><tr>
+<th style="text-align:left;padding-left:12px;">阶段</th>
+<th>人数</th><th style="text-align:right;">人均产值</th><th>AI均分</th><th>人均拨打</th>
+</tr></thead><tbody><tr><td style="padding:8px 12px;">新人(≤3月)</td>
+<td style="padding:8px;text-align:center;">96人</td>
+<td style="padding:8px;text-align:right;font-weight:600;">¥678</td>
+<td style="padding:8px;text-align:center;">66.5</td>
+<td style="padding:8px;text-align:center;">146</td></tr><tr><td style="padding:8px 12px;">成长期(4-12月)</td>
+<td style="padding:8px;text-align:center;">77人</td>
+<td style="padding:8px;text-align:right;font-weight:600;">¥1,056</td>
+<td style="padding:8px;text-align:center;">74.4</td>
+<td style="padding:8px;text-align:center;">151</td></tr><tr><td style="padding:8px 12px;">成熟期(1-2年)</td>
+<td style="padding:8px;text-align:center;">40人</td>
+<td style="padding:8px;text-align:right;font-weight:600;">¥1,642</td>
+<td style="padding:8px;text-align:center;">92.2</td>
+<td style="padding:8px;text-align:center;">147</td></tr><tr><td style="padding:8px 12px;">老员工(>2年)</td>
+<td style="padding:8px;text-align:center;">21人</td>
+<td style="padding:8px;text-align:right;font-weight:600;">¥1,520</td>
+<td style="padding:8px;text-align:center;">95.0</td>
+<td style="padding:8px;text-align:center;">150</td></tr></tbody></table>
+<div style="font-size:11px;color:#94a3b8;margin-top:8px;">
+* 产能曲线：新人爬坡→成长期冲刺→成熟期巅峰→老员工可能衰减。关注断崖和倦怠点。</div>
+</div>
+
+<!-- 部门排名 -->
+<div class="card" style="overflow-x:auto;">
+<h2>部门排名(按营收降序)</h2>
+<table style="font-size:12px;min-width:800px;"><thead><tr>
+<th style="text-align:left;padding-left:12px;">部门</th><th style="text-align:right;">营收</th>
+<th style="text-align:right;">人均</th><th>接通率</th><th>深沟率</th><th>AI</th>
+<th>转化率</th><th>签单</th><th>TOP20%</th><th>退费率</th><th>ROI</th>
+</tr></thead><tbody><tr style="background:#f8fafc;">
+<td style="padding:9px 12px;font-weight:600;">电销三部</td>
+<td style="padding:9px 6px;text-align:right;font-weight:700;">¥89,590</td>
+<td style="padding:9px 6px;text-align:right;">¥2,635</td>
+<td style="padding:9px 6px;text-align:center;color:#333;">46.7%</td>
+<td style="padding:9px 6px;text-align:center;">24.3%</td>
+<td style="padding:9px 6px;text-align:center;">78.3</td>
+<td style="padding:9px 6px;text-align:center;">3.16%</td>
+<td style="padding:9px 6px;text-align:center;">17</td>
+<td style="padding:9px 6px;text-align:center;color:#16a34a;">46.7%</td>
+<td style="padding:9px 6px;text-align:center;">9.4%</td>
+<td style="padding:9px 6px;text-align:center;">941.1%</td>
+</tr><tr style="background:#fff;">
+<td style="padding:9px 12px;font-weight:600;">电销六部</td>
+<td style="padding:9px 6px;text-align:right;font-weight:700;">¥68,978</td>
+<td style="padding:9px 6px;text-align:right;">¥2,156</td>
+<td style="padding:9px 6px;text-align:center;color:#333;">46.1%</td>
+<td style="padding:9px 6px;text-align:center;">21.2%</td>
+<td style="padding:9px 6px;text-align:center;">76.4</td>
+<td style="padding:9px 6px;text-align:center;">2.73%</td>
+<td style="padding:9px 6px;text-align:center;">14</td>
+<td style="padding:9px 6px;text-align:center;color:#16a34a;">47.7%</td>
+<td style="padding:9px 6px;text-align:center;">0.0%</td>
+<td style="padding:9px 6px;text-align:center;">769.8%</td>
+</tr><tr style="background:#f8fafc;">
+<td style="padding:9px 12px;font-weight:600;">电销一部</td>
+<td style="padding:9px 6px;text-align:right;font-weight:700;">¥54,804</td>
+<td style="padding:9px 6px;text-align:right;">¥1,768</td>
+<td style="padding:9px 6px;text-align:center;color:#dc2626;">42.3%</td>
+<td style="padding:9px 6px;text-align:center;">19.0%</td>
+<td style="padding:9px 6px;text-align:center;">75.6</td>
+<td style="padding:9px 6px;text-align:center;">2.4%</td>
+<td style="padding:9px 6px;text-align:center;">12</td>
+<td style="padding:9px 6px;text-align:center;color:#d97706;">54.6%</td>
+<td style="padding:9px 6px;text-align:center;">5.4%</td>
+<td style="padding:9px 6px;text-align:center;">631.4%</td>
+</tr><tr style="background:#fff;">
+<td style="padding:9px 12px;font-weight:600;">电销八部</td>
+<td style="padding:9px 6px;text-align:right;font-weight:700;">¥52,558</td>
+<td style="padding:9px 6px;text-align:right;">¥1,752</td>
+<td style="padding:9px 6px;text-align:center;color:#333;">44.2%</td>
+<td style="padding:9px 6px;text-align:center;">18.0%</td>
+<td style="padding:9px 6px;text-align:center;">74.1</td>
+<td style="padding:9px 6px;text-align:center;">2.43%</td>
+<td style="padding:9px 6px;text-align:center;">11</td>
+<td style="padding:9px 6px;text-align:center;color:#d97706;">54.9%</td>
+<td style="padding:9px 6px;text-align:center;">0.0%</td>
+<td style="padding:9px 6px;text-align:center;">625.7%</td>
+</tr><tr style="background:#f8fafc;">
+<td style="padding:9px 12px;font-weight:600;">电销五部</td>
+<td style="padding:9px 6px;text-align:right;font-weight:700;">¥38,961</td>
+<td style="padding:9px 6px;text-align:right;">¥1,498</td>
+<td style="padding:9px 6px;text-align:center;color:#dc2626;">40.2%</td>
+<td style="padding:9px 6px;text-align:center;">18.0%</td>
+<td style="padding:9px 6px;text-align:center;">69.4</td>
+<td style="padding:9px 6px;text-align:center;">2.17%</td>
+<td style="padding:9px 6px;text-align:center;">9</td>
+<td style="padding:9px 6px;text-align:center;color:#dc2626;">56.5%</td>
+<td style="padding:9px 6px;text-align:center;">0.0%</td>
+<td style="padding:9px 6px;text-align:center;">535.2%</td>
+</tr><tr style="background:#fff;">
+<td style="padding:9px 12px;font-weight:600;">电销二部</td>
+<td style="padding:9px 6px;text-align:right;font-weight:700;">¥37,208</td>
+<td style="padding:9px 6px;text-align:right;">¥1,329</td>
+<td style="padding:9px 6px;text-align:center;color:#dc2626;">40.9%</td>
+<td style="padding:9px 6px;text-align:center;">16.0%</td>
+<td style="padding:9px 6px;text-align:center;">67.2</td>
+<td style="padding:9px 6px;text-align:center;">1.87%</td>
+<td style="padding:9px 6px;text-align:center;">8</td>
+<td style="padding:9px 6px;text-align:center;color:#dc2626;">58.9%</td>
+<td style="padding:9px 6px;text-align:center;">0.0%</td>
+<td style="padding:9px 6px;text-align:center;">474.6%</td>
+</tr><tr style="background:#f8fafc;">
+<td style="padding:9px 12px;font-weight:600;">电销四部</td>
+<td style="padding:9px 6px;text-align:right;font-weight:700;">¥34,008</td>
+<td style="padding:9px 6px;text-align:right;">¥1,134</td>
+<td style="padding:9px 6px;text-align:center;color:#dc2626;">38.2%</td>
+<td style="padding:9px 6px;text-align:center;">13.8%</td>
+<td style="padding:9px 6px;text-align:center;">66.0</td>
+<td style="padding:9px 6px;text-align:center;">1.69%</td>
+<td style="padding:9px 6px;text-align:center;">8</td>
+<td style="padding:9px 6px;text-align:center;color:#dc2626;">64.8%</td>
+<td style="padding:9px 6px;text-align:center;">10.3%</td>
+<td style="padding:9px 6px;text-align:center;">404.9%</td>
+</tr><tr style="background:#fff;">
+<td style="padding:9px 12px;font-weight:600;">电销七部</td>
+<td style="padding:9px 6px;text-align:right;font-weight:700;">¥21,180</td>
+<td style="padding:9px 6px;text-align:right;">¥921</td>
+<td style="padding:9px 6px;text-align:center;color:#dc2626;">37.0%</td>
+<td style="padding:9px 6px;text-align:center;">13.0%</td>
+<td style="padding:9px 6px;text-align:center;">63.4</td>
+<td style="padding:9px 6px;text-align:center;">1.34%</td>
+<td style="padding:9px 6px;text-align:center;">5</td>
+<td style="padding:9px 6px;text-align:center;color:#dc2626;">68.5%</td>
+<td style="padding:9px 6px;text-align:center;">0.0%</td>
+<td style="padding:9px 6px;text-align:center;">328.9%</td>
+</tr></tbody></table></div>
+
+<!-- 新人追踪 -->
+<div class="card">
+<h2>新人成长追踪</h2>
+<table style="font-size:12px;"><thead><tr>
+<th style="text-align:left;padding-left:12px;">部门</th><th>新人数</th>
+<th style="text-align:right;">新人均产</th><th style="text-align:right;">全员均产</th>
+<th>达标率</th></tr></thead><tbody><tr><td style="padding:7px 12px;">电销三部</td><td style="padding:7px;text-align:center;">4人</td><td style="padding:7px;text-align:right;">¥937</td><td style="padding:7px;text-align:right;">¥2,635</td><td style="padding:7px;text-align:center;color:#dc2626;font-weight:600;">35.6%</td></tr><tr><td style="padding:7px 12px;">电销六部</td><td style="padding:7px;text-align:center;">5人</td><td style="padding:7px;text-align:right;">¥730</td><td style="padding:7px;text-align:right;">¥2,156</td><td style="padding:7px;text-align:center;color:#dc2626;font-weight:600;">33.9%</td></tr><tr><td style="padding:7px 12px;">电销一部</td><td style="padding:7px;text-align:center;">2人</td><td style="padding:7px;text-align:right;">¥788</td><td style="padding:7px;text-align:right;">¥1,768</td><td style="padding:7px;text-align:center;color:#dc2626;font-weight:600;">44.6%</td></tr><tr><td style="padding:7px 12px;">电销八部</td><td style="padding:7px;text-align:center;">2人</td><td style="padding:7px;text-align:right;">¥570</td><td style="padding:7px;text-align:right;">¥1,752</td><td style="padding:7px;text-align:center;color:#dc2626;font-weight:600;">32.5%</td></tr><tr><td style="padding:7px 12px;">电销五部</td><td style="padding:7px;text-align:center;">2人</td><td style="padding:7px;text-align:right;">¥636</td><td style="padding:7px;text-align:right;">¥1,498</td><td style="padding:7px;text-align:center;color:#dc2626;font-weight:600;">42.4%</td></tr><tr><td style="padding:7px 12px;">电销二部</td><td style="padding:7px;text-align:center;">3人</td><td style="padding:7px;text-align:right;">¥566</td><td style="padding:7px;text-align:right;">¥1,329</td><td style="padding:7px;text-align:center;color:#dc2626;font-weight:600;">42.6%</td></tr><tr><td style="padding:7px 12px;">电销四部</td><td style="padding:7px;text-align:center;">4人</td><td style="padding:7px;text-align:right;">¥482</td><td style="padding:7px;text-align:right;">¥1,134</td><td style="padding:7px;text-align:center;color:#dc2626;font-weight:600;">42.5%</td></tr><tr><td style="padding:7px 12px;">电销七部</td><td style="padding:7px;text-align:center;">4人</td><td style="padding:7px;text-align:right;">¥380</td><td style="padding:7px;text-align:right;">¥921</td><td style="padding:7px;text-align:center;color:#dc2626;font-weight:600;">41.3%</td></tr></tbody></table>
+</div>
+
+<!-- TOP & BOTTOM -->
+<div class="card" style="overflow-x:auto;">
+<h2>个人 TOP10</h2>
+<table style="font-size:12px;"><thead><tr>
+<th>#</th><th style="text-align:left;">姓名</th><th style="text-align:left;">部门</th>
+<th>司龄</th><th style="text-align:right;">营收</th><th>签单</th><th>AI</th><th>深沟</th>
+</tr></thead><tbody><tr style="background:#f8fafc;"><td style="padding:7px 10px;">1</td>
+<td style="padding:7px 6px;">电销三部·03号</td>
+<td style="padding:7px 6px;">电销三部</td>
+<td style="padding:7px 6px;text-align:center;">18月</td>
+<td style="padding:7px 6px;text-align:right;color:#16a34a;font-weight:600;">¥6,734</td>
+<td style="padding:7px 6px;text-align:center;">1</td>
+<td style="padding:7px 6px;text-align:center;">95.0</td>
+<td style="padding:7px 6px;text-align:center;">8</td></tr><tr style="background:#fff;"><td style="padding:7px 10px;">2</td>
+<td style="padding:7px 6px;">电销三部·04号</td>
+<td style="padding:7px 6px;">电销三部</td>
+<td style="padding:7px 6px;text-align:center;">24月</td>
+<td style="padding:7px 6px;text-align:right;color:#16a34a;font-weight:600;">¥6,381</td>
+<td style="padding:7px 6px;text-align:center;">1</td>
+<td style="padding:7px 6px;text-align:center;">95.0</td>
+<td style="padding:7px 6px;text-align:center;">7</td></tr><tr style="background:#f8fafc;"><td style="padding:7px 10px;">3</td>
+<td style="padding:7px 6px;">电销六部·06号</td>
+<td style="padding:7px 6px;">电销六部</td>
+<td style="padding:7px 6px;text-align:center;">18月</td>
+<td style="padding:7px 6px;text-align:right;color:#16a34a;font-weight:600;">¥5,516</td>
+<td style="padding:7px 6px;text-align:center;">1</td>
+<td style="padding:7px 6px;text-align:center;">92.4</td>
+<td style="padding:7px 6px;text-align:center;">12</td></tr><tr style="background:#fff;"><td style="padding:7px 10px;">4</td>
+<td style="padding:7px 6px;">电销三部·06号</td>
+<td style="padding:7px 6px;">电销三部</td>
+<td style="padding:7px 6px;text-align:center;">36月</td>
+<td style="padding:7px 6px;text-align:right;color:#16a34a;font-weight:600;">¥4,867</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">95.0</td>
+<td style="padding:7px 6px;text-align:center;">11</td></tr><tr style="background:#f8fafc;"><td style="padding:7px 10px;">5</td>
+<td style="padding:7px 6px;">电销八部·04号</td>
+<td style="padding:7px 6px;">电销八部</td>
+<td style="padding:7px 6px;text-align:center;">36月</td>
+<td style="padding:7px 6px;text-align:right;color:#16a34a;font-weight:600;">¥4,784</td>
+<td style="padding:7px 6px;text-align:center;">1</td>
+<td style="padding:7px 6px;text-align:center;">95.0</td>
+<td style="padding:7px 6px;text-align:center;">9</td></tr><tr style="background:#fff;"><td style="padding:7px 10px;">6</td>
+<td style="padding:7px 6px;">电销三部·01号</td>
+<td style="padding:7px 6px;">电销三部</td>
+<td style="padding:7px 6px;text-align:center;">4月</td>
+<td style="padding:7px 6px;text-align:right;color:#16a34a;font-weight:600;">¥4,250</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">74.1</td>
+<td style="padding:7px 6px;text-align:center;">5</td></tr><tr style="background:#f8fafc;"><td style="padding:7px 10px;">7</td>
+<td style="padding:7px 6px;">电销五部·01号</td>
+<td style="padding:7px 6px;">电销五部</td>
+<td style="padding:7px 6px;text-align:center;">24月</td>
+<td style="padding:7px 6px;text-align:right;color:#16a34a;font-weight:600;">¥4,238</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">95.0</td>
+<td style="padding:7px 6px;text-align:center;">12</td></tr><tr style="background:#fff;"><td style="padding:7px 10px;">8</td>
+<td style="padding:7px 6px;">电销八部·03号</td>
+<td style="padding:7px 6px;">电销八部</td>
+<td style="padding:7px 6px;text-align:center;">12月</td>
+<td style="padding:7px 6px;text-align:right;color:#16a34a;font-weight:600;">¥3,995</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">88.8</td>
+<td style="padding:7px 6px;text-align:center;">3</td></tr><tr style="background:#f8fafc;"><td style="padding:7px 10px;">9</td>
+<td style="padding:7px 6px;">电销五部·03号</td>
+<td style="padding:7px 6px;">电销五部</td>
+<td style="padding:7px 6px;text-align:center;">18月</td>
+<td style="padding:7px 6px;text-align:right;color:#16a34a;font-weight:600;">¥3,959</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">87.4</td>
+<td style="padding:7px 6px;text-align:center;">15</td></tr><tr style="background:#fff;"><td style="padding:7px 10px;">10</td>
+<td style="padding:7px 6px;">电销一部·05号</td>
+<td style="padding:7px 6px;">电销一部</td>
+<td style="padding:7px 6px;text-align:center;">36月</td>
+<td style="padding:7px 6px;text-align:right;color:#16a34a;font-weight:600;">¥3,895</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">95.0</td>
+<td style="padding:7px 6px;text-align:center;">11</td></tr></tbody></table></div>
+
+<div class="card" style="overflow-x:auto;">
+<h2>个人 BOTTOM10</h2>
+<table style="font-size:12px;"><thead><tr>
+<th>#</th><th style="text-align:left;">姓名</th><th style="text-align:left;">部门</th>
+<th>司龄</th><th style="text-align:right;">营收</th><th>签单</th><th>AI</th><th>深沟</th>
+</tr></thead><tbody><tr style="background:#f8fafc;"><td style="padding:7px 10px;">1</td>
+<td style="padding:7px 6px;">电销四部·29号</td>
+<td style="padding:7px 6px;">电销四部</td>
+<td style="padding:7px 6px;text-align:center;">3月</td>
+<td style="padding:7px 6px;text-align:right;color:#94a3b8;font-weight:600;">¥91</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">65.7</td>
+<td style="padding:7px 6px;text-align:center;">9</td></tr><tr style="background:#fff;"><td style="padding:7px 10px;">2</td>
+<td style="padding:7px 6px;">电销一部·27号</td>
+<td style="padding:7px 6px;">电销一部</td>
+<td style="padding:7px 6px;text-align:center;">1月</td>
+<td style="padding:7px 6px;text-align:right;color:#94a3b8;font-weight:600;">¥89</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">58.7</td>
+<td style="padding:7px 6px;text-align:center;">15</td></tr><tr style="background:#f8fafc;"><td style="padding:7px 10px;">3</td>
+<td style="padding:7px 6px;">电销七部·20号</td>
+<td style="padding:7px 6px;">电销七部</td>
+<td style="padding:7px 6px;text-align:center;">2月</td>
+<td style="padding:7px 6px;text-align:right;color:#94a3b8;font-weight:600;">¥88</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">54.2</td>
+<td style="padding:7px 6px;text-align:center;">7</td></tr><tr style="background:#fff;"><td style="padding:7px 10px;">4</td>
+<td style="padding:7px 6px;">电销七部·22号</td>
+<td style="padding:7px 6px;">电销七部</td>
+<td style="padding:7px 6px;text-align:center;">36月</td>
+<td style="padding:7px 6px;text-align:right;color:#94a3b8;font-weight:600;">¥88</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">95.0</td>
+<td style="padding:7px 6px;text-align:center;">7</td></tr><tr style="background:#f8fafc;"><td style="padding:7px 10px;">5</td>
+<td style="padding:7px 6px;">电销一部·26号</td>
+<td style="padding:7px 6px;">电销一部</td>
+<td style="padding:7px 6px;text-align:center;">2月</td>
+<td style="padding:7px 6px;text-align:right;color:#94a3b8;font-weight:600;">¥86</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">69.5</td>
+<td style="padding:7px 6px;text-align:center;">4</td></tr><tr style="background:#fff;"><td style="padding:7px 10px;">6</td>
+<td style="padding:7px 6px;">电销七部·12号</td>
+<td style="padding:7px 6px;">电销七部</td>
+<td style="padding:7px 6px;text-align:center;">8月</td>
+<td style="padding:7px 6px;text-align:right;color:#94a3b8;font-weight:600;">¥85</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">60.4</td>
+<td style="padding:7px 6px;text-align:center;">6</td></tr><tr style="background:#f8fafc;"><td style="padding:7px 10px;">7</td>
+<td style="padding:7px 6px;">电销二部·27号</td>
+<td style="padding:7px 6px;">电销二部</td>
+<td style="padding:7px 6px;text-align:center;">2月</td>
+<td style="padding:7px 6px;text-align:right;color:#94a3b8;font-weight:600;">¥81</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">67.5</td>
+<td style="padding:7px 6px;text-align:center;">15</td></tr><tr style="background:#fff;"><td style="padding:7px 10px;">8</td>
+<td style="padding:7px 6px;">电销二部·24号</td>
+<td style="padding:7px 6px;">电销二部</td>
+<td style="padding:7px 6px;text-align:center;">1月</td>
+<td style="padding:7px 6px;text-align:right;color:#94a3b8;font-weight:600;">¥70</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">65.3</td>
+<td style="padding:7px 6px;text-align:center;">3</td></tr><tr style="background:#f8fafc;"><td style="padding:7px 10px;">9</td>
+<td style="padding:7px 6px;">电销四部·26号</td>
+<td style="padding:7px 6px;">电销四部</td>
+<td style="padding:7px 6px;text-align:center;">3月</td>
+<td style="padding:7px 6px;text-align:right;color:#94a3b8;font-weight:600;">¥68</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">68.8</td>
+<td style="padding:7px 6px;text-align:center;">11</td></tr><tr style="background:#fff;"><td style="padding:7px 10px;">10</td>
+<td style="padding:7px 6px;">电销四部·22号</td>
+<td style="padding:7px 6px;">电销四部</td>
+<td style="padding:7px 6px;text-align:center;">2月</td>
+<td style="padding:7px 6px;text-align:right;color:#94a3b8;font-weight:600;">¥65</td>
+<td style="padding:7px 6px;text-align:center;">0</td>
+<td style="padding:7px 6px;text-align:center;">52.2</td>
+<td style="padding:7px 6px;text-align:center;">4</td></tr></tbody></table></div>
+
+<!-- 因果链综合诊断 -->
+<div class="card">
+<h2>因果链综合诊断</h2>
+<div style="font-size:13px;line-height:1.9;color:#475569;">
+<strong style="color:#0f172a;">资源端</strong> 日分配3,692条 · 分配率90%<br>
+<strong style="color:#0f172a;">触达端</strong> 拨打11,279次(人均48通) · 接通1,559通(42.2%)<br>
+<strong style="color:#0f172a;">转化端</strong> 深沟288通(深沟率18.5%) · AI均分71.8 · 转化2.28%<br>
+<strong style="color:#0f172a;">产出端</strong> 签单84笔 · 客单价¥4,730 · 总营收¥397,287 · 人均¥1,698<br>
+<strong style="color:#0f172a;">质量端</strong> 退费4笔(¥14,906 · 3.8%) · 投诉15件<br>
+<strong style="color:#0f172a;">协同端</strong> 建信转入443条→69单(15.6%) · 公海64条→4单(6.2%)<br>
+<strong style="color:#0f172a;">效率端</strong> 黄金时段61.5%营收 · 部门CV=0.34 · TOP20%占53.9%
+</div></div>
+
+<div style="text-align:center;color:#cbd5e1;font-size:10px;padding:16px 0;">
+数据专家智能体 v2.2.0 · 2026-02-27
+· 三引擎: 数据对撞(16组) + 逻辑对撞(3组假设)
++ 跨领域对撞(15组 · 6领域)
+· 知识库158本 · 10个领域
+</div>
+</div></body></html>

@@ -1,0 +1,17 @@
+{
+  "_doc": "用户偏好与执行规则",
+  "execution_principles": {
+    "first_principle": "助手全部搞定，不得让用户执行本可由助手代劳之事",
+    "single_script_closure": "所有报告生成在一个流程内完成：拉数→分析→生成HTML→发送邮件"
+  },
+  "report_standards": {
+    "modules": 14,
+    "email_subject_format": "【{业务名}体检】{月日}运营报告 — {核心指标}",
+    "redline_words": ["躺平", "支持部门躺平", "仅三人推动", "赵总+肖总+陈总", "派系斗争", "内斗", "大病初愈", "断臂求生", "负重突围", "恶意索赔"]
+  },
+  "email_template_style": {
+    "primary_color": "#1a56db", "gradient_start": "#0f172a", "gradient_end": "#1e3a5f",
+    "background": "#f5f6f8", "card_background": "#ffffff"
+  },
+  "language": "zh-CN", "response_style": "温婉、专业、主动"
+}

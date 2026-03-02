@@ -1,0 +1,107 @@
+{
+  "framework": "数据对撞规则集",
+  "version": "2.0.0",
+  "principles": [
+    "每次分析至少5组数据对撞",
+    "覆盖至少3种对撞类型",
+    "每个碰撞必须量化影响+标注优先级+给出建议"
+  ],
+  "collision_types": [
+    "metric_x_metric",
+    "metric_x_time",
+    "metric_x_entity",
+    "entity_x_entity",
+    "funnel_x_benchmark"
+  ],
+  "benchmarks": {
+    "telemarketing": {
+      "connect_rate": {
+        "warning": 43,
+        "critical": 38,
+        "excellent": 48
+      },
+      "deep_talk_rate": {
+        "warning": 18,
+        "critical": 12,
+        "excellent": 25
+      },
+      "ai_score": {
+        "warning": 70,
+        "critical": 60,
+        "excellent": 80
+      },
+      "conversion_rate": {
+        "warning": 1.0,
+        "critical": 0.6,
+        "excellent": 1.5
+      },
+      "refund_rate": {
+        "warning": 5,
+        "critical": 8,
+        "excellent": 3
+      },
+      "top20_pct": {
+        "warning": 50,
+        "critical": 60,
+        "excellent": 40
+      },
+      "per_capita_revenue": {
+        "warning": 3500,
+        "critical": 2500,
+        "excellent": 5000
+      },
+      "connect_duration": {
+        "warning": 100,
+        "critical": 60,
+        "excellent": 150
+      },
+      "peak_ratio": {
+        "warning": 0.72,
+        "critical": 0.8,
+        "excellent": 0.6
+      },
+      "dept_cv": {
+        "warning": 0.35,
+        "critical": 0.5,
+        "excellent": 0.2
+      }
+    },
+    "store": {
+      "visit_to_close_rate": {
+        "unqualified_lt": 30,
+        "qualified_ge": 30,
+        "qualified_lt": 35,
+        "excellent_ge": 35,
+        "unit": "%",
+        "source": "手工设定",
+        "indicator_names": [
+          "门店到店转化率",
+          "首次到店成交率"
+        ],
+        "note": "低于30%不合格，30-35%合格，35%以上优秀"
+      }
+    }
+  },
+  "detection_patterns": {
+    "high_connect_low_duration": {
+      "condition": "connect_rate>=43 AND avg_connect_dur<100",
+      "diagnosis": "接通后留不住用户",
+      "root_cause": "开场白缺乏价值钩子"
+    },
+    "low_connect_high_duration": {
+      "condition": "connect_rate<40 AND avg_connect_dur>150",
+      "diagnosis": "号码/时段瓶颈但话术OK",
+      "root_cause": "修复接通率即可释放产能"
+    },
+    "high_deep_low_ai": {
+      "condition": "deep_talk_rate>20 AND ai_score<68",
+      "diagnosis": "深聊变闲聊",
+      "root_cause": "缺转化话术结构"
+    },
+    "high_signed_high_refund": {
+      "condition": "signed>avg AND refund_rate>6",
+      "diagnosis": "过度承诺循环",
+      "root_cause": "签单话术过度包装"
+    }
+  }
+}

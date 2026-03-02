@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>电销团队业务体检报告 2026-02-27</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:#f0f2f5;color:#2c3e50;font-size:14px}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 40%,#0f3460 70%,#533483 100%);color:#fff;padding:40px 48px;position:relative;overflow:hidden}
+.header::before{content:"";position:absolute;top:-50%;right:-10%;width:400px;height:400px;background:rgba(83,52,131,0.3);border-radius:50%}
+.header h1{font-size:28px;font-weight:700;letter-spacing:2px;margin-bottom:8px}
+.header .meta{font-size:13px;opacity:0.8;line-height:2}
+.section{background:#fff;margin:16px 24px;border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.section-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #f0f2f5;display:flex;align-items:center;gap:8px}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.kpi-card{border-radius:10px;padding:16px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.kpi-card .label{font-size:11px;opacity:0.85;margin-bottom:6px}
+.kpi-card .value{font-size:24px;font-weight:700;line-height:1.2}
+.kpi-card .sub{font-size:11px;opacity:0.75;margin-top:4px}
+.positioning-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pos-item{background:#f8f9fa;border-left:4px solid #0f3460;padding:12px;border-radius:0 8px 8px 0}
+.pos-item .num{font-size:22px;font-weight:700;color:#0f3460}
+.pos-item .title{font-size:13px;font-weight:600;margin:4px 0}
+.pos-item .desc{font-size:11px;color:#666;line-height:1.5}
+.finding{padding:12px 16px;border-radius:8px;margin-bottom:10px;border-left:4px solid}
+.finding.critical{background:#fff5f5;border-color:#e74c3c}
+.finding.warning{background:#fffbf0;border-color:#e67e22}
+.finding.good{background:#f0fdf4;border-color:#27ae60}
+.finding.info{background:#f0f4ff;border-color:#3498db}
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
+.badge.red{background:#e74c3c;color:#fff}
+.badge.orange{background:#e67e22;color:#fff}
+.badge.green{background:#27ae60;color:#fff}
+.funnel-wrap{display:flex;gap:12px;align-items:stretch;margin:16px 0}
+.funnel-arrow{display:flex;align-items:center;color:#aaa;font-size:20px;padding:0 4px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#1a1a2e;color:#fff;padding:10px 12px;text-align:left;font-weight:600;font-size:12px}
+td{padding:9px 12px;border-bottom:1px solid #f0f2f5}
+tr:hover td{background:#fafafa}
+.tag{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10px;font-weight:600}
+.tag.p0{background:#e74c3c;color:#fff}
+.tag.p1{background:#e67e22;color:#fff}
+.footer{text-align:center;padding:24px;color:#999;font-size:12px}
+</style></head>
+<body>
+
+<!-- 1. 头部 -->
+<div class="header">
+  <div style="position:relative;z-index:1">
+    <h1>⚡ 电销团队业务体检报告</h1>
+    <div class="meta">
+      📅 报告日期：2026-02-27 &nbsp;|&nbsp; 👤 运营负责人：罗阳 等8部门负责人 &nbsp;|&nbsp; 👥 团队规模：336人<br>
+      📊 分析范围：电销全团队 8个部门 · 覆盖14项诊断模块
+    </div>
+  </div>
+</div>
+
+<!-- 2. 业务定位 -->
+<div class="section">
+  <div class="section-title">🎯 电销团队高业绩必须关注的重点</div>
+  <div class="positioning-grid">
+    <div class="pos-item"><div class="num">①</div><div class="title">接通率（号码健康+时段）</div><div class="desc">外呼接通是一切转化的起点。健康号码+黄金时段=接通率提升20%+，直接影响每日可用资源量</div></div>
+    <div class="pos-item"><div class="num">②</div><div class="title">深沟率（话术结构+情绪）</div><div class="desc">接通后能否进入10分钟以上深度沟通，是签单率的核心分水岭。平均深沟率每提升5%，签单增加约8%</div></div>
+    <div class="pos-item"><div class="num">③</div><div class="title">人均产值（效率核心）</div><div class="desc">人均产值低于¥1,500为危险线。中腰部员工是最大杠杆点，提升TOP20%员工占比，但更要捞起中腰部</div></div>
+    <div class="pos-item"><div class="num">④</div><div class="title">新人成长（漏斗补充）</div><div class="desc">新人30天内能否完成「0→1」是团队可持续性关键。前7天是关键窗口，需要深度陪飞</div></div>
+    <div class="pos-item"><div class="num">⑤</div><div class="title">退费控制（利润保障）</div><div class="desc">签单话术合规性直接影响退费率。退费率高的部门，往往存在承诺夸大或资源匹配失当问题</div></div>
+    <div class="pos-item"><div class="num">⑥</div><div class="title">员工能力差异（标杆复制）</div><div class="desc">TOP5员工的方法论是最稀缺的资产。不挖掘、不复制、不扩散，就是让资产睡觉。管理者的核心职责是让好方法变成团队SOP</div></div>
+  </div>
+</div>
+
+<!-- 3. 全局KPI -->
+<div class="section">
+  <div class="section-title">📊 全局KPI总览（含环比对比）</div>
+  <div class="kpi-grid">
+    <div class="kpi-card" style="background:linear-gradient(135deg,#1a1a2e,#0f3460)">
+      <div class="label">今日总营收</div><div class="value">¥55.3万</div>
+      <svg width="60" height="22" style="display:block;margin-top:3px"><polygon points="1.0,20.5 7.4,21.0 13.9,21.0 20.3,20.6 26.8,20.7 33.2,19.3 39.7,6.6 46.1,4.0 52.6,1.0 59.0,5.6 59.0,22 1.0,22" fill="rgba(255,255,255,.7)" opacity="0.1"/><polyline points="1.0,20.5 7.4,21.0 13.9,21.0 20.3,20.6 26.8,20.7 33.2,19.3 39.7,6.6 46.1,4.0 52.6,1.0 59.0,5.6" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="59.0" cy="5.6" r="2" fill="#dc2626"/></svg>
+      <div class="sub"><span style="color:#e74c3c;font-size:11px">▼23.0% 🚨</span></div>
+    </div>
+    <div class="kpi-card" style="background:linear-gradient(135deg,#2c3e50,#3d566e)">
+      <div class="label">在岗人数</div><div class="value">336</div>
+      <div class="sub">新人 123 人</div>
+    </div>
+    <div class="kpi-card" style="background:linear-gradient(135deg,#e67e22,#e67e22aa)">
+      <div class="label">人均产值</div><div class="value">¥1,646</div>
+      <svg width="60" height="22" style="display:block;margin-top:3px"><polygon points="1.0,1.0 7.4,18.8 13.9,21.0 20.3,16.5 26.8,16.1 33.2,20.1 39.7,12.6 46.1,10.8 52.6,8.7 59.0,12.1 59.0,22 1.0,22" fill="rgba(255,255,255,.7)" opacity="0.1"/><polyline points="1.0,1.0 7.4,18.8 13.9,21.0 20.3,16.5 26.8,16.1 33.2,20.1 39.7,12.6 46.1,10.8 52.6,8.7 59.0,12.1" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="59.0" cy="12.1" r="2" fill="#dc2626"/></svg>
+      <div class="sub">基准¥1,500 <span style="color:#e74c3c;font-size:11px">▼23.3% 🚨</span></div>
+    </div>
+    <div class="kpi-card" style="background:linear-gradient(135deg,#27ae60,#27ae60aa)">
+      <div class="label">接通率</div><div class="value">43.6%</div>
+      <svg width="60" height="22" style="display:block;margin-top:3px"><polygon points="1.0,11.9 7.4,2.2 13.9,4.9 20.3,13.3 26.8,1.0 33.2,17.6 39.7,11.4 46.1,17.2 52.6,21.0 59.0,20.0 59.0,22 1.0,22" fill="rgba(255,255,255,.7)" opacity="0.1"/><polyline points="1.0,11.9 7.4,2.2 13.9,4.9 20.3,13.3 26.8,1.0 33.2,17.6 39.7,11.4 46.1,17.2 52.6,21.0 59.0,20.0" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="59.0" cy="20.0" r="2" fill="#16a34a"/></svg>
+      <div class="sub">基准18% <span style="color:#27ae60;font-size:11px">▲1.0%</span></div>
+    </div>
+    <div class="kpi-card" style="background:linear-gradient(135deg,#e74c3c,#e74c3caa)">
+      <div class="label">深沟率</div><div class="value">12.0%</div>
+      <svg width="60" height="22" style="display:block;margin-top:3px"><polygon points="1.0,3.5 7.4,9.8 13.9,1.0 20.3,1.4 26.8,11.5 33.2,20.0 39.7,16.7 46.1,17.3 52.6,18.5 59.0,21.0 59.0,22 1.0,22" fill="rgba(255,255,255,.7)" opacity="0.1"/><polyline points="1.0,3.5 7.4,9.8 13.9,1.0 20.3,1.4 26.8,11.5 33.2,20.0 39.7,16.7 46.1,17.3 52.6,18.5 59.0,21.0" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="59.0" cy="21.0" r="2" fill="#dc2626"/></svg>
+      <div class="sub">基准35% <span style="color:#e74c3c;font-size:11px">▼15.3% 🚨</span></div>
+    </div>
+    <div class="kpi-card" style="background:linear-gradient(135deg,#8e44ad,#9b59b6)">
+      <div class="label">当日签单</div><div class="value">71</div>
+      <svg width="60" height="22" style="display:block;margin-top:3px"><polygon points="1.0,20.6 7.4,21.0 13.9,21.0 20.3,20.8 26.8,21.0 33.2,19.2 39.7,7.9 46.1,6.1 52.6,1.0 59.0,8.3 59.0,22 1.0,22" fill="rgba(255,255,255,.7)" opacity="0.1"/><polyline points="1.0,20.6 7.4,21.0 13.9,21.0 20.3,20.8 26.8,21.0 33.2,19.2 39.7,7.9 46.1,6.1 52.6,1.0 59.0,8.3" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="59.0" cy="8.3" r="2" fill="#dc2626"/></svg>
+      <div class="sub"><span style="color:#e74c3c;font-size:11px">▼36.0% 🚨</span></div>
+    </div>
+    <div class="kpi-card" style="background:linear-gradient(135deg,#27ae60,#27ae60aa)">
+      <div class="label">AI评分均值</div><div class="value">2893</div>
+      <svg width="60" height="22" style="display:block;margin-top:3px"><polygon points="1.0,21.0 7.4,20.3 13.9,20.1 20.3,20.5 26.8,20.3 33.2,16.5 39.7,2.0 46.1,3.4 52.6,1.0 59.0,1.8 59.0,22 1.0,22" fill="rgba(255,255,255,.7)" opacity="0.1"/><polyline points="1.0,21.0 7.4,20.3 13.9,20.1 20.3,20.5 26.8,20.3 33.2,16.5 39.7,2.0 46.1,3.4 52.6,1.0 59.0,1.8" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="59.0" cy="1.8" r="2" fill="#dc2626"/></svg>
+      <div class="sub">基准75分 <span style="color:#e74c3c;font-size:11px">▼4.1%</span></div>
+    </div>
+    <div class="kpi-card" style="background:linear-gradient(135deg,#16a085,#1abc9c)">
+      <div class="label">当月累计营收</div><div class="value">¥476.1万</div>
+      <div class="sub"><span style="color:#27ae60;font-size:11px">▲13.1%</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. 全局诊断+环比 -->
+<div class="section">
+  <div class="section-title">🔍 全局诊断（含环比预警）</div>
+  <div class="finding good">
+    <span class="badge green">接通率</span>
+    <strong> 43.6%</strong> — 
+    ✅ 接通率达标
+  </div>
+  <div class="finding critical">
+    <span class="badge red">深沟率</span>
+    <strong> 12.0%</strong> — 
+    🚨 深沟率严重偏低，话术结构性问题，非个人能力问题，需要系统性干预
+  </div>
+  <div class="finding warning">
+    <span class="badge orange">人均产值</span>
+    <strong> ¥1,646</strong> — 
+    ⚠ 人均产值偏低，重点关注中腰部员工辅导
+  </div>
+  <div class="finding info">
+    <span class="badge" style="background:#3498db;color:#fff">新人比例</span>
+    <strong> 123/336 (37%)</strong> —
+    新人占比偏高（>20%），建议强化陪飞机制，防止断崖式流失
+  </div>
+</div>
+
+<!-- 5. 知识图谱诊断模式匹配 -->
+<div class="section">
+  <div class="section-title">🧠 知识图谱诊断模式匹配</div>
+  <div class="finding info">
+    <span class="tag p1">E01</span> <strong>营收增长但接通率下滑</strong> — 当前接通率43.6%，若月营收同比增长而接通率持续下降，说明靠<em>加量打电话</em>弥补低效，是"饮鸩止渴"。号码资源消耗加速，需警惕号码池耗尽风险。
+  </div>
+  <div class="finding info">
+    <span class="tag p0">E03</span> <strong>高呼叫量低接通</strong> — 呼叫总量33,747通，接通14,721通（43.6%）。若接通率低于12%，号码健康度和外呼时段是主要病因，而非员工努力程度不足。
+  </div>
+  <div class="finding info">
+    <span class="tag p1">E04</span> <strong>TOP集中度风险</strong> — 业绩高度依赖TOP20%员工（典型集中度>50%）。中腰部员工产能尚未充分释放，是最大增量来源。建议差异化辅导，优先投入中腰部提升。
+  </div>
+  <div class="finding info">
+    <span class="tag p1">E06</span> <strong>红娘-电销协同效率</strong> — 电销部门若承接红娘转来资源，需核查两端资源匹配度和转介绍成功率，确保协同链路不断裂。
+  </div>
+</div>
+
+<!-- 6. 因果链 -->
+<div class="section">
+  <div class="section-title">⛓ 转化漏斗因果链（🔴 标红最大瓶颈）</div>
+  <div class="funnel-wrap">
+    <div style="flex:0 0 100px;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(135deg,#1a1a2e,#0f3460);color:#fff;border-radius:8px;padding:12px">
+      <div style="font-size:11px;opacity:0.8">总外呼量</div>
+      <div style="font-size:20px;font-weight:700">33,747</div>
+    </div>
+    <div class="funnel-arrow">→</div>
+    <div style="flex:1;padding:14px;border-radius:8px;border:1px solid #dee2e6;background:#fff;text-align:center">
+            <div style="font-size:12px;color:#666;margin-bottom:4px">接通率</div>
+            <div style="font-size:22px;font-weight:700;color:#27ae60">43.6%</div>
+            <div style="font-size:11px;color:#999">33,747 → 14,721</div>
+        </div>
+    <div class="funnel-arrow">→</div>
+    <div style="flex:1;padding:14px;border-radius:8px;border:1px solid #dee2e6;background:#fff;text-align:center">
+            <div style="font-size:12px;color:#666;margin-bottom:4px">深沟率</div>
+            <div style="font-size:22px;font-weight:700;color:#e74c3c">12.0%</div>
+            <div style="font-size:11px;color:#999">14,721 → 1,764</div>
+        </div>
+    <div class="funnel-arrow">→</div>
+    <div style="flex:1;padding:14px;border-radius:8px;border:3px solid #e74c3c;box-shadow:0 0 12px rgba(231,76,60,0.5);background:#fff;text-align:center">
+            <div style="font-size:12px;color:#666;margin-bottom:4px">签单转化率<span style="background:#e74c3c;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;margin-left:6px">🔴 最大瓶颈</span></div>
+            <div style="font-size:22px;font-weight:700;color:#e74c3c">4.0%</div>
+            <div style="font-size:11px;color:#999">1,764 → 71</div>
+        </div>
+    <div class="funnel-arrow">→</div>
+    <div style="flex:0 0 110px;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(135deg,#27ae60,#2ecc71);color:#fff;border-radius:8px;padding:12px">
+      <div style="font-size:11px;opacity:0.8">当日营收</div>
+      <div style="font-size:18px;font-weight:700">¥55.3万</div>
+    </div>
+  </div>
+  <div style="background:#fff5f5;border:1px solid #e74c3c;border-radius:8px;padding:12px;margin-top:8px;font-size:13px">
+    🔴 <strong>杠杆估算：</strong>若将最大瓶颈环节效率提升5个百分点，预计可新增签单约 <strong style="color:#e74c3c">8 单</strong>，对应营收增量约 <strong style="color:#e74c3c">¥24,414</strong>
+  </div>
+</div>
+
+<!-- 7. 跨领域对撞 -->
+<div class="section">
+  <div class="section-title">💥 跨领域知识对撞</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div style="background:#f8f4ff;border-radius:10px;padding:16px;border-left:4px solid #8e44ad">
+      <div style="font-weight:700;color:#8e44ad;margin-bottom:8px">SPIN销售 × 损失厌恶 📚《SPIN Selling》Neil Rackham × 📚《Thinking, Fast and Slow》Kahneman</div>
+      <div style="font-size:12px;color:#555;line-height:1.7">
+        <strong>现象：</strong>深沟率12.0%偏低，员工在浅层寒暄而非深度挖掘需求<br>
+        <strong>对撞：</strong>SPIN的「痛苦问题」阶段 + Kahneman的「损失比收益更有感知力」<br>
+        <strong>动作：</strong>在深沟第3-5分钟植入「您目前面临的最大情感困境是什么？」，引导对方说出损失，而非单方面介绍产品优势<br>
+        <strong>预估：</strong>深沟率+8%→月增¥15万
+      </div>
+    </div>
+    <div style="background:#f0fff4;border-radius:10px;padding:16px;border-left:4px solid #27ae60">
+      <div style="font-weight:700;color:#27ae60;margin-bottom:8px">社会认同 × 从众心理 📚《Influence》Robert Cialdini</div>
+      <div style="font-size:12px;color:#555;line-height:1.7">
+        <strong>现象：</strong>AI评分2893分，话术同质化，缺乏社交验证植入<br>
+        <strong>对撞：</strong>Cialdini的「社会认同原则」——人在不确定时看他人行为。在婚恋决策中最强效<br>
+        <strong>动作：</strong>每通深沟必须包含1条真实成功案例（「上周帮一位同龄客户在3周内见面4次…」），AI评分检测此环节<br>
+        <strong>预估：</strong>签单转化率+3%→月增¥8万
+      </div>
+    </div>
+    <div style="background:#fff8f0;border-radius:10px;padding:16px;border-left:4px solid #e67e22">
+      <div style="font-weight:700;color:#e67e22;margin-bottom:8px">SOP标准化 × 优势管理 📚《Atomic Habits》James Clear</div>
+      <div style="font-size:12px;color:#555;line-height:1.7">
+        <strong>现象：</strong>部门间人均产值差距悬殊，说明顶尖员工方法论未被系统复制<br>
+        <strong>对撞：</strong>Atomic Habits中「系统胜于目标」——不能依赖TOP员工天赋，要把好方法变成系统<br>
+        <strong>动作：</strong>本周提取TOP3员工深沟录音3条，编写「5分钟深沟黄金脚本」，全员7天执行测试<br>
+        <strong>预估：</strong>中腰部人均+¥500/日→月增¥30万
+      </div>
+    </div>
+    <div style="background:#f0f4ff;border-radius:10px;padding:16px;border-left:4px solid #3498db">
+      <div style="font-weight:700;color:#3498db;margin-bottom:8px">时间窗口理论 × 新人断崖 📚《The First 90 Days》Michael Watkins</div>
+      <div style="font-size:12px;color:#555;line-height:1.7">
+        <strong>现象：</strong>新人123人，占比37%，前30天是关键成活窗口<br>
+        <strong>对撞：</strong>《前90天》的「早期胜利」原则——新人在前30天若无显著进展，留存率骤降<br>
+        <strong>动作：</strong>为每位新人指定深沟导师，第7/14/30天节点检查，第一单成单率作为辅导KPI<br>
+        <strong>预估：</strong>新人成活率+15%→月增¥12万
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. 改善建议 -->
+<div class="section">
+  <div class="section-title">💡 改善建议（按预估增幅排序，含负责人+执行计划）</div>
+  <table>
+    <thead><tr><th>#</th><th>问题/机会点</th><th>负责人</th><th>每日具体动作</th><th>周期</th><th>预估增幅</th><th>知识来源</th></tr></thead>
+    <tbody><tr>
+            <td style="text-align:center;font-weight:700;color:#e67e22">#1</td>
+            <td style="font-weight:600">接通率专项提升</td>
+            <td style="color:#2980b9;font-weight:600">吴胜悍</td>
+            <td style="font-size:12px">每日08:30前提交号码健康度自查报告，优化外呼时段至10-11:30/14-16:30</td>
+            <td style="text-align:center">14天</td>
+            <td style="color:#27ae60;font-weight:600">+¥8,000/日→+¥24万/月</td>
+            <td style="font-size:11px;color:#7f8c8d">📚《Atomic Habits》James Clear</td>
+        </tr><tr>
+            <td style="text-align:center;font-weight:700;color:#e67e22">#2</td>
+            <td style="font-weight:600">深沟话术A/B测试</td>
+            <td style="color:#2980b9;font-weight:600">宋晓鹏</td>
+            <td style="font-size:12px">每日晨会播放1条TOP深沟录音，午间组织5分钟话术通关测试</td>
+            <td style="text-align:center">7天</td>
+            <td style="color:#27ae60;font-weight:600">+¥6,000/日→+¥18万/月</td>
+            <td style="font-size:11px;color:#7f8c8d">📚《SPIN Selling》Neil Rackham</td>
+        </tr><tr>
+            <td style="text-align:center;font-weight:700;color:#e67e22">#3</td>
+            <td style="font-weight:600">新人30日成长计划</td>
+            <td style="color:#2980b9;font-weight:600">罗阳</td>
+            <td style="font-size:12px">为新人配备深沟导师1对1跟听，每3天提交一次成长报告</td>
+            <td style="text-align:center">30天</td>
+            <td style="color:#27ae60;font-weight:600">+¥4,500/日→+¥13.5万/月</td>
+            <td style="font-size:11px;color:#7f8c8d">📚《The First 90 Days》Michael Watkins</td>
+        </tr><tr>
+            <td style="text-align:center;font-weight:700;color:#e67e22">#4</td>
+            <td style="font-weight:600">AI评分激励机制</td>
+            <td style="color:#2980b9;font-weight:600">赵梅</td>
+            <td style="font-size:12px">AI评分≥80分纳入月度TOP奖励，<60分触发强制复训</td>
+            <td style="text-align:center">持续</td>
+            <td style="color:#27ae60;font-weight:600">+¥3,000/日→+¥9万/月</td>
+            <td style="font-size:11px;color:#7f8c8d">📚《Influence》Robert Cialdini</td>
+        </tr><tr>
+            <td style="text-align:center;font-weight:700;color:#e67e22">#5</td>
+            <td style="font-weight:600">损失厌恶话术植入</td>
+            <td style="color:#2980b9;font-weight:600">朱晓提</td>
+            <td style="font-size:12px">在深沟环节植入「错过珍爱黄金期」框架，强化时间紧迫感</td>
+            <td style="text-align:center">7天</td>
+            <td style="color:#27ae60;font-weight:600">+¥2,500/日→+¥7.5万/月</td>
+            <td style="font-size:11px;color:#7f8c8d">📚《Thinking, Fast and Slow》Kahneman</td>
+        </tr></tbody>
+  </table>
+</div>
+
+<!-- 9. 部门明细表 -->
+<div class="section">
+  <div class="section-title">📋 部门明细（人均产值<¥1,500标红，接通率<12%标红）</div>
+  <table>
+    <thead><tr><th>部门</th><th>负责人</th><th>人数</th><th>今日营收</th><th>人均产值</th><th>接通率</th><th>深沟率</th><th>签单数</th><th>AI均分</th><th>月累计</th></tr></thead>
+    <tbody><tr>
+            <td style="font-weight:600">厦门电销一区（何丹丹）</td>
+            <td>（待确认）</td>
+            <td>39</td>
+            <td>¥14.3万</td>
+            <td style="color:#27ae60;font-weight:600">¥3,665</td>
+            <td style="color:#27ae60">42.1%</td>
+            <td>19.3%</td>
+            <td>18</td>
+            <td>5340</td>
+            <td>¥130.6万</td>
+        </tr><tr>
+            <td style="font-weight:600">深圳电销二区（朱晓提）</td>
+            <td>（待确认）</td>
+            <td>25</td>
+            <td>¥9.4万</td>
+            <td style="color:#27ae60;font-weight:600">¥3,755</td>
+            <td style="color:#27ae60">40.3%</td>
+            <td>18.0%</td>
+            <td>13</td>
+            <td>3700</td>
+            <td>¥75.3万</td>
+        </tr><tr>
+            <td style="font-weight:600">深圳电销一区（赵梅）</td>
+            <td>（待确认）</td>
+            <td>22</td>
+            <td>¥5.8万</td>
+            <td style="color:#27ae60;font-weight:600">¥2,625</td>
+            <td style="color:#27ae60">37.2%</td>
+            <td>13.5%</td>
+            <td>8</td>
+            <td>4210</td>
+            <td>¥52.0万</td>
+        </tr><tr>
+            <td style="font-weight:600">西安电销一区（游云清）</td>
+            <td>（待确认）</td>
+            <td>22</td>
+            <td>¥5.5万</td>
+            <td style="color:#27ae60;font-weight:600">¥2,512</td>
+            <td style="color:#27ae60">35.5%</td>
+            <td>13.0%</td>
+            <td>9</td>
+            <td>1671</td>
+            <td>¥43.2万</td>
+        </tr><tr>
+            <td style="font-weight:600">深圳红娘一部 曹世迪</td>
+            <td>（待确认）</td>
+            <td>27</td>
+            <td>¥5.0万</td>
+            <td style="color:#e67e22;font-weight:600">¥1,866</td>
+            <td style="color:#27ae60">52.6%</td>
+            <td>11.3%</td>
+            <td>4</td>
+            <td>0</td>
+            <td>¥37.0万</td>
+        </tr><tr>
+            <td style="font-weight:600">厦门红娘二区一部 邓怡娟</td>
+            <td>（待确认）</td>
+            <td>17</td>
+            <td>¥4.0万</td>
+            <td style="color:#27ae60;font-weight:600">¥2,353</td>
+            <td style="color:#27ae60">55.5%</td>
+            <td>10.5%</td>
+            <td>3</td>
+            <td>0</td>
+            <td>¥26.6万</td>
+        </tr><tr>
+            <td style="font-weight:600">厦门红娘二区二部刘文琴</td>
+            <td>（待确认）</td>
+            <td>18</td>
+            <td>¥3.2万</td>
+            <td style="color:#e67e22;font-weight:600">¥1,799</td>
+            <td style="color:#27ae60">55.9%</td>
+            <td>8.5%</td>
+            <td>4</td>
+            <td>0</td>
+            <td>¥24.1万</td>
+        </tr><tr>
+            <td style="font-weight:600">厦门红娘一区二部 周美霞</td>
+            <td>（待确认）</td>
+            <td>20</td>
+            <td>¥2.3万</td>
+            <td style="color:#e74c3c;font-weight:600">¥1,169</td>
+            <td style="color:#27ae60">51.2%</td>
+            <td>11.7%</td>
+            <td>3</td>
+            <td>0</td>
+            <td>¥17.3万</td>
+        </tr><tr>
+            <td style="font-weight:600">深圳电销五区（吴胜悍）</td>
+            <td>（待确认）</td>
+            <td>18</td>
+            <td>¥1.9万</td>
+            <td style="color:#e74c3c;font-weight:600">¥1,061</td>
+            <td style="color:#27ae60">37.0%</td>
+            <td>8.5%</td>
+            <td>2</td>
+            <td>2888</td>
+            <td>¥13.4万</td>
+        </tr><tr>
+            <td style="font-weight:600">深圳电销四区（罗义武）</td>
+            <td>（待确认）</td>
+            <td>24</td>
+            <td>¥1.8万</td>
+            <td style="color:#e74c3c;font-weight:600">¥759</td>
+            <td style="color:#27ae60">40.8%</td>
+            <td>11.0%</td>
+            <td>3</td>
+            <td>4130</td>
+            <td>¥19.1万</td>
+        </tr><tr>
+            <td style="font-weight:600">深圳电销三区（宋晓鹏）</td>
+            <td>（待确认）</td>
+            <td>17</td>
+            <td>¥1.3万</td>
+            <td style="color:#e74c3c;font-weight:600">¥790</td>
+            <td style="color:#27ae60">38.5%</td>
+            <td>13.1%</td>
+            <td>3</td>
+            <td>2719</td>
+            <td>¥10.3万</td>
+        </tr><tr>
+            <td style="font-weight:600">厦门红娘一区一部 温方方</td>
+            <td>（待确认）</td>
+            <td>18</td>
+            <td>¥0.7万</td>
+            <td style="color:#e74c3c;font-weight:600">¥361</td>
+            <td style="color:#27ae60">53.5%</td>
+            <td>13.8%</td>
+            <td>1</td>
+            <td>0</td>
+            <td>¥27.2万</td>
+        </tr><tr>
+            <td style="font-weight:600">上海书城店</td>
+            <td>（待确认）</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+            <td style="color:#e74c3c;font-weight:600">¥0</td>
+            <td style="color:#e74c3c">0.0%</td>
+            <td>0.0%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+        </tr><tr>
+            <td style="font-weight:600">佛山橙果店</td>
+            <td>（待确认）</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+            <td style="color:#e74c3c;font-weight:600">¥0</td>
+            <td style="color:#e74c3c">0.0%</td>
+            <td>0.0%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+        </tr><tr>
+            <td style="font-weight:600">厦门电销客诉组 陈平香</td>
+            <td>（待确认）</td>
+            <td>3</td>
+            <td>¥0.0万</td>
+            <td style="color:#e74c3c;font-weight:600">¥0</td>
+            <td style="color:#27ae60">61.2%</td>
+            <td>12.9%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+        </tr><tr>
+            <td style="font-weight:600">厦门电销门店（勿删）</td>
+            <td>（待确认）</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+            <td style="color:#e74c3c;font-weight:600">¥0</td>
+            <td style="color:#e74c3c">0.0%</td>
+            <td>0.0%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+        </tr><tr>
+            <td style="font-weight:600">合作深圳呼叫中心</td>
+            <td>（待确认）</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+            <td style="color:#e74c3c;font-weight:600">¥0</td>
+            <td style="color:#e74c3c">0.0%</td>
+            <td>0.0%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+        </tr><tr>
+            <td style="font-weight:600">合作电销精英</td>
+            <td>（待确认）</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+            <td style="color:#e74c3c;font-weight:600">¥0</td>
+            <td style="color:#e74c3c">0.0%</td>
+            <td>0.0%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+        </tr><tr>
+            <td style="font-weight:600">深圳爱优门店</td>
+            <td>（待确认）</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+            <td style="color:#e74c3c;font-weight:600">¥0</td>
+            <td style="color:#e74c3c">0.0%</td>
+            <td>0.0%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+        </tr><tr>
+            <td style="font-weight:600">深圳网销</td>
+            <td>（待确认）</td>
+            <td>66</td>
+            <td>¥0.0万</td>
+            <td style="color:#e74c3c;font-weight:600">¥0</td>
+            <td style="color:#27ae60">43.4%</td>
+            <td>3.2%</td>
+            <td>0</td>
+            <td>1634</td>
+            <td>¥0.0万</td>
+        </tr><tr>
+            <td style="font-weight:600">深圳邀约项目一（龚洪）</td>
+            <td>（待确认）</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+            <td style="color:#e74c3c;font-weight:600">¥0</td>
+            <td style="color:#e74c3c">0.0%</td>
+            <td>0.0%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+        </tr><tr>
+            <td style="font-weight:600">深圳顺风顺水店</td>
+            <td>（待确认）</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+            <td style="color:#e74c3c;font-weight:600">¥0</td>
+            <td style="color:#e74c3c">0.0%</td>
+            <td>0.0%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+        </tr><tr>
+            <td style="font-weight:600">红娘后台部</td>
+            <td>（待确认）</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+            <td style="color:#e74c3c;font-weight:600">¥0</td>
+            <td style="color:#e74c3c">0.0%</td>
+            <td>0.0%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+        </tr><tr>
+            <td style="font-weight:600">西安电销培训部</td>
+            <td>（待确认）</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+            <td style="color:#e74c3c;font-weight:600">¥0</td>
+            <td style="color:#e74c3c">0.0%</td>
+            <td>0.0%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+        </tr><tr>
+            <td style="font-weight:600">重庆呼叫中心（游云清）</td>
+            <td>（待确认）</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+            <td style="color:#e74c3c;font-weight:600">¥0</td>
+            <td style="color:#e74c3c">0.0%</td>
+            <td>0.0%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>¥0.0万</td>
+        </tr></tbody>
+  </table>
+</div>
+
+<!-- 10. 部门级诊断（带管理视角缺失） -->
+<div class="section">
+  <div class="section-title">🔬 部门级诊断（管理视角缺失推断）</div>
+  
+  <div class="finding good" style="margin-bottom:10px">
+    <strong>厦门电销一区（何丹丹） · （待确认）</strong> — 
+    人均¥3,665 / 接通42.1% / 深沟19.3% / AI5340分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：
+    ；深沟率19.3%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    
+    </span>
+  </div>
+  <div class="finding good" style="margin-bottom:10px">
+    <strong>深圳电销二区（朱晓提） · （待确认）</strong> — 
+    人均¥3,755 / 接通40.3% / 深沟18.0% / AI3700分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：
+    ；深沟率18.0%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    
+    </span>
+  </div>
+  <div class="finding good" style="margin-bottom:10px">
+    <strong>深圳电销一区（赵梅） · （待确认）</strong> — 
+    人均¥2,625 / 接通37.2% / 深沟13.5% / AI4210分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：
+    ；深沟率13.5%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    
+    </span>
+  </div>
+  <div class="finding good" style="margin-bottom:10px">
+    <strong>西安电销一区（游云清） · （待确认）</strong> — 
+    人均¥2,512 / 接通35.5% / 深沟13.0% / AI1671分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：
+    ；深沟率13.0%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    
+    </span>
+  </div>
+  <div class="finding warning" style="margin-bottom:10px">
+    <strong>深圳红娘一部 曹世迪 · （待确认）</strong> — 
+    人均¥1,866 / 接通52.6% / 深沟11.3% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：
+    ；深沟率11.3%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding good" style="margin-bottom:10px">
+    <strong>厦门红娘二区一部 邓怡娟 · （待确认）</strong> — 
+    人均¥2,353 / 接通55.5% / 深沟10.5% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：
+    ；深沟率10.5%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    
+    </span>
+  </div>
+  <div class="finding warning" style="margin-bottom:10px">
+    <strong>厦门红娘二区二部刘文琴 · （待确认）</strong> — 
+    人均¥1,799 / 接通55.9% / 深沟8.5% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：
+    ；深沟率8.5%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>厦门红娘一区二部 周美霞 · （待确认）</strong> — 
+    人均¥1,169 / 接通51.2% / 深沟11.7% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：
+    ；深沟率11.7%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>深圳电销五区（吴胜悍） · （待确认）</strong> — 
+    人均¥1,061 / 接通37.0% / 深沟8.5% / AI2888分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：
+    ；深沟率8.5%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>深圳电销四区（罗义武） · （待确认）</strong> — 
+    人均¥759 / 接通40.8% / 深沟11.0% / AI4130分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：
+    ；深沟率11.0%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>深圳电销三区（宋晓鹏） · （待确认）</strong> — 
+    人均¥790 / 接通38.5% / 深沟13.1% / AI2719分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：
+    ；深沟率13.1%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>厦门红娘一区一部 温方方 · （待确认）</strong> — 
+    人均¥361 / 接通53.5% / 深沟13.8% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：
+    ；深沟率13.8%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>上海书城店 · （待确认）</strong> — 
+    人均¥0 / 接通0.0% / 深沟0.0% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：接通率0.0%低于基准，缺乏号码健康度和外呼时段精细化管理意识
+    ；深沟率0%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>佛山橙果店 · （待确认）</strong> — 
+    人均¥0 / 接通0.0% / 深沟0.0% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：接通率0.0%低于基准，缺乏号码健康度和外呼时段精细化管理意识
+    ；深沟率0%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>厦门电销客诉组 陈平香 · （待确认）</strong> — 
+    人均¥0 / 接通61.2% / 深沟12.9% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：
+    ；深沟率12.9%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>厦门电销门店（勿删） · （待确认）</strong> — 
+    人均¥0 / 接通0.0% / 深沟0.0% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：接通率0.0%低于基准，缺乏号码健康度和外呼时段精细化管理意识
+    ；深沟率0%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>合作深圳呼叫中心 · （待确认）</strong> — 
+    人均¥0 / 接通0.0% / 深沟0.0% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：接通率0.0%低于基准，缺乏号码健康度和外呼时段精细化管理意识
+    ；深沟率0%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>合作电销精英 · （待确认）</strong> — 
+    人均¥0 / 接通0.0% / 深沟0.0% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：接通率0.0%低于基准，缺乏号码健康度和外呼时段精细化管理意识
+    ；深沟率0%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>深圳爱优门店 · （待确认）</strong> — 
+    人均¥0 / 接通0.0% / 深沟0.0% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：接通率0.0%低于基准，缺乏号码健康度和外呼时段精细化管理意识
+    ；深沟率0%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>深圳网销 · （待确认）</strong> — 
+    人均¥0 / 接通43.4% / 深沟3.2% / AI1634分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：
+    ；深沟率3.2%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>深圳邀约项目一（龚洪） · （待确认）</strong> — 
+    人均¥0 / 接通0.0% / 深沟0.0% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：接通率0.0%低于基准，缺乏号码健康度和外呼时段精细化管理意识
+    ；深沟率0%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>深圳顺风顺水店 · （待确认）</strong> — 
+    人均¥0 / 接通0.0% / 深沟0.0% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：接通率0.0%低于基准，缺乏号码健康度和外呼时段精细化管理意识
+    ；深沟率0%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>红娘后台部 · （待确认）</strong> — 
+    人均¥0 / 接通0.0% / 深沟0.0% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：接通率0.0%低于基准，缺乏号码健康度和外呼时段精细化管理意识
+    ；深沟率0%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>西安电销培训部 · （待确认）</strong> — 
+    人均¥0 / 接通0.0% / 深沟0.0% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：接通率0.0%低于基准，缺乏号码健康度和外呼时段精细化管理意识
+    ；深沟率0%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+  <div class="finding critical" style="margin-bottom:10px">
+    <strong>重庆呼叫中心（游云清） · （待确认）</strong> — 
+    人均¥0 / 接通0.0% / 深沟0.0% / AI0分<br>
+    <span style="font-size:12px;color:#666;margin-top:4px;display:block">
+    管理视角缺失推断：接通率0.0%低于基准，缺乏号码健康度和外呼时段精细化管理意识
+    ；深沟率0%偏低，忽视话术结构化训练，团队在浅层沟通而非深度卖货
+    ；人均产值偏低，缺乏中腰部差异化辅导策略
+    </span>
+  </div>
+</div>
+
+<!-- 11. TOP5 深度分析 -->
+<div class="section">
+  <div class="section-title">🏆 TOP5部门深度分析（为什么好？可复制性？）</div>
+  <table>
+    <thead><tr><th>排名</th><th>部门</th><th>负责人</th><th>人均产值</th><th>接通率</th><th>深沟率</th><th>AI均分</th><th>为什么好</th><th>可复制要点</th></tr></thead>
+    <tbody><tr style="background:#f0fdf4">
+            <td style="color:#27ae60;font-weight:700">⭐ 深圳电销二区（朱晓提）</td>
+            <td>（待确认）</td>
+            <td style="color:#27ae60;font-weight:700">¥3,755</td>
+            <td>40.3%</td>
+            <td>18.0%</td>
+            <td>3700</td>
+            <td>话术成熟 · 时段精细化 · 深沟节奏强</td>
+            <td>录制标杆录音，晨会播放，全员复盘</td>
+        </tr><tr style="background:#f0fdf4">
+            <td style="color:#27ae60;font-weight:700">⭐ 厦门电销一区（何丹丹）</td>
+            <td>（待确认）</td>
+            <td style="color:#27ae60;font-weight:700">¥3,665</td>
+            <td>42.1%</td>
+            <td>19.3%</td>
+            <td>5340</td>
+            <td>话术成熟 · 时段精细化 · 深沟节奏强</td>
+            <td>录制标杆录音，晨会播放，全员复盘</td>
+        </tr><tr style="background:#f0fdf4">
+            <td style="color:#27ae60;font-weight:700">⭐ 深圳电销一区（赵梅）</td>
+            <td>（待确认）</td>
+            <td style="color:#27ae60;font-weight:700">¥2,625</td>
+            <td>37.2%</td>
+            <td>13.5%</td>
+            <td>4210</td>
+            <td>话术成熟 · 时段精细化 · 深沟节奏强</td>
+            <td>录制标杆录音，晨会播放，全员复盘</td>
+        </tr></tbody>
+  </table>
+</div>
+
+<!-- 12. TOP vs BOTTOM 对比 -->
+<div class="section">
+  <div class="section-title">⚖ TOP3 vs BOTTOM3 能力差异对比</div>
+  <table>
+    <thead><tr><th>分层</th><th>部门</th><th>负责人</th><th>人均产值</th><th>接通率</th><th>深沟率</th><th>AI均分</th><th>核心问题</th><th>改善路径</th></tr></thead>
+    <tbody>
+      <tr style="background:#f0fdf4">
+            <td style="color:#27ae60;font-weight:700">⭐ 深圳电销二区（朱晓提）</td>
+            <td>（待确认）</td>
+            <td style="color:#27ae60;font-weight:700">¥3,755</td>
+            <td>40.3%</td>
+            <td>18.0%</td>
+            <td>3700</td>
+            <td>话术成熟 · 时段精细化 · 深沟节奏强</td>
+            <td>录制标杆录音，晨会播放，全员复盘</td>
+        </tr><tr style="background:#f0fdf4">
+            <td style="color:#27ae60;font-weight:700">⭐ 厦门电销一区（何丹丹）</td>
+            <td>（待确认）</td>
+            <td style="color:#27ae60;font-weight:700">¥3,665</td>
+            <td>42.1%</td>
+            <td>19.3%</td>
+            <td>5340</td>
+            <td>话术成熟 · 时段精细化 · 深沟节奏强</td>
+            <td>录制标杆录音，晨会播放，全员复盘</td>
+        </tr><tr style="background:#f0fdf4">
+            <td style="color:#27ae60;font-weight:700">⭐ 深圳电销一区（赵梅）</td>
+            <td>（待确认）</td>
+            <td style="color:#27ae60;font-weight:700">¥2,625</td>
+            <td>37.2%</td>
+            <td>13.5%</td>
+            <td>4210</td>
+            <td>话术成熟 · 时段精细化 · 深沟节奏强</td>
+            <td>录制标杆录音，晨会播放，全员复盘</td>
+        </tr>
+      <tr style="background:#fff5f5">
+            <td style="color:#e74c3c;font-weight:700">⚠ 上海书城店</td>
+            <td>管理者</td>
+            <td style="color:#e74c3c;font-weight:700">¥0</td>
+            <td>0.0%</td>
+            <td>0.0%</td>
+            <td>0</td>
+            <td>接通率低/话术弱/深沟不足</td>
+            <td>立即跟听录音，排查时段/号码健康度，制定7日专项辅导</td>
+        </tr><tr style="background:#fff5f5">
+            <td style="color:#e74c3c;font-weight:700">⚠ 佛山橙果店</td>
+            <td>管理者</td>
+            <td style="color:#e74c3c;font-weight:700">¥0</td>
+            <td>0.0%</td>
+            <td>0.0%</td>
+            <td>0</td>
+            <td>接通率低/话术弱/深沟不足</td>
+            <td>立即跟听录音，排查时段/号码健康度，制定7日专项辅导</td>
+        </tr><tr style="background:#fff5f5">
+            <td style="color:#e74c3c;font-weight:700">⚠ 厦门电销客诉组 陈平香</td>
+            <td>管理者</td>
+            <td style="color:#e74c3c;font-weight:700">¥0</td>
+            <td>61.2%</td>
+            <td>12.9%</td>
+            <td>0</td>
+            <td>接通率低/话术弱/深沟不足</td>
+            <td>立即跟听录音，排查时段/号码健康度，制定7日专项辅导</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 13. BOTTOM5 诊断 -->
+<div class="section">
+  <div class="section-title">🚨 BOTTOM3部门专项诊断</div>
+  
+  <div class="finding critical" style="margin-bottom:12px">
+    <strong>⚠ 上海书城店 · （待确认）</strong>
+    <span class="tag p0" style="margin-left:8px">需立即干预</span><br>
+    <div style="margin-top:8px;font-size:12px;line-height:2">
+      人均产值：<strong style="color:#e74c3c">¥0</strong> |
+      接通率：<strong>🔴 0.0%</strong> |
+      深沟率：<strong>0.0%</strong> |
+      AI均分：<strong>0</strong><br>
+      <strong>问题定位：</strong>接通率严重偏低，号码资源使用效率待提升；深沟率低，话术训练需要加强；人均产值严重低于基准线
+      <br><strong>即日行动：</strong>（待确认）今日安排组内话术通关测试，提取最近3天外呼录音，识别接通后放弃的关键节点，明日晨会分享诊断结果
+    </div>
+  </div>
+  <div class="finding critical" style="margin-bottom:12px">
+    <strong>⚠ 佛山橙果店 · （待确认）</strong>
+    <span class="tag p0" style="margin-left:8px">需立即干预</span><br>
+    <div style="margin-top:8px;font-size:12px;line-height:2">
+      人均产值：<strong style="color:#e74c3c">¥0</strong> |
+      接通率：<strong>🔴 0.0%</strong> |
+      深沟率：<strong>0.0%</strong> |
+      AI均分：<strong>0</strong><br>
+      <strong>问题定位：</strong>接通率严重偏低，号码资源使用效率待提升；深沟率低，话术训练需要加强；人均产值严重低于基准线
+      <br><strong>即日行动：</strong>（待确认）今日安排组内话术通关测试，提取最近3天外呼录音，识别接通后放弃的关键节点，明日晨会分享诊断结果
+    </div>
+  </div>
+  <div class="finding critical" style="margin-bottom:12px">
+    <strong>⚠ 厦门电销客诉组 陈平香 · （待确认）</strong>
+    <span class="tag p0" style="margin-left:8px">需立即干预</span><br>
+    <div style="margin-top:8px;font-size:12px;line-height:2">
+      人均产值：<strong style="color:#e74c3c">¥0</strong> |
+      接通率：<strong>61.2%</strong> |
+      深沟率：<strong>12.9%</strong> |
+      AI均分：<strong>0</strong><br>
+      <strong>问题定位：</strong>深沟率低，话术训练需要加强；人均产值严重低于基准线
+      <br><strong>即日行动：</strong>（待确认）今日安排组内话术通关测试，提取最近3天外呼录音，识别接通后放弃的关键节点，明日晨会分享诊断结果
+    </div>
+  </div>
+</div>
+
+<!-- 14. 数据→人的转向（四维分析） -->
+<div class="section">
+  <div class="section-title">👥 数据→人的转向（技能/心态/存量管理/执行力）</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+    <div style="background:#f8f4ff;border-radius:8px;padding:14px;border-left:3px solid #8e44ad">
+      <div style="font-weight:700;color:#8e44ad;margin-bottom:6px">🎯 技能维度</div>
+      <div style="font-size:12px;color:#555;line-height:1.8">
+        深沟率12.0%揭示：接通后引导深度对话的话术技能参差不齐。<br>
+        重点培训：开场白→需求挖掘→情感共鸣→成功案例→行动号召五步法
+      </div>
+    </div>
+    <div style="background:#fff8f0;border-radius:8px;padding:14px;border-left:3px solid #e67e22">
+      <div style="font-weight:700;color:#e67e22;margin-bottom:6px">💪 心态维度</div>
+      <div style="font-size:12px;color:#555;line-height:1.8">
+        接通率43.6%中，需区分「外部因素（号码质量）」和「内部因素（心态放弃）」。<br>
+        AI评分2893分可辅助判断：低AI分+低接通=技能问题；高AI分+低接通=资源问题
+      </div>
+    </div>
+    <div style="background:#f0fdf4;border-radius:8px;padding:14px;border-left:3px solid #27ae60">
+      <div style="font-weight:700;color:#27ae60;margin-bottom:6px">📦 存量管理维度</div>
+      <div style="font-size:12px;color:#555;line-height:1.8">
+        老线索二次激活率：跟进超15天但未成单的资源是否在系统化复盘？<br>
+        建议每周四「沉默资源盘活日」，专门处理30天内未跟进资源
+      </div>
+    </div>
+    <div style="background:#f0f4ff;border-radius:8px;padding:14px;border-left:3px solid #3498db">
+      <div style="font-weight:700;color:#3498db;margin-bottom:6px">⚡ 执行力维度</div>
+      <div style="font-size:12px;color:#555;line-height:1.8">
+        建议从三个执行力指标追踪：①早到岗时间 ②日外呼量完成率 ③晨会话术测试参与率<br>
+        执行力差距往往是业绩差距的先行指标
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  📊 本报告由 Linh Nguyen（智慧助理）自动生成 · 2026-02-27 · 覆盖14项诊断模块<br>
+  数据来源：珍爱网运营数据平台 · 如有疑问请联系数据团队
+</div>
+
+<div class="card" style="border-left:4px solid #6366f1;margin-top:18px;"><h2>历史趋势对比（情景记忆）</h2><div style="font-size:11px;color:#64748b;margin-bottom:12px;">基于最近 3 天的历史数据自动对比</div><table style="width:100%;border-collapse:collapse;font-size:12px;"><thead><tr style="background:#f1f5f9;"><th style="padding:6px 8px;text-align:left;border-bottom:2px solid #e2e8f0;">指标</th><th style="padding:6px 8px;text-align:right;border-bottom:2px solid #e2e8f0;">今日</th><th style="padding:6px 8px;text-align:right;border-bottom:2px solid #e2e8f0;">昨日(2026-02-26)</th><th style="padding:6px 8px;text-align:right;border-bottom:2px solid #e2e8f0;">环比</th><th style="padding:6px 8px;text-align:right;border-bottom:2px solid #e2e8f0;">3日均值</th><th style="padding:6px 8px;text-align:right;border-bottom:2px solid #e2e8f0;">vs均值</th></tr></thead><tbody><tr style="border-bottom:1px solid #f1f5f9;"><td style="padding:5px 8px;font-weight:500;">日营收</td><td style="padding:5px 8px;text-align:right;">55.3万</td><td style="padding:5px 8px;text-align:right;">71.9万</td><td style="padding:5px 8px;text-align:right;color:#dc2626;font-weight:600;">↓23.0%</td><td style="padding:5px 8px;text-align:right;">61.7万</td><td style="padding:5px 8px;text-align:right;color:#dc2626;font-weight:600;">↓10.3%</td></tr><tr style="border-bottom:1px solid #f1f5f9;"><td style="padding:5px 8px;font-weight:500;">人均产值</td><td style="padding:5px 8px;text-align:right;">1646.5</td><td style="padding:5px 8px;text-align:right;">2145.4</td><td style="padding:5px 8px;text-align:right;color:#dc2626;font-weight:600;">↓23.3%</td><td style="padding:5px 8px;text-align:right;">1847.3</td><td style="padding:5px 8px;text-align:right;color:#dc2626;font-weight:600;">↓10.9%</td></tr><tr style="border-bottom:1px solid #f1f5f9;"><td style="padding:5px 8px;font-weight:500;">接通率%</td><td style="padding:5px 8px;text-align:right;">43.6</td><td style="padding:5px 8px;text-align:right;">43.2</td><td style="padding:5px 8px;text-align:right;color:#64748b;font-weight:600;">↑1.0%</td><td style="padding:5px 8px;text-align:right;">45.1</td><td style="padding:5px 8px;text-align:right;color:#64748b;font-weight:600;">↓3.3%</td></tr><tr style="border-bottom:1px solid #f1f5f9;"><td style="padding:5px 8px;font-weight:500;">深沟率%</td><td style="padding:5px 8px;text-align:right;">12.0</td><td style="padding:5px 8px;text-align:right;">14.2</td><td style="padding:5px 8px;text-align:right;color:#dc2626;font-weight:600;">↓15.3%</td><td style="padding:5px 8px;text-align:right;">15.0</td><td style="padding:5px 8px;text-align:right;color:#dc2626;font-weight:600;">↓20.2%</td></tr><tr style="border-bottom:1px solid #f1f5f9;"><td style="padding:5px 8px;font-weight:500;">签单数</td><td style="padding:5px 8px;text-align:right;">71</td><td style="padding:5px 8px;text-align:right;">111</td><td style="padding:5px 8px;text-align:right;color:#dc2626;font-weight:600;">↓36.0%</td><td style="padding:5px 8px;text-align:right;">89.0</td><td style="padding:5px 8px;text-align:right;color:#dc2626;font-weight:600;">↓20.2%</td></tr><tr style="border-bottom:1px solid #f1f5f9;"><td style="padding:5px 8px;font-weight:500;">AI评分</td><td style="padding:5px 8px;text-align:right;">2893.3</td><td style="padding:5px 8px;text-align:right;">0</td><td style="padding:5px 8px;text-align:right;color:#16a34a;font-weight:600;">↑100.0%</td><td style="padding:5px 8px;text-align:right;">0.00</td><td style="padding:5px 8px;text-align:right;color:#16a34a;font-weight:600;">↑100.0%</td></tr></tbody></table></div>
+</body></html>

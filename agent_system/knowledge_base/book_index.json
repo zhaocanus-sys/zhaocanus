@@ -1,0 +1,187 @@
+{
+  "knowledge_base_meta": {
+    "total_books": 158,
+    "domains": 10,
+    "version": "2.3.0",
+    "last_updated": "2026-03-01",
+    "target_total_books": 500
+  },
+  "domains": [
+    {
+      "id": "01",
+      "name": "销售精通",
+      "file": "01_sales_mastery.md",
+      "books_count": 20,
+      "core_concepts": [
+        "SPIN Selling",
+        "挑战式销售",
+        "影响力",
+        "超级转化率",
+        "销售圣经"
+      ],
+      "collision_tags": [
+        "S01-S20"
+      ]
+    },
+    {
+      "id": "02",
+      "name": "电话销售",
+      "file": "02_telemarketing_playbook.md",
+      "books_count": 15,
+      "core_concepts": [
+        "张烜搏六步法",
+        "销售铁军",
+        "Convoso漏斗",
+        "AI质检",
+        "外呼营销"
+      ],
+      "collision_tags": [
+        "T01-T23"
+      ]
+    },
+    {
+      "id": "03",
+      "name": "APP增长",
+      "file": "03_app_growth_engine.md",
+      "books_count": 15,
+      "core_concepts": [
+        "增长黑客",
+        "AARRR",
+        "Hook模型",
+        "北极星指标",
+        "用户分层"
+      ],
+      "collision_tags": [
+        "A01-A15"
+      ]
+    },
+    {
+      "id": "04",
+      "name": "交友行业",
+      "file": "04_dating_industry_insights.md",
+      "books_count": 13,
+      "core_concepts": [
+        "社交天性",
+        "进化心理学",
+        "孤独经济",
+        "亲密关系",
+        "社交货币"
+      ],
+      "collision_tags": [
+        "D01-D13"
+      ]
+    },
+    {
+      "id": "05",
+      "name": "团队管理",
+      "file": "05_team_leadership.md",
+      "books_count": 15,
+      "core_concepts": [
+        "OKR",
+        "Q12",
+        "复盘四步法",
+        "GROW教练",
+        "赋能"
+      ],
+      "collision_tags": [
+        "L01-L19"
+      ]
+    },
+    {
+      "id": "06",
+      "name": "数据分析",
+      "file": "06_data_analytics.md",
+      "books_count": 15,
+      "core_concepts": [
+        "精益数据分析",
+        "信号与噪声",
+        "AB测试",
+        "贝叶斯思维",
+        "指标陷阱"
+      ],
+      "collision_tags": [
+        "DA01-DA15"
+      ]
+    },
+    {
+      "id": "07",
+      "name": "客户心理",
+      "file": "07_customer_psychology.md",
+      "books_count": 10,
+      "core_concepts": [
+        "怪诞行为学",
+        "助推",
+        "非暴力沟通",
+        "损失厌恶",
+        "锚定效应"
+      ],
+      "collision_tags": [
+        "C01-C10"
+      ]
+    },
+    {
+      "id": "08",
+      "name": "运营方法论",
+      "file": "08_operations_methodology.md",
+      "books_count": 5,
+      "core_concepts": [
+        "TOC约束理论",
+        "精益思想",
+        "从0到1",
+        "六西格玛",
+        "系统之美"
+      ],
+      "collision_tags": [
+        "O01-O12"
+      ]
+    },
+    {
+      "id": "09",
+      "name": "公司经营背景与红线",
+      "file": "09_company_crisis_context.md",
+      "books_count": 0,
+      "core_concepts": [
+        "断臂求生",
+        "负重突围",
+        "风险隔离",
+        "弱依赖强闭环",
+        "组织熵增",
+        "现金流红线",
+        "反鞭打快牛"
+      ],
+      "collision_tags": [
+        "CTX01-CTX06"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "企业困境重建与扭亏",
+      "file": "10_corporate_turnaround.md",
+      "books_count": 50,
+      "core_concepts": [
+        "衰落五阶段",
+        "飞轮效应",
+        "战时CEO",
+        "20英里行军",
+        "杠铃策略",
+        "One Ford消灭政治",
+        "困境六大悖论"
+      ],
+      "collision_tags": [
+        "R01-R50"
+      ]
+    }
+  ],
+  "cross_domain_matrices": {
+    "file": "frameworks/collision_matrices.md",
+    "matrix_count": 6,
+    "matrices": [
+      "销售×心理学",
+      "电销×团队管理",
+      "APP增长×交友行业",
+      "数据分析×运营方法论",
+      "困境重建×经营现实",
+      "全领域超级对撞"
+    ]
+  }
+}

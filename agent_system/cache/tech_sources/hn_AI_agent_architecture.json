@@ -1,0 +1,85 @@
+{
+  "_ts": 1772460773.4754171,
+  "items": [
+    {
+      "title": "A PM's Guide to AI Agent Architecture",
+      "url": "https://www.productcurious.com/p/a-pms-guide-to-ai-agent-architecture",
+      "source": "Hacker News",
+      "points": 208,
+      "comments": 62,
+      "date": "2025-09-04"
+    },
+    {
+      "title": "ProfileGPT: An Example of AI Agents Collaboration Architecture",
+      "url": "https://sahbichaieb.com/profilegpt/",
+      "source": "Hacker News",
+      "points": 106,
+      "comments": 15,
+      "date": "2023-04-23"
+    },
+    {
+      "title": "Survey Study on AI Agent Architectures (2024)",
+      "url": "https://arxiv.org/abs/2404.11584",
+      "source": "Hacker News",
+      "points": 77,
+      "comments": 16,
+      "date": "2024-04-22"
+    },
+    {
+      "title": "Emerging AI Agent Architecture for Fintech with DeepSeek Foundation Models",
+      "url": "https://news.ycombinator.com/item?id=42893981",
+      "source": "Hacker News",
+      "points": 5,
+      "comments": 0,
+      "date": "2025-01-31"
+    },
+    {
+      "title": "AI Agents: Architecture, Usecases and Future Applications",
+      "url": "https://youtu.be/VDhQFBxIgtI?si=UmQwBeQywdAkS9jV",
+      "source": "Hacker News",
+      "points": 4,
+      "comments": 0,
+      "date": "2025-04-20"
+    },
+    {
+      "title": "MCP Gateways: A Developer's Guide to AI Agent Architecture in 2026",
+      "url": "https://composio.dev/blog/mcp-gateways-guide",
+      "source": "Hacker News",
+      "points": 3,
+      "comments": 0,
+      "date": "2025-11-15"
+    },
+    {
+      "title": "AI Agent Architecture via A2A/MCP",
+      "url": "https://medium.com/@jeffreymrichter/ai-agent-architecture-b864080c4bbc",
+      "source": "Hacker News",
+      "points": 3,
+      "comments": 0,
+      "date": "2025-06-19"
+    },
+    {
+      "title": "Securing AI Agents: Architecture for Systems You Can't Control",
+      "url": "https://medium.com/@epappas/securing-ai-agents-an-architecture-for-systems-you-cant-fully-control-fad4b9d5c8ef",
+      "source": "Hacker News",
+      "points": 2,
+      "comments": 0,
+      "date": "2026-02-22"
+    },
+    {
+      "title": "Show HN: AI Agent Architecture Patterns for Production Systems",
+      "url": "https://github.com/devwithmohit/ai-agent-architecture-patterns",
+      "source": "Hacker News",
+      "points": 2,
+      "comments": 0,
+      "date": "2026-01-30"
+    },
+    {
+      "title": "Rethinking AI Agent Architecture with MCP",
+      "url": "https://thedeployloop.substack.com/p/rethinking-ai-agent-architecture",
+      "source": "Hacker News",
+      "points": 2,
+      "comments": 0,
+      "date": "2025-04-14"
+    }
+  ]
+}

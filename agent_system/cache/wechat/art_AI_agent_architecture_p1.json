@@ -1,0 +1,75 @@
+{
+  "_ts": 1772460821.7050629,
+  "items": [
+    {
+      "title": "AI+建筑 | 从“设备是成本”到Agent:工程设备AI的全球演进与中国落地路径",
+      "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSxRiuz06uerPoqqhp2DUjktFlIfwA9WwvVqXa8Fplpd9-rJz19y0xX9FRiZTUoBkZZnSTdfea12WENcCCYuj1FeaS1-ORnXtjlKnoGRe7nLCI2RDsboKIA-holdp0bKUqHjjesboNs-xcPEOAh1A2MlLfJ8JPHRbKHtnV50GYRLOkQMWWFsYpj6h0JEPDNc6YLis5TVWpAIF_D8iHLXQI2efxjh3za6jWA..&type=2&query=AI agent architecture&token=27E5F9D9836ED65FE8E1A4E3D64BB187E86D7B8B69A59B15",
+      "source": "",
+      "abstract": "往期回顾:AI+建筑 | 从CDE到Agent:全球工程资料AI正在怎么演进,建设单位如何先赢一局从“问题台账”到Agent:工程质量AI的...",
+      "time_str": ""
+    },
+    {
+      "title": "第三篇:AIAgent架构篇:从 ReAct 到 LangGraph 的工程真相",
+      "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSxRiuz06uerPoqqhp2DUjktFlIfwA9WwvVqXa8Fplpd9cVbdvd9q2s5lOyqtyuGoJLnqe0TSgLKYrHA-RPEYt-aKor-VZynwZpKV4xzgm6ftlvPAS4_04FZq8HC2vEcwR28p6BAe5gvxwd59RSW9C6jVyK2pW7btchFiT-KwE4a3eL8wvacw276AJnEpezFGw8W2NcI4pUI5vHKnLavkT6VAe0f8bRARvQ..&type=2&query=AI agent architecture&token=27E5F9D9836ED65FE8E1A4E3D64BB187E86D7B8B69A59B15",
+      "source": "",
+      "abstract": "“结构决定行为.”——凯文·凯利摘要读完本篇,你会理解AIAgent的真实工程实现方式.你能分清 ReAct、Plan&Execute、...",
+      "time_str": ""
+    },
+    {
+      "title": "AIAgent架构深度解析:从核心能力到工程实现",
+      "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSxRiuz06uerPoqqhp2DUjktFlIfwA9WwvVqXa8Fplpd9DWHtPwGSLJAdwBsWGMgTULSnn5rd96E2PAmYBu5zGa6IByYpiBPmbBcl1myD8NAtQVgh7fYGKP5ufAAJ0U-7ubqgc7tyj4p30IR26i_XvW2cIv6NfkOLtaWaKOcuDeXI5KEC6tL5lx-JYuZCQQv5VdQ09HWfgqSr7oRWAAcMtkkGX_iHL9MadA..&type=2&query=AI agent architecture&token=27E5F9D9836ED65FE8E1A4E3D64BB187E86D7B8B69A59B15",
+      "source": "",
+      "abstract": "智能体(AIAgent)作为当前人工智能领域的前沿方向,其核心在于通过感知、规划、行动与反思的闭环,实现与环境的持续交互以完...",
+      "time_str": ""
+    },
+    {
+      "title": "从评测视角看AIAgent架构:Skills 体系的解耦与工程化实践",
+      "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSxRiuz06uerPoqqhp2DUjktFlIfwA9WwvVqXa8Fplpd9MMbMw6nG9dZtlMY_5L-gd0U8Pch_6tdORY4ZcoSoDnZ2O-IMxDDpIHF9To1tFxOCkAil2UzzpPZjy67HouZtD_RMZE5HZezxk1elwp87GtdIPi0ZZqlFHDaHAuJqRAWBjaMewmU1ZnPiJatbvey1LAaEFENOj3k88G7NWX92rx_zAjcIGepUqA..&type=2&query=AI agent architecture&token=27E5F9D9836ED65FE8E1A4E3D64BB187E86D7B8B69A59B15",
+      "source": "",
+      "abstract": "导读|当我们评测大模型的Agent能力时,往往关注的是「能不能完成任务」.但从工程落地角度看,更关键的问题是:如何让Agent...",
+      "time_str": ""
+    },
+    {
+      "title": "AIAgent架构全解析",
+      "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSxRiuz06uerPoqqhp2DUjktFlIfwA9WwvVqXa8Fplpd9LlhRpK2pX-rnHm2B0brcyZhZ9U0zkB9TO12XK4VHW8HntVwJw4P2mu8vnta343L7jcqxNY2o1qvonQ-h8SS3VZjtP-BSAhezQXcggt62imMxOtV1dX0YRpT21lUWDjxVWUlJtaAqeE9YoZCdGy6Jr4EJlGKx1q7tCnijdjxDrbbRtmyIGw2VAg..&type=2&query=AI agent architecture&token=27E5F9D9836ED65FE8E1A4E3D64BB187E86D7B8B69A59B15",
+      "source": "",
+      "abstract": "AIAgent通用框架AIAgent是能够感知环境,基于目标进行决策并... 007 黑板系统(BlackboardArchitecture)逻辑: 异步、非线性的...",
+      "time_str": ""
+    },
+    {
+      "title": "AI+建筑 | 从CDE到Agent:全球工程资料AI正在怎么演进,建设单位如何先赢一局",
+      "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSxRiuz06uerPoqqhp2DUjktFlIfwA9WwvVqXa8Fplpd9-rJz19y0xX9FRiZTUoBkZZnSTdfea12WENcCCYuj1FeaS1-ORnXtjloBBEJ_iPuUhyu1cwgHGcRs7LXbVHB0VXnt3Ilv4mnFo-ERk_9w6tqUQ1qVREd7S0X3X2C-UqizILHFHYUjyEXTA_qxTiYcZTmPNTaV_Dg8pM1kXdc50qRFkDr8IT4KYw..&type=2&query=AI agent architecture&token=27E5F9D9836ED65FE8E1A4E3D64BB187E86D7B8B69A59B15",
+      "source": "",
+      "abstract": "Agent路线图都整理成一个《资料AI治理下载包》(你可交给团队直接照抄开工),内容包括:元数据字典(最小字段集)《迎检一页...",
+      "time_str": ""
+    },
+    {
+      "title": "2026年2月27日 |AI安全每日观察 :AI发现以太坊客户端的高危漏洞",
+      "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSxRiuz06uerPoqqhp2DUjktFlIfwA9WwvVqXa8Fplpd9q2DAybeMA2WuaqAMst6AwsBzsPctK1Tbochw0o9TLi1bFSyaTenGrvgrSNcUSQlL9T_O7pAVr2F6ZyX7a7_eXTTpnk2gi7cdehlW86F28BC0tq7kEbj8rIt8dEd9dBUoby6rI4zh9LBy2DGmrX41En6I73hY_5lPRhk1nKaOJEPI3OTRHYU2og..&type=2&query=AI agent architecture&token=27E5F9D9836ED65FE8E1A4E3D64BB187E86D7B8B69A59B15",
+      "source": "",
+      "abstract": "//automationedge.com/blogs/ai-agent-architecture-enterprise-guide/ @latentsauce. ＂getting anotheragentto solve merge conflicts after...",
+      "time_str": ""
+    },
+    {
+      "title": "AIAgent自主交易时代来了:这家公司获300万美元押注",
+      "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSxRiuz06uerPoqqhp2DUjktFlIfwA9WwvVqXa8Fplpd9_LoakRrH5b46L2WLjeLAVw2RrIqJZjXgweoreGZJeXfxs4EuSFotOYbbaCA8DuHF66APZfCbxIs9Ja5gd7kl4MA-UJZgw3ex51E0HjA9tLwG8Zrlzf-vyfTKQuw6T47hwZwMRgGj1JgdPnnSoq-krfwlzWNBPfHRWexYCzXls44tPujwwRB2Pw..&type=2&query=AI agent architecture&token=27E5F9D9836ED65FE8E1A4E3D64BB187E86D7B8B69A59B15",
+      "source": "",
+      "abstract": "Agent之间如何建立信任?Unicity Protocol的答案是密码学证明+信... -cryptographic-architecture-for-ai-agents[5]AIAgents Market Set to ...",
+      "time_str": ""
+    },
+    {
+      "title": "青少年AI周刊,2026第4期",
+      "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSxRiuz06uerPoqqhp2DUjktFlIfwA9WwvVqXa8Fplpd9lQrFJctvCO9UF4zd4kaPf6qyFOcAWrlB8gzwbsDWiybzG_w33YD1vu2Krzc8xGYxwHqZ0ATc9wQ32zLg7ScoGuNFYFI5nKsodPmWK5__HljIXfgaI0G3nfD0FodZuSKZFg5ze1MGoGPl41_MCUftRQnREGoK33xO12l-e4sfzZg89kyxDwoXvg..&type=2&query=AI agent architecture&token=27E5F9D9836ED65FE8E1A4E3D64BB187E86D7B8B69A59B15",
+      "source": "",
+      "abstract": "featuring a four-agentarchitecture. SpecializedAIagents — a strategist, a researcher, a reasoner, and a creative thinker — debate each...",
+      "time_str": ""
+    },
+    {
+      "title": "Markdown to PDF byAIAgent完全指南",
+      "url": "https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSxRiuz06uerPoqqhp2DUjktFlIfwA9WwvVqXa8Fplpd9AuIlKUgTbZYbuuB0xYvlnBSdQcZ9Mr11yPm76i4_E-PrLDC_dtBBb0n8e0OBgQNf15SondTku9XT9TPubyAiKIUpmQMT1mhH1E1y7ANzOuXeSPdHPf4itGsUdz12xaAlNugYAU584kRkd3lDMuQ64_kgkIcOAKyloHe9eN5Q9tZS6t2rFt2rnA..&type=2&query=AI agent architecture&token=27E5F9D9836ED65FE8E1A4E3D64BB187E86D7B8B69A59B15",
+      "source": "",
+      "abstract": "(Architecture& Mechanisms)在AIAgent视角下,一个极其健壮的 PDF 图文构建工作流需要解耦为＂多阶段预处理 (Multi-stage ...",
+      "time_str": ""
+    }
+  ]
+}

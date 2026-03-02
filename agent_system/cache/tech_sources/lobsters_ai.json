@@ -1,0 +1,85 @@
+{
+  "_ts": 1772460801.613303,
+  "items": [
+    {
+      "title": "The Science of Detecting LLM-Generated Text",
+      "url": "https://dl.acm.org/doi/10.1145/3624725",
+      "source": "Lobsters",
+      "score": 9,
+      "comments": 3,
+      "date": "2026-02-28"
+    },
+    {
+      "title": "Verified Spec-Driven Development (VSDD)",
+      "url": "https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00",
+      "source": "Lobsters",
+      "score": 1,
+      "comments": 0,
+      "date": "2026-02-28"
+    },
+    {
+      "title": "Atomic GraphRAG Demo: A Single Query Execution",
+      "url": "https://memgraph.com/blog/atomic-graphrag-demo-highlights",
+      "source": "Lobsters",
+      "score": 1,
+      "comments": 0,
+      "date": "2026-02-28"
+    },
+    {
+      "title": "Packaging AI/ML models as conda packages",
+      "url": "https://prefix.dev/blog/packaging-ai-ml-models-as-conda-packages",
+      "source": "Lobsters",
+      "score": 4,
+      "comments": 2,
+      "date": "2026-02-28"
+    },
+    {
+      "title": "Model Collapse Ends AI Hype",
+      "url": "https://youtu.be/ShusuVq32hc",
+      "source": "Lobsters",
+      "score": 13,
+      "comments": 17,
+      "date": "2026-02-26"
+    },
+    {
+      "title": "Current Large Audio Language Models largely transcribe rather than listen",
+      "url": "https://arxiv.org/abs/2510.10444",
+      "source": "Lobsters",
+      "score": 11,
+      "comments": 0,
+      "date": "2026-02-25"
+    },
+    {
+      "title": "Mercury: Ultra-Fast Language Models Based on Diffusion",
+      "url": "https://arxiv.org/abs/2506.17298",
+      "source": "Lobsters",
+      "score": 7,
+      "comments": 0,
+      "date": "2026-02-25"
+    },
+    {
+      "title": "ansigpt: c89 implementation of microgpt",
+      "url": "https://github.com/yobibyte/ansigpt",
+      "source": "Lobsters",
+      "score": 13,
+      "comments": 7,
+      "date": "2026-02-24"
+    },
+    {
+      "title": "Dear researchers: Is AI all you've got?",
+      "url": "https://austinhenley.com/blog/dearresearchers.html",
+      "source": "Lobsters",
+      "score": 9,
+      "comments": 0,
+      "date": "2026-02-24"
+    },
+    {
+      "title": "Producing garbage for the AI",
+      "url": "https://alexschroeder.ch/view/2026-02-20-garbage",
+      "source": "Lobsters",
+      "score": 9,
+      "comments": 1,
+      "date": "2026-02-24"
+    }
+  ]
+}

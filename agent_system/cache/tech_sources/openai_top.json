@@ -1,0 +1,75 @@
+{
+  "_ts": 1772460804.642199,
+  "items": [
+    {
+      "title": "client.vectorStores.create failed with 401",
+      "url": "https://community.openai.com/t/client-vectorstores-create-failed-with-401/1374905",
+      "source": "OpenAI Community",
+      "views": 148,
+      "replies": 11
+    },
+    {
+      "title": "🚀 gpt-realtime-1.5 is live in Realtime API",
+      "url": "https://community.openai.com/t/gpt-realtime-1-5-is-live-in-realtime-api/1374919",
+      "source": "OpenAI Community",
+      "views": 2059,
+      "replies": 4
+    },
+    {
+      "title": "Websockets for Responses API",
+      "url": "https://community.openai.com/t/websockets-for-responses-api/1374906",
+      "source": "OpenAI Community",
+      "views": 379,
+      "replies": 2
+    },
+    {
+      "title": "Codex VSCode Extension - Tiny fixed size review window",
+      "url": "https://community.openai.com/t/codex-vscode-extension-tiny-fixed-size-review-window/1375002",
+      "source": "OpenAI Community",
+      "views": 79,
+      "replies": 1
+    },
+    {
+      "title": "I ported Gemini's context-driven development extension \"Conductor\" to codex. It works wonderfully",
+      "url": "https://community.openai.com/t/i-ported-geminis-context-driven-development-extension-conductor-to-codex-it-works-wonderfully/1374944",
+      "source": "OpenAI Community",
+      "views": 89,
+      "replies": 2
+    },
+    {
+      "title": "Responses API now has expanded file input types: docx, pptx, csv, xlsx",
+      "url": "https://community.openai.com/t/responses-api-now-has-expanded-file-input-types-docx-pptx-csv-xlsx/1375013",
+      "source": "OpenAI Community",
+      "views": 179,
+      "replies": 4
+    },
+    {
+      "title": "Random 384 dimension embeddings from text-embedding-3-small",
+      "url": "https://community.openai.com/t/random-384-dimension-embeddings-from-text-embedding-3-small/1375153",
+      "source": "OpenAI Community",
+      "views": 68,
+      "replies": 4
+    },
+    {
+      "title": "What are the new GPT Realtime voices?",
+      "url": "https://community.openai.com/t/what-are-the-new-gpt-realtime-voices/1375080",
+      "source": "OpenAI Community",
+      "views": 238,
+      "replies": 3
+    },
+    {
+      "title": "Gpt-realtime-1.5: text output mode broken when tools are enabled",
+      "url": "https://community.openai.com/t/gpt-realtime-1-5-text-output-mode-broken-when-tools-are-enabled/1375106",
+      "source": "OpenAI Community",
+      "views": 99,
+      "replies": 8
+    },
+    {
+      "title": "Massive Token Overestimation in Multiple Tool Calls due to Internal Unicode Escaping",
+      "url": "https://community.openai.com/t/massive-token-overestimation-in-multiple-tool-calls-due-to-internal-unicode-escaping/1375117",
+      "source": "OpenAI Community",
+      "views": 36,
+      "replies": 2
+    }
+  ]
+}

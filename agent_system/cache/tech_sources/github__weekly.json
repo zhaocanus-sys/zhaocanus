@@ -1,0 +1,110 @@
+{
+  "_ts": 1772460796.3406348,
+  "items": [
+    {
+      "title": "ruvnet/wifi-densepose",
+      "url": "https://github.com/ruvnet/wifi-densepose",
+      "source": "GitHub Trending",
+      "description": "WiFi DensePose turns commodity WiFi signals into real-time human pose estimation, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "stars_period": "7,915 stars this week"
+    },
+    {
+      "title": "abhigyanpatwari/GitNexus",
+      "url": "https://github.com/abhigyanpatwari/GitNexus",
+      "source": "GitHub Trending",
+      "description": "GitNexus: The Zero-Server Code Intelligence Engine - GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a GitHub repo or ZIP file, and get an interactive knowledge graph wit a built in Graph RAG Agent. Perfect for code exploration",
+      "stars_period": "5,791 stars this week"
+    },
+    {
+      "title": "muratcankoylan/Agent-Skills-for-Context-Engineering",
+      "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+      "source": "GitHub Trending",
+      "description": "A comprehensive collection of Agent Skills for context engineering, multi-agent architectures, and production agent systems. Use when building, optimizing, or debugging agent systems that require effective context management.",
+      "stars_period": "4,368 stars this week"
+    },
+    {
+      "title": "bytedance/deer-flow",
+      "url": "https://github.com/bytedance/deer-flow",
+      "source": "GitHub Trending",
+      "description": "An open-source SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skills and subagents, it handles different levels of tasks that could take minutes to hours.",
+      "stars_period": "2,776 stars this week"
+    },
+    {
+      "title": "huggingface/skills",
+      "url": "https://github.com/huggingface/skills",
+      "source": "GitHub Trending",
+      "description": "",
+      "stars_period": "5,739 stars this week"
+    },
+    {
+      "title": "x1xhlol/system-prompts-and-models-of-ai-tools",
+      "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+      "source": "GitHub Trending",
+      "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
+      "stars_period": "10,412 stars this week"
+    },
+    {
+      "title": "clockworklabs/SpacetimeDB",
+      "url": "https://github.com/clockworklabs/SpacetimeDB",
+      "source": "GitHub Trending",
+      "description": "Development at the speed of light",
+      "stars_period": "2,540 stars this week"
+    },
+    {
+      "title": "ruvnet/ruvector",
+      "url": "https://github.com/ruvnet/ruvector",
+      "source": "GitHub Trending",
+      "description": "RuVector is a High Performance, Real-Time, Self-Learning, Vector Graph Neural Network, and Database built in Rust.",
+      "stars_period": "1,776 stars this week"
+    },
+    {
+      "title": "alibaba/OpenSandbox",
+      "url": "https://github.com/alibaba/OpenSandbox",
+      "source": "GitHub Trending",
+      "description": "OpenSandbox is a general-purpose sandbox platform for AI applications, offering multi-language SDKs, unified sandbox APIs, and Docker/Kubernetes runtimes for scenarios like Coding Agents, GUI Agents, Agent Evaluation, AI Code Execution, and RL Training.",
+      "stars_period": "2,012 stars this week"
+    },
+    {
+      "title": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "source": "GitHub Trending",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "stars_period": "9,249 stars this week"
+    },
+    {
+      "title": "moeru-ai/airi",
+      "url": "https://github.com/moeru-ai/airi",
+      "source": "GitHub Trending",
+      "description": "💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.",
+      "stars_period": "2,408 stars this week"
+    },
+    {
+      "title": "shareAI-lab/learn-claude-code",
+      "url": "https://github.com/shareAI-lab/learn-claude-code",
+      "source": "GitHub Trending",
+      "description": "Bash is all you need - A nano Claude Code–like agent, built from 0 to 1",
+      "stars_period": "2,616 stars this week"
+    },
+    {
+      "title": "moonshine-ai/moonshine",
+      "url": "https://github.com/moonshine-ai/moonshine",
+      "source": "GitHub Trending",
+      "description": "Fast and accurate automatic speech recognition (ASR) for edge devices",
+      "stars_period": "2,149 stars this week"
+    },
+    {
+      "title": "mihail911/modern-software-dev-assignments",
+      "url": "https://github.com/mihail911/modern-software-dev-assignments",
+      "source": "GitHub Trending",
+      "description": "Assignments for CS146S: The Modern Software Dev (Stanford University Fall 2025)",
+      "stars_period": "698 stars this week"
+    },
+    {
+      "title": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code",
+      "source": "GitHub Trending",
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "stars_period": "3,594 stars this week"
+    }
+  ]
+}
