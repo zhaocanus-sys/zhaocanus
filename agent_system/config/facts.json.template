@@ -1,0 +1,55 @@
+{
+  "_doc": "事实记忆：邮箱、SMTP、通讯录、部门映射、API 等配置。请将此文件复制为 facts.json 并填入真实凭据。",
+  "smtp": {
+    "host": "smtp.exmail.qq.com",
+    "port": 465,
+    "ssl": true,
+    "from_email": "你的邮箱@zhenai.com",
+    "auth_code": "你的SMTP授权码",
+    "from_name": "智慧助理"
+  },
+  "imap": {
+    "host": "imap.exmail.qq.com",
+    "port": 993,
+    "ssl": true,
+    "email": "你的邮箱@zhenai.com"
+  },
+  "contacts": {
+    "zhao_coo": {"name": "赵总", "title": "COO", "email": "zhao.can@zhenai.com", "role": "决策者，所有报告TO或CC"},
+    "tian_xiaoying": {"name": "田小英", "title": "赵总助理", "email": "xiaoying.tian@zhenai.com", "role": "所有邮件CC"},
+    "wang_yiwen": {"name": "王溢文", "title": "技术总监", "email": "yiwen.wang1@zhenai.com", "role": "App/外呼系统技术支持"},
+    "zhang_miao": {"name": "张苗", "title": "技术助理", "email": "miao.zhang6@zhenai.com", "role": "API错误通知"},
+    "zeng_wei": {"name": "曾伟", "title": "数据总负责", "email": "wei.zeng@zhenai.com", "role": "数据底层问题"},
+    "zhang_kang": {"name": "张康", "title": "数据执行+门店", "email": "kang.zhang2@zhenai.com", "role": "数据对接+门店管理"},
+    "luo_yang": {"name": "罗阳", "title": "电销负责人", "email": "yang.luo@zhenaiyd.com", "role": "电销团队"},
+    "cheng_pujuan": {"name": "程朴娟", "title": "建信负责人", "email": "pujuan.cheng@zhenai.com", "role": "建信团队"},
+    "miao_chunlei": {"name": "苗春雷", "title": "邀约负责人", "email": "", "role": "邀约团队"},
+    "zhang_xinrui": {"name": "张心蕊", "title": "红娘服务营销", "email": "", "role": "公海捞取与长尾转化"}
+  },
+  "dept_managers": {
+    "电销一部": "何丹丹",
+    "电销二部": "赵梅",
+    "电销三部": "朱晓园",
+    "电销四部": "宋晓鹏",
+    "电销五部": "吴胜悍",
+    "电销六部": "游云清",
+    "电销七部": "",
+    "电销八部": ""
+  },
+  "api": {
+    "base_url": "http://43.138.47.115:8600",
+    "api_key": "你的API密钥",
+    "auth_header": "X-API-Key",
+    "user": "你的用户名",
+    "role": "admin",
+    "data_scope": "all",
+    "query_script": ".cursor/skills/compass-skills-service/scripts/query.py",
+    "knowledge_file": ".cursor/skills/compass-skills-service/knowledge.md"
+  },
+  "default_recipients": {
+    "report_to": "zhao.can@zhenai.com",
+    "report_cc": "xiaoying.tian@zhenai.com",
+    "data_team": ["wei.zeng@zhenai.com", "kang.zhang2@zhenai.com"],
+    "tech_team": ["yiwen.wang1@zhenai.com", "miao.zhang6@zhenai.com"]
+  }
+}

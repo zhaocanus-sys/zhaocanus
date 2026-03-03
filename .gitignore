@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 *.db
 agent_system/cache/
+agent_system/config/facts.json
