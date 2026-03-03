@@ -5,7 +5,7 @@
 """
 import sys
 import datetime
-from agent_system.actions.api_client import daily, trend, query, safe_float, safe_int, parallel_fetch
+from agent_system.actions.api_client import daily, trend, query, safe_float, safe_int
 from agent_system.actions.email_sender import send_report_email
 from agent_system.actions.report_exporter import export_html
 
@@ -103,9 +103,7 @@ def dept_rows(rows):
     return sorted(result, key=lambda x: x["pay_1d_amt"], reverse=True)
 
 
-def generate_html(today_rows, prev_rows, date_display, spk=None):
-    if spk is None:
-        spk = {}
+def generate_html(today_rows, prev_rows, date_display):
     t = agg_telesale(today_rows)
     p = agg_telesale(prev_rows) if prev_rows else {}
     depts = dept_rows(today_rows)
@@ -215,13 +213,6 @@ def generate_html(today_rows, prev_rows, date_display, spk=None):
             <td style="font-size:11px;color:#7f8c8d">{ref}</td>
         </tr>'''
 
-    spk_rev = spk.get("total_rev", "")
-    spk_pc = spk.get("per_capita", "")
-    spk_cr = spk.get("connect_rate", "")
-    spk_dr = spk.get("deep_rate", "")
-    spk_sg = spk.get("signed", "")
-    spk_ai = spk.get("avg_ai", "")
-
     html = f'''<!DOCTYPE html>
 <html lang="zh-CN">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -297,7 +288,6 @@ tr:hover td{{background:#fafafa}}
   <div class="kpi-grid">
     <div class="kpi-card" style="background:linear-gradient(135deg,#1a1a2e,#0f3460)">
       <div class="label">今日总营收</div><div class="value">¥{t["total_rev"]/10000:.1f}万</div>
-      {spk_rev}
       <div class="sub">{dod("total_rev")}</div>
     </div>
     <div class="kpi-card" style="background:linear-gradient(135deg,#2c3e50,#3d566e)">
@@ -306,27 +296,22 @@ tr:hover td{{background:#fafafa}}
     </div>
     <div class="kpi-card" style="background:linear-gradient(135deg,{pc_color},{pc_color}aa)">
       <div class="label">人均产值</div><div class="value">¥{t["per_capita"]:,.0f}</div>
-      {spk_pc}
       <div class="sub">基准¥1,500 {dod("per_capita")}</div>
     </div>
     <div class="kpi-card" style="background:linear-gradient(135deg,{cr_color},{cr_color}aa)">
       <div class="label">接通率</div><div class="value">{t["connect_rate"]:.1f}%</div>
-      {spk_cr}
       <div class="sub">基准18% {dod("connect_rate")}</div>
     </div>
     <div class="kpi-card" style="background:linear-gradient(135deg,{dr_color},{dr_color}aa)">
       <div class="label">深沟率</div><div class="value">{t["deep_rate"]:.1f}%</div>
-      {spk_dr}
       <div class="sub">基准35% {dod("deep_rate")}</div>
     </div>
     <div class="kpi-card" style="background:linear-gradient(135deg,#8e44ad,#9b59b6)">
       <div class="label">当日签单</div><div class="value">{t["signed"]}</div>
-      {spk_sg}
       <div class="sub">{dod("signed")}</div>
     </div>
     <div class="kpi-card" style="background:linear-gradient(135deg,{ai_color},{ai_color}aa)">
       <div class="label">AI评分均值</div><div class="value">{t["avg_ai"]:.0f}</div>
-      {spk_ai}
       <div class="sub">基准75分 {dod("avg_ai")}</div>
     </div>
     <div class="kpi-card" style="background:linear-gradient(135deg,#16a085,#1abc9c)">
@@ -421,7 +406,7 @@ tr:hover td{{background:#fafafa}}
       <div style="font-size:12px;color:#555;line-height:1.7">
         <strong>现象：</strong>AI评分{t["avg_ai"]:.0f}分，话术同质化，缺乏社交验证植入<br>
         <strong>对撞：</strong>Cialdini的「社会认同原则」——人在不确定时看他人行为。在婚恋决策中最强效<br>
-        <strong>动作：</strong>每通深沟必须包含1条真实成功案例（「上周帮一位同龄客户在3周内见面4次…」），AI评分检测此环节<br>
+        <strong>动作：</strong>每通深沟必须包含1条真实成功案例（「上周帮一位{{}age{}岁客户在3周内见面4次…」），AI评分检测此环节<br>
         <strong>预估：</strong>签单转化率+3%→月增¥8万
       </div>
     </div>
@@ -570,50 +555,19 @@ def main():
             DATE = sys.argv[idx + 1].replace("-", "")
             DATE_DISPLAY = f"{DATE[:4]}-{DATE[4:6]}-{DATE[6:]}"
 
-    base_dt = datetime.datetime.strptime(DATE, "%Y%m%d")
+    print(f"[电销报告] 拉取数据 {DATE}...")
+    resp_today = daily("telesale", DATE)
+    resp_prev = daily("telesale", prev_date(DATE))
 
-    print(f"[电销报告] 并行拉取数据 {DATE}（含10天趋势）...")
-    calls = [
-        lambda: daily("telesale", DATE),
-        lambda: daily("telesale", prev_date(DATE)),
-    ]
-    for delta in range(9, -1, -1):
-        d = (base_dt - datetime.timedelta(days=delta)).strftime("%Y%m%d")
-        calls.append(lambda d=d: daily("telesale", d))
-    results = parallel_fetch(calls)
-
-    rows_today = parse_rows(results[0])
-    rows_prev = parse_rows(results[1])
+    rows_today = parse_rows(resp_today)
+    rows_prev = parse_rows(resp_prev)
 
     if not rows_today:
         print(f"[警告] 未获取到 {DATE} 数据，rows={len(rows_today)}")
 
-    trend_days = []
-    for i in range(10):
-        day_rows = parse_rows(results[2 + i])
-        trend_days.append(agg_telesale(day_rows) if day_rows else {})
+    print(f"[电销报告] 今日数据行数: {len(rows_today)}, 昨日: {len(rows_prev)}")
 
-    print(f"[电销报告] 今日数据行数: {len(rows_today)}, 昨日: {len(rows_prev)}, 趋势: {len(trend_days)}天")
-
-    from agent_system.actions.report_sparkline import sparkline_svg
-    from agent_system.actions.memory_manager import ReportMemory
-    spk = {}
-    for key, color in [("total_rev","rgba(255,255,255,.7)"),("per_capita","rgba(255,255,255,.7)"),
-                        ("connect_rate","rgba(255,255,255,.7)"),("deep_rate","rgba(255,255,255,.7)"),
-                        ("signed","rgba(255,255,255,.7)"),("avg_ai","rgba(255,255,255,.7)")]:
-        vals = [float(d.get(key, 0) or 0) for d in trend_days]
-        spk[key] = sparkline_svg(vals, color=color)
-
-    html = generate_html(rows_today, rows_prev, DATE_DISPLAY, spk)
-
-    mem = ReportMemory()
-    today_metrics = agg_telesale(rows_today)
-    mem.save("telesale", DATE, today_metrics)
-    trend_html = mem.trend_comparison_html("telesale", DATE, today_metrics,
-        {"total_rev":"日营收","per_capita":"人均产值","connect_rate":"接通率%",
-         "deep_rate":"深沟率%","signed":"签单数","avg_ai":"AI评分"})
-    if trend_html:
-        html = html.replace("</body></html>", trend_html + "\n</body></html>")
+    html = generate_html(rows_today, rows_prev, DATE_DISPLAY)
 
     filename = f"Telesale_Full_{DATE_DISPLAY}.html"
     path = export_html(html, filename, open_browser=True)

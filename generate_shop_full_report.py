@@ -7,7 +7,7 @@
 import sys
 import datetime
 from collections import defaultdict
-from agent_system.actions.api_client import daily, trend, query, safe_float, safe_int, parallel_fetch
+from agent_system.actions.api_client import daily, trend, query, safe_float, safe_int
 from agent_system.actions.email_sender import send_report_email
 from agent_system.actions.report_exporter import export_html
 
@@ -149,9 +149,7 @@ def build_shop_data(rows):
     return sorted(result, key=lambda x: x["total_realpay"], reverse=True)
 
 
-def generate_html(today_rows, prev_rows, date_display, spk=None):
-    if spk is None:
-        spk = {}
+def generate_html(today_rows, prev_rows, date_display):
     t = agg_shop(today_rows)
     p = agg_shop(prev_rows) if prev_rows else {}
     shops = build_shop_data(today_rows)
@@ -433,42 +431,34 @@ th:first-child{{text-align:left;padding-left:10px}}
 <div style="flex:1;min-width:90px;background:#fff;border-radius:10px;padding:14px;box-shadow:0 1px 2px rgba(0,0,0,.04)">
 <div style="font-size:10px;color:#94a3b8">当日线索</div>
 <div style="font-size:20px;font-weight:800;color:#1e293b">{t['leads_1d']}</div>
-{spk.get("leads_1d","")}
 <div style="font-size:11px;color:#64748b">3日线索{t['leads_3d']}</div></div>
 <div style="flex:1;min-width:90px;background:#fff;border-radius:10px;padding:14px;box-shadow:0 1px 2px rgba(0,0,0,.04)">
 <div style="font-size:10px;color:#94a3b8">邀约接通</div>
 <div style="font-size:20px;font-weight:800;color:#1e293b">{t['link_num']}</div>
-{spk.get("link_num","")}
 <div style="font-size:11px;color:#64748b">呼出{t['call_times']}次</div></div>
 <div style="flex:1;min-width:90px;background:#fff;border-radius:10px;padding:14px;box-shadow:0 1px 2px rgba(0,0,0,.04)">
 <div style="font-size:10px;color:#94a3b8">到店人数</div>
 <div style="font-size:20px;font-weight:800;color:#1e293b">{t['sg_num']}</div>
-{spk.get("sg_num","")}
 <div style="font-size:11px">接通→到店{t['invite_conv']:.0f}% {dod('invite_conv')}</div></div>
 <div style="flex:1;min-width:90px;background:#fff;border-radius:10px;padding:14px;box-shadow:0 1px 2px rgba(0,0,0,.04)">
 <div style="font-size:10px;color:#94a3b8">签单数</div>
 <div style="font-size:20px;font-weight:800;color:{sr_c}">{t['shop_sign']}</div>
-{spk.get("shop_sign","")}
 <div style="font-size:11px">签单率{t['sign_rate']:.1f}% {dod('sign_rate')}</div></div>
 <div style="flex:1;min-width:90px;background:#fff;border-radius:10px;padding:14px;box-shadow:0 1px 2px rgba(0,0,0,.04)">
 <div style="font-size:10px;color:#94a3b8">日营收</div>
 <div style="font-size:20px;font-weight:800;color:{rev_c}">¥{t['total_rev']/10000:.0f}万</div>
-{spk.get("total_rev","")}
 <div style="font-size:11px">月累¥{t['rev_m']/10000:.0f}万 {dod('total_rev')}</div></div>
 <div style="flex:1;min-width:90px;background:#fff;border-radius:10px;padding:14px;box-shadow:0 1px 2px rgba(0,0,0,.04)">
 <div style="font-size:10px;color:#94a3b8">人均产值</div>
 <div style="font-size:20px;font-weight:800;color:{pr_c}">¥{t['per_rev']:,.0f}</div>
-{spk.get("per_rev","")}
 <div style="font-size:11px;color:#64748b">在岗{t['zaigang']}人</div></div>
 <div style="flex:1;min-width:90px;background:#fff;border-radius:10px;padding:14px;box-shadow:0 1px 2px rgba(0,0,0,.04)">
 <div style="font-size:10px;color:#94a3b8">退费率</div>
 <div style="font-size:20px;font-weight:800;color:{rr_c}">{t['refund_rate']:.1f}%</div>
-{spk.get("refund_rate","")}
 <div style="font-size:11px;color:#64748b">投诉{t['complain']}单</div></div>
 <div style="flex:1;min-width:90px;background:#fff;border-radius:10px;padding:14px;box-shadow:0 1px 2px rgba(0,0,0,.04)">
 <div style="font-size:10px;color:#94a3b8">线索即日分配</div>
 <div style="font-size:20px;font-weight:800;color:{ls_c}">{t['lead_speed_1d']:.0f}%</div>
-{spk.get("lead_speed_1d","")}
 <div style="font-size:11px;color:#64748b">红线≥80%</div></div>
 </div>
 <div class="card" style="padding:12px 20px">
@@ -702,47 +692,16 @@ def main():
             DATE = sys.argv[idx + 1].replace("-", "")
             DATE_DISPLAY = f"{DATE[:4]}-{DATE[4:6]}-{DATE[6:]}"
 
-    base_dt = datetime.datetime.strptime(DATE, "%Y%m%d")
+    print(f"[门店报告] 拉取数据 {DATE}...")
+    resp_today = daily("shop", DATE)
+    resp_prev = daily("shop", prev_date(DATE))
 
-    print(f"[门店报告] 并行拉取数据 {DATE}（含10天趋势）...")
-    calls = [
-        lambda: daily("shop", DATE),
-        lambda: daily("shop", prev_date(DATE)),
-    ]
-    for delta in range(9, -1, -1):
-        d = (base_dt - datetime.timedelta(days=delta)).strftime("%Y%m%d")
-        calls.append(lambda d=d: daily("shop", d))
-    results = parallel_fetch(calls)
+    rows_today = parse_rows(resp_today)
+    rows_prev = parse_rows(resp_prev)
 
-    rows_today = parse_rows(results[0])
-    rows_prev = parse_rows(results[1])
+    print(f"[门店报告] 今日门店行数: {len(rows_today)}, 昨日: {len(rows_prev)}")
 
-    trend_days = []
-    for i in range(10):
-        day_rows = parse_rows(results[2 + i])
-        trend_days.append(agg_shop(day_rows) if day_rows else {})
-
-    print(f"[门店报告] 今日门店行数: {len(rows_today)}, 昨日: {len(rows_prev)}, 趋势: {len(trend_days)}天")
-
-    from agent_system.actions.report_sparkline import sparkline_svg
-    from agent_system.actions.memory_manager import ReportMemory
-    spk = {}
-    for key, color in [("leads_1d","#3b82f6"),("link_num","#6366f1"),("sg_num","#7c3aed"),
-                        ("shop_sign","#16a34a"),("total_rev","#dc2626"),("per_rev","#d97706"),
-                        ("refund_rate","#dc2626"),("lead_speed_1d","#0891b2")]:
-        vals = [float(d.get(key, 0) or 0) for d in trend_days]
-        spk[key] = sparkline_svg(vals, color=color)
-
-    html = generate_html(rows_today, rows_prev, DATE_DISPLAY, spk)
-
-    mem = ReportMemory()
-    today_metrics = agg_shop(rows_today)
-    mem.save("shop", DATE, today_metrics)
-    trend_html = mem.trend_comparison_html("shop", DATE, today_metrics,
-        {"total_rev":"日营收","per_rev":"人均产值","sg_num":"到店人数",
-         "shop_sign":"签单数","sign_rate":"签单率%","refund_rate":"退费率%"})
-    if trend_html:
-        html = html.replace("</body></html>", trend_html + "\n</body></html>")
+    html = generate_html(rows_today, rows_prev, DATE_DISPLAY)
 
     filename = f"Shop_Full_{DATE_DISPLAY}.html"
     path = export_html(html, filename, open_browser=True)

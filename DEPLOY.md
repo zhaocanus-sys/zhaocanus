@@ -70,7 +70,7 @@ linh-system-backup/
 │   │   ├── actions/             ← 邮件/API/报告导出
 │   │   └── agents/              ← DataExpert 智能体
 │   ├── generate_telesale_full_report.py    ← 电销全量报告生成器
-│   ├── generate_jianxin_full_report.py     ← 建信全量报告生成器（48KB，774行，14模块全覆盖）
+│   ├── generate_jianxin_full_report.py     ← 建信全量报告生成器（如有）
 │   ├── generate_hongniang_full_report.py   ← 红娘全量报告生成器（v2）
 │   ├── generate_app_full_report.py         ← APP全量报告生成器（新）
 │   ├── generate_shop_full_report.py        ← 门店全量报告生成器（新）

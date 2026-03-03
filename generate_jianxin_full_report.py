@@ -6,7 +6,7 @@
 """
 import sys
 import datetime
-from agent_system.actions.api_client import daily, trend, query, safe_float, safe_int, parallel_fetch
+from agent_system.actions.api_client import daily, trend, query, safe_float, safe_int
 from agent_system.actions.email_sender import send_report_email
 from agent_system.actions.report_exporter import export_html
 
@@ -180,9 +180,7 @@ def build_worker_data(rows):
     return sorted(result, key=lambda x: x["score"], reverse=True)
 
 
-def generate_html(today_rows, prev_rows, date_display, spk=None):
-    if spk is None:
-        spk = {}
+def generate_html(today_rows, prev_rows, date_display):
     t = agg_jianxin(today_rows)
     p = agg_jianxin(prev_rows) if prev_rows else {}
     depts    = build_dept_data(today_rows)
@@ -249,7 +247,6 @@ def generate_html(today_rows, prev_rows, date_display, spk=None):
   <div class="kpi-card">
     <div style="font-size:10px;color:#94a3b8;">切面业绩</div>
     <div style="font-size:22px;font-weight:700;color:{color_kpi(t["pay_amt"],300000,200000)};">¥{t["pay_amt"]/10000:.1f}万</div>
-    {spk.get("pay_amt","")}
     <div style="font-size:11px;color:#64748b;">{dod("pay_amt")}</div>
   </div>
   <div class="kpi-card">
@@ -259,7 +256,6 @@ def generate_html(today_rows, prev_rows, date_display, spk=None):
   <div class="kpi-card">
     <div style="font-size:10px;color:#94a3b8;">人均切面</div>
     <div style="font-size:22px;font-weight:700;color:{color_kpi(t["per_capita"],5000,3000)};">¥{t["per_capita"]:,.0f}</div>
-    {spk.get("per_capita","")}
   </div>
   <div class="kpi-card">
     <div style="font-size:10px;color:#94a3b8;">在岗人数</div>
@@ -269,31 +265,26 @@ def generate_html(today_rows, prev_rows, date_display, spk=None):
   <div class="kpi-card">
     <div style="font-size:10px;color:#94a3b8;">回复率</div>
     <div style="font-size:22px;font-weight:700;color:{color_kpi(t["reply_rate"],8,5)};">{t["reply_rate"]:.1f}%</div>
-    {spk.get("reply_rate","")}
     <div style="font-size:11px;color:#64748b;">{dod("reply_rate")}</div>
   </div>
   <div class="kpi-card">
     <div style="font-size:10px;color:#94a3b8;">企微添加</div>
     <div style="font-size:22px;font-weight:700;color:{color_kpi(t["wechat"],5000,3000)};">{t["wechat"]:,}</div>
-    {spk.get("wechat","")}
     <div style="font-size:11px;color:#64748b;">{dod("wechat")}</div>
   </div>
   <div class="kpi-card">
     <div style="font-size:10px;color:#94a3b8;">调配人数</div>
     <div style="font-size:22px;font-weight:700;color:{color_kpi(t["transfer"],500,300)};">{t["transfer"]:,}</div>
-    {spk.get("transfer","")}
     <div style="font-size:11px;color:#64748b;">{dod("transfer")}</div>
   </div>
   <div class="kpi-card">
     <div style="font-size:10px;color:#94a3b8;">自主触达</div>
     <div style="font-size:22px;font-weight:700;color:#0f172a;">{t["proactive"]:,}</div>
-    {spk.get("proactive","")}
     <div style="font-size:10px;color:#64748b;">人均{t["per_capita_proactive"]:.0f}</div>
   </div>
   <div class="kpi-card">
     <div style="font-size:10px;color:#94a3b8;">调配转化率</div>
     <div style="font-size:22px;font-weight:700;color:{color_kpi(t["transfer_rate"],10,6)};">{t["transfer_rate"]:.1f}%</div>
-    {spk.get("transfer_rate","")}
   </div>
 </div>
 
@@ -756,54 +747,19 @@ def main():
             DATE = sys.argv[idx + 1].replace("-", "")
             DATE_DISPLAY = f"{DATE[:4]}-{DATE[4:6]}-{DATE[6:]}"
 
-    base_dt = datetime.datetime.strptime(DATE, "%Y%m%d")
+    print(f"[建信报告] 拉取数据 {DATE}...")
+    resp_today = daily("jianxin", DATE)
+    resp_prev  = daily("jianxin", prev_date(DATE))
 
-    print(f"[建信报告] 并行拉取数据 {DATE}（含10天趋势）...")
-    calls = [
-        lambda: daily("jianxin", DATE),
-        lambda: daily("jianxin", prev_date(DATE)),
-    ]
-    for delta in range(9, -1, -1):
-        d = (base_dt - datetime.timedelta(days=delta)).strftime("%Y%m%d")
-        calls.append(lambda d=d: daily("jianxin", d))
-    results = parallel_fetch(calls)
-
-    rows_today = parse_rows(results[0])
-    rows_prev = parse_rows(results[1])
+    rows_today = parse_rows(resp_today)
+    rows_prev  = parse_rows(resp_prev)
 
     if not rows_today:
         print(f"[警告] 未获取到 {DATE} 数据，rows={len(rows_today)}")
 
-    trend_days = []
-    for i, delta in enumerate(range(9, -1, -1)):
-        day_rows = parse_rows(results[2 + i])
-        if day_rows:
-            trend_days.append(agg_jianxin(day_rows))
-        else:
-            trend_days.append({})
+    print(f"[建信报告] 今日数据行数: {len(rows_today)}, 昨日: {len(rows_prev)}")
 
-    print(f"[建信报告] 今日数据行数: {len(rows_today)}, 昨日: {len(rows_prev)}, 趋势: {len(trend_days)}天")
-
-    from agent_system.actions.report_sparkline import sparkline_svg
-    from agent_system.actions.memory_manager import ReportMemory
-    spk = {}
-    spk_cfg = [("pay_amt","#16a34a"),("per_capita","#3b82f6"),("reply_rate","#6366f1"),
-               ("wechat","#d97706"),("transfer","#7c3aed"),("proactive","#0891b2"),("transfer_rate","#dc2626")]
-    for key, color in spk_cfg:
-        vals = [d.get(key, 0) for d in trend_days]
-        vals = [float(v) if v else 0.0 for v in vals]
-        spk[key] = sparkline_svg(vals, color=color)
-
-    html = generate_html(rows_today, rows_prev, DATE_DISPLAY, spk)
-
-    mem = ReportMemory()
-    today_metrics = agg_jianxin(rows_today)
-    mem.save("jianxin", DATE, today_metrics)
-    trend_html = mem.trend_comparison_html("jianxin", DATE, today_metrics,
-        {"pay_amt":"切面业绩","per_capita":"人均切面","reply_rate":"回复率%",
-         "wechat":"企微添加","transfer":"调配人数","transfer_rate":"调配转化率%"})
-    if trend_html:
-        html = html.replace("</body></html>", trend_html + "\n</body></html>")
+    html = generate_html(rows_today, rows_prev, DATE_DISPLAY)
 
     filename = f"Jianxin_Full_{DATE_DISPLAY}.html"
     path = export_html(html, filename, open_browser=True)
