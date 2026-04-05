@@ -38,6 +38,20 @@ Without valid API credentials, report scripts will still run but produce reports
 
 No lint tooling is configured in the project. Use `python3 -m py_compile <file>` for syntax checks, or install `ruff` and run `python3 -m ruff check --select E9 .` for syntax-level linting.
 
+### Cursor Skills (`.cursor/skills/`)
+
+5 cloud skills are deployed from `http://42.193.182.174:8090/skills/`. Each skill requires `ZHENAI_API_KEY` set in `~/.zhenai-skills/api_key` or as environment variable. Run `doctor` to verify:
+
+| Skill | Purpose | Verify |
+|-------|---------|--------|
+| `analysis-data-service-skill` | SCRM data analysis (CynosDB) | `python3 scripts/handler.py doctor` |
+| `company-conversation-archive-skill` | WeChat conversation archive stats | `python3 scripts/handler.py doctor` |
+| `compass-skills-service` | Data platform API query tool | `python3 scripts/query.py me` |
+| `telephone-record-skill` | Call recording query | `python3 scripts/handler.py doctor` |
+| `zhenai-biz-skills` | Business sync utilities | N/A |
+
+Python dependency for DB skills: `pymysql` (in addition to `requests`).
+
 ### Testing
 
 No automated test suite exists in this project. Validation is done by running report generators and inspecting output HTML files.
