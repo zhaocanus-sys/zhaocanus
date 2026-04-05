@@ -1,0 +1,66 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-04-04T03:51:03Z",
+  "files": {
+    ".gitignore": {
+      "hash": "b4ab2dff535e78026ea0b6fec66edc9e",
+      "size": 91
+    },
+    "README.md": {
+      "hash": "0b3d8f718bb65d83aefd48c3c8eb5cc7",
+      "size": 1942
+    },
+    "SKILL.md": {
+      "hash": "702817a51c5987c5026784d7b7221332",
+      "size": 12591
+    },
+    "install.sh": {
+      "hash": "5addf03b357df9272c72c619a0012d5f",
+      "size": 2700
+    },
+    "scripts/auth_config.json": {
+      "hash": "64cbcc897cf3f21ecd31952e5caea2bd",
+      "size": 6329
+    },
+    "scripts/auth_guard.py": {
+      "hash": "f68e3744cd591805b14ac1f796846c0e",
+      "size": 4550
+    },
+    "scripts/config.py": {
+      "hash": "c7f4e9f42291b5600f3a512bdd7aeb21",
+      "size": 1145
+    },
+    "scripts/data_engine.py": {
+      "hash": "a06050ecfcf225d42ad959a57f48c878",
+      "size": 9733
+    },
+    "scripts/datasource_registry.py": {
+      "hash": "2e094ea9667c6f9db2714689f1884a43",
+      "size": 16252
+    },
+    "scripts/diagnostics.py": {
+      "hash": "9a46d14334914954ac1c110da7a194b2",
+      "size": 5430
+    },
+    "scripts/feedback_client.py": {
+      "hash": "f0587b046de3f032e89edba43eb7b615",
+      "size": 12706
+    },
+    "scripts/generate_manifest.py": {
+      "hash": "ea3ff21e554c77665036cd88beaf0c79",
+      "size": 3108
+    },
+    "scripts/handler.py": {
+      "hash": "089fb6dfd6bd39b424cacb447facdb6e",
+      "size": 26974
+    },
+    "scripts/org_resolver.py": {
+      "hash": "5fa233a443b8c120a16fe9f8f3348c95",
+      "size": 13691
+    },
+    "scripts/sync_client.py": {
+      "hash": "f068a30e6a2836323e25f49645c0c742",
+      "size": 4311
+    }
+  }
+}
