@@ -1,11 +1,10 @@
-name: AquaMark
+name: SaveBox
 options:
-  bundleIdPrefix: com.aquamark
+  bundleIdPrefix: com.savebox
   deploymentTarget:
     iOS: "16.0"
   xcodeVersion: "15.0"
   createIntermediateGroups: true
-  defaultConfig: Release
 
 settings:
   base:
@@ -15,32 +14,15 @@ settings:
     CURRENT_PROJECT_VERSION: "1"
 
 targets:
-  AquaMark:
+  SaveBox:
     type: application
     platform: iOS
     sources:
-      - path: AquaMark
-        excludes:
-          - "**/*.storekit"
-    resources:
-      - path: AquaMark/Resources/Assets.xcassets
-      - path: AquaMark/Resources/LaunchScreen.storyboard
-      - path: AquaMark/Resources/AquaMarkProducts.storekit
+      - SaveBox
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.aquamark.app
-        INFOPLIST_FILE: AquaMark/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.savebox.app
+        INFOPLIST_FILE: SaveBox/Info.plist
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: ""
-        INFOPLIST_KEY_CFBundleDisplayName: AquaMark
-        INFOPLIST_KEY_LSApplicationCategoryType: "public.app-category.photography"
-        INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen
-        INFOPLIST_KEY_NSPhotoLibraryUsageDescription: "AquaMark needs access to your photos to add watermarks."
-        INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription: "AquaMark needs permission to save watermarked photos to your library."
-        INFOPLIST_KEY_NSCameraUsageDescription: "AquaMark uses the camera to capture photos for watermarking."
-        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait"
-        INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
-    scheme:
-      testTargets: []
-      storeKitConfiguration: AquaMark/Resources/AquaMarkProducts.storekit
