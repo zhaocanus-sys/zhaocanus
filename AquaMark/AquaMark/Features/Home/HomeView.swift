@@ -1,13 +1,26 @@
 import SwiftUI
+import PhotosUI
 
 struct HomeView: View {
     @EnvironmentObject var subscriptionManager: SubscriptionManager
     @State private var showSubscription = false
-    @Namespace private var heroAnimation
+    @State private var showPhotoEditor = false
+    @State private var showVideoEditor = false
+    @State private var showVideoCrop = false
+    @State private var showVideoCompress = false
+    @State private var showMD5Modifier = false
+    @State private var showBatchProcess = false
+
+    @State private var photoPickerItem: PhotosPickerItem?
+    @State private var showPhotoPicker = false
+    @State private var showVideoPicker = false
+    @State private var videoPickerItem: PhotosPickerItem?
+
+    @StateObject private var importService = MediaImportService()
 
     private let columns = [
-        GridItem(.flexible(), spacing: AppTheme.Spacing.sm),
-        GridItem(.flexible(), spacing: AppTheme.Spacing.sm)
+        GridItem(.flexible(), spacing: 10),
+        GridItem(.flexible(), spacing: 10)
     ]
 
     var body: some View {
@@ -26,13 +39,15 @@ struct HomeView: View {
             }
             .background(AppTheme.Colors.gradientDark.ignoresSafeArea())
             .navigationBarHidden(true)
-            .sheet(isPresented: $showSubscription) {
-                SubscriptionView()
-            }
+            .sheet(isPresented: $showSubscription) { SubscriptionView() }
+            .fullScreenCover(isPresented: $showPhotoEditor) { PhotoWatermarkView() }
+            .fullScreenCover(isPresented: $showVideoEditor) { VideoWatermarkView() }
+            .fullScreenCover(isPresented: $showVideoCrop) { VideoCropView() }
+            .fullScreenCover(isPresented: $showVideoCompress) { VideoCompressView() }
+            .fullScreenCover(isPresented: $showMD5Modifier) { MD5ModifierView() }
+            .fullScreenCover(isPresented: $showBatchProcess) { BatchProcessingView() }
         }
     }
-
-    // MARK: - Header
 
     private var headerSection: some View {
         HStack {
@@ -40,14 +55,11 @@ struct HomeView: View {
                 Text("AquaMark")
                     .font(AppTheme.Typography.title)
                     .foregroundColor(AppTheme.Colors.textPrimary)
-
                 Text("Professional Watermark Studio")
                     .font(AppTheme.Typography.subheadline)
                     .foregroundColor(AppTheme.Colors.textSecondary)
             }
-
             Spacer()
-
             if subscriptionManager.isPro {
                 ProBadge(size: .regular)
             }
@@ -55,30 +67,23 @@ struct HomeView: View {
         .padding(.top, AppTheme.Spacing.md)
     }
 
-    // MARK: - Pro Banner
-
     private var proPromoBanner: some View {
-        Button {
-            showSubscription = true
-        } label: {
+        Button { showSubscription = true } label: {
             HStack(spacing: AppTheme.Spacing.md) {
                 VStack(alignment: .leading, spacing: 6) {
                     HStack(spacing: 6) {
                         Image(systemName: "crown.fill")
-                            .foregroundColor(Color(hex: "FDCB6E"))
+                            .foregroundColor(Color(hex: "FDE68A"))
                         Text("Unlock Pro")
                             .font(AppTheme.Typography.headline)
                             .foregroundColor(.white)
                     }
-
                     Text("Unlimited exports, 4K quality, batch processing & more")
                         .font(AppTheme.Typography.caption)
                         .foregroundColor(.white.opacity(0.7))
                         .lineLimit(2)
                 }
-
                 Spacer()
-
                 Image(systemName: "chevron.right.circle.fill")
                     .font(.system(size: 24))
                     .foregroundColor(.white.opacity(0.8))
@@ -88,25 +93,15 @@ struct HomeView: View {
                 RoundedRectangle(cornerRadius: AppTheme.Radius.lg)
                     .fill(
                         LinearGradient(
-                            colors: [
-                                Color(hex: "6C5CE7"),
-                                Color(hex: "A29BFE"),
-                                Color(hex: "FD79A8")
-                            ],
+                            colors: [Color(hex: "7C3AED"), Color(hex: "8B5CF6"), Color(hex: "C084FC"), Color(hex: "F472B6")],
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
                         )
                     )
             )
-            .overlay(
-                RoundedRectangle(cornerRadius: AppTheme.Radius.lg)
-                    .stroke(Color.white.opacity(0.2), lineWidth: 1)
-            )
         }
         .buttonStyle(ScaleButtonStyle())
     }
-
-    // MARK: - Tools Grid
 
     private var toolsGrid: some View {
         VStack(alignment: .leading, spacing: AppTheme.Spacing.sm) {
@@ -114,18 +109,14 @@ struct HomeView: View {
                 .font(AppTheme.Typography.title2)
                 .foregroundColor(AppTheme.Colors.textPrimary)
 
-            LazyVGrid(columns: columns, spacing: AppTheme.Spacing.sm) {
+            LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(ToolType.allCases) { tool in
                     ToolCard(
                         icon: tool.icon,
                         title: tool.rawValue,
                         subtitle: tool.subtitle,
                         gradient: tool.gradientColors,
-                        action: {
-                            if tool.isPro && !subscriptionManager.isPro {
-                                showSubscription = true
-                            }
-                        },
+                        action: { handleToolTap(tool) },
                         isPro: tool.isPro
                     )
                 }
@@ -133,7 +124,20 @@ struct HomeView: View {
         }
     }
 
-    // MARK: - Recent Projects
+    private func handleToolTap(_ tool: ToolType) {
+        if tool.isPro && !subscriptionManager.isPro {
+            showSubscription = true
+            return
+        }
+        switch tool {
+        case .photoWatermark: showPhotoEditor = true
+        case .videoWatermark: showVideoEditor = true
+        case .videoCrop: showVideoCrop = true
+        case .videoCompress: showVideoCompress = true
+        case .videoMD5: showMD5Modifier = true
+        case .batchProcess: showBatchProcess = true
+        }
+    }
 
     private var recentSection: some View {
         VStack(alignment: .leading, spacing: AppTheme.Spacing.sm) {
@@ -146,7 +150,6 @@ struct HomeView: View {
                     .font(AppTheme.Typography.subheadline)
                     .foregroundColor(AppTheme.Colors.primary)
             }
-
             emptyRecentState
         }
     }
@@ -157,11 +160,9 @@ struct HomeView: View {
                 Image(systemName: "sparkles")
                     .font(.system(size: 40))
                     .foregroundStyle(AppTheme.Colors.gradientPrimary)
-
                 Text("No recent projects")
                     .font(AppTheme.Typography.headline)
                     .foregroundColor(AppTheme.Colors.textSecondary)
-
                 Text("Start creating to see your work here")
                     .font(AppTheme.Typography.footnote)
                     .foregroundColor(AppTheme.Colors.textTertiary)
