@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=2200">
+<title>AquaMark — Premium UI Preview</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing: antialiased; }
+body {
+  background: #05050A;
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: #fff;
+  padding: 50px 40px;
+  min-width: 2100px;
+}
+
+.page-title {
+  text-align: center; font-size: 14px; font-weight: 600;
+  color: rgba(255,255,255,0.3); letter-spacing: 4px; text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.page-brand {
+  text-align: center; font-size: 36px; font-weight: 800;
+  background: linear-gradient(135deg, #8B7CF6, #C084FC, #F472B6);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 6px; letter-spacing: -1px;
+}
+.page-subtitle {
+  text-align: center; font-size: 13px; color: rgba(255,255,255,0.25);
+  margin-bottom: 56px; letter-spacing: 0.5px;
+}
+
+.screens-row {
+  display: flex; gap: 36px; justify-content: center;
+  align-items: flex-start;
+}
+
+.screen-wrapper {
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+}
+.screen-label {
+  font-size: 11px; font-weight: 600;
+  color: rgba(255,255,255,0.25); text-transform: uppercase; letter-spacing: 2px;
+}
+
+/* ========== PHONE FRAME ========== */
+.phone {
+  width: 310px; height: 672px;
+  border-radius: 48px;
+  background: #0A0A12;
+  border: 2.5px solid rgba(255,255,255,0.08);
+  overflow: hidden; position: relative;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.03),
+    0 25px 80px rgba(0,0,0,0.8),
+    0 4px 20px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.phone::before {
+  content: ''; position: absolute;
+  top: 8px; left: 50%; transform: translateX(-50%);
+  width: 110px; height: 30px;
+  background: #000; border-radius: 20px; z-index: 200;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+/* Status bar */
+.phone::after {
+  content: '12:19'; position: absolute;
+  top: 14px; left: 28px; z-index: 200;
+  font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.8);
+  font-family: 'Inter', sans-serif;
+}
+.status-right {
+  position: absolute; top: 14px; right: 24px; z-index: 200;
+  display: flex; align-items: center; gap: 5px;
+}
+.signal { width: 14px; height: 10px; display: flex; align-items: flex-end; gap: 1.2px; }
+.signal span { width: 2.5px; border-radius: 1px; background: rgba(255,255,255,0.8); }
+.signal span:nth-child(1) { height: 3px; }
+.signal span:nth-child(2) { height: 5px; }
+.signal span:nth-child(3) { height: 7px; }
+.signal span:nth-child(4) { height: 10px; }
+.wifi { font-size: 10px; color: rgba(255,255,255,0.8); }
+.battery {
+  width: 22px; height: 10px; border: 1.5px solid rgba(255,255,255,0.6);
+  border-radius: 3px; position: relative;
+}
+.battery::before {
+  content: ''; position: absolute; inset: 1.5px; border-radius: 1px;
+  background: rgba(255,255,255,0.8); width: 70%;
+}
+.battery::after {
+  content: ''; position: absolute; right: -4px; top: 2.5px;
+  width: 2px; height: 5px; background: rgba(255,255,255,0.4);
+  border-radius: 0 1px 1px 0;
+}
+
+.sc { width: 100%; height: 100%; overflow: hidden; position: relative; }
+
+/* ========== COMMON ========== */
+.glass-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  backdrop-filter: blur(40px);
+}
+.glass-card-sm {
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+}
+
+/* SF Symbols approximation via CSS */
+.sf-icon {
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-family: 'Inter', sans-serif;
+}
+
+/* ========== 1. ONBOARDING ========== */
+.ob-bg {
+  width:100%; height:100%;
+  background: radial-gradient(ellipse at 50% 30%, #1a1040 0%, #0a0a14 60%, #06060c 100%);
+  display: flex; flex-direction: column; align-items: center;
+  padding: 0 28px;
+  position: relative; overflow: hidden;
+}
+.ob-glow-1 {
+  position: absolute; width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(139,124,246,0.25) 0%, transparent 70%);
+  top: 60px; left: 50%; transform: translateX(-50%);
+  filter: blur(40px);
+}
+.ob-glow-2 {
+  position: absolute; width: 200px; height: 200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(244,114,182,0.12) 0%, transparent 70%);
+  top: 140px; right: -40px; filter: blur(30px);
+}
+
+.ob-icon-outer {
+  margin-top: 180px; margin-bottom: 36px;
+  width: 120px; height: 120px; border-radius: 60px;
+  background: linear-gradient(145deg, #8B7CF6 0%, #7C3AED 50%, #C084FC 100%);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 60px rgba(139,124,246,0.35), 0 8px 32px rgba(0,0,0,0.4);
+  position: relative; z-index: 2;
+}
+.ob-icon-inner {
+  width: 52px; height: 52px;
+}
+/* Water drop SVG inline */
+.drop-svg { width: 48px; height: 48px; }
+
+.ob-title {
+  font-size: 34px; font-weight: 800; color: #fff;
+  letter-spacing: -1px; margin-bottom: 10px;
+  position: relative; z-index: 2;
+}
+.ob-desc {
+  font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.5);
+  text-align: center; position: relative; z-index: 2;
+  margin-bottom: auto; max-width: 240px;
+}
+.ob-bottom {
+  position: relative; z-index: 2; width: 100%;
+  padding-bottom: 50px;
+}
+.ob-dots {
+  display: flex; gap: 8px; justify-content: center; margin-bottom: 24px;
+}
+.ob-dot { width: 8px; height: 8px; border-radius: 4px; background: rgba(255,255,255,0.15); }
+.ob-dot.on { width: 28px; background: linear-gradient(90deg, #8B7CF6, #C084FC); border-radius: 4px; }
+.ob-btn {
+  width: 100%; height: 54px; border-radius: 16px; border: none; cursor: pointer;
+  font-size: 17px; font-weight: 700; color: #fff; font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #7C3AED, #8B7CF6);
+  box-shadow: 0 8px 30px rgba(124,58,237,0.35);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  letter-spacing: -0.3px; position: relative; overflow: hidden;
+}
+.ob-btn::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+  border-radius: 16px;
+}
+
+/* ========== 2. HOME ========== */
+.hm-bg {
+  width:100%; height:100%;
+  background: linear-gradient(180deg, #0B0B16 0%, #0E0E1C 50%, #0A0A14 100%);
+  padding: 54px 16px 0;
+  overflow-y: auto; position: relative;
+}
+.hm-bg::-webkit-scrollbar { display: none; }
+.hm-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; padding: 0 2px; }
+.hm-logo { font-size: 28px; font-weight: 800; letter-spacing: -0.8px; }
+.hm-sub { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 3px; font-weight: 400; }
+.hm-pro {
+  display: flex; align-items: center; gap: 5px;
+  padding: 5px 12px; border-radius: 20px;
+  background: linear-gradient(135deg, rgba(244,114,182,0.2), rgba(251,191,36,0.15));
+  border: 1px solid rgba(244,114,182,0.25);
+  font-size: 10px; font-weight: 700; color: #F9A8D4;
+}
+.hm-pro svg { width: 12px; height: 12px; }
+
+/* Promo banner */
+.hm-promo {
+  padding: 18px 18px; border-radius: 20px; margin-bottom: 24px;
+  background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 40%, #C084FC 70%, #F472B6 100%);
+  position: relative; overflow: hidden;
+}
+.hm-promo::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 40%);
+}
+.hm-promo::after {
+  content: ''; position: absolute; right: -20px; top: -20px;
+  width: 120px; height: 120px; border-radius: 60px;
+  background: rgba(255,255,255,0.08); filter: blur(20px);
+}
+.hm-promo-inner { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; }
+.hm-promo-crown { font-size: 11px; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+.hm-promo-crown svg { width: 14px; height: 14px; fill: #FDE68A; }
+.hm-promo-title { font-size: 16px; font-weight: 700; letter-spacing: -0.3px; }
+.hm-promo-desc { font-size: 11px; color: rgba(255,255,255,0.75); margin-top: 4px; line-height: 1.4; }
+.hm-arrow {
+  width: 32px; height: 32px; border-radius: 16px;
+  background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.hm-section { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 14px; }
+
+/* Tool cards */
+.hm-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+.hm-tool {
+  padding: 16px 14px; border-radius: 18px; position: relative;
+  background: linear-gradient(145deg, rgba(255,255,255,0.055) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+.hm-tool::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+}
+.hm-tool-icon {
+  width: 42px; height: 42px; border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 12px; position: relative;
+}
+.hm-tool-icon svg { width: 20px; height: 20px; fill: #fff; }
+.hm-tool-name { font-size: 13px; font-weight: 700; letter-spacing: -0.2px; margin-bottom: 3px; }
+.hm-tool-desc { font-size: 10px; color: rgba(255,255,255,0.3); line-height: 1.35; }
+.hm-tool-pro {
+  position: absolute; top: 14px; right: 12px;
+  font-size: 8px; font-weight: 800; color: #fff; letter-spacing: 0.5px;
+  padding: 2.5px 7px; border-radius: 8px;
+  background: linear-gradient(135deg, #F472B6, #FBBF24);
+}
+
+/* Tab bar */
+.hm-tab {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 78px; padding-top: 10px;
+  display: flex; align-items: flex-start; justify-content: space-around;
+  background: linear-gradient(180deg, rgba(10,10,18,0.7) 0%, rgba(10,10,18,0.95) 100%);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(30px);
+}
+.hm-tab-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.hm-tab-item svg { width: 22px; height: 22px; }
+.hm-tab-label { font-size: 9px; font-weight: 600; letter-spacing: 0.3px; }
+.tab-on { fill: #8B7CF6; color: #8B7CF6; }
+.tab-off { fill: rgba(255,255,255,0.25); color: rgba(255,255,255,0.25); }
+.hm-tab-center {
+  width: 42px; height: 42px; border-radius: 21px;
+  background: linear-gradient(135deg, #7C3AED, #8B7CF6);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(124,58,237,0.35);
+  margin-top: -4px;
+}
+.hm-tab-center svg { width: 20px; height: 20px; fill: #fff; }
+
+/* Recent */
+.hm-recent-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.hm-see-all { font-size: 12px; font-weight: 600; color: #8B7CF6; }
+.hm-empty {
+  padding: 32px 16px; border-radius: 18px; text-align: center;
+  background: linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%);
+  border: 1px solid rgba(255,255,255,0.05);
+  margin-bottom: 90px;
+}
+.hm-empty-icon { font-size: 14px; color: rgba(255,255,255,0.15); margin-bottom: 10px; }
+.hm-empty-title { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+.hm-empty-desc { font-size: 11px; color: rgba(255,255,255,0.2); }
+
+/* ========== 3. PHOTO EDITOR ========== */
+.ed-bg {
+  width:100%; height:100%;
+  background: #08080E;
+  display: flex; flex-direction: column;
+}
+.ed-toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 52px 16px 10px;
+}
+.ed-close {
+  width: 30px; height: 30px; border-radius: 15px;
+  background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center;
+}
+.ed-close svg { width: 12px; height: 12px; fill: rgba(255,255,255,0.5); }
+.ed-title { font-size: 15px; font-weight: 700; letter-spacing: -0.3px; }
+.ed-export {
+  display: flex; align-items: center; gap: 5px;
+  padding: 8px 16px; border-radius: 20px;
+  background: linear-gradient(135deg, #7C3AED, #8B7CF6);
+  font-size: 12px; font-weight: 700; color: #fff;
+  box-shadow: 0 4px 12px rgba(124,58,237,0.3);
+}
+.ed-export svg { width: 12px; height: 12px; fill: #fff; }
+
+.ed-canvas {
+  flex: 1; margin: 8px 14px 8px;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden; position: relative;
+}
+/* Simulated photo - scenic landscape */
+.ed-photo {
+  width: 100%; height: 100%; position: relative;
+  background:
+    radial-gradient(ellipse at 70% 25%, rgba(251,191,36,0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 70%, rgba(56,189,248,0.15) 0%, transparent 50%),
+    linear-gradient(180deg, #1e3a5f 0%, #2d1b4e 30%, #1a1a3e 60%, #0d1b2a 100%);
+}
+/* Mountains */
+.ed-mountain {
+  position: absolute; bottom: 28%; left: 0; right: 0; height: 35%;
+  background: linear-gradient(180deg, transparent 0%, rgba(15,20,40,0.9) 100%);
+  clip-path: polygon(0% 100%, 5% 55%, 12% 70%, 22% 30%, 35% 55%, 42% 25%, 55% 50%, 62% 15%, 75% 45%, 82% 30%, 92% 55%, 100% 40%, 100% 100%);
+}
+.ed-water {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 28%;
+  background: linear-gradient(180deg, rgba(56,189,248,0.12) 0%, rgba(30,58,95,0.4) 50%, rgba(13,27,42,0.8) 100%);
+}
+/* Sun glow */
+.ed-sun {
+  position: absolute; top: 18%; right: 28%;
+  width: 28px; height: 28px; border-radius: 14px;
+  background: radial-gradient(circle, #FDE68A 0%, #FBBF24 40%, rgba(251,191,36,0) 100%);
+  box-shadow: 0 0 40px rgba(251,191,36,0.3), 0 0 80px rgba(251,191,36,0.15);
+}
+/* Watermark overlay */
+.ed-wm-text {
+  position: absolute; bottom: 34%; right: 6%;
+  font-size: 20px; font-weight: 800; color: rgba(255,255,255,0.8);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  letter-spacing: 2px;
+}
+.ed-wm-time {
+  position: absolute; top: 6%; left: 6%;
+  font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.55);
+  font-family: 'DM Sans', monospace; letter-spacing: 0.5px;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.25); padding: 4px 8px; border-radius: 6px;
+  backdrop-filter: blur(10px);
+}
+/* Selection box around watermark */
+.ed-wm-select {
+  position: absolute; bottom: 31%; right: 4%;
+  width: 130px; height: 36px;
+  border: 1.5px dashed rgba(139,124,246,0.6);
+  border-radius: 6px;
+}
+.ed-wm-dot {
+  width: 8px; height: 8px; border-radius: 4px;
+  background: #8B7CF6; border: 2px solid #fff;
+  position: absolute; box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* Tool tabs */
+.ed-tabs {
+  display: flex; height: 52px;
+  background: rgba(8,8,14,0.95); border-top: 1px solid rgba(255,255,255,0.04);
+}
+.ed-tab {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+}
+.ed-tab svg { width: 18px; height: 18px; }
+.ed-tab span { font-size: 9px; font-weight: 600; }
+.ed-tab-on svg { fill: #8B7CF6; }
+.ed-tab-on span { color: #8B7CF6; }
+.ed-tab-off svg { fill: rgba(255,255,255,0.25); }
+.ed-tab-off span { color: rgba(255,255,255,0.25); }
+.ed-tab-indicator {
+  width: 20px; height: 2px; border-radius: 1px;
+  background: #8B7CF6; margin-top: 2px;
+}
+
+/* Tool panel */
+.ed-panel {
+  padding: 14px 16px 28px;
+  background: linear-gradient(180deg, rgba(12,12,20,0.98) 0%, rgba(8,8,14,1) 100%);
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+.ed-panel-label { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.25); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+.ed-input {
+  width: 100%; padding: 11px 14px; border-radius: 12px;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.9); font-size: 14px; font-weight: 500;
+  font-family: 'Inter', sans-serif; margin-bottom: 12px;
+}
+.ed-slider-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.ed-slider-icon { font-size: 11px; color: rgba(255,255,255,0.3); font-weight: 700; }
+.ed-slider-track { flex: 1; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.08); position: relative; }
+.ed-slider-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, #7C3AED, #A78BFA); }
+.ed-slider-knob {
+  width: 16px; height: 16px; border-radius: 8px;
+  background: #fff; position: absolute; top: -6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3), 0 0 0 2px rgba(139,124,246,0.3);
+}
+.ed-add-btn {
+  width: 100%; height: 44px; border-radius: 12px; border: none;
+  font-size: 14px; font-weight: 700; color: #fff; font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #7C3AED, #8B7CF6);
+  box-shadow: 0 4px 16px rgba(124,58,237,0.25);
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  position: relative; overflow: hidden;
+}
+.ed-add-btn::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 50%);
+}
+
+/* ========== 4. VIDEO EDITOR ========== */
+.vid-preview {
+  flex: 1; margin: 8px 14px 6px;
+  border-radius: 18px; overflow: hidden;
+  background: #000; position: relative;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.vid-scene {
+  width: 100%; height: 100%;
+  background:
+    radial-gradient(ellipse at 40% 40%, rgba(192,132,252,0.1) 0%, transparent 60%),
+    linear-gradient(150deg, #12182a 0%, #1a1030 40%, #0d1820 100%);
+  position: relative;
+}
+.vid-play-ring {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 56px; height: 56px; border-radius: 28px;
+  background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(20px);
+}
+.vid-play-ring svg { width: 20px; height: 20px; fill: #fff; margin-left: 3px; }
+.vid-wm {
+  position: absolute; bottom: 12%; right: 6%;
+  font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.65);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4); letter-spacing: 1.5px;
+}
+
+.vid-timeline { padding: 6px 16px 4px; }
+.vid-times { display: flex; justify-content: space-between; font-size: 10px; color: rgba(255,255,255,0.3); font-family: 'DM Sans', monospace; font-weight: 500; margin-bottom: 6px; }
+.vid-bar { height: 4px; border-radius: 2px; background: rgba(255,255,255,0.08); position: relative; margin-bottom: 10px; }
+.vid-bar-fill { height: 100%; width: 38%; border-radius: 2px; background: linear-gradient(90deg, #7C3AED, #A78BFA); }
+.vid-bar-knob { width: 14px; height: 14px; border-radius: 7px; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.3); position: absolute; top: -5px; left: calc(38% - 7px); }
+.vid-controls { display: flex; justify-content: center; align-items: center; gap: 28px; padding: 2px 0 6px; }
+.vid-ctrl { display: flex; align-items: center; justify-content: center; }
+.vid-ctrl svg { fill: rgba(255,255,255,0.6); }
+.vid-ctrl-play svg { fill: #fff; }
+
+/* ========== 5. SUBSCRIPTION ========== */
+.sub-bg {
+  width:100%; height:100%;
+  background: radial-gradient(ellipse at 50% 20%, #1a1040 0%, #0a0a14 60%, #06060c 100%);
+  padding: 50px 18px 20px;
+  overflow-y: auto; position: relative;
+}
+.sub-bg::-webkit-scrollbar { display: none; }
+.sub-glow-1 { position: absolute; width: 250px; height: 250px; border-radius: 50%; background: radial-gradient(circle, rgba(124,58,237,0.2) 0%, transparent 70%); top: 20px; left: -60px; filter: blur(50px); }
+.sub-glow-2 { position: absolute; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgba(244,114,182,0.12) 0%, transparent 70%); top: 80px; right: -40px; filter: blur(40px); }
+
+.sub-close {
+  text-align: right; position: relative; z-index: 2;
+}
+.sub-close-btn {
+  width: 30px; height: 30px; border-radius: 15px;
+  background: rgba(255,255,255,0.08); display: inline-flex; align-items: center; justify-content: center;
+}
+.sub-close-btn svg { width: 12px; height: 12px; fill: rgba(255,255,255,0.4); }
+
+.sub-hero { text-align: center; position: relative; z-index: 2; margin-bottom: 22px; margin-top: 8px; }
+.sub-crown-circle {
+  width: 76px; height: 76px; border-radius: 38px; margin: 0 auto 18px;
+  background: linear-gradient(145deg, #7C3AED 0%, #C084FC 50%, #F472B6 100%);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 50px rgba(124,58,237,0.4), 0 8px 24px rgba(0,0,0,0.3);
+  position: relative;
+}
+.sub-crown-circle::before {
+  content: ''; position: absolute; inset: 0; border-radius: 38px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+}
+.sub-crown-circle svg { width: 34px; height: 34px; fill: #fff; position: relative; z-index: 2; }
+.sub-h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.8px; }
+.sub-h2 { font-size: 14px; color: rgba(255,255,255,0.45); margin-top: 6px; }
+
+.sub-features {
+  padding: 4px 16px; border-radius: 18px; margin-bottom: 18px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative; z-index: 2;
+}
+.sub-feat { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.sub-feat:last-child { border-bottom: none; }
+.sub-feat-icon {
+  width: 32px; height: 32px; border-radius: 10px;
+  background: linear-gradient(135deg, rgba(139,124,246,0.2), rgba(139,124,246,0.08));
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.sub-feat-icon svg { width: 16px; height: 16px; fill: #A78BFA; }
+.sub-feat-title { font-size: 13px; font-weight: 700; letter-spacing: -0.2px; }
+.sub-feat-desc { font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 1px; }
+
+.sub-plan {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 15px 16px; border-radius: 14px; margin-bottom: 8px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%);
+  border: 1.5px solid rgba(255,255,255,0.06);
+  position: relative; z-index: 2;
+}
+.sub-plan.sel {
+  background: linear-gradient(145deg, rgba(124,58,237,0.15) 0%, rgba(139,124,246,0.08) 100%);
+  border-color: rgba(139,124,246,0.5);
+  box-shadow: 0 0 20px rgba(124,58,237,0.1);
+}
+.sub-plan-name { font-size: 15px; font-weight: 700; letter-spacing: -0.2px; }
+.sub-plan-badge {
+  display: inline-block; font-size: 8px; font-weight: 800; color: #fff;
+  padding: 2px 7px; border-radius: 6px; margin-left: 8px; vertical-align: middle;
+  background: linear-gradient(135deg, #F472B6, #FBBF24);
+  letter-spacing: 0.3px;
+}
+.sub-plan-save { font-size: 11px; color: #4ADE80; font-weight: 600; margin-top: 3px; }
+.sub-plan-price { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
+.sub-plan-period { font-size: 10px; color: rgba(255,255,255,0.35); font-weight: 500; }
+
+.sub-cta {
+  width: 100%; height: 54px; border-radius: 16px; border: none; cursor: pointer;
+  font-size: 17px; font-weight: 700; color: #fff; font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #7C3AED, #8B7CF6);
+  box-shadow: 0 8px 30px rgba(124,58,237,0.35);
+  margin-top: 16px; position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  overflow: hidden;
+}
+.sub-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 50%);
+}
+.sub-cta svg { width: 18px; height: 18px; fill: #fff; position: relative; z-index: 2; }
+.sub-cta-text { position: relative; z-index: 2; }
+.sub-restore { text-align: center; font-size: 12px; color: rgba(255,255,255,0.25); margin-top: 12px; font-weight: 500; position: relative; z-index: 2; }
+.sub-legal { font-size: 9px; color: rgba(255,255,255,0.15); text-align: center; margin-top: 14px; line-height: 1.5; position: relative; z-index: 2; }
+.sub-legal a { color: rgba(139,124,246,0.6); text-decoration: none; }
+
+/* ========== 6. SETTINGS ========== */
+.st-bg {
+  width:100%; height:100%;
+  background: linear-gradient(180deg, #0B0B16 0%, #0E0E1C 100%);
+  padding: 54px 16px 0;
+  overflow-y: auto; position: relative;
+}
+.st-bg::-webkit-scrollbar { display: none; }
+.st-header { margin-bottom: 20px; }
+.st-title { font-size: 28px; font-weight: 800; letter-spacing: -0.8px; }
+.st-pro-status { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+.st-pro-pill {
+  display: flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 10px;
+  background: linear-gradient(135deg, rgba(244,114,182,0.15), rgba(251,191,36,0.1));
+  border: 1px solid rgba(244,114,182,0.2);
+  font-size: 9px; font-weight: 700; color: #F9A8D4;
+}
+.st-pro-pill svg { width: 10px; height: 10px; fill: #F9A8D4; }
+.st-active { font-size: 11px; font-weight: 600; color: #4ADE80; }
+
+.st-upgrade {
+  padding: 16px 18px; border-radius: 18px; margin-bottom: 22px;
+  background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #C084FC 100%);
+  display: flex; align-items: center; justify-content: space-between;
+  position: relative; overflow: hidden;
+}
+.st-upgrade::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 40%);
+}
+.st-upgrade-text { position: relative; z-index: 2; }
+.st-upgrade-title { font-size: 15px; font-weight: 700; }
+.st-upgrade-desc { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 3px; }
+.st-upgrade-icon { position: relative; z-index: 2; }
+.st-upgrade-icon svg { width: 28px; height: 28px; fill: #FDE68A; }
+
+.st-section { margin-bottom: 18px; }
+.st-section-label { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.2); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; padding-left: 2px; }
+.st-card {
+  border-radius: 16px; padding: 2px 16px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.045) 0%, rgba(255,255,255,0.015) 100%);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.st-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.035);
+}
+.st-row:last-child { border-bottom: none; }
+.st-row-left { display: flex; align-items: center; gap: 12px; }
+.st-icon {
+  width: 28px; height: 28px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+.st-icon svg { width: 14px; height: 14px; }
+.st-row-label { font-size: 14px; font-weight: 500; }
+.st-chevron svg { width: 10px; height: 10px; fill: rgba(255,255,255,0.2); }
+.st-value { font-size: 13px; color: rgba(255,255,255,0.3); font-weight: 500; }
+
+/* Toggle switch */
+.st-toggle {
+  width: 44px; height: 27px; border-radius: 14px;
+  background: #7C3AED; position: relative;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.15);
+}
+.st-toggle::before {
+  content: ''; position: absolute;
+  width: 23px; height: 23px; border-radius: 12px;
+  background: #fff; top: 2px; right: 2px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Quality check */
+.st-check svg { width: 18px; height: 18px; fill: #8B7CF6; }
+</style>
+</head>
+<body>
+
+<div class="page-title">Design Preview</div>
+<div class="page-brand">AquaMark</div>
+<div class="page-subtitle">Professional Watermark Studio · iOS · 6 Core Screens</div>
+
+<div class="screens-row">
+
+<!-- ============================== 1. ONBOARDING ============================== -->
+<div class="screen-wrapper">
+  <div class="screen-label">Onboarding</div>
+  <div class="phone">
+    <div class="status-right"><div class="signal"><span></span><span></span><span></span><span></span></div><div class="battery"></div></div>
+    <div class="sc">
+      <div class="ob-bg">
+        <div class="ob-glow-1"></div>
+        <div class="ob-glow-2"></div>
+        <div class="ob-icon-outer">
+          <svg class="drop-svg" viewBox="0 0 24 24" fill="none"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0L12 2.69z" fill="rgba(255,255,255,0.95)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/></svg>
+        </div>
+        <div class="ob-title">AquaMark</div>
+        <div class="ob-desc">Professional watermark studio for creators. Protect your content beautifully.</div>
+        <div class="ob-bottom">
+          <div class="ob-dots"><div class="ob-dot on"></div><div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot"></div></div>
+          <button class="ob-btn"><span>Continue</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== 2. HOME ============================== -->
+<div class="screen-wrapper">
+  <div class="screen-label">Home</div>
+  <div class="phone">
+    <div class="status-right"><div class="signal"><span></span><span></span><span></span><span></span></div><div class="battery"></div></div>
+    <div class="sc">
+      <div class="hm-bg">
+        <div class="hm-header">
+          <div>
+            <div class="hm-logo">AquaMark</div>
+            <div class="hm-sub">Professional Watermark Studio</div>
+          </div>
+          <div class="hm-pro"><svg viewBox="0 0 24 24" fill="#F9A8D4"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"/></svg>PRO</div>
+        </div>
+
+        <div class="hm-promo">
+          <div class="hm-promo-inner">
+            <div>
+              <div class="hm-promo-crown"><svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"/></svg><span style="font-weight:700;font-size:12px;">Unlock Pro</span></div>
+              <div class="hm-promo-desc">Unlimited exports, 4K quality,<br>batch processing & more</div>
+            </div>
+            <div class="hm-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></div>
+          </div>
+        </div>
+
+        <div class="hm-section">Tools</div>
+        <div class="hm-tools">
+          <div class="hm-tool">
+            <div class="hm-tool-icon" style="background:linear-gradient(135deg,#7C3AED,#A78BFA);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="#fff" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="#fff"/><path d="M21 15l-5-5L5 21" stroke="#fff" stroke-width="2" fill="none"/></svg>
+            </div>
+            <div class="hm-tool-name">Photo Watermark</div>
+            <div class="hm-tool-desc">Text, logo & timestamp</div>
+          </div>
+          <div class="hm-tool">
+            <div class="hm-tool-icon" style="background:linear-gradient(135deg,#06B6D4,#67E8F9);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            </div>
+            <div class="hm-tool-name">Video Watermark</div>
+            <div class="hm-tool-desc">Brand your video content</div>
+            <div class="hm-tool-pro">PRO</div>
+          </div>
+          <div class="hm-tool">
+            <div class="hm-tool-icon" style="background:linear-gradient(135deg,#F472B6,#FBBF24);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M6 2L2 6M22 18l-4 4M2 6l14 14M10 2l12 12"/></svg>
+            </div>
+            <div class="hm-tool-name">Video Crop</div>
+            <div class="hm-tool-desc">Trim & resize freely</div>
+          </div>
+          <div class="hm-tool">
+            <div class="hm-tool-icon" style="background:linear-gradient(135deg,#34D399,#38BDF8);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M15 4h5v5M9 20H4v-5M21 4L14 11M3 20l7-7"/></svg>
+            </div>
+            <div class="hm-tool-name">Compress</div>
+            <div class="hm-tool-desc">Reduce file size smartly</div>
+            <div class="hm-tool-pro">PRO</div>
+          </div>
+          <div class="hm-tool">
+            <div class="hm-tool-icon" style="background:linear-gradient(135deg,#F9A8D4,#F472B6);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h4v4H4zM14 4h4v4h-4zM4 14h4v4H4z"/><circle cx="16" cy="16" r="2"/></svg>
+            </div>
+            <div class="hm-tool-name">MD5 Modifier</div>
+            <div class="hm-tool-desc">Change file fingerprint</div>
+            <div class="hm-tool-pro">PRO</div>
+          </div>
+          <div class="hm-tool">
+            <div class="hm-tool-icon" style="background:linear-gradient(135deg,#C084FC,#8B5CF6);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><rect x="5" y="2" width="14" height="16" rx="2" fill="none"/><rect x="8" y="10" width="8" height="8" rx="1" fill="none"/></svg>
+            </div>
+            <div class="hm-tool-name">Batch Process</div>
+            <div class="hm-tool-desc">Process multiple files</div>
+            <div class="hm-tool-pro">PRO</div>
+          </div>
+        </div>
+
+        <div class="hm-recent-header">
+          <div class="hm-section" style="margin-bottom:0">Recent</div>
+          <div class="hm-see-all">See All</div>
+        </div>
+        <div class="hm-empty">
+          <div class="hm-empty-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(139,124,246,0.4)" stroke-width="1.5"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M19 15l.75 2.25L22 18l-2.25.75L19 21l-.75-2.25L16 18l2.25-.75L19 15z" opacity="0.5"/></svg></div>
+          <div class="hm-empty-title">No recent projects</div>
+          <div class="hm-empty-desc">Start creating to see your work here</div>
+        </div>
+      </div>
+      <div class="hm-tab">
+        <div class="hm-tab-item tab-on"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1m-2 0h2" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="hm-tab-label tab-on">Home</span></div>
+        <div class="hm-tab-center"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+        <div class="hm-tab-item tab-off"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="hm-tab-label tab-off">Settings</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== 3. PHOTO EDITOR ============================== -->
+<div class="screen-wrapper">
+  <div class="screen-label">Photo Editor</div>
+  <div class="phone">
+    <div class="status-right"><div class="signal"><span></span><span></span><span></span><span></span></div><div class="battery"></div></div>
+    <div class="sc">
+      <div class="ed-bg">
+        <div class="ed-toolbar">
+          <div class="ed-close"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke="rgba(255,255,255,0.5)" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+          <div class="ed-title">Photo Watermark</div>
+          <div class="ed-export"><svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 3v12M8 7l4-4 4 4" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></svg>Export</div>
+        </div>
+        <div class="ed-canvas">
+          <div class="ed-photo">
+            <div class="ed-sun"></div>
+            <div class="ed-mountain"></div>
+            <div class="ed-water"></div>
+            <div class="ed-wm-time">2026-04-05  14:32</div>
+            <div class="ed-wm-text">AquaMark</div>
+            <div class="ed-wm-select">
+              <div class="ed-wm-dot" style="top:-4px;left:-4px;"></div>
+              <div class="ed-wm-dot" style="top:-4px;right:-4px;"></div>
+              <div class="ed-wm-dot" style="bottom:-4px;left:-4px;"></div>
+              <div class="ed-wm-dot" style="bottom:-4px;right:-4px;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ed-tabs">
+          <div class="ed-tab ed-tab-on"><svg viewBox="0 0 24 24"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg><span>Text</span><div class="ed-tab-indicator"></div></div>
+          <div class="ed-tab ed-tab-off"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Image</span></div>
+          <div class="ed-tab ed-tab-off"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span>Time</span></div>
+          <div class="ed-tab ed-tab-off"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Style</span></div>
+          <div class="ed-tab ed-tab-off"><svg viewBox="0 0 24 24"><path d="M5 9l4-4 4 4M15 15l4 4-4 4M9 5v14M15 5v14"/></svg><span>Position</span></div>
+        </div>
+        <div class="ed-panel">
+          <div class="ed-panel-label">Text</div>
+          <div class="ed-input">AquaMark</div>
+          <div class="ed-slider-row">
+            <span class="ed-slider-icon">A</span>
+            <div class="ed-slider-track">
+              <div class="ed-slider-fill" style="width:42%"></div>
+              <div class="ed-slider-knob" style="left:calc(42% - 8px)"></div>
+            </div>
+            <span class="ed-slider-icon" style="font-size:15px;">A</span>
+          </div>
+          <button class="ed-add-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg><span style="position:relative;z-index:2;">Add Text</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== 4. VIDEO EDITOR ============================== -->
+<div class="screen-wrapper">
+  <div class="screen-label">Video Editor</div>
+  <div class="phone">
+    <div class="status-right"><div class="signal"><span></span><span></span><span></span><span></span></div><div class="battery"></div></div>
+    <div class="sc">
+      <div class="ed-bg">
+        <div class="ed-toolbar">
+          <div class="ed-close"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke="rgba(255,255,255,0.5)" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+          <div class="ed-title">Video Editor</div>
+          <div class="ed-export"><svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 3v12M8 7l4-4 4 4" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></svg>Export</div>
+        </div>
+        <div class="vid-preview">
+          <div class="vid-scene">
+            <div class="vid-play-ring"><svg viewBox="0 0 24 24"><polygon points="8,5 20,12 8,19"/></svg></div>
+            <div class="vid-wm">AquaMark</div>
+          </div>
+        </div>
+        <div class="vid-timeline">
+          <div class="vid-times"><span>00:12</span><span>03:34</span></div>
+          <div class="vid-bar"><div class="vid-bar-fill"></div><div class="vid-bar-knob"></div></div>
+          <div class="vid-controls">
+            <div class="vid-ctrl"><svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.5)"><path d="M12.5 8c-2.6-2-5.5.4-4.8 3.2l.3 1.3L5 17h2l2-3 1 3h2l-1.3-4.7C11.4 10 12 9 12.5 8z"/><path d="M10 3L4 8l6 5V3z"/></svg></div>
+            <div class="vid-ctrl vid-ctrl-play"><svg width="28" height="28" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="none" stroke="#fff" stroke-width="1.5"/><polygon points="10,8 18,12 10,16" fill="#fff"/></svg></div>
+            <div class="vid-ctrl"><svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.5)"><path d="M11.5 8c2.6-2 5.5.4 4.8 3.2l-.3 1.3L19 17h-2l-2-3-1 3h-2l1.3-4.7C12.6 10 12 9 11.5 8z"/><path d="M14 3l6 5-6 5V3z"/></svg></div>
+          </div>
+        </div>
+        <div class="ed-tabs">
+          <div class="ed-tab ed-tab-on"><svg viewBox="0 0 24 24"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg><span>Watermark</span><div class="ed-tab-indicator"></div></div>
+          <div class="ed-tab ed-tab-off"><svg viewBox="0 0 24 24"><path d="M6 2L2 6M22 18l-4 4M2 6l14 14M10 2l12 12" stroke-linecap="round"/></svg><span>Crop</span></div>
+          <div class="ed-tab ed-tab-off"><svg viewBox="0 0 24 24"><path d="M15 4h5v5M9 20H4v-5M21 4L14 11M3 20l7-7"/></svg><span>Compress</span></div>
+          <div class="ed-tab ed-tab-off"><svg viewBox="0 0 24 24"><path d="M4 4h4v4H4zM14 4h4v4h-4zM4 14h4v4H4z"/><circle cx="16" cy="16" r="2"/></svg><span>MD5</span></div>
+        </div>
+        <div class="ed-panel">
+          <div class="ed-input">AquaMark</div>
+          <div style="display:flex;gap:16px;">
+            <div style="flex:1"><div class="ed-slider-row"><span class="ed-slider-icon" style="font-size:9px">Size</span><div class="ed-slider-track"><div class="ed-slider-fill" style="width:48%"></div><div class="ed-slider-knob" style="left:calc(48% - 8px)"></div></div></div></div>
+            <div style="flex:1"><div class="ed-slider-row"><span class="ed-slider-icon" style="font-size:9px">Opacity</span><div class="ed-slider-track"><div class="ed-slider-fill" style="width:82%;background:linear-gradient(90deg,#06B6D4,#67E8F9);"></div><div class="ed-slider-knob" style="left:calc(82% - 8px)"></div></div></div></div>
+          </div>
+          <button class="ed-add-btn" style="margin-top:4px;"><span style="position:relative;z-index:2;">Apply Watermark</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== 5. SUBSCRIPTION ============================== -->
+<div class="screen-wrapper">
+  <div class="screen-label">Pro Paywall</div>
+  <div class="phone">
+    <div class="status-right"><div class="signal"><span></span><span></span><span></span><span></span></div><div class="battery"></div></div>
+    <div class="sc">
+      <div class="sub-bg">
+        <div class="sub-glow-1"></div>
+        <div class="sub-glow-2"></div>
+        <div class="sub-close"><div class="sub-close-btn"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+
+        <div class="sub-hero">
+          <div class="sub-crown-circle"><svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"/></svg></div>
+          <div class="sub-h1">Upgrade to Pro</div>
+          <div class="sub-h2">Unlock the full creative power</div>
+        </div>
+
+        <div class="sub-features">
+          <div class="sub-feat">
+            <div class="sub-feat-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+            <div><div class="sub-feat-title">Unlimited Exports</div><div class="sub-feat-desc">No watermarks or limits</div></div>
+          </div>
+          <div class="sub-feat">
+            <div class="sub-feat-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 12h2l1-3 2 6 1-3h2"/></svg></div>
+            <div><div class="sub-feat-title">4K Ultra HD</div><div class="sub-feat-desc">Maximum quality output</div></div>
+          </div>
+          <div class="sub-feat">
+            <div class="sub-feat-icon"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="1"/><rect x="5" y="2" width="14" height="16" rx="1" fill="none"/><rect x="8" y="10" width="8" height="8" rx="1" fill="none"/></svg></div>
+            <div><div class="sub-feat-title">Batch Processing</div><div class="sub-feat-desc">Process multiple files at once</div></div>
+          </div>
+          <div class="sub-feat">
+            <div class="sub-feat-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+            <div><div class="sub-feat-title">Video Watermark</div><div class="sub-feat-desc">Brand your video content</div></div>
+          </div>
+        </div>
+
+        <div class="sub-plan sel">
+          <div><div class="sub-plan-name">Annual<span class="sub-plan-badge">BEST VALUE</span></div><div class="sub-plan-save">Save 69%</div></div>
+          <div style="text-align:right"><div class="sub-plan-price">$29.99</div><div class="sub-plan-period">/year</div></div>
+        </div>
+        <div class="sub-plan">
+          <div><div class="sub-plan-name">Monthly</div></div>
+          <div style="text-align:right"><div class="sub-plan-price">$7.99</div><div class="sub-plan-period">/month</div></div>
+        </div>
+        <div class="sub-plan">
+          <div><div class="sub-plan-name">Weekly</div></div>
+          <div style="text-align:right"><div class="sub-plan-price">$3.99</div><div class="sub-plan-period">/week</div></div>
+        </div>
+        <div class="sub-plan">
+          <div><div class="sub-plan-name">Lifetime<span class="sub-plan-badge">FOREVER</span></div></div>
+          <div style="text-align:right"><div class="sub-plan-price">$49.99</div><div class="sub-plan-period">one-time</div></div>
+        </div>
+
+        <button class="sub-cta"><svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"/></svg><span class="sub-cta-text">Start Pro Now</span></button>
+        <div class="sub-restore">Restore Purchases</div>
+        <div class="sub-legal">Auto-renews. Cancel anytime.<br><a href="#">Terms</a> · <a href="#">Privacy</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== 6. SETTINGS ============================== -->
+<div class="screen-wrapper">
+  <div class="screen-label">Settings</div>
+  <div class="phone">
+    <div class="status-right"><div class="signal"><span></span><span></span><span></span><span></span></div><div class="battery"></div></div>
+    <div class="sc">
+      <div class="st-bg">
+        <div class="st-header">
+          <div class="st-title">Settings</div>
+          <div class="st-pro-status">
+            <div class="st-pro-pill"><svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"/></svg>PRO</div>
+            <div class="st-active">Active</div>
+          </div>
+        </div>
+
+        <div class="st-upgrade">
+          <div class="st-upgrade-text"><div class="st-upgrade-title">Upgrade to Pro</div><div class="st-upgrade-desc">Unlock all features</div></div>
+          <div class="st-upgrade-icon"><svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"/></svg></div>
+        </div>
+
+        <div class="st-section">
+          <div class="st-section-label">General</div>
+          <div class="st-card">
+            <div class="st-row">
+              <div class="st-row-left">
+                <div class="st-icon" style="background:rgba(139,124,246,0.12);"><svg viewBox="0 0 24 24" fill="#A78BFA"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8" fill="none" stroke="#A78BFA" stroke-width="1.5"/></svg></div>
+                <span class="st-row-label">Auto Save</span>
+              </div>
+              <div class="st-toggle"></div>
+            </div>
+            <div class="st-row">
+              <div class="st-row-left">
+                <div class="st-icon" style="background:rgba(139,124,246,0.12);"><svg viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2"><path d="M5.636 18.364a9 9 0 010-12.728M18.364 5.636a9 9 0 010 12.728"/><circle cx="12" cy="12" r="3"/></svg></div>
+                <span class="st-row-label">Haptic Feedback</span>
+              </div>
+              <div class="st-toggle"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="st-section">
+          <div class="st-section-label">Export Quality</div>
+          <div class="st-card">
+            <div class="st-row">
+              <div class="st-row-left">
+                <div class="st-icon" style="background:rgba(74,222,128,0.1);"><svg viewBox="0 0 24 24" fill="#4ADE80"><circle cx="12" cy="12" r="5"/></svg></div>
+                <div><span class="st-row-label">High</span><br><span style="font-size:10px;color:rgba(255,255,255,0.3);">2K · High quality</span></div>
+              </div>
+              <div class="st-check"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4" fill="none" stroke="#8B7CF6" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+            </div>
+            <div class="st-row">
+              <div class="st-row-left">
+                <div class="st-icon" style="background:rgba(255,255,255,0.04);"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.2)"><circle cx="12" cy="12" r="5"/></svg></div>
+                <div><span class="st-row-label" style="color:rgba(255,255,255,0.5);">Ultra HD</span><br><span style="font-size:10px;color:rgba(255,255,255,0.2);">4K · Maximum quality</span></div>
+              </div>
+              <div class="st-pro-pill" style="font-size:8px;padding:2px 8px;"><svg viewBox="0 0 24 24" style="width:8px;height:8px;"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"/></svg>PRO</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="st-section">
+          <div class="st-section-label">Support</div>
+          <div class="st-card">
+            <div class="st-row"><div class="st-row-left"><div class="st-icon" style="background:rgba(139,124,246,0.12);"><svg viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></div><span class="st-row-label">Contact Us</span></div><div class="st-chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/></svg></div></div>
+            <div class="st-row"><div class="st-row-left"><div class="st-icon" style="background:rgba(251,191,36,0.1);"><svg viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></div><span class="st-row-label">Rate App</span></div><div class="st-chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/></svg></div></div>
+            <div class="st-row"><div class="st-row-left"><div class="st-icon" style="background:rgba(56,189,248,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div><span class="st-row-label">Restore Purchases</span></div><div class="st-chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/></svg></div></div>
+          </div>
+        </div>
+
+        <div class="st-section">
+          <div class="st-section-label">About</div>
+          <div class="st-card">
+            <div class="st-row"><div class="st-row-left"><div class="st-icon" style="background:rgba(255,255,255,0.04);"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div><span class="st-row-label">Privacy Policy</span></div><div class="st-chevron"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/></svg></div></div>
+            <div class="st-row"><span class="st-row-label" style="color:rgba(255,255,255,0.5)">Version</span><span class="st-value">1.0.0</span></div>
+          </div>
+        </div>
+        <div style="height:90px;"></div>
+      </div>
+      <div class="hm-tab">
+        <div class="hm-tab-item tab-off"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1m-2 0h2" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="hm-tab-label tab-off">Home</span></div>
+        <div class="hm-tab-center"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+        <div class="hm-tab-item tab-on"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="hm-tab-label tab-on">Settings</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
