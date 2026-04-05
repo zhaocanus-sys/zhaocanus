@@ -1,0 +1,79 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-04-04T03:51:04Z",
+  "file_count": 18,
+  "files": {
+    ".gitignore": {
+      "hash": "f490c0049279a715fc1399bb9523fe88",
+      "size": 294
+    },
+    "README.md": {
+      "hash": "7386a18efe4c0025288cce2e99cce8c9",
+      "size": 1659
+    },
+    "SKILL.md": {
+      "hash": "811891a4e79407247cd8388a7939e2b6",
+      "size": 8690
+    },
+    "install.sh": {
+      "hash": "08ef7722bafdf05922c2d09a98d3c528",
+      "size": 2667
+    },
+    "scripts/auth_config.json": {
+      "hash": "64cbcc897cf3f21ecd31952e5caea2bd",
+      "size": 6329
+    },
+    "scripts/auth_guard.py": {
+      "hash": "f68e3744cd591805b14ac1f796846c0e",
+      "size": 4550
+    },
+    "scripts/config.py": {
+      "hash": "bd09d54ce069d8bac52d83d8f10a6078",
+      "size": 2458
+    },
+    "scripts/db_client.py": {
+      "hash": "2bf3e41146d6e7ec8ac7d4454ce035a3",
+      "size": 20618
+    },
+    "scripts/diagnostics.py": {
+      "hash": "ed9b43479cf65a595d1dca9206f08476",
+      "size": 8455
+    },
+    "scripts/feedback_client.py": {
+      "hash": "f0587b046de3f032e89edba43eb7b615",
+      "size": 12706
+    },
+    "scripts/generate_manifest.py": {
+      "hash": "06d29ecd0c4b559b6f3f339da8077073",
+      "size": 3848
+    },
+    "scripts/handler.py": {
+      "hash": "30f908d671021330d630c88f9d2d32d6",
+      "size": 16981
+    },
+    "scripts/message_processor.py": {
+      "hash": "cca910caeeab9edcc1a08bf3aa17c89c",
+      "size": 532
+    },
+    "scripts/org_resolver.py": {
+      "hash": "a4ae387beb2e1adec71e3b5505fd84a9",
+      "size": 8021
+    },
+    "scripts/sync_client.py": {
+      "hash": "5ceaf26f48080672d23a93b5c7ed687f",
+      "size": 7043
+    },
+    "tests/__init__.py": {
+      "hash": "68b329da9893e34099c7d8ad5cb9c940",
+      "size": 1
+    },
+    "tests/test_db_client.py": {
+      "hash": "5f48ec5ffe5bde0eb9f3372ebd003935",
+      "size": 13144
+    },
+    "tests/test_diagnostics.py": {
+      "hash": "47eacb8fd8d0390c1a9eec61c8a85f0f",
+      "size": 5290
+    }
+  }
+}

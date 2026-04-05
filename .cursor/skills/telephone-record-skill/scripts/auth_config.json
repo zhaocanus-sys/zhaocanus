@@ -1,0 +1,222 @@
+{
+  "_version": "1.0",
+  "_note": "从 zhenai-api/config/users.json 导入，去除 password_hash，新增 can_view_sensitive",
+  "users": {
+    "zhao_boss": {
+      "name": "赵总",
+      "api_key": "za_1792d80ab9b774913fd26ca46fb14a13",
+      "role": "super_admin",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "luoyang": {
+      "name": "罗阳",
+      "api_key": "za_092f847411d4c885bab65886fdddc9cf",
+      "role": "director",
+      "teams": ["telesale", "wechat_archive"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "test_jianxin": {
+      "name": "建信测试",
+      "api_key": "za_427931be0c613701390ee37a780b6b46",
+      "role": "dept_manager",
+      "teams": ["jianxin"],
+      "depts": ["深圳网销"],
+      "data_scope": "dept_only"
+    },
+    "test_hongniang": {
+      "name": "红娘测试",
+      "api_key": "za_fadaf01620d2531bae8edaf2e4dec693",
+      "role": "dept_manager",
+      "teams": ["hongniang"],
+      "depts": ["深圳红娘一部 曹世迪"],
+      "data_scope": "dept_only"
+    },
+    "wangyiwen": {
+      "name": "王溢文",
+      "api_key": "za_57448ead054f00ceb2e4939363f0e233",
+      "role": "admin",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "zhangkang": {
+      "name": "张康",
+      "api_key": "za_c96f4189d76262865c47326d442c96f1",
+      "role": "admin",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "zengwei": {
+      "name": "曾伟",
+      "api_key": "za_96eab73cb05d0286a24906cd1b23483d",
+      "role": "admin",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "zhangmiao": {
+      "name": "张苗",
+      "api_key": "za_1c4b068c992a08c01f330f5505bccd14",
+      "role": "director",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "tianxiaoying": {
+      "name": "田小英",
+      "api_key": "za_b6795a6e34dab8fffb6fe16d7f5b4965",
+      "role": "admin",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "wangzhe": {
+      "name": "王喆",
+      "api_key": "za_127f77582bdde2d21f66de2f6b8b8f40",
+      "role": "director",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "chenliangxiu": {
+      "name": "陈亮秀",
+      "api_key": "za_1482n7806ee79bb6d6d89173f294b5uq",
+      "role": "admin",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "xiaosuining": {
+      "name": "肖遂宁",
+      "api_key": "za_5e3ed1a2615da49fca40c399a1cbace6",
+      "role": "admin",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "xiangfulang": {
+      "name": "项拂朗",
+      "api_key": "za_83162cbb42861cbd94a689a87bbd4b71",
+      "role": "admin",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "zhaojinsong": {
+      "name": "赵劲松",
+      "api_key": "za_bafab5db10e3bc549db66e252ecb3066",
+      "role": "director",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "jiangzong": {
+      "name": "姜总",
+      "api_key": "za_94ebb44d3ae23b4b5455bcb357452303",
+      "role": "director",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "zhangshijie": {
+      "name": "张世杰",
+      "api_key": "za_f9750797ce4b0a0af7fae9548b910800",
+      "role": "director",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "chengpujuan": {
+      "name": "程朴娟",
+      "api_key": "za_1eaccd249ed13ad0b2f5b223a116b06d",
+      "role": "director",
+      "teams": ["jianxin", "wechat_archive"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "zhangxinrui": {
+      "name": "张心蕊",
+      "api_key": "za_14e264e388aa65181d47cb0c44949312",
+      "role": "director",
+      "teams": ["hongniang", "wechat_archive"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "jianglinfu": {
+      "name": "姜麟复",
+      "api_key": "za_08b6e07f4744e2c406de4aef0afbbafc",
+      "role": "director",
+      "teams": ["app", "qyh", "xfh"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "shenxiaojuan": {
+      "name": "沈小娟",
+      "api_key": "za_ff0bf8d2eac999ceea49eb9f99fc5ba2",
+      "role": "admin",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "dingdanyang": {
+      "name": "丁丹阳",
+      "api_key": "za_5525f22f3e5c3546a83f01ed19bc5a99",
+      "role": "director",
+      "teams": ["app", "qyh", "advertising", "jianxin", "telesale"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "lizileng": {
+      "name": "李梓棱",
+      "api_key": "za_6d7573cfc6898f532ef937700d49e57f",
+      "role": "director",
+      "teams": ["app", "qyh", "advertising", "jianxin", "telesale"],
+      "depts": ["all"],
+      "data_scope": "all"
+    },
+    "test_all": {
+      "name": "全权限测试账号",
+      "api_key": "za_a109683cae5447b685f8ff9ea52637d7",
+      "role": "admin",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    }
+  },
+  "roles": {
+    "super_admin": {
+      "description": "超级管理员，全部数据，可查看敏感内容",
+      "can_query_raw": true,
+      "can_manage_users": true,
+      "can_view_sensitive": true
+    },
+    "admin": {
+      "description": "管理员，全部数据",
+      "can_query_raw": true,
+      "can_manage_users": true,
+      "can_view_sensitive": false
+    },
+    "director": {
+      "description": "总监级，可看多个团队",
+      "can_query_raw": false,
+      "can_manage_users": false,
+      "can_view_sensitive": false
+    },
+    "dept_manager": {
+      "description": "部门经理，仅看本部门",
+      "can_query_raw": false,
+      "can_manage_users": false,
+      "can_view_sensitive": false
+    },
+    "worker": {
+      "description": "普通员工，仅看个人数据",
+      "can_query_raw": false,
+      "can_manage_users": false,
+      "can_view_sensitive": false
+    }
+  }
+}
