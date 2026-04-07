@@ -1,0 +1,227 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+环境与数据库连通性诊断
+面向非技术用户输出明确的失败原因和下一步动作
+"""
+from __future__ import annotations
+
+import importlib.util
+from dataclasses import dataclass
+from typing import Iterable, List
+
+from config import RECORDING_TYPES
+
+
+STATUS_ICONS = {
+    "ok": "✅",
+    "warning": "⚠️ ",
+    "error": "❌",
+    "info": "ℹ️ ",
+}
+
+
+@dataclass
+class CheckResult:
+    name: str
+    status: str
+    summary: str
+    action: str = ""
+    details: str = ""
+
+
+def render_report(results: Iterable[CheckResult], title: str = "环境诊断") -> str:
+    lines = [f"=== {title} ==="]
+    for result in results:
+        icon = STATUS_ICONS.get(result.status, "-")
+        lines.append(f"{icon} {result.name}: {result.summary}")
+        if result.action:
+            lines.append(f"   下一步: {result.action}")
+        if result.details:
+            lines.append(f"   详情: {result.details}")
+    return "\n".join(lines)
+
+
+def _module_exists(module_name: str) -> bool:
+    return importlib.util.find_spec(module_name) is not None
+
+
+def check_auth_status() -> CheckResult:
+    """检查 API Key 鉴权配置状态（本地校验模式）。"""
+    import json
+    import os
+    from pathlib import Path
+
+    script_dir = Path(__file__).resolve().parent
+    config_file = script_dir / "auth_config.json"
+
+    if not config_file.exists():
+        return CheckResult(
+            name="鉴权配置",
+            status="error",
+            summary="auth_config.json 未找到。",
+            action=f"请确认 {config_file} 存在。",
+        )
+
+    try:
+        config = json.loads(config_file.read_text(encoding="utf-8"))
+        user_count = len(config.get("users", {}))
+        role_count = len(config.get("roles", {}))
+    except (json.JSONDecodeError, OSError) as e:
+        return CheckResult(
+            name="鉴权配置",
+            status="error",
+            summary=f"auth_config.json 解析失败: {e}",
+            action="检查文件格式是否为合法 JSON。",
+        )
+
+    api_key = os.environ.get("ZHENAI_API_KEY", "").strip()
+    source = "环境变量"
+    if not api_key:
+        key_file = Path.home() / ".zhenai-skills" / "api_key"
+        if key_file.exists():
+            api_key = key_file.read_text(encoding="utf-8-sig").strip()
+            source = f"文件 {key_file}"
+
+    if not api_key:
+        return CheckResult(
+            name="鉴权配置",
+            status="warning",
+            summary=f"配置正常（{user_count} 用户, {role_count} 角色），但未设置 API Key。",
+            action="设置环境变量 ZHENAI_API_KEY=za_xxx 或写入 ~/.zhenai-skills/api_key",
+        )
+
+    if not api_key.startswith("za_"):
+        return CheckResult(
+            name="鉴权配置",
+            status="warning",
+            summary=f"API Key 格式异常（来源: {source}），应以 za_ 开头。",
+            action="请确认使用正确的 API Key（格式 za_xxx）。",
+        )
+
+    matched_user = None
+    for username, user_data in config.get("users", {}).items():
+        if user_data.get("api_key") == api_key:
+            matched_user = (username, user_data)
+            break
+
+    if not matched_user:
+        return CheckResult(
+            name="鉴权配置",
+            status="error",
+            summary=f"API Key 在配置中未找到（来源: {source}）。",
+            action="确认 API Key 正确，或联系管理员更新 auth_config.json。",
+        )
+
+    username, user_data = matched_user
+    role = user_data.get("role", "")
+    role_info = config.get("roles", {}).get(role, {})
+    teams = user_data.get("teams", [])
+    teams_str = "全部" if "all" in teams else ", ".join(teams)
+    perms = []
+    if role_info.get("can_query_raw"):
+        perms.append("自由SQL")
+    if role_info.get("can_view_sensitive"):
+        perms.append("敏感数据")
+    perms_str = ", ".join(perms) if perms else "基础查询"
+
+    return CheckResult(
+        name="鉴权配置",
+        status="ok",
+        summary=f"本地校验通过 — {user_data.get('name', username)} ({role})，团队: {teams_str}，权限: {perms_str}。",
+    )
+
+
+def check_local_dependencies() -> List[CheckResult]:
+    deps = [
+        ("pymysql", "MySQL 数据库访问"),
+    ]
+    results: List[CheckResult] = []
+    for module_name, label in deps:
+        exists = _module_exists(module_name)
+        results.append(
+            CheckResult(
+                name=f"依赖 {module_name}",
+                status="ok" if exists else "error",
+                summary=f"{label} {'已安装' if exists else '未安装'}。",
+                action="" if exists else f"执行 python -m pip install {module_name}",
+            )
+        )
+    return results
+
+
+def check_mysql_connection() -> CheckResult:
+    """测试 MySQL 数据库连通性"""
+    try:
+        from recording_client import RecordingClient
+        client = RecordingClient()
+        ok = client.ping()
+        client.close()
+        if ok:
+            return CheckResult(
+                name="数据库连接",
+                status="ok",
+                summary="MySQL 连接正常。",
+            )
+        return CheckResult(
+            name="数据库连接",
+            status="error",
+            summary="MySQL 连接失败。",
+            action="确认网络、VPN 或数据库白名单权限是否已开通。",
+        )
+    except Exception as e:
+        return CheckResult(
+            name="数据库连接",
+            status="error",
+            summary="MySQL 连接异常。",
+            action="确认 pymysql 已安装，且网络可达数据库服务器。",
+            details=str(e),
+        )
+
+
+def check_all_tables() -> List[CheckResult]:
+    """逐一检测 6 张录音表的可访问性"""
+    results: List[CheckResult] = []
+    try:
+        from recording_client import RecordingClient
+        client = RecordingClient()
+        for key in RECORDING_TYPES:
+            info = RECORDING_TYPES[key]
+            ok, msg = client.probe_table(key)
+            results.append(
+                CheckResult(
+                    name=f"表 {info['label']}",
+                    status="ok" if ok else "error",
+                    summary=msg,
+                    action="" if ok else "确认数据库用户是否有该表的读权限。",
+                )
+            )
+        client.close()
+    except Exception as e:
+        results.append(
+            CheckResult(
+                name="录音表检测",
+                status="error",
+                summary="无法执行表检测。",
+                details=str(e),
+            )
+        )
+    return results
+
+
+def run_setup_checks() -> List[CheckResult]:
+    """安装环境检查：鉴权 + 依赖是否就绪"""
+    results = [check_auth_status()]
+    results.extend(check_local_dependencies())
+    return results
+
+
+def run_runtime_checks() -> List[CheckResult]:
+    """运行时检查：数据库连通性 + 各表可访问性"""
+    results: List[CheckResult] = []
+    conn_result = check_mysql_connection()
+    results.append(conn_result)
+    if conn_result.status == "error":
+        return results
+    results.extend(check_all_tables())
+    return results

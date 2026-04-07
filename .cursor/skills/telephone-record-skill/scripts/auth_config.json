@@ -1,0 +1,46 @@
+{
+  "_version": "1.0",
+  "_note": "勿将含真实 api_key 的文件提交到 Git。请从内部安全渠道获取完整配置，或使用环境变量 ZHENAI_API_KEY 或 ~/.zhenai-skills/api_key。",
+  "users": {
+    "local_dev": {
+      "name": "本地开发",
+      "api_key": "za_REPLACE_ME",
+      "role": "super_admin",
+      "teams": ["all"],
+      "depts": ["all"],
+      "data_scope": "all"
+    }
+  },
+  "roles": {
+    "super_admin": {
+      "description": "超级管理员，全部数据，可查看敏感内容",
+      "can_query_raw": true,
+      "can_manage_users": true,
+      "can_view_sensitive": true
+    },
+    "admin": {
+      "description": "管理员，全部数据",
+      "can_query_raw": true,
+      "can_manage_users": true,
+      "can_view_sensitive": false
+    },
+    "director": {
+      "description": "总监级，可看多个团队",
+      "can_query_raw": false,
+      "can_manage_users": false,
+      "can_view_sensitive": false
+    },
+    "dept_manager": {
+      "description": "部门经理，仅看本部门",
+      "can_query_raw": false,
+      "can_manage_users": false,
+      "can_view_sensitive": false
+    },
+    "worker": {
+      "description": "普通员工，仅看个人数据",
+      "can_query_raw": false,
+      "can_manage_users": false,
+      "can_view_sensitive": false
+    }
+  }
+}

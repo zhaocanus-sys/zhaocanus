@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-04-04T03:54:33Z",
+  "files": {
+    ".githooks/pre-commit": {
+      "hash": "518fd40af391257e674908fa0b00fcf7",
+      "size": 334
+    },
+    ".gitignore": {
+      "hash": "d753b15863cb9c2b2e6d407760ceadfb",
+      "size": 332
+    },
+    "01-install.command": {
+      "hash": "dbd1ed536da7e49eec7a857e915411a1",
+      "size": 677
+    },
+    "02-doctor.command": {
+      "hash": "126a6719dea836c6c515d15f8f6aa4e2",
+      "size": 786
+    },
+    "03-query.command": {
+      "hash": "7eb76e44ce228fb1f2d3278eb57ef03d",
+      "size": 491
+    },
+    "BP-START-HERE.md": {
+      "hash": "2fa63b51de26a6612724a805d39a80ec",
+      "size": 680
+    },
+    "README.md": {
+      "hash": "959a57568b02a6977a8cdc5bea6c3129",
+      "size": 2093
+    },
+    "SKILL.md": {
+      "hash": "17b92d6b496dedcfb939ef2b1a464bc7",
+      "size": 11165
+    },
+    "install.sh": {
+      "hash": "d0239cd93eff8f17fd61a5fb15bcbe89",
+      "size": 2502
+    },
+    "scripts/auth_config.json": {
+      "hash": "64cbcc897cf3f21ecd31952e5caea2bd",
+      "size": 6329
+    },
+    "scripts/auth_guard.py": {
+      "hash": "f68e3744cd591805b14ac1f796846c0e",
+      "size": 4550
+    },
+    "scripts/config.py": {
+      "hash": "44e567a5d82db528ed30738153c1f115",
+      "size": 7659
+    },
+    "scripts/diagnostics.py": {
+      "hash": "8995698c4a854c5303f2d56b72a8bfd1",
+      "size": 7497
+    },
+    "scripts/feedback_client.py": {
+      "hash": "f0587b046de3f032e89edba43eb7b615",
+      "size": 12706
+    },
+    "scripts/generate_manifest.py": {
+      "hash": "3d12f3b65b2e3e44e243b8403008f6ae",
+      "size": 2936
+    },
+    "scripts/handler.py": {
+      "hash": "77dac84ef01db19de929c6f12e0a49a0",
+      "size": 18030
+    },
+    "scripts/recording_client.py": {
+      "hash": "8210c7f7983a56f6a6de05e03486aa2b",
+      "size": 11809
+    },
+    "scripts/sync_client.py": {
+      "hash": "47f0d39fd6c1ab11f3d93c19cc08d746",
+      "size": 5276
+    }
+  }
+}
