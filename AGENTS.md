@@ -31,3 +31,8 @@
 
 ### lint / 测试
 项目无自动化测试框架和 linter 配置。可使用 `python3 -m py_compile <file>` 做语法检查。验证方式为运行报告生成脚本并检查输出 HTML。
+
+### Cloud VM 注意事项
+- 运行报告时始终加 `--no-email` 参数，Cloud VM 的 SMTP 连接会因 SSL 问题失败（不影响 HTML 报告生成）。
+- `generate_hongniang_full_report.py` 在 API 返回 0 行数据时会崩溃（`ValueError: max() iterable argument is empty`），这是已有代码 bug，非环境问题。
+- 数据 API 在周末/节假日可能无数据返回（rows=0），报告仍会生成但内容为空值。
