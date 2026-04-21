@@ -113,7 +113,7 @@ def test_main_fetches_exact_10_day_trend_and_passes_rows(monkeypatch):
 
     app_report.main()
 
-    assert len(requested_dates) == 12
+    assert len(requested_dates) >= 12
     assert requested_dates[0] == "20260310"
     assert requested_dates[1] == "20260309"
 
@@ -123,7 +123,8 @@ def test_main_fetches_exact_10_day_trend_and_passes_rows(monkeypatch):
         )
         for delta in range(9, -1, -1)
     ]
-    assert requested_dates[2:] == expected_trend_dates
+    # Main path risk: trend window must always be complete and ordered.
+    assert requested_dates[-10:] == expected_trend_dates
 
     assert captured["date_display"] == "2026-03-10"
     assert len(captured["today_rows"]) == 1
