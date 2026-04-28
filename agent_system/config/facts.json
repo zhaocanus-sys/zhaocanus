@@ -33,8 +33,8 @@
     "user": "zhao_boss",
     "role": "admin",
     "data_scope": "all",
-    "query_script": ".cursor/skills/compass-skills-service/scripts/query.py",
-    "knowledge_file": ".cursor/skills/compass-skills-service/knowledge.md"
+    "skill_gateway": ".cursor/skills/zhenai-biz-skills/SKILL.md",
+    "skill_gateway_sync": ".cursor/skills/zhenai-biz-skills/scripts/sync_required_files.py"
   },
   "default_recipients": {
     "report_to": "zhao.can@zhenai.com",
