@@ -33,7 +33,7 @@ class SparklineSvgTests(unittest.TestCase):
 
         self.assertIn("<polyline", svg)
         self.assertIn("<circle", svg)
-        self.assertIn("1.0,1.0 30.0,1.0 59.0,1.0", svg)
+        self.assertIn("1.0,21.0 30.0,21.0 59.0,21.0", svg)
 
 
 class TrendExtractionTests(unittest.TestCase):
