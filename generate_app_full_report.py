@@ -122,6 +122,19 @@ def build_trend_data(trend_rows):
     return result
 
 
+def fetch_app_trend_rows(date, fetch_daily=daily):
+    """Fetch the report date and previous 9 days, tagging rows with their date."""
+    trend_rows = []
+    base_dt = datetime.datetime.strptime(date, "%Y%m%d")
+    for delta in range(9, -1, -1):
+        d = (base_dt - datetime.timedelta(days=delta)).strftime("%Y%m%d")
+        resp = fetch_daily("app", d)
+        for row in parse_rows(resp):
+            row["ftime"] = d
+            trend_rows.append(row)
+    return trend_rows
+
+
 def generate_html(today_rows, prev_rows, trend_rows_raw, date_display):
     t = agg_app(today_rows)
     p = agg_app(prev_rows) if prev_rows else {}
@@ -609,20 +622,10 @@ def main():
     print(f"[APP报告] 拉取数据 {DATE}...")
     resp_today = daily("app", DATE)
     resp_prev = daily("app", prev_date(DATE))
-    resp_trend = daily("app", DATE)  # Re-use; trend from last 10 days via multiple queries
 
     rows_today = parse_rows(resp_today)
     rows_prev = parse_rows(resp_prev)
-
-    # Build trend from multiple day queries
-    trend_rows = []
-    base_dt = datetime.datetime.strptime(DATE, "%Y%m%d")
-    for delta in range(9, -1, -1):
-        d = (base_dt - datetime.timedelta(days=delta)).strftime("%Y%m%d")
-        r = daily("app", d)
-        for row in parse_rows(r):
-            row["ftime"] = d
-            trend_rows.append(row)
+    trend_rows = fetch_app_trend_rows(DATE)
 
     print(f"[APP报告] 今日行数: {len(rows_today)}, 昨日: {len(rows_prev)}, 趋势: {len(trend_rows)}")
 
