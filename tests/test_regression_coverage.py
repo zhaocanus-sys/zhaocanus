@@ -154,7 +154,7 @@ class SparklineRegressionTests(unittest.TestCase):
         self.assertEqual(sparkline_svg([None, 3]), "")
 
         flat = sparkline_svg([5, None, 5], width=10, height=6, fill=False)
-        self.assertIn('<polyline points="1.0,1.0 9.0,1.0"', flat)
+        self.assertIn('<polyline points="1.0,5.0 9.0,5.0"', flat)
         self.assertIn('fill="#16a34a"', flat)
         self.assertNotIn("<polygon", flat)
 
