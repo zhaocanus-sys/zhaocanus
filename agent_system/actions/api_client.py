@@ -48,6 +48,8 @@ def safe_int(v, d=0): return int(safe_float(v, d))
 def parallel_fetch(calls):
     from concurrent.futures import ThreadPoolExecutor, as_completed
     results = [None] * len(calls)
+    if not calls:
+        return results
     with ThreadPoolExecutor(max_workers=min(len(calls), 8)) as ex:
         future_map = {ex.submit(fn): i for i, fn in enumerate(calls)}
         for future in as_completed(future_map):
