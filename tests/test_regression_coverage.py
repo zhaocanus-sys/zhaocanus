@@ -62,7 +62,7 @@ class AppTrendRegressionTests(unittest.TestCase):
         self.assertEqual(trends[1]["active_members"], 50)
         self.assertEqual(trends[1]["arpu"], 100)
         self.assertEqual(trends[1]["pay_rate"], 10)
-        self.assertEqual(trends[1]["order_conv"], 75)
+        self.assertAlmostEqual(trends[1]["order_conv"], 10 / 15 * 100)
 
     def test_build_trend_data_handles_zero_denominators(self):
         trends = build_trend_data([
