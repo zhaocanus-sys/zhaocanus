@@ -47,6 +47,9 @@ class ReportSparklineTests(unittest.TestCase):
 
 
 class ParallelFetchTests(unittest.TestCase):
+    def test_parallel_fetch_returns_empty_list_for_no_calls(self):
+        self.assertEqual([], parallel_fetch([]))
+
     def test_parallel_fetch_preserves_call_order_despite_completion_order(self):
         def slow_first():
             time.sleep(0.03)
