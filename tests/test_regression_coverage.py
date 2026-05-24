@@ -1,4 +1,5 @@
 import datetime
+import io
 import unittest
 from unittest import mock
 
@@ -164,6 +165,7 @@ class AppFullReportTests(unittest.TestCase):
             return "<html></html>"
 
         with mock.patch.object(generate_app_full_report.sys, "argv", ["cmd", "--date", "2026-02-27"]), \
+             mock.patch.object(generate_app_full_report.sys, "stdout", new_callable=io.StringIO), \
              mock.patch.object(generate_app_full_report, "daily", side_effect=fake_daily), \
              mock.patch.object(generate_app_full_report, "generate_html", side_effect=fake_generate_html), \
              mock.patch.object(generate_app_full_report, "export_html", return_value="/tmp/report.html"), \
