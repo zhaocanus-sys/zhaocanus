@@ -291,6 +291,8 @@ def build_trend_data(trend_rows):
         t["arpu"] = t["amt"] / t["pay_num"] if t["pay_num"] > 0 else 0
         t["pay_rate"] = (t["pay_num"] / t["active_members"] * 100
                          if t["active_members"] > 0 else 0)
+        t["refund_rate"] = (t["refund_money"] / t["amt"] * 100
+                            if t["amt"] > 0 else 0)
         t["order_conv"] = (t["order_pay"] / t["order_cnt"] * 100
                            if t["order_cnt"] > 0 else 0)
         result.append(t)
