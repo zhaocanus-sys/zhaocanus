@@ -573,10 +573,24 @@ class DataCollisionEngine:
         检测10天内部门关键指标是否持续低于红线且无改善趋势。
         连续>=7天无改善 → P0升级 + 绩效挂钩处罚建议。
         """
-        if len(trends) < 5:
+        if len(trends) < 7:
             return
 
-        red_lines = {"cr": 43, "dr": 18, "conv": 1.0}
+        cr_red_line = 43
+
+        def connect_rate_of(row, default=50):
+            return row.get("connect_rate", row.get("cr", default))
+
+        def longest_below_redline(rows, default=50):
+            longest = 0
+            current = 0
+            for row in rows:
+                if connect_rate_of(row, default) < cr_red_line:
+                    current += 1
+                    longest = max(longest, current)
+                else:
+                    current = 0
+            return longest
 
         by_dept_trend = defaultdict(list)
         for t in trends:
@@ -584,11 +598,17 @@ class DataCollisionEngine:
                 for dt in t["dept_trends"]:
                     by_dept_trend[dt["dept_name"]].append(dt)
 
+        global_cr_below_days = longest_below_redline(trends)
+
         for d in depts:
             dn = d["dept_name"]
-            cr_below_count = sum(1 for t in trends if t.get("cr", 50) < 43)
+            dept_trend = by_dept_trend.get(dn)
+            cr_below_count = (
+                longest_below_redline(dept_trend, default=d.get("connect_rate", 50))
+                if dept_trend else global_cr_below_days
+            )
 
-            if d["connect_rate"] < 43 and cr_below_count >= 5:
+            if d["connect_rate"] < cr_red_line and cr_below_count >= 7:
                 mgr = self.dept_managers.get(dn, "")
                 mgr_str = f"({mgr})" if mgr else ""
                 days = cr_below_count
