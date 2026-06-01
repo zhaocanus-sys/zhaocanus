@@ -573,7 +573,7 @@ class DataCollisionEngine:
         检测10天内部门关键指标是否持续低于红线且无改善趋势。
         连续>=7天无改善 → P0升级 + 绩效挂钩处罚建议。
         """
-        if len(trends) < 5:
+        if len(trends) < 7:
             return
 
         red_lines = {"cr": 43, "dr": 18, "conv": 1.0}
@@ -584,11 +584,19 @@ class DataCollisionEngine:
                 for dt in t["dept_trends"]:
                     by_dept_trend[dt["dept_name"]].append(dt)
 
+        def _connect_rate(row):
+            return row.get("cr", row.get("connect_rate", row.get("connect_rate_pct", 50)))
+
         for d in depts:
             dn = d["dept_name"]
-            cr_below_count = sum(1 for t in trends if t.get("cr", 50) < 43)
+            dept_history = by_dept_trend.get(dn)
+            history = dept_history if dept_history else trends
+            if len(history) < 7:
+                continue
 
-            if d["connect_rate"] < 43 and cr_below_count >= 5:
+            cr_below_count = sum(1 for t in history if _connect_rate(t) < red_lines["cr"])
+
+            if d["connect_rate"] < red_lines["cr"] and cr_below_count >= 7:
                 mgr = self.dept_managers.get(dn, "")
                 mgr_str = f"({mgr})" if mgr else ""
                 days = cr_below_count
