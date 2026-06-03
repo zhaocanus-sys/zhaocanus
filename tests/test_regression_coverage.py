@@ -33,6 +33,7 @@ def _base_dept(**overrides):
         "connect_rate": 38,
         "avg_connect_dur": 180,
         "allocated": 1000,
+        "conversion_rate": 1.5,
         "avg_deal_amount": 5000,
     }
     dept.update(overrides)
