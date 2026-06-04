@@ -286,12 +286,18 @@ def build_trend_data(trend_rows):
         t = {"dt": day[:4] + "-" + day[4:6] + "-" + day[6:8]}
         for k in ("amt", "pay_num", "active_members", "refund_money",
                    "retain_1d", "order_cnt", "order_pay", "anchmems",
-                   "giftmems", "fugou_amt"):
+                   "giftmems", "fugou_amt", "mems", "retain_7d"):
             t[k] = sum(safe_float(r.get(k)) for r in rows)
         t["arpu"] = t["amt"] / t["pay_num"] if t["pay_num"] > 0 else 0
         t["pay_rate"] = (t["pay_num"] / t["active_members"] * 100
                          if t["active_members"] > 0 else 0)
         t["order_conv"] = (t["order_pay"] / t["order_cnt"] * 100
                            if t["order_cnt"] > 0 else 0)
+        t["refund_rate"] = (t["refund_money"] / t["amt"] * 100
+                            if t["amt"] > 0 else 0)
+        t["retain_rate_1d"] = (t["retain_1d"] / t["mems"] * 100
+                               if t["mems"] > 0 else 0)
+        t["retain_rate_7d"] = (t["retain_7d"] / t["mems"] * 100
+                               if t["mems"] > 0 else 0)
         result.append(t)
     return result
