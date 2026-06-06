@@ -118,6 +118,7 @@ def build_trend_data(trend_rows):
             t[k] = sum(safe_float(r.get(k)) for r in rows)
         t["arpu"] = t["amt"] / t["pay_num"] if t["pay_num"] > 0 else 0
         t["pay_rate"] = t["pay_num"] / t["active_members"] * 100 if t["active_members"] > 0 else 0
+        t["refund_rate"] = t["refund_money"] / t["amt"] * 100 if t["amt"] > 0 else 0
         result.append(t)
     return result
 
@@ -208,7 +209,7 @@ def generate_html(today_rows, prev_rows, trend_rows_raw, date_display):
 <td style="padding:7px;font-size:12px;color:#dc2626">{bn}</td>
 <td style="padding:7px;text-align:right;font-size:12px;color:#dc2626">¥{ba/10000:.1f}万</td>
 <td style="padding:7px;text-align:center;font-size:12px;font-weight:700;color:#7c3aed">{ratio:.1f}x</td>
-<td style="padding:7px;font-size:11px;color:#475569">{'差距显著，{tn}设计值得{bn}借鉴：核心在钩子、价值感知、路径简化' if ratio>3 else '适度差距，关注产品价值传递是否清晰'}</td>
+<td style="padding:7px;font-size:11px;color:#475569">{f'差距显著，{tn}设计值得{bn}借鉴：核心在钩子、价值感知、路径简化' if ratio>3 else '适度差距，关注产品价值传递是否清晰'}</td>
 </tr>"""
 
     # ── BOTTOM5 product diagnosis ─────────────────────────────────────
@@ -609,7 +610,6 @@ def main():
     print(f"[APP报告] 拉取数据 {DATE}...")
     resp_today = daily("app", DATE)
     resp_prev = daily("app", prev_date(DATE))
-    resp_trend = daily("app", DATE)  # Re-use; trend from last 10 days via multiple queries
 
     rows_today = parse_rows(resp_today)
     rows_prev = parse_rows(resp_prev)
