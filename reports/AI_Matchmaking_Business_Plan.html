@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>珍爱网「知己 · AI 真人精准婚恋」商业计划书</title>
+<style>
+  :root{
+    --primary:#1a56db; --primary-2:#3b82f6; --ink:#0f172a; --ink2:#1e3a5f;
+    --bg:#f5f6f8; --card:#ffffff; --line:#e6e9ef; --muted:#64748b;
+    --green:#0f9d58; --green-bg:#e9f7ef; --red:#e11d48; --red-bg:#fdecef;
+    --amber:#b45309; --amber-bg:#fef3e2; --blue-bg:#eef4ff;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:'PingFang SC','Microsoft YaHei',-apple-system,Segoe UI,sans-serif;background:var(--bg);color:#1f2937;margin:0;padding:28px 16px;line-height:1.7;}
+  .container{max-width:1080px;margin:0 auto;}
+  .hero{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);color:#fff;padding:44px 40px;border-radius:16px;box-shadow:0 10px 30px rgba(15,23,42,.25);position:relative;overflow:hidden;}
+  .hero:before{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(59,130,246,.45),transparent 70%);}
+  .hero .tag{display:inline-block;font-size:13px;letter-spacing:1px;background:rgba(255,255,255,.14);padding:5px 14px;border-radius:999px;margin-bottom:16px;}
+  .hero h1{margin:0 0 14px;font-size:30px;font-weight:800;letter-spacing:.5px;}
+  .hero .lead{font-size:17px;line-height:1.8;opacity:.95;max-width:760px;margin:0 0 20px;}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13px;opacity:.85;border-top:1px solid rgba(255,255,255,.18);padding-top:16px;}
+  .hero .meta b{color:#bfdbfe;font-weight:600;}
+
+  .section{background:var(--card);border-radius:14px;padding:30px 32px;margin-top:22px;box-shadow:0 2px 10px rgba(15,23,42,.05);border:1px solid var(--line);}
+  .section h2{font-size:21px;color:var(--ink);margin:0 0 6px;display:flex;align-items:center;gap:10px;}
+  .section h2 .no{background:var(--primary);color:#fff;width:30px;height:30px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none;}
+  .section .sub{color:var(--muted);font-size:14px;margin:0 0 18px;padding-left:40px;}
+  h3{font-size:16px;color:var(--ink2);margin:22px 0 10px;}
+  p{margin:10px 0;}
+  ul{margin:10px 0;padding-left:22px;} li{margin:6px 0;}
+
+  .quote{background:linear-gradient(135deg,#eef4ff,#f8fbff);border-left:5px solid var(--primary);border-radius:10px;padding:18px 22px;font-size:17px;color:var(--ink2);font-weight:600;line-height:1.8;}
+
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:6px 0 0;}
+  .kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center;}
+  .kpi .v{font-size:24px;font-weight:800;color:var(--primary);}
+  .kpi .l{font-size:13px;color:var(--muted);margin-top:4px;}
+
+  .engines{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .engine{border-radius:14px;padding:22px;border:1px solid var(--line);}
+  .engine.know{background:linear-gradient(135deg,#eef4ff,#fff);border-top:4px solid var(--primary);}
+  .engine.real{background:linear-gradient(135deg,#e9f7ef,#fff);border-top:4px solid var(--green);}
+  .engine h3{margin-top:0;font-size:18px;}
+  .engine .pill{display:inline-block;font-size:12px;padding:3px 10px;border-radius:999px;margin-bottom:8px;font-weight:700;}
+  .engine.know .pill{background:var(--blue-bg);color:var(--primary);}
+  .engine.real .pill{background:var(--green-bg);color:var(--green);}
+
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:#f1f5fb;color:var(--ink2);font-weight:700;}
+  tbody tr:nth-child(even){background:#fafbfd;}
+
+  .flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0;}
+  .step{background:var(--primary);color:#fff;border-radius:10px;padding:10px 14px;font-size:13.5px;font-weight:600;}
+  .step.alt{background:var(--green);}
+  .arrow{color:var(--primary);font-weight:800;font-size:18px;}
+
+  .badge{display:inline-block;font-size:12px;font-weight:700;padding:3px 9px;border-radius:6px;}
+  .b-ok{background:var(--green-bg);color:var(--green);}
+  .b-no{background:var(--red-bg);color:var(--red);}
+  .b-warn{background:var(--amber-bg);color:var(--amber);}
+
+  .callout{border-radius:10px;padding:16px 18px;margin:14px 0;font-size:14.5px;line-height:1.75;}
+  .callout.danger{background:var(--red-bg);border-left:4px solid var(--red);color:#9f1239;}
+  .callout.key{background:var(--blue-bg);border-left:4px solid var(--primary);color:#1e40af;}
+
+  .challenge{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0;background:#fff;}
+  .challenge .q{font-weight:700;color:var(--red);margin-bottom:6px;}
+  .challenge .a{color:#374151;}
+  .challenge .a b{color:var(--green);}
+  .decide{background:linear-gradient(135deg,var(--ink),var(--ink2));color:#fff;border-radius:12px;padding:22px 24px;margin-top:18px;}
+  .decide h3{color:#bfdbfe;margin-top:0;}
+  .decide ol{margin:8px 0;padding-left:20px;} .decide li{margin:8px 0;}
+
+  .footer{text-align:center;color:var(--muted);font-size:13px;margin:26px 0 8px;}
+  @media(max-width:760px){.engines{grid-template-columns:1fr;}.hero{padding:30px 22px;}.section{padding:22px;}}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <span class="tag">战略级商业计划书 · V1.0 · 赵总待决断稿</span>
+    <h1>珍爱网「知己」—— AI 真人精准婚恋引擎</h1>
+    <p class="lead">别人靠红娘猜，我们让 <b>AI 懂你</b>、让 <b>真人核实他</b>——把每一次推荐，都变成经过核验的、真实的、精准的人。</p>
+    <div class="meta">
+      <span>定位：<b>AI 全程懂你 + 真人核实保真 双引擎</b></span>
+      <span>合规基线：<b>个保法 / 数据安全法 全程合规</b></span>
+      <span>经营基线：<b>轻资产 · 强算法 · 高转化 · 风险隔离</b></span>
+    </div>
+  </div>
+
+  <!-- 1 执行摘要 -->
+  <div class="section">
+    <h2><span class="no">1</span>执行摘要</h2>
+    <p class="sub">在婚恋行业信任跌至历史冰点的当下，谁解决"对面是不是真人、说的是不是真话"，谁就拿到下一个十年的入场券。</p>
+    <div class="kpis">
+      <div class="kpi"><div class="v">18.7%</div><div class="l">行业信任度（历史冰点）</div></div>
+      <div class="kpi"><div class="v">双引擎</div><div class="l">懂你 × 保真</div></div>
+      <div class="kpi"><div class="v">0 原始数据</div><div class="l">只取核验结论</div></div>
+      <div class="kpi"><div class="v">90/10</div><div class="l">存量稳健 / MVP 创新</div></div>
+    </div>
+    <table>
+      <tr><th>维度</th><th>内容</th></tr>
+      <tr><td>核心价值</td><td>① AI 全程最懂用户；② 全员经多源核验的"真实会员"；③ 推荐精准真人候选人</td></tr>
+      <tr><td>数据逻辑</td><td>珍爱网自有数据 + 合作平台<b>授权下的"凭证化核验结论"</b>（非原始数据对撞）+ 线下人工核实</td></tr>
+      <tr><td>合规护城河</td><td>用户主动授权 + 隐私计算（数据可用不可见）+ 数据最小化 + 独立合规实体隔离风险</td></tr>
+      <tr><td>商业模式</td><td>会员订阅 + 核验增值 + 红娘/约会服务 + B 端可信身份 API 分成</td></tr>
+      <tr><td>财务底线</td><td>单位经济为正、边际 ROI 可测，绝不动用 10 亿现金生命线</td></tr>
+    </table>
+  </div>
+
+  <!-- 2 痛点 -->
+  <div class="section">
+    <h2><span class="no">2</span>行业痛点与时间窗口</h2>
+    <p class="sub">婚恋行业正处在"信任崩塌"的战略转折点（10X 变化）。</p>
+    <ul>
+      <li><b>信任冰点</b>：消费者对婚恋平台信任度跌至约 18.7%。</li>
+      <li><b>真假难辨</b>：用户最大痛点不是"没人选"，而是"不知道对面是不是真人、是不是骗子"。</li>
+      <li><b>诈骗高发</b>：全行业年诈骗损失规模巨大，维权周期长、追回率低。</li>
+      <li><b>传统失效</b>：靠红娘"人海撮合"边际成本高、主观性强、不可规模化、难复制。</li>
+    </ul>
+    <div class="callout key"><b>结论：</b>行业核心矛盾已从"匹配效率"转向"真实性与信任"。这正是用 <b>AI（懂你）+ 核验（保真）</b> 重做一遍婚恋的历史性窗口。</div>
+  </div>
+
+  <!-- 3 双引擎 -->
+  <div class="section">
+    <h2><span class="no">3</span>产品核心理念：双引擎</h2>
+    <p class="sub">懂你引擎解决"懂不懂"，保真引擎解决"真不真"。</p>
+    <div class="engines">
+      <div class="engine know">
+        <span class="pill">引擎一</span>
+        <h3>懂你引擎 · AI Understanding</h3>
+        <ul>
+          <li><b>显性偏好</b>：用户主动填写的择偶条件。</li>
+          <li><b>隐性偏好</b>：从浏览/停留/聊天/约会反馈反推"真实的他"。</li>
+          <li><b>关系适配</b>：预测长期关系稳定性（价值观/节奏/消费观/家庭观）。</li>
+          <li><b>持续进化</b>：每次反馈回流，越用越懂你。</li>
+        </ul>
+      </div>
+      <div class="engine real">
+        <span class="pill">引擎二</span>
+        <h3>保真引擎 · Verification</h3>
+        <p>让每个展示的会员都是<b>经过分层核验的真实的人</b>，默认只输出"结论"，不展示明细，徽章展示由用户自主掌控。</p>
+      </div>
+    </div>
+    <h3>保真引擎五层核验</h3>
+    <table>
+      <tr><th>层级</th><th>核验内容</th><th>核验方式</th><th>用户授权</th></tr>
+      <tr><td>L1 实名真实</td><td>真人 / 实名 / 活体</td><td>国家网络身份认证 + 活体检测</td><td><span class="badge b-ok">是</span></td></tr>
+      <tr><td>L2 资料一致</td><td>年龄 / 婚况 / 学历</td><td>权威源比对返回"一致/不一致"</td><td><span class="badge b-ok">是</span></td></tr>
+      <tr><td>L3 稳定性信号</td><td>居住稳定 / 生活城市</td><td>合作平台授权返回脱敏结论标签</td><td><span class="badge b-ok">是</span></td></tr>
+      <tr><td>L4 经济与产权</td><td>收入区间 / 名下有房 / 在职</td><td>持牌征信·背调机构 + 客户授权</td><td><span class="badge b-warn">强授权</span></td></tr>
+      <tr><td>L5 线下核实</td><td>高价值会员实地核实</td><td>自有+众包核实员（滴滴接单式）</td><td><span class="badge b-ok">是</span></td></tr>
+    </table>
+  </div>
+
+  <!-- 4 数据逻辑（核心对撞） -->
+  <div class="section">
+    <h2><span class="no">4</span>数据逻辑：把"违法对撞"重构为"合规核验"</h2>
+    <p class="sub">全案最关键的一次对撞——保留"懂他、核实他"的灵魂，换掉"对撞原始数据"的躯壳。</p>
+    <div class="callout danger">
+      <b>最大破绽：</b>"汇总京东、滴滴、顺丰、百合佳缘的原始数据来对撞"——直接<b>违反《个人信息保护法》</b>，合作平台不会也不能交出原始数据，更会让珍爱网"VIP 信息被倒卖"的历史伤疤重演，<b>合规风险直接回流总部</b>（踩穿风险隔离红线）。
+    </div>
+    <div class="callout key">
+      <b>合规化重构：不取数据，只取结论；数据不出域，可用不可见。</b><br>
+      用户在珍爱网主动授权 → 权威平台/持牌机构在自有域内完成核验 → 仅回传最小化"核验结论"（是/否、区间、分段）。
+    </div>
+    <table>
+      <tr><th>合作/权威源</th><th>想了解的</th><th>合规获取（只取结论）</th><th>严禁的违法做法</th></tr>
+      <tr><td>国家网络身份认证</td><td>是否真实实名</td><td>返回"实名一致"</td><td><span class="badge b-no">抓取身份明细</span></td></tr>
+      <tr><td>京东（授权 API）</td><td>消费稳定性</td><td>"消费能力分段"（脱敏）</td><td><span class="badge b-no">拉取购物清单</span></td></tr>
+      <tr><td>滴滴（授权 API）</td><td>常驻城市/出行稳定</td><td>"常驻城市一致"</td><td><span class="badge b-no">拉取行程轨迹</span></td></tr>
+      <tr><td>顺丰（授权 API）</td><td>居住/工作稳定</td><td>"长期稳定收寄地（是/否）"</td><td><span class="badge b-no">拉取地址明细</span></td></tr>
+      <tr><td>百合佳缘（同业联防）</td><td>反欺诈/重复账号</td><td>黑名单"命中/未命中"</td><td><span class="badge b-no">共享会员库</span></td></tr>
+      <tr><td>持牌征信·背调</td><td>收入/产权/在职</td><td>"收入区间""名下有房(是/否)"</td><td><span class="badge b-no">自调征信/不动产明细</span></td></tr>
+    </table>
+    <p><b>技术兜底：</b>全部通过<b>隐私计算</b>实现——多方安全计算（MPC）、联邦学习、可信执行环境（TEE）、可验证凭证（VC）。原始数据永远停留在持有方域内，珍爱网只接收脱敏结论，<b>全程可审计、可追溯、可撤回</b>。</p>
+    <p><b>合作平台为何配合：</b>数据不出域、零合规风险，还能获得 API 调用分成；任一平台不开放，即<b>降级为"用户自证 + 线下核实"</b>，闭环不依赖单一外部方（弱依赖、强闭环）。</p>
+  </div>
+
+  <!-- 5 流程闭环 -->
+  <div class="section">
+    <h2><span class="no">5</span>产品全流程闭环（七步法）</h2>
+    <p class="sub">从授权到反馈回流，形成"越用越准"的数据飞轮。</p>
+    <div class="flow">
+      <span class="step">① 授权采集</span><span class="arrow">→</span>
+      <span class="step">② AI 理解</span><span class="arrow">→</span>
+      <span class="step">③ 多源核验对撞</span><span class="arrow">→</span>
+      <span class="step alt">④ 线下人工核实</span><span class="arrow">→</span>
+      <span class="step alt">⑤ 真实展示</span><span class="arrow">→</span>
+      <span class="step">⑥ 精准推荐</span><span class="arrow">→</span>
+      <span class="step">⑦ 反馈回流（飞轮）</span>
+    </div>
+    <p>推荐排序 = <b>懂你引擎 × 保真引擎</b>，优先推荐"高匹配 + 高核验"的真人候选人；任一核验源出现矛盾即触发"待核实"标记（反欺诈）。</p>
+  </div>
+
+  <!-- 6 商业模式 -->
+  <div class="section">
+    <h2><span class="no">6</span>商业模式与单位经济</h2>
+    <p class="sub">多元化变现，避免单一收入结构踩 80% 红线；分层核实控成本。</p>
+    <table>
+      <tr><th>收入线</th><th>说明</th><th>毛利特征</th></tr>
+      <tr><td>会员订阅</td><td>基础/进阶/尊享，解锁更深核验与更多推荐</td><td>高毛利、可预测</td></tr>
+      <tr><td>核验增值</td><td>深度背调/产权核验/线下核实，按次或套餐</td><td>中毛利、按需</td></tr>
+      <tr><td>红娘与约会服务</td><td>高净值用户一对一精选（轻资产服务营销）</td><td>中高毛利</td></tr>
+      <tr><td>B 端可信身份 API</td><td>向合作平台/同业输出"婚恋可信核验"能力分成</td><td>高毛利、规模化</td></tr>
+    </table>
+    <h3>成本与现金流（线下核实成本的对撞解法）</h3>
+    <ul>
+      <li><b>分层核实控成本</b>：L1–L3 自动完成、边际成本趋零；L4–L5 仅对高意向、愿付费用户触发，成本与收入直接挂钩。</li>
+      <li><b>众包核实网络（滴滴接单模式）</b>：核实员按单接活，轻资产、弹性扩张。</li>
+      <li><b>现金流红线</b>：边际 ROI 转正才放量，绝不动用 10 亿现金生命线（先子弹后炮弹）。</li>
+    </ul>
+  </div>
+
+  <!-- 7 合规风控 -->
+  <div class="section">
+    <h2><span class="no">7</span>合规与风险隔离架构（没有破绽的地基）</h2>
+    <p class="sub">把珍爱网从"被重点监管"变成"行业合规标杆"。</p>
+    <ul>
+      <li><b>独立合规实体</b>：核验/数据业务由独立主体承载，以 SaaS/API 与总部协作，<b>合规风险不回流总部</b>。</li>
+      <li><b>数据最小化与不落地</b>：只接收脱敏结论，原始数据不出持有方域。</li>
+      <li><b>全链路授权与可撤回</b>：每次核验都有明示授权记录，满足知情同意、目的限定、最小必要。</li>
+      <li><b>安全合规审计</b>：定期开展个人信息保护合规审计，留痕可追溯，主动对接监管。</li>
+      <li><b>反歧视与伦理底线</b>：核验定位"真实性"而非"财富排序"；展示徽章由用户自主掌控。</li>
+    </ul>
+  </div>
+
+  <!-- 8 对撞专章 -->
+  <div class="section">
+    <h2><span class="no">8</span>对撞逻辑专章（逐条挑战 → 化解）</h2>
+    <p class="sub">把每一个破绽逐条挑明并补上，确保"没有破绽"。</p>
+    <table>
+      <tr><th>#</th><th>破绽 / 质疑</th><th>化解方案</th></tr>
+      <tr><td>1</td><td>直接对撞京东/滴滴/顺丰原始数据 = 违法</td><td>重构为"授权 + 凭证化核验 + 隐私计算"，只取结论，数据不出域</td></tr>
+      <tr><td>2</td><td>合作平台不会交出数据</td><td>不要数据只要结论；数据不出域+API 分成；不开放则降级"用户自证+线下核实"</td></tr>
+      <tr><td>3</td><td>房产/公司核实涉合规与隐私</td><td>客户强授权 + 持牌背调出"是/否"结论，不展示明细</td></tr>
+      <tr><td>4</td><td>历史信息泄露伤疤会重演</td><td>数据不落地 + 隐私计算 + 独立合规实体 + 审计留痕</td></tr>
+      <tr><td>5</td><td>线下核实成本高、难规模化</td><td>分层核实（高意向才触发）+ 众包核实员轻资产</td></tr>
+      <tr><td>6</td><td>按收入/房产推荐 = 歧视/物化</td><td>定位"真实性核验"非"财富排序"，徽章由用户自主展示</td></tr>
+      <tr><td>7</td><td>冷启动没有合作数据</td><td>先用珍爱网海量存量跑通闭环，合作源逐步接入</td></tr>
+      <tr><td>8</td><td>用户不愿授权敏感信息</td><td>授权分级、价值可见、透明可撤回，用信任换授权</td></tr>
+      <tr><td>9</td><td>重资产投入冲击现金流</td><td>杠铃策略 90% 存量 + 10% MVP，边际 ROI 转正才放量</td></tr>
+      <tr><td>10</td><td>依赖外部大规模配合难落地</td><td>弱依赖设计，核心闭环由业务团队 + 合规伙伴自主推动</td></tr>
+    </table>
+  </div>
+
+  <!-- 9 路线图 -->
+  <div class="section">
+    <h2><span class="no">9</span>落地路径与三年路线图</h2>
+    <p class="sub">遵循"20 英里行军"：不因环境好冒进，不因环境差停步。</p>
+    <table>
+      <tr><th>阶段</th><th>关键动作</th><th>验证指标</th></tr>
+      <tr><td>MVP（基础验证）</td><td>珍爱网存量用户跑通 L1–L3 核验 + 双引擎推荐</td><td>核验渗透率、约会转化、信任净推荐值</td></tr>
+      <tr><td>扩张（规模化）</td><td>接入 1–2 个合作核验源 + 上线 L4 增值 + 众包核实网络</td><td>增值付费率、徽章覆盖率、单位经济转正</td></tr>
+      <tr><td>领导者（生态）</td><td>输出 B 端可信身份 API + 参与行业核验标准制定</td><td>API 分成收入、品牌信任回升、行业标杆</td></tr>
+    </table>
+    <h3>竞争壁垒</h3>
+    <ul>
+      <li><b>数据飞轮</b>：核验 + 反馈越多 → 模型越准 → 越吸引真实用户 → 自我强化。</li>
+      <li><b>核验网络</b>：合规核验源 + 线下众包网络，重资产对手难快速复制。</li>
+      <li><b>合规先发</b>：率先建立"凭证化核验"范式，把监管压力转化为准入壁垒。</li>
+      <li><b>信任品牌</b>：信任冰点行业里，"经过核实的真实"就是最稀缺的品牌资产。</li>
+    </ul>
+  </div>
+
+  <!-- 10 虚拟赵总质疑 -->
+  <div class="section">
+    <h2><span class="no">10</span>虚拟赵总质疑环节</h2>
+    <p class="sub">质疑维度：完善性 / 可行性 / 合理性 / 数据充分性 / 红线一致性。</p>
+
+    <div class="challenge">
+      <div class="q">质疑 1（红线一致性）：整合京东/滴滴/顺丰/百合佳缘数据，是不是又把合规风险引回总部、重蹈泄露覆辙？</div>
+      <div class="a"><b>回应：</b>是最大风险，已根本化解。不取原始数据、只取脱敏结论，隐私计算"可用不可见"，独立合规实体承载，风险不回流总部。</div>
+    </div>
+    <div class="challenge">
+      <div class="q">质疑 2（可行性）：合作平台凭什么把数据给珍爱网？</div>
+      <div class="a"><b>回应：</b>我们不要数据、只要"核验结论"。平台数据不出域、零合规风险还能 API 分成；不开放即降级"用户自证 + 线下核实"，闭环不依赖单一外部方。</div>
+    </div>
+    <div class="challenge">
+      <div class="q">质疑 3（现金流红线）：线下核实 + 技术投入会不会拖垮现金流？</div>
+      <div class="a"><b>回应：</b>分层核实（高意向才触发）+ 众包核实员轻资产；杠铃策略 90% 存量 + 10% MVP，边际 ROI 转正才放量，绝不碰 10 亿生命线。</div>
+    </div>
+    <div class="challenge">
+      <div class="q">质疑 4（合理性/伦理）：按收入、房产推荐，会不会变成"财富排序"、引发歧视与舆情？</div>
+      <div class="a"><b>回应：</b>定位是"真实性核验"而非"财富排序"，核验只输出真/假结论，展示哪些徽章由用户自主掌控，从价值观上规避物化与歧视。</div>
+    </div>
+
+    <div class="decide">
+      <h3>最终方案</h3>
+      <p>保留"AI 全程懂你 + 真人核实保真"的灵魂，把"原始数据对撞"重构为"授权 + 凭证化核验 + 隐私计算"，以独立合规实体 + 轻资产众包核实落地，先用珍爱网存量跑通 MVP，再逐步接入合作核验源。</p>
+      <h3>请赵总决断</h3>
+      <ol>
+        <li>是否认可"凭证化核验替代原始数据对撞"的合规重构主线？</li>
+        <li>MVP 是否先锁定珍爱网存量高净值会员，跑通 L1–L3 + 双引擎推荐？</li>
+        <li>是否启动独立合规实体的论证，以承载核验数据业务、隔离总部风险？</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="footer">
+    珍爱网「知己」AI 真人精准婚恋引擎 · 商业计划书 V1.0 · 赵总待决断稿<br>
+    本计划书可一键转为对外版本与邮件汇报，对外版本将自动剔除一切内部敏感措辞。
+  </div>
+
+</div>
+</body>
+</html>
