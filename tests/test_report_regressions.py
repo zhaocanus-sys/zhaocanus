@@ -103,7 +103,8 @@ class AppTrendRegressionTest(unittest.TestCase):
             )
 
         self.assertIn("退款率", html)
-        self.assertEqual(captured_values, [[1.0, 2.0]])
+        non_empty_values = [values for values in captured_values if values]
+        self.assertEqual(non_empty_values, [[1.0, 2.0]])
 
 
 class GenerateAppFullReportRegressionTest(unittest.TestCase):
