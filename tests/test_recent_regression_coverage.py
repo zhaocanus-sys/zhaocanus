@@ -143,15 +143,15 @@ class AppTrendRegressionTests(unittest.TestCase):
         captured = []
 
         def fake_sparkline(values, **kwargs):
-            captured.append(tuple(values))
+            captured.append((tuple(values), kwargs.get("color")))
             return "<sparkline/>"
 
         with patch("agent_system.actions.report_sparkline.sparkline_svg", side_effect=fake_sparkline):
             html = app_report_html.kpi_cards_html(metric, {}, trends)
 
         self.assertIn("<sparkline/>", html)
-        self.assertIn((20, 5), captured)
-        self.assertNotIn((100, 200), captured)
+        self.assertIn(((20, 5), "#dc2626"), captured)
+        self.assertNotIn(((100, 200), "#dc2626"), captured)
 
 
 class GenerateAppFullReportRegressionTests(unittest.TestCase):
