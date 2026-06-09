@@ -118,6 +118,7 @@ def build_trend_data(trend_rows):
             t[k] = sum(safe_float(r.get(k)) for r in rows)
         t["arpu"] = t["amt"] / t["pay_num"] if t["pay_num"] > 0 else 0
         t["pay_rate"] = t["pay_num"] / t["active_members"] * 100 if t["active_members"] > 0 else 0
+        t["refund_rate"] = t["refund_money"] / t["amt"] * 100 if t["amt"] > 0 else 0
         result.append(t)
     return result
 
@@ -609,7 +610,6 @@ def main():
     print(f"[APP报告] 拉取数据 {DATE}...")
     resp_today = daily("app", DATE)
     resp_prev = daily("app", prev_date(DATE))
-    resp_trend = daily("app", DATE)  # Re-use; trend from last 10 days via multiple queries
 
     rows_today = parse_rows(resp_today)
     rows_prev = parse_rows(resp_prev)
