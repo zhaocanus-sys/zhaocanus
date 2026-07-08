@@ -406,7 +406,7 @@ tr:hover td{{background:#fafafa}}
       <div style="font-size:12px;color:#555;line-height:1.7">
         <strong>现象：</strong>AI评分{t["avg_ai"]:.0f}分，话术同质化，缺乏社交验证植入<br>
         <strong>对撞：</strong>Cialdini的「社会认同原则」——人在不确定时看他人行为。在婚恋决策中最强效<br>
-        <strong>动作：</strong>每通深沟必须包含1条真实成功案例（「上周帮一位{{}age{}岁客户在3周内见面4次…」），AI评分检测此环节<br>
+        <strong>动作：</strong>每通深沟必须包含1条真实成功案例（「上周帮一位{{age}}岁客户在3周内见面4次…」），AI评分检测此环节<br>
         <strong>预估：</strong>签单转化率+3%→月增¥8万
       </div>
     </div>
