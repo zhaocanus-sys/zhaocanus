@@ -61,7 +61,7 @@ def kpi_cards_html(t, p, trends=None):
     trend_map = {}
     if trends and len(trends) >= 2:
         keys = {"active": "active_members", "pay_rate": "pay_rate", "arpu": "arpu",
-                "total_rev": "amt", "fugou_amt": "fugou_amt", "refund_rate": "refund_money",
+                "total_rev": "amt", "fugou_amt": "fugou_amt", "refund_rate": "refund_rate",
                 "order_conv": "order_conv", "retain_rate_1d": "retain_1d"}
         for card_key, trend_key in keys.items():
             vals = [tr.get(trend_key, 0) for tr in trends[-10:]]
