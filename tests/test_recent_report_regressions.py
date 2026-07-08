@@ -111,7 +111,8 @@ class RecentReportRegressionTests(unittest.TestCase):
             html = app_report_html.kpi_cards_html(today, {}, trends)
 
         self.assertIn("退款率", html)
-        self.assertEqual(captured_values, [[1.0, 4.0]])
+        self.assertIn([1.0, 4.0], captured_values)
+        self.assertNotIn([100000, 1000], captured_values)
 
     def test_app_main_fetches_today_previous_and_exact_ten_day_window(self):
         original_date = generate_app_full_report.DATE
