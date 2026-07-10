@@ -1,4 +1,5 @@
 import unittest
+from email import message_from_string
 from unittest.mock import patch
 
 from agent_system.actions import email_sender
@@ -41,7 +42,13 @@ class EmailSenderTests(unittest.TestCase):
         self.assertEqual(set(recipients), {"boss@example.com", "assistant@example.com"})
         self.assertIn("Data Expert <reports@example.com>", message)
         self.assertIn("Content-Type: text/html", message)
-        self.assertIn("<h1>ok</h1>", message)
+        parsed = message_from_string(message)
+        html_parts = [
+            part.get_payload(decode=True).decode(part.get_content_charset() or "utf-8")
+            for part in parsed.walk()
+            if part.get_content_type() == "text/html"
+        ]
+        self.assertEqual(html_parts, ["<h1>ok</h1>"])
 
     def test_send_report_email_defaults_to_ceo_and_assistant_contacts(self):
         contacts = {
