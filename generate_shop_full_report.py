@@ -123,8 +123,7 @@ def build_shop_data(rows):
                 total_realpay_m=0, deptsale_realpay_m=0,
             )
         s = shops[dn]
-        for k in ("total_realpay", "hn_realpay", "total_pay_num",
-                  "deptsale_shop_num", "sg_num", "link_num", "call_times",
+        for k in ("total_pay_num", "deptsale_shop_num", "sg_num", "link_num", "call_times",
                   "zaigang_rs", "allot_worker_num",
                   "leads_xyzout_3day", "leads_3day_allot_0day",
                   "leads_1day_allot_0day"):
