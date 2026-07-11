@@ -123,7 +123,7 @@ def build_shop_data(rows):
                 total_realpay_m=0, deptsale_realpay_m=0,
             )
         s = shops[dn]
-        for k in ("total_realpay", "hn_realpay", "total_pay_num",
+        for k in ("total_pay_num",
                   "deptsale_shop_num", "sg_num", "link_num", "call_times",
                   "zaigang_rs", "allot_worker_num",
                   "leads_xyzout_3day", "leads_3day_allot_0day",
@@ -137,14 +137,14 @@ def build_shop_data(rows):
 
     result = []
     for s in shops.values():
-        sg = s["sg_num"] or 1
-        lk = s["link_num"] or 1
-        w = s["zaigang_rs"] or 1
-        rev = s["total_realpay"] or 1
-        s["sign_rate"] = s["deptsale_shop_num"] / sg * 100
-        s["invite_conv"] = s["sg_num"] / lk * 100
-        s["per_rev"] = s["total_realpay"] / w
-        s["refund_rate"] = s["refund_money_d"] / rev * 100
+        sg = s["sg_num"]
+        lk = s["link_num"]
+        w = s["zaigang_rs"]
+        rev = s["total_realpay"]
+        s["sign_rate"] = s["deptsale_shop_num"] / sg * 100 if sg > 0 else 0
+        s["invite_conv"] = s["sg_num"] / lk * 100 if lk > 0 else 0
+        s["per_rev"] = s["total_realpay"] / w if w > 0 else 0
+        s["refund_rate"] = s["refund_money_d"] / rev * 100 if rev > 0 else 0
         result.append(s)
     return sorted(result, key=lambda x: x["total_realpay"], reverse=True)
 

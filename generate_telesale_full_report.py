@@ -129,7 +129,7 @@ def generate_html(today_rows, prev_rows, date_display):
         ("接通→深沟", t["links"], t["deep"], t["deep_rate"], 30),
         ("深沟→签单", t["deep"], t["signed"], t["conv_rate"], 10),
     ]
-    worst_idx = min(range(len(funnel_losses)), key=lambda i: funnel_losses[i][2] / funnel_losses[i][4])
+    worst_idx = min(range(len(funnel_losses)), key=lambda i: funnel_losses[i][3] / funnel_losses[i][4])
 
     def funnel_box(label, num_in, num_out, rate, thresh, idx):
         is_bottleneck = (idx == worst_idx)
