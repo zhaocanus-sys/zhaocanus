@@ -126,10 +126,10 @@ class TelesaleFunnelTests(unittest.TestCase):
             "2026-02-27",
         )
 
-        self.assertIn("外呼→接通", html)
-        self.assertIn("外呼→接通<span", html)
+        self.assertIn("接通率", html)
+        self.assertIn("接通率<span", html)
         self.assertIn("最大瓶颈", html)
-        self.assertNotIn("深沟→签单<span", html)
+        self.assertNotIn("签单转化率<span", html)
 
 
 if __name__ == "__main__":
