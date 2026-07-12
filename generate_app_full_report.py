@@ -609,7 +609,6 @@ def main():
     print(f"[APP报告] 拉取数据 {DATE}...")
     resp_today = daily("app", DATE)
     resp_prev = daily("app", prev_date(DATE))
-    resp_trend = daily("app", DATE)  # Re-use; trend from last 10 days via multiple queries
 
     rows_today = parse_rows(resp_today)
     rows_prev = parse_rows(resp_prev)
