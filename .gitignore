@@ -4,3 +4,6 @@ __pycache__/
 *.db
 agent_system/cache/
 agent_system/config/facts.json
+
+# Third-party: ai-goofish-monitor local deploy (contains secrets/.env)
+ai-goofish-monitor/
