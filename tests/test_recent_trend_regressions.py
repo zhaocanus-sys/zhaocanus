@@ -39,7 +39,7 @@ class SparklineTests(unittest.TestCase):
         svg = sparkline_svg([5, 5, 5], width=30, height=12)
 
         self.assertIn('<svg width="30" height="12"', svg)
-        self.assertIn('<polyline points="1.0,1.0 15.0,1.0 29.0,1.0"', svg)
+        self.assertIn('<polyline points="1.0,11.0 15.0,11.0 29.0,11.0"', svg)
         self.assertIn('fill="#16a34a"', svg)
 
     def test_extract_trend_values_returns_chronological_history_with_fallbacks(self):
