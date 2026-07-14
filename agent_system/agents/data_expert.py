@@ -103,7 +103,7 @@ class DataExpert:
 
         Args:
             date: 分析日期 "YYYY-MM-DD"
-            dates_range: 趋势日期范围(默认自动推算7日)
+            dates_range: 趋势日期范围(默认自动推算10日)
 
         Returns:
             AnalysisReport 完整分析报告
@@ -600,9 +600,9 @@ border:1px solid #0ea5e944;display:flex;align-items:center;gap:14px;">
 {cross_domain_html}
 </div>
 
-<!-- 7日趋势 -->
+<!-- 10日趋势 -->
 <div class="card" style="overflow-x:auto;">
-<h2>7日趋势</h2>
+<h2>10日趋势</h2>
 <table style="min-width:600px;"><thead><tr>
 <th style="text-align:left;padding-left:12px;">指标</th>{th}</tr></thead><tbody>
 {tr_row("营收","total_revenue")}
