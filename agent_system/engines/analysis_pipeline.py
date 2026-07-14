@@ -14,6 +14,7 @@ import os
 import statistics
 from collections import defaultdict
 from dataclasses import dataclass, field
+from datetime import datetime, timedelta
 from typing import Optional
 
 from agent_system.engines.collision_engine import (
@@ -82,11 +83,21 @@ class AnalysisPipeline:
         self.logic_engine = LogicCollisionEngine()
         self.cross_domain_engine = CrossDomainCollisionEngine()
 
+    @staticmethod
+    def _build_dates_range(date: str, days: int = 10) -> list[str]:
+        """生成包含报告日在内的连续自然日窗口。"""
+        if days < 1:
+            raise ValueError("days must be at least 1")
+        end_date = datetime.strptime(date, "%Y-%m-%d").date()
+        return [
+            (end_date - timedelta(days=offset)).isoformat()
+            for offset in range(days - 1, -1, -1)
+        ]
+
     def run(self, date: str, dates_range: Optional[list] = None) -> AnalysisReport:
         """执行完整分析流程"""
         if dates_range is None:
-            d = int(date[-2:])
-            dates_range = [f"{date[:-2]}{i:02d}" for i in range(max(1, d - 9), d + 1)]
+            dates_range = self._build_dates_range(date)
 
         S, depts, trends, top10, bot10, new_stats, persons = self._pull_data(date, dates_range)
         tenure_avg = self._compute_tenure_analysis(persons)
@@ -149,8 +160,14 @@ class AnalysisPipeline:
             "SELECT * FROM ts_daily WHERE report_date=? ORDER BY total_revenue DESC",
             (date,))]
 
-        all_rows = [dict(r) for r in conn.execute(
-            "SELECT * FROM ts_daily ORDER BY report_date, dept_name")]
+        if dates_range:
+            placeholders = ", ".join("?" for _ in dates_range)
+            all_rows = [dict(r) for r in conn.execute(
+                f"SELECT * FROM ts_daily WHERE report_date IN ({placeholders}) "
+                "ORDER BY report_date, dept_name",
+                tuple(dates_range))]
+        else:
+            all_rows = []
 
         persons = [dict(r) for r in conn.execute(
             "SELECT * FROM ts_person WHERE report_date=? ORDER BY revenue DESC",
@@ -219,7 +236,7 @@ class AnalysisPipeline:
         return S
 
     def _aggregate_trends(self, all_rows):
-        """聚合7日趋势"""
+        """聚合所选日期窗口的趋势"""
         by_date = defaultdict(list)
         for r in all_rows:
             by_date[r["report_date"]].append(r)
@@ -271,7 +288,6 @@ class AnalysisPipeline:
         """计算量化改善建议(含时间维度执行指令)"""
         items = []
         avg_d = S["avg_deal"]
-        from datetime import datetime, timedelta
         tomorrow = (datetime.strptime(S["date"], "%Y-%m-%d") + timedelta(days=1)).strftime("%Y-%m-%d")
 
         if S["cr"] < 43:
