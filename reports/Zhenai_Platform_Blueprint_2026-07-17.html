@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>珍爱网平台化改造蓝图 — 对标东郊到家模式（2026-07-17）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif; background:#f5f6f8; color:#1f2937; line-height:1.75; }
+  .wrap { max-width:960px; margin:0 auto; padding:24px 16px 64px; }
+  .header { background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%); color:#fff; border-radius:14px; padding:36px 40px; margin-bottom:24px; }
+  .header h1 { font-size:26px; letter-spacing:1px; margin-bottom:10px; }
+  .header .sub { font-size:14px; opacity:.85; }
+  .header .meta { margin-top:16px; font-size:13px; opacity:.75; }
+  .card { background:#fff; border-radius:12px; padding:28px 32px; margin-bottom:22px; box-shadow:0 1px 3px rgba(15,23,42,.06); }
+  .card h2 { font-size:19px; color:#1a56db; border-left:4px solid #1a56db; padding-left:12px; margin-bottom:18px; }
+  .card h3 { font-size:15.5px; color:#0f172a; margin:18px 0 8px; }
+  .card p { font-size:14px; margin-bottom:10px; }
+  .lead { font-size:15px; background:#eef4ff; border-left:4px solid #1a56db; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:14px; }
+  table { width:100%; border-collapse:collapse; font-size:13.5px; margin:12px 0 16px; }
+  th { background:#1a56db; color:#fff; padding:9px 12px; text-align:left; font-weight:600; }
+  td { padding:9px 12px; border-bottom:1px solid #e5e7eb; vertical-align:top; }
+  tr:nth-child(even) td { background:#f8fafc; }
+  .tag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:20px; margin-right:6px; font-weight:600; }
+  .tag-blue { background:#dbeafe; color:#1a56db; }
+  .tag-green { background:#d1fae5; color:#047857; }
+  .tag-red { background:#fee2e2; color:#b91c1c; }
+  .tag-amber { background:#fef3c7; color:#b45309; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:12px 0; }
+  .mini { background:#f8fafc; border:1px solid #e5e7eb; border-radius:10px; padding:14px 16px; }
+  .mini b { color:#1a56db; display:block; margin-bottom:6px; font-size:14px; }
+  .mini p { font-size:13px; margin:0; color:#475569; }
+  .figure { text-align:center; margin:18px 0 6px; }
+  .figure img { max-width:100%; border-radius:10px; border:1px solid #e5e7eb; }
+  .figure .cap { font-size:12.5px; color:#64748b; margin-top:8px; }
+  ul,ol { padding-left:22px; font-size:14px; margin-bottom:10px; }
+  li { margin-bottom:5px; }
+  .hl { color:#b91c1c; font-weight:700; }
+  .qa { background:#fdf7ee; border:1px solid #f3e2c5; border-radius:10px; padding:16px 20px; margin-bottom:12px; }
+  .qa .q { font-weight:700; color:#92400e; margin-bottom:6px; font-size:14px; }
+  .qa .a { font-size:13.5px; color:#374151; }
+  .footer { text-align:center; font-size:12px; color:#94a3b8; margin-top:30px; }
+  @media (max-width:640px){ .grid2{grid-template-columns:1fr;} .card{padding:20px;} .header{padding:26px;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 头部 -->
+  <div class="header">
+    <h1>珍爱网平台化改造蓝图</h1>
+    <div class="sub">对标东郊到家模式 · 目标架构与成型画像 · 战略参考文件</div>
+    <div class="meta">报告日期：2026-07-17　|　呈报：赵总（COO）　|　编制：智慧助理　|　密级：管理层参考</div>
+  </div>
+
+  <!-- 模块1 一页式总览 -->
+  <div class="card">
+    <h2>一、一页式总览：改造成功后的珍爱网是什么样子</h2>
+    <div class="lead">
+      一句话画像：<b>「婚恋服务行业的东郊到家」</b>——一个零门店、轻资产的婚恋服务撮合平台。总部只做系统、算法、结算、品控和规则；直营区域运营中心作为中间管理介质，管人不碰钱；数万名持证个体红娘在平台上自主接单，按次为用户提供标准化的婚恋服务；用户像叫外卖、约按摩一样，随时下单购买一次牵线、一次约会策划、一次情感咨询。
+    </div>
+    <table>
+      <tr><th style="width:22%">维度</th><th>成型后的状态</th></tr>
+      <tr><td>商业本质</td><td>从「卖会员合同的婚介公司」变为「抽取服务佣金的撮合平台」，收入=平台佣金+会员订阅+增值服务</td></tr>
+      <tr><td>资产形态</td><td>零服务门店。资产只有：四端系统、算法、品牌、用户池、红娘网络</td></tr>
+      <tr><td>人的形态</td><td>总部精干中台团队＋各城直营运营中心小编制团队（雇佣制）＋大规模个体红娘网络（个体工商户合作制，非雇佣）</td></tr>
+      <tr><td>收费形态</td><td>从一次性高客单价合同 → 按次/按套餐小额多次付费，全生命周期持续收费</td></tr>
+      <tr><td>风险形态</td><td>服务履约责任隔离在个体工商户层面；资金全部走平台，交易全程留痕，合规风险不回流总部</td></tr>
+      <tr><td>扩张形态</td><td>开一座城=设一个运营中心+招募一批本地红娘，无门店装修与大额固定投入，边际成本极低</td></tr>
+    </table>
+    <div class="figure">
+      <img src="assets/before_after.png" alt="改造前后模式对比">
+      <div class="cap">图1 · 改造前后模式对比：重资产直营 → 平台撮合</div>
+    </div>
+  </div>
+
+  <!-- 模块2 四层总架构 -->
+  <div class="card">
+    <h2>二、四层总架构（对标东郊到家三层结构+用户层）</h2>
+    <table>
+      <tr><th style="width:18%">东郊到家</th><th style="width:22%">珍爱网（改造后）</th><th>角色与性质</th></tr>
+      <tr><td>平台总部</td><td><b>珍爱平台总部</b></td><td>轻资产平台方：产品、算法、结算、品控、规则制定。不直接雇佣服务者、不直接履约</td></tr>
+      <tr><td>城市运营中心</td><td><b>区域运营中心（直营）</b></td><td>中间管理介质：总部直营编制，负责属地红娘的招募、培训、督导、品控与考核。<span class="hl">管人不碰交易资金</span></td></tr>
+      <tr><td>按摩技师</td><td><b>个体红娘</b></td><td>个体从业者：注册个体工商户、与平台签署《合作协议》入驻，非劳动关系。自主接单+平台派单，按阶梯比例分佣</td></tr>
+      <tr><td>消费用户</td><td><b>单身用户</b></td><td>需求方：App下单，按次或按套餐购买婚恋服务，服务后评价</td></tr>
+    </table>
+    <div class="figure">
+      <img src="assets/architecture_overview.png" alt="珍爱网平台化四层总架构">
+      <div class="cap">图2 · 珍爱网平台化四层总架构：管理链自上而下，资金流只走平台</div>
+    </div>
+    <p><b>两条主线贯穿四层：</b></p>
+    <ul>
+      <li><b>管理链（自上而下）</b>：总部定规则 → 运营中心执行属地管理 → 红娘按标准履约 → 用户获得一致体验；</li>
+      <li><b>资金流（只走平台）</b>：用户付款进平台 → 平台按阶梯比例结算给红娘个体户 → 运营中心费用由总部预算覆盖，<span class="hl">任何一层不得线下收款</span>。</li>
+    </ul>
+  </div>
+
+  <!-- 模块3 平台总部 -->
+  <div class="card">
+    <h2>三、平台总部层：五大中台 + 四端系统</h2>
+    <h3>3.1 五大中台（总部职能）</h3>
+    <div class="grid2">
+      <div class="mini"><b>① 流量中台</b><p>主站App、拾花有伴、趣约会等全渠道获客与线索池统一管理；老资源线索回流盘活；合伙人裂变体系（用户/红娘皆可推广返佣，替代大额广告投放）。</p></div>
+      <div class="mini"><b>② 派单算法中台</b><p>按用户画像、红娘专长标签、服务分、地理位置、响应时长智能匹配；「派单+抢单」双模式；防止头部红娘垄断单源，保障中腰部单量（对应东郊智能派单机制）。</p></div>
+      <div class="mini"><b>③ 结算分佣中台</b><p>资金统一进出平台账户；按月考核周期自动计算阶梯分佣；红娘个体户对公/对私打款自动化；发票与税务合规链路（个体户自开票）。</p></div>
+      <div class="mini"><b>④ 品控风控中台</b><p>红娘资质统一核验与前台公示；服务过程线上留痕（沟通记录/服务确认）；投诉分级处理；飞单监测模型（通讯行为异常+成单率异常识别）；客单价熔断线。</p></div>
+      <div class="mini"><b>⑤ 培训认证中台</b><p>红娘持证上岗体系：入驻培训→考试认证→分级晋升（初级/资深/金牌）；标准化服务SOP与话术库；线上课程复训与年审。</p></div>
+      <div class="mini"><b>总部编制原则</b><p>精干中台，不设庞大直营服务队伍。所有新增职能优先系统化、算法化，而非人力堆叠——轻资产、强算法。</p></div>
+    </div>
+    <h3>3.2 四端系统（对标东郊到家四端口）</h3>
+    <table>
+      <tr><th style="width:20%">端口</th><th style="width:26%">使用者</th><th>核心功能</th></tr>
+      <tr><td>用户端 App</td><td>单身用户</td><td>浏览红娘/服务SKU、下单支付、匹配进度、服务评价、复购与推荐返佣</td></tr>
+      <tr><td>红娘端 App</td><td>个体红娘</td><td>接单/抢单、日程管理、客户档案（脱敏）、收入与分佣档位实时可见、培训课程、服务分看板</td></tr>
+      <tr><td>运营中心工作台</td><td>区域运营中心</td><td>属地红娘名册与状态、招募漏斗、培训排期、品控抽检、投诉工单、区域经营看板</td></tr>
+      <tr><td>总部管理后台</td><td>平台总部</td><td>全国经营大盘、派单策略配置、分佣规则配置、风控预警、运营中心KPI考核</td></tr>
+    </table>
+  </div>
+
+  <!-- 模块4 区域运营中心 -->
+  <div class="card">
+    <h2>四、区域运营中心层（直营）：中间管理介质</h2>
+    <div class="lead">定位一句话：<b>「管红娘的人，不碰用户的钱」</b>。运营中心是总部在属地的直营管理机构，解决平台模式最大的软肋——服务者关系松散、品质不稳（东郊到家已暴露的短板），但绝不介入交易与资金，避免变成变相门店。</div>
+    <h3>4.1 职能边界（四管四不管）</h3>
+    <div class="grid2">
+      <div class="mini"><b>管什么</b><p>① 红娘招募与资质初审　② 岗前培训与持续督导　③ 属地品控抽检与投诉现场处置　④ 属地红娘活跃度与服务考核</p></div>
+      <div class="mini"><b>不管什么</b><p>① 不收用户任何款项　② 不与用户签任何服务合同　③ 不自建服务场所对客经营　④ 不干预派单算法结果（只可申诉）</p></div>
+    </div>
+    <h3>4.2 编制模型（单城标准配置，小而精）</h3>
+    <table>
+      <tr><th style="width:22%">岗位</th><th style="width:14%">编制</th><th>职责</th></tr>
+      <tr><td>中心长</td><td>1</td><td>区域经营全责，向总部运营VP汇报</td></tr>
+      <tr><td>红娘招募官</td><td>1-2</td><td>属地红娘招募、入驻引导、个体户注册协办</td></tr>
+      <tr><td>培训督导</td><td>1-2</td><td>岗前培训执行、标杆案例萃取、周度督导例会</td></tr>
+      <tr><td>品控专员</td><td>1</td><td>服务抽检、投诉处置、飞单线索核查上报</td></tr>
+    </table>
+    <p>单城4-6人管理100-300名个体红娘，管理杠杆约1:40。对比旧直营门店单店动辄20-40名雇佣销售，人力成本结构发生数量级变化。</p>
+    <h3>4.3 运营中心考核指标（总部对中心）</h3>
+    <ul>
+      <li><b>属地红娘月活跃率</b>（当月有接单红娘/在册红娘）≥ 60%；</li>
+      <li><b>属地平均服务分</b> ≥ 4.5 / 5.0；</li>
+      <li><b>千单投诉率</b> ≤ 3‰，投诉24小时响应率 100%；</li>
+      <li><b>招募达成率</b>：按开城爬坡计划考核在册红娘数；</li>
+      <li><b>红娘90天留存率</b> ≥ 70%（针对东郊「服务者关系松散易流失」的短板专项设计）。</li>
+    </ul>
+  </div>
+
+  <!-- 模块5 个体红娘 -->
+  <div class="card">
+    <h2>五、个体红娘层：个体从业者网络</h2>
+    <h3>5.1 身份设计（完全对标东郊技师）</h3>
+    <ul>
+      <li>红娘注册<b>个体工商户</b>，以个体户身份与平台签署《合作协议》——合作关系而非劳动关系；</li>
+      <li>平台<b>只与个人签约</b>，不允许机构/公司批量入驻（防灰产公司借壳进场，保护品牌）；</li>
+      <li>无底薪、无社保绑定、按单分佣；平台提供保险方案（职业责任险+意外险）作为合作权益；</li>
+      <li>红娘前台页面公示：实名认证、资质证书、个体户执照、服务分、服务人次——<span class="hl">资质透明是对东郊「执照混乱被曝光」教训的直接修正</span>。</li>
+    </ul>
+    <h3>5.2 入驻五步流程</h3>
+    <p>① 实名+背景核验（无欺诈/涉案记录）→ ② 资质认证（婚恋咨询相关培训证书，无证者先培训后考证）→ ③ 个体工商户注册（运营中心协办，1-3天）→ ④ 签署《合作协议》+ 合规承诺书 → ⑤ 岗前培训考核通过，开通接单权限。</p>
+    <h3>5.3 服务SKU（按次计费，替代一次性大合同）</h3>
+    <table>
+      <tr><th style="width:24%">服务SKU</th><th style="width:24%">参考定价（按次）</th><th>说明</th></tr>
+      <tr><td>精准牵线</td><td>¥199-399/次</td><td>红娘人工筛选+双向确认+牵线引荐，成功见面另计</td></tr>
+      <tr><td>约会安排与陪同策划</td><td>¥299-599/次</td><td>见面场景策划、破冰引导、约会后双方回访</td></tr>
+      <tr><td>情感咨询</td><td>¥199-499/时</td><td>单次咨询，线上为主，可续购</td></tr>
+      <tr><td>形象与资料优化</td><td>¥99-299/次</td><td>资料照指导、自我介绍优化、第一印象诊断</td></tr>
+      <tr><td>月度陪伴套餐</td><td>¥999-2999/月</td><td>组合SKU订阅，可随时取消——续费靠满意而非合同锁定</td></tr>
+    </table>
+    <p><b>客单价熔断线</b>：单用户单月累计消费超过阈值（建议 ¥6,000）触发平台复核与冷静期提醒，从机制上杜绝诱导高额消费——这是对东郊「诱导办卡投诉」教训的预防，也符合行业合规底线。</p>
+    <h3>5.4 接单模式</h3>
+    <ul>
+      <li><b>智能派单为主</b>：算法按画像匹配度+服务分+响应速度推送订单；</li>
+      <li><b>抢单池为辅</b>：普通单进入属地抢单池，保障新人红娘起量；</li>
+      <li><b>指定复购</b>：用户可指定合作过的红娘直接下单（复购计入红娘晋升考核）。</li>
+    </ul>
+    <div class="figure">
+      <img src="assets/service_flow.png" alt="个体红娘接单服务闭环">
+      <div class="cap">图3 · 个体红娘接单服务闭环：六步循环，资金只走平台，全流程可追溯</div>
+    </div>
+  </div>
+
+  <!-- 模块6 分成模型 -->
+  <div class="card">
+    <h2>六、分成与激励模型（对标东郊阶梯佣金）</h2>
+    <p>东郊到家原型：15天考核周期，技师流水0-6500元分50%，逐档升至14500元以上分80%，叠加续购率与成长值门槛。珍爱网按婚恋服务客单价与履约周期特点调整为<b>月度考核周期</b>：</p>
+    <table>
+      <tr><th style="width:14%">档位</th><th style="width:22%">月流水区间</th><th style="width:16%">红娘分成</th><th>晋升门槛（双条件）</th></tr>
+      <tr><td><span class="tag tag-blue">起步档</span></td><td>0 - 2万</td><td><b>50%</b></td><td>完成岗前认证即可接单</td></tr>
+      <tr><td><span class="tag tag-blue">达标档</span></td><td>2万 - 4万</td><td><b>55%</b></td><td>服务分 ≥ 4.5</td></tr>
+      <tr><td><span class="tag tag-green">优秀档</span></td><td>4万 - 8万</td><td><b>60%</b></td><td>服务分 ≥ 4.6 且用户复购率 ≥ 20%</td></tr>
+      <tr><td><span class="tag tag-green">标杆档</span></td><td>8万以上</td><td><b>70%</b></td><td>服务分 ≥ 4.7 且用户复购率 ≥ 25%</td></tr>
+    </table>
+    <ul>
+      <li>平台综合抽佣 <b>30%-50%</b>，直营运营中心成本从平台佣金中核算覆盖，测算单城佣金收入需覆盖中心成本的1.5倍以上方可开城；</li>
+      <li><b>复购率门槛用「用户真实复购」而非「加钟式续购」</b>——东郊被媒体质疑的考核变形（把加钟包装成续购、逼推销办卡）在机制上排除；</li>
+      <li><b>违规降档</b>：投诉核实、服务分连续低于4.0降一档；<b>飞单直接清退</b>并列入行业合作黑名单；</li>
+      <li>推广裂变：红娘/用户推荐新用户成单，返佣2%-5%，以裂变替代大额品牌投放（现金流友好）。</li>
+    </ul>
+    <div class="figure">
+      <img src="assets/commission_model.png" alt="个体红娘阶梯分成激励模型">
+      <div class="cap">图4 · 个体红娘阶梯分成激励模型：多劳多得、优服优酬，双门槛晋升</div>
+    </div>
+  </div>
+
+  <!-- 模块7 业务流程闭环 -->
+  <div class="card">
+    <h2>七、业务流程闭环：从线索到裂变</h2>
+    <ol>
+      <li><b>获客进池</b>：主站App/拾花有伴/趣约会/老资源回流线索统一进入平台用户池；</li>
+      <li><b>用户下单</b>：App内按SKU下单支付，资金进平台监管账户；</li>
+      <li><b>智能派单</b>：算法匹配属地红娘，红娘限时接单（超时流转抢单池）；</li>
+      <li><b>服务履约</b>：牵线/约会/咨询按SOP执行，关键节点线上确认留痕；</li>
+      <li><b>双向评价</b>：用户评红娘（服务分），红娘评用户（诚信分），双分进入匹配算法；</li>
+      <li><b>自动结算</b>：服务确认完成后T+7分佣至红娘个体户账户（预留售后处理期）；</li>
+      <li><b>复购与裂变</b>：满意用户指定复购/购买套餐/推荐返佣，回到第2步。</li>
+    </ol>
+    <p><b>平台飞轮</b>：更多用户 → 红娘收入更高 → 吸引更优红娘入驻 → 服务质量与口碑提升 → 更多用户。每一环都有数据留痕，飞轮转速可度量。</p>
+  </div>
+
+  <!-- 模块8 风控合规 -->
+  <div class="card">
+    <h2>八、风控与合规内置：把东郊踩过的坑焊死在架构里</h2>
+    <table>
+      <tr><th style="width:26%">东郊到家已暴露的问题</th><th>珍爱网蓝图内置对策</th></tr>
+      <tr><td>技师与客户绕过平台私下交易（飞单）</td><td>① 客户联系方式全程脱敏（虚拟号）② 私下收款一经核实立即清退+黑名单 ③ 飞单监测模型（沟通中断+复购异常识别）④ 高分成档位让头部红娘算得过账：留在平台比飞单更赚</td></tr>
+      <tr><td>签约商户执照缺失、名实不符被媒体曝光</td><td>入驻五步流程强制核验，红娘前台页面公示执照+资质+实名认证，缺一不得上架</td></tr>
+      <tr><td>诱导消费、办卡投诉、退款难</td><td>按次小额计费为主、套餐可随时取消按次退余、单月消费熔断线、7天冷静期退款通道</td></tr>
+      <tr><td>平台对服务者维护弱、关系松散易流失</td><td>直营运营中心专职做红娘留存（培训/督导/荣誉体系/90天留存率考核），这正是「直营运营中心」相对东郊加盟制中心的差异化优势</td></tr>
+      <tr><td>服务过程不透明、纠纷举证难</td><td>服务节点线上确认+沟通留痕，纠纷时平台可完整还原过程</td></tr>
+    </table>
+    <p><b>总部风险隔离逻辑</b>：履约责任主体是红娘个体工商户，平台承担的是信息撮合与管理责任；叠加资金只走平台、过程全留痕、资质全公示三道防线，服务合规风险被隔离在个体层面，与门店SaaS隔离、邀约外包化属同一风险哲学的第三块拼图。</p>
+  </div>
+
+  <!-- 模块9 六维对比 -->
+  <div class="card">
+    <h2>九、改造前后六维对比</h2>
+    <table>
+      <tr><th style="width:16%">维度</th><th style="width:40%">改造前（重资产直营）</th><th>改造后（平台模式）</th></tr>
+      <tr><td>成本结构</td><td>门店租金+装修+大编制雇佣销售底薪社保，固定成本高企</td><td>零门店；红娘无底薪按单分佣，成本随收入线性变化，佣金毛利结构清晰</td></tr>
+      <tr><td>人效杠杆</td><td>1名店长管20-40名雇佣销售，管理半径小</td><td>1个4-6人运营中心管100-300名个体红娘，杠杆1:40</td></tr>
+      <tr><td>合规风险敞口</td><td>销售逼签、高客单纠纷、退费潮全部集中在总部主体</td><td>履约责任在个体户层面，资金留痕可举证，客单价熔断防纠纷于未然</td></tr>
+      <tr><td>扩张速度</td><td>开城=选址+装修+招聘+养店，单店回本周期长</td><td>开城=1个运营中心+首批红娘招募，人到即开业，边际成本极低</td></tr>
+      <tr><td>现金流模型</td><td>先收大额合同款、后置长周期履约，退费即失血</td><td>按次收费即时履约、T+7结算，预收退费敞口小，现金流健康可预测</td></tr>
+      <tr><td>收入天花板</td><td>受门店数量与销售人数线性制约</td><td>受红娘网络规模与算法匹配效率驱动，具备指数扩张可能</td></tr>
+    </table>
+  </div>
+
+  <!-- 模块10 路线图 -->
+  <div class="card">
+    <h2>十、分阶段落地路线图（东郊用4年从1城到22城28中心，珍爱有品牌与线索存量，可更快）</h2>
+    <table>
+      <tr><th style="width:18%">阶段</th><th style="width:20%">周期</th><th>关键动作与验收里程碑</th></tr>
+      <tr><td><span class="tag tag-blue">试点期</span></td><td>第1-4个月</td><td>深圳/重庆任选1-2城设直营运营中心；招募首批50-100名个体红娘（优先转化现有优秀红娘为首批个体入驻者）；四端系统MVP上线。<b>验收</b>：跑通「下单→派单→履约→结算」全链路，首月GMV达标，投诉率≤3‰</td></tr>
+      <tr><td><span class="tag tag-blue">验证期</span></td><td>第5-8个月</td><td>验证阶梯分成与品控模型；红娘90天留存≥70%；用户复购率≥20%；单城运营中心佣金覆盖成本1.5倍。<b>验收</b>：单城模型盈利，形成《开城手册》标准化文档</td></tr>
+      <tr><td><span class="tag tag-green">复制期</span></td><td>第9-18个月</td><td>按《开城手册》批量复制至8-12城，运营中心中心长从试点城市督导队伍中晋升输出；裂变体系全量启动。<b>验收</b>：平台收入占公司新业务收入比重达成年度目标</td></tr>
+      <tr><td><span class="tag tag-green">规模期</span></td><td>第19-36个月</td><td>覆盖主要一二线城市；红娘网络破万人；算法派单占比≥80%；输出行业服务标准。<b>验收</b>：成为婚恋服务平台模式的品类第一</td></tr>
+    </table>
+    <p><b>投入原则</b>：试点期总投入控制在小额验证规模（系统MVP+2个运营中心+启动运营费），先射子弹再射炮弹，验证通过再加大投入，现金流红线全程不动摇。</p>
+  </div>
+
+  <!-- 质疑环节 -->
+  <div class="card">
+    <h2>附：方案质疑与回应（供赵总决断）</h2>
+    <div class="qa">
+      <div class="q">质疑1：红娘与用户建立深度信任后飞单绕开平台，婚恋服务比按摩更依赖长期关系，飞单风险更大，怎么防？</div>
+      <div class="a">回应：三重防线——① 技术上虚拟号+脱敏，红娘拿不到用户直连方式；② 经济上标杆档70%分成+复购计入晋升，让头部红娘「留在平台更赚」；③ 制度上飞单一票清退+黑名单。同时承认无法100%杜绝，试点期设「飞单率」观测指标，若超5%需重新校准分成结构。</div>
+    </div>
+    <div class="qa">
+      <div class="q">质疑2：婚恋服务高度非标（效果=脱单，周期长、归因难），按次计费用户凭什么持续买单？会不会复购率撑不起模型？</div>
+      <div class="a">回应：SKU设计刻意把「脱单结果」拆解为可感知的「过程价值」（一次高质量牵线、一次专业约会策划），用户为每次确定性体验付费而非为承诺付费——这恰恰是退费纠纷的解药。试点期以复购率≥20%为生死线验收，不达标即回炉调整SKU与定价，不带病复制。</div>
+    </div>
+    <div class="qa">
+      <div class="q">质疑3：红娘个体户模式是否有被认定事实劳动关系的用工合规风险？东郊模式本身正被舆论与监管审视。</div>
+      <div class="a">回应：关键在「三不」——不定底薪、不定考勤、不强制接单，红娘自主决定在线时长与接单量；运营中心考核的是服务质量门槛（准入性标准）而非工作量指令（管理性指令），法律边界与网约车/东郊同构。落地前由法务对《合作协议》做专项论证，并为红娘配置职业责任险增强合作黏性。</div>
+    </div>
+    <div class="qa">
+      <div class="q">质疑4：直营运营中心是重资产回潮吗？为什么不像东郊部分城市那样用加盟制运营中心？</div>
+      <div class="a">回应：单城4-6人无门面办公，年成本约百万级，是「轻直营」而非重资产。婚恋行业信任是生命线，运营中心管的是品控与红娘留存，这个环节外包给加盟商等于把品牌命脉交出去（行业前车之鉴充分）。交易与履约已经平台化，管理介质保持直营是本方案刻意保留的「品质锚点」。</div>
+    </div>
+    <p style="margin-top:14px"><b>请赵总决断</b>：① 试点城市选择（建议深圳+重庆）；② 阶梯分成档位与熔断线金额是否按本蓝图口径执行；③ 是否启动法务对《合作协议》的专项论证。</p>
+  </div>
+
+  <div class="footer">
+    本文件为战略参考蓝图 · 智慧助理编制 · 2026-07-17<br>
+    数据参考：东郊到家公开资料（成立2018年，覆盖47城，注册用户1000万+，签约技师3万+，阶梯佣金50%-80%，平台抽成20%-50%）
+  </div>
+
+</div>
+</body>
+</html>
