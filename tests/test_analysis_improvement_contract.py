@@ -18,7 +18,7 @@ class AnalysisImprovementContractTests(unittest.TestCase):
             "conv": 2,
             "t20": 50,
             "on_duty": 20,
-            "dr": 20,
+            "dr": 23,
             "link_1d_num": 400,
             "ai": 75,
             "ref_rate": 5,
