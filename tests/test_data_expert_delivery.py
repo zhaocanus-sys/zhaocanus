@@ -28,6 +28,8 @@ def make_report(*, departments=None, total_revenue=120_000, rev_dod=3.5):
 class DataExpertDeliveryTests(unittest.TestCase):
     def setUp(self):
         self.expert = object.__new__(DataExpert)
+        self.expert.total_books = 108
+        self.expert.domains = 8
         self.expert.render_html = Mock(return_value="<html>report</html>")
 
     @patch("agent_system.agents.data_expert.send_report_email", return_value=True)
