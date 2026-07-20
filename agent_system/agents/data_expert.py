@@ -26,11 +26,9 @@ import os
 import json
 import statistics
 import webbrowser
-import smtplib
 from datetime import datetime
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 
+from agent_system.actions.email_sender import send_report_email
 from agent_system.engines.analysis_pipeline import AnalysisPipeline, AnalysisReport
 
 
@@ -735,24 +733,7 @@ padding-bottom:8px;border-bottom:1px solid #f1f5f9;">
                 f"+逻辑对撞{report.logic_collision_summary['total_hypotheses']}组]")
 
         html = self.render_html(report)
-        msg = MIMEMultipart()
-        msg["From"] = "Data Expert <zhao.can@zhenai.com>"
-        msg["To"] = to
-        msg["Cc"] = cc
-        msg["Subject"] = subj
-        msg.attach(MIMEText(html, "html", "utf-8"))
-        recipients = [to]
-        if cc:
-            recipients.append(cc)
-
-        try:
-            with smtplib.SMTP_SSL("smtp.exmail.qq.com", 465, timeout=15) as s:
-                s.login("zhao.can@zhenai.com", "b6k36jmUW8EcUsDg")
-                s.sendmail("zhao.can@zhenai.com", recipients, msg.as_string())
-            return True
-        except Exception as e:
-            print(f"邮件发送失败: {e}")
-            return False
+        return send_report_email(subj, html, to=to, cc=cc)
 
     def run_full_pipeline(self, date: str, send_mail: bool = True,
                           open_browser: bool = True) -> AnalysisReport:
