@@ -100,10 +100,11 @@ class CrossDomainMatrixGateTests(unittest.TestCase):
         self.assertNotIn("话术标准化×优势管理", tags)
 
         # AI below 75 + extreme department spread → both fire.
+        # Gate: any dept pc > 1.5 × mean(pcs). 8000/2000 → mean=5000, 1.5×=7500.
         self.engine.execute(
             make_summary(ai=70),
             [
-                make_dept("电销一部", 5000),
+                make_dept("电销一部", 8000),
                 make_dept("电销二部", 2000),
             ],
             [],
@@ -234,7 +235,12 @@ class LogicCrossValidationTests(unittest.TestCase):
         )
         self.assertIn(
             "7日",
-            self.engine._generate_alternative(finding("漏斗瓶颈:分配→接通"), {}, []),
+            self.engine._generate_alternative(finding("漏斗瓶颈:分配→深沟"), {}, []),
+        )
+        # Tag containing both 接通 and 漏斗 prefers the 接通 alternative (first match).
+        self.assertIn(
+            "运营商",
+            self.engine._generate_alternative(finding("漏斗瓶颈:接通→深沟"), {}, []),
         )
         self.assertIn(
             "大单",
@@ -247,7 +253,7 @@ class LogicCrossValidationTests(unittest.TestCase):
     def test_cross_validate_emits_p2_only_for_p0_with_alternative(self):
         data_findings = [
             finding("接通率持续低于红线", priority="P0", description="电销六部接通率连续偏低"),
-            finding("漏斗瓶颈:接通→深沟", priority="P0", description="漏斗薄弱"),
+            finding("漏斗瓶颈:分配→深沟", priority="P0", description="漏斗薄弱"),
             finding("高活动高营收异常", priority="P0", description="营收冲高"),
             finding("深沟率偏低", priority="P0", description="无替代解释标签"),
             finding("接通率波动", priority="P1", description="非P0应忽略"),
@@ -267,10 +273,15 @@ class LogicCrossValidationTests(unittest.TestCase):
 
         tags = {f.tag for f in self.engine.findings}
         self.assertIn("验证: 接通率持续低于红线", tags)
-        self.assertIn("验证: 漏斗瓶颈:接通→深沟", tags)
+        self.assertIn("验证: 漏斗瓶颈:分配→深沟", tags)
         self.assertIn("验证: 高活动高营收异常", tags)
         self.assertNotIn("验证: 深沟率偏低", tags)
         self.assertNotIn("验证: 接通率波动", tags)
+
+        funnel_validation = next(
+            f for f in self.engine.findings if f.tag == "验证: 漏斗瓶颈:分配→深沟"
+        )
+        self.assertIn("7日", funnel_validation.description)
 
     def test_cross_validate_noop_without_p0(self):
         self.engine._cross_validate_with_data_findings(
