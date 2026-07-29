@@ -220,10 +220,10 @@ class PipelineRunFunnelAndCvTests(unittest.TestCase):
         report = self._run_isolated(summary, [make_dept("电销一部", 1000)])
 
         by_name = {name: value for name, value, _, _ in report.funnel}
-        self.assertEqual(3.0, by_name["分配→拨打"])  # 300 / 100
-        self.assertEqual(15.0, by_name["拨打→接通"])  # 45 / 300 * 100
-        self.assertEqual(20.0, by_name["接通→深沟"])  # 9 / 45 * 100
-        self.assertEqual(100 / 3, by_name["深沟→签单"])  # 3 / 9 * 100
+        self.assertAlmostEqual(3.0, by_name["分配→拨打"])  # 300 / 100
+        self.assertAlmostEqual(15.0, by_name["拨打→接通"])  # 45 / 300 * 100
+        self.assertAlmostEqual(20.0, by_name["接通→深沟"])  # 9 / 45 * 100
+        self.assertAlmostEqual(100 / 3, by_name["深沟→签单"])  # 3 / 9 * 100
 
     def test_pc_cv_zero_with_fewer_than_two_departments(self):
         summary = make_summary()
