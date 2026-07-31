@@ -187,10 +187,19 @@ class DataExpertRenderBoundaryTests(unittest.TestCase):
             self.assertEqual(len(set(ys)), 1)
 
     def test_dod_arrows_render_up_down_and_flat(self):
-        html = self.expert.render_html(make_report())
+        # Only revenue / per-capita KPI cards render DoD arrows.
+        html = self.expert.render_html(
+            make_report(summary_overrides={"rev_dod": 3.5, "pc_dod": 0.0})
+        )
         self.assertIn("▲+3.5%", html)
-        self.assertIn("▼-1.2%", html)
         self.assertIn("—", html)
+        self.assertNotIn("▼", html)
+
+        html_down = self.expert.render_html(
+            make_report(summary_overrides={"rev_dod": -2.0, "pc_dod": 1.5})
+        )
+        self.assertIn("▼-2.0%", html_down)
+        self.assertIn("▲+1.5%", html_down)
 
     def test_improvement_time_instructions_rendered_when_complete(self):
         improvements = [
