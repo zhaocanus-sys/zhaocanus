@@ -159,7 +159,7 @@ def live_section_html(t, orders):
     h += f'送礼{t["giftmems"]}人贡献¥{t["costmoney"]:,.0f}，人均¥{t["gift_per_viewer"]:.0f}。'
     if t["avg_anchtime"] / 60 < 60:
         h += f'<br><span style="color:#dc2626;font-weight:600">⚠ 人均直播仅{t["avg_anchtime"]/60:.0f}分钟，低于60分钟基准。</span>增加开播时长可线性提升直播营收。'
-    if live_conv < 60:
+    if live_total_cnt > 0 and live_conv < 60:
         h += f'<br><span style="color:#dc2626;font-weight:600">⚠ 直播支付成功率{live_conv:.1f}%偏低，{live_fail}笔订单失败。</span>需排查支付链路稳定性。'
     h += f'<br><strong>杠杆预估：</strong>'
     h += f'①主播人均时长+30分钟 → 预计直播营收<b style="color:#dc2626">+¥{int(live_total_amt * 0.3):,}/日（+¥{int(live_total_amt * 0.3 * 30):,}/月）</b>'
