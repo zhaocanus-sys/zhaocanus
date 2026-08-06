@@ -494,6 +494,18 @@ def generate_html(today_rows, prev_rows, hourly_rows, date_display):
 <strong>即日建议：</strong>{MANAGER} 今日与 {mgr} 约谈，要求提交本部门「VIP盘点清单+未见面原因+本周行动计划」
 </div></div>"""
 
+    # ── Department gap summary (empty-safe) ───────────────────────────
+    if depts:
+        best_jm_dept = max(depts, key=lambda d: d["jm_rate"])
+        best_jm = max(d["jm_rate"] for d in depts)
+        worst_jm = min(d["jm_rate"] for d in depts)
+        dept_gap_html = (
+            f"最高{best_jm_dept['dept_name']} 见面安排率 {best_jm:.2f} vs "
+            f"最低 {worst_jm:.2f} — 差距{best_jm - worst_jm:.2f}x，标杆复制空间显著"
+        )
+    else:
+        dept_gap_html = "暂无部门数据，待分配后对比"
+
     # ── HTML assembly ─────────────────────────────────────────────────
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -586,7 +598,7 @@ th:first-child{{text-align:left;padding-left:10px}}
 <strong>退费率 {t['refund_rate']:.1f}%</strong>（¥{t['total_refund']/10000:.1f}万/¥{t['total_rev']/10000:.1f}万）— {'🚨 超10%红线，立即启动退费专项' if t['refund_rate']>10 else '⚠ 偏高，分渠道追因，检查话术合规性' if t['refund_rate']>5 else '✅ 退费控制良好'}
 </div>
 <div style="padding:14px 16px;margin-bottom:8px;border-radius:8px;background:#f8fafc;border-left:3px solid #6366f1">
-<strong>部门差距：</strong>最高{max(depts, key=lambda d: d['jm_rate'])['dept_name'] if depts else ''} 见面安排率 {max(d['jm_rate'] for d in depts):.2f} vs 最低 {min(d['jm_rate'] for d in depts):.2f} — 差距{max(d['jm_rate'] for d in depts) - min(d['jm_rate'] for d in depts):.2f}x，标杆复制空间显著
+<strong>部门差距：</strong>{dept_gap_html}
 </div>
 </div>
 
