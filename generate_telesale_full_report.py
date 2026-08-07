@@ -122,6 +122,13 @@ def generate_html(today_rows, prev_rows, date_display):
     dr_color = color_kpi(t["deep_rate"], 35, 25)
     pc_color = color_kpi(t["per_capita"], 2000, 1500)
     ai_color = color_kpi(t["avg_ai"], 75, 60)
+    # Empty API payloads yield workers=0; keep new-hire ratio finite for HTML.
+    new_ratio_pct = (t["new_w"] / t["workers"] * 100) if t["workers"] else 0
+    new_ratio_note = (
+        "偏高（>20%），建议强化陪飞机制，防止断崖式流失"
+        if t["workers"] and t["new_w"] / t["workers"] > 0.2
+        else "正常，建议保持新人辅导节奏"
+    )
 
     # Identify bottleneck in funnel
     funnel_losses = [
@@ -341,8 +348,8 @@ tr:hover td{{background:#fafafa}}
   </div>
   <div class="finding info">
     <span class="badge" style="background:#3498db;color:#fff">新人比例</span>
-    <strong> {t["new_w"]}/{t["workers"]} ({t["new_w"]/t["workers"]*100:.0f}%)</strong> —
-    新人占比{'偏高（>20%），建议强化陪飞机制，防止断崖式流失' if t["new_w"]/t["workers"] > 0.2 else '正常，建议保持新人辅导节奏'}
+    <strong> {t["new_w"]}/{t["workers"]} ({new_ratio_pct:.0f}%)</strong> —
+    新人占比{new_ratio_note}
   </div>
 </div>
 
@@ -406,7 +413,7 @@ tr:hover td{{background:#fafafa}}
       <div style="font-size:12px;color:#555;line-height:1.7">
         <strong>现象：</strong>AI评分{t["avg_ai"]:.0f}分，话术同质化，缺乏社交验证植入<br>
         <strong>对撞：</strong>Cialdini的「社会认同原则」——人在不确定时看他人行为。在婚恋决策中最强效<br>
-        <strong>动作：</strong>每通深沟必须包含1条真实成功案例（「上周帮一位{{}age{}岁客户在3周内见面4次…」），AI评分检测此环节<br>
+        <strong>动作：</strong>每通深沟必须包含1条真实成功案例（「上周帮一位35岁客户在3周内见面4次…」），AI评分检测此环节<br>
         <strong>预估：</strong>签单转化率+3%→月增¥8万
       </div>
     </div>
@@ -422,7 +429,7 @@ tr:hover td{{background:#fafafa}}
     <div style="background:#f0f4ff;border-radius:10px;padding:16px;border-left:4px solid #3498db">
       <div style="font-weight:700;color:#3498db;margin-bottom:8px">时间窗口理论 × 新人断崖 {BOOK_REFS["FIRST90"]}</div>
       <div style="font-size:12px;color:#555;line-height:1.7">
-        <strong>现象：</strong>新人{t["new_w"]}人，占比{t["new_w"]/t["workers"]*100:.0f}%，前30天是关键成活窗口<br>
+        <strong>现象：</strong>新人{t["new_w"]}人，占比{new_ratio_pct:.0f}%，前30天是关键成活窗口<br>
         <strong>对撞：</strong>《前90天》的「早期胜利」原则——新人在前30天若无显著进展，留存率骤降<br>
         <strong>动作：</strong>为每位新人指定深沟导师，第7/14/30天节点检查，第一单成单率作为辅导KPI<br>
         <strong>预估：</strong>新人成活率+15%→月增¥12万
