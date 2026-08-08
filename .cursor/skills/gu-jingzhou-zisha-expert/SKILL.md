@@ -33,7 +33,11 @@ license: MIT
 
 ### 3. 年代与印章对照
 
-读取 [references/seal-chronology.md](references/seal-chronology.md)，核对底款、盖款、闲章是否与推断年代一致。顾景舟**不同时期印章不同**，单凭「顾景舟制」四字不能定真。
+1. 读取 [references/seal-atlas.md](references/seal-atlas.md)，将底款、盖内、把下款与图谱 **28+ 种标准印文**逐字比对字形与布局  
+2. 读取 [references/seal-chronology.md](references/seal-chronology.md)，核对印文是否与推断年代一致  
+3. 若印文出现在顾景舟 **1984-07-02 自证印谱**（见 seal-atlas 第一节）内，仅作「字形可参考」而非定真依据  
+
+顾景舟**不同时期印章不同**，单凭「顾景舟制」四字不能定真；须与盖内、把款配套互证。
 
 ### 4. 流传与市场逻辑
 
@@ -79,6 +83,7 @@ license: MIT
 
 ## 延伸阅读
 
+- [references/seal-atlas.md](references/seal-atlas.md) — **印章款识图谱**（赵总提供的三页对照图整理版）
 - [references/authentication-framework.md](references/authentication-framework.md) — 四维度细则
 - [references/seal-chronology.md](references/seal-chronology.md) — 印章年表
 - [references/master-profile.md](references/master-profile.md) — 生平与代表作
