@@ -189,6 +189,12 @@ def generate_html(today_rows, prev_rows, date_display):
     top5   = workers[:5]   if len(workers) >= 5 else workers
     bot5   = workers[-5:]  if len(workers) >= 5 else []
 
+    try:
+        report_dt = datetime.datetime.strptime(date_display, "%Y-%m-%d")
+    except ValueError:
+        report_dt = datetime.datetime.strptime(DATE, "%Y%m%d")
+    tomorrow = (report_dt + datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+
     def dod(key, fmt=".0f"):
         if not p: return ""
         cur = t[key]; prv = p.get(key, cur)
@@ -205,6 +211,40 @@ def generate_html(today_rows, prev_rows, date_display):
 
     # 最优员工
     top1 = top5[0] if top5 else {}
+
+    # 部门级诊断：仅对触发门槛的部门输出（含负责人 + 管理视角缺失推断）
+    dept_diag_html = ""
+    for d in depts:
+        wechat_rate = d["wechat"] / d["assign"] * 100 if d["assign"] > 0 else 0
+        transfer_rate = d["transfer"] / d["wechat"] * 100 if d["wechat"] > 0 else 0
+        if d["reply_rate"] < 5:
+            gap_key = "low_reply_rate"
+        elif wechat_rate < 30:
+            gap_key = "low_wechat_rate"
+        elif transfer_rate < 15:
+            gap_key = "low_transfer_rate"
+        elif d["per_capita"] < 2000:
+            gap_key = "low_per_capita"
+        else:
+            continue
+        mgmt_gap = MGMT_GAP_RULES.get(gap_key, "需进一步排查")
+        mgr = d["manager"]
+        dept_diag_html += f"""<div style="padding:14px 16px;margin-bottom:10px;border-radius:8px;border-left:4px solid #d97706;background:#fffbeb">
+<div style="display:flex;justify-content:space-between;margin-bottom:4px">
+<div><span style="font-size:10px;font-weight:700;color:#fff;background:#d97706;padding:1px 8px;border-radius:4px;margin-right:6px">部门预警</span>
+<span style="font-size:13px;font-weight:600">{d['dept_name']}（{mgr}）— 回复率 {d['reply_rate']:.1f}% / 企微添加率 {wechat_rate:.1f}% / 调配转化 {transfer_rate:.1f}%</span></div>
+<span style="font-size:12px;color:#dc2626;font-weight:600">人均切面 ¥{d['per_capita']:,.0f}</span>
+</div>
+<div style="font-size:12px;color:#475569;line-height:1.7">
+人数: {d['workers']} | 分配: {d['assign']:,} | 发信: {d['send_msg']:,} | 回复: {d['reply']:,} | 企微+: {d['wechat']:,} | 调配: {d['transfer']:,} | 切面: ¥{d['pay_amt']/10000:.1f}万<br>
+<strong>管理视角缺失推断：</strong>{mgmt_gap}<br>
+<strong>即日建议：</strong>{MANAGER} 今日与 {mgr} 约谈，要求提交「首发信模板对比 + 调配交接清单 + 3日改善计划」
+</div></div>"""
+    if not dept_diag_html:
+        dept_diag_html = (
+            '<div style="padding:14px 16px;border-radius:8px;background:#f0fdf4;border-left:3px solid #16a34a;'
+            'font-size:12px;color:#166534;">各部门关键指标暂无触发预警门槛，保持现有辅导节奏。</div>'
+        )
 
     html = f'''<!DOCTYPE html>
 <html lang="zh-CN">
@@ -343,6 +383,12 @@ def generate_html(today_rows, prev_rows, date_display):
   </div>
 </div>
 
+<!-- ④b 部门级诊断（含管理者姓名 + 管理视角缺失推断）-->
+<div class="section">
+  <h2>部门级诊断（含管理者姓名 + 管理视角缺失推断）</h2>
+  {dept_diag_html}
+</div>
+
 <!-- ⑤ 知识图谱诊断 -->
 <div class="section">
   <h2>知识图谱诊断</h2>
@@ -453,7 +499,7 @@ def generate_html(today_rows, prev_rows, date_display):
         当前回复率{t["reply_rate"]:.1f}%，首发信话术不具备钩子效应。今日执行：①对比测试3版首发信模板（钩子型/情感型/价值型）②统计各组长当日回复率 ③72小时内选出最优模板全团推广。
       </div>
       <div style="font-size:12px;color:#dc2626;font-weight:600;margin-top:4px;">
-        今日部署: 全团 | 每日执行: 晨会比对模板效果+回复率排名 | 坚持: 7天 | 里程碑: 第7天验收<br>
+        部署: {tomorrow} | 今日部署: 全团 | 每日执行: 晨会比对模板效果+回复率排名 | 坚持: 7天 | 里程碑: 第7天验收<br>
         预估提升: 回复率提至{t["reply_rate"]+2:.1f}% → 日增回复{int(t["send_msg"]*0.02)}人 → 预估月增切面¥{int(t["send_msg"]*0.02*t["per_capita"]/30/10000)*10000:,}
       </div>
     </div>
@@ -467,7 +513,7 @@ def generate_html(today_rows, prev_rows, date_display):
         当前调配{t["transfer"]:,}人但信任传递断裂。今日制定：①调配前建信用IM告知客户「为你对接专业老师XX」②调配单必须附客户画像+核心抗拒点 ③电销接手24h内首拨，首通前5分钟共情不推产品。
       </div>
       <div style="font-size:12px;color:#dc2626;font-weight:600;margin-top:4px;">
-        今日部署: 建信全团+电销对接组 | 坚持: 14天 | 里程碑: 第7天中期检查<br>
+        部署: {tomorrow} | 今日部署: 建信全团+电销对接组 | 每日执行: 抽查调配单画像完整度 | 坚持: 14天 | 里程碑: 第7天中期检查<br>
         预估提升: 调配→付费转化率提升3pp → 月增切面约¥{int(t["transfer"]*0.03*t["per_capita"]/t["pay_n"]*t["transfer"]/10000) if t["pay_n"] else 28}万
       </div>
     </div>
@@ -481,6 +527,7 @@ def generate_html(today_rows, prev_rows, date_display):
         {worst_ch.get("channel_name","试岗资源") if worst_ch and worst_ch.get("pay_n",1)==0 else "低效渠道"}触发量大但付费率极低，资源沉淀浪费。今日评估：①该渠道用户意向度是否过低 ②是否应暂停并将资源重分到{best_ch.get("channel_name","高效渠道") if best_ch else "高效渠道"}等高效渠道。
       </div>
       <div style="font-size:12px;color:#dc2626;font-weight:600;margin-top:4px;">
+        部署: {tomorrow} | 今日部署: 渠道运营组 | 每日执行: 复核低效渠道分配权重 | 坚持: 7天 | 里程碑: 第7天验收<br>
         预估提升: 资源重分后 → 高效渠道调配量+{int(worst_ch.get("trigger",500)*0.1) if worst_ch else 50}人 → 预估月增¥{int(best_ch.get("pay_amt",130000)/10000*0.3) if best_ch else 20}万
       </div>
     </div>
