@@ -46,7 +46,7 @@ class AppDiagnosisGateTests(unittest.TestCase):
 
         self.assertIn("全局诊断 · 环比分析", html)
         self.assertIn("珍心会员占比 90.0%", html)
-        self.assertIn("超80%红线", html)
+        self.assertIn("⚠ 超80%红线", html)
         self.assertIn("次日留存率 30.0%", html)
         self.assertIn("严重偏低", html)
         self.assertIn("退款率 5.0%", html)
@@ -83,7 +83,8 @@ class AppDiagnosisGateTests(unittest.TestCase):
         self.assertNotIn("次日留存率提升至40%", html)
         self.assertNotIn("付费率从", html)
         self.assertNotIn("退款率控制至<2%", html)
-        self.assertNotIn("超80%红线", html)
+        # Product-table warning badge is threshold-gated (static KB copy may still mention 80%).
+        self.assertNotIn("⚠ 超80%红线", html)
 
         # Always-on baseline cards still carry deploy_date = tomorrow.
         self.assertIn("ARPU提升策略", html)
