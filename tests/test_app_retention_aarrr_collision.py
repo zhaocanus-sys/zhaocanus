@@ -191,19 +191,32 @@ class PlatformCompareHtmlTests(unittest.TestCase):
         self.assertNotIn("差距正常范围", html)
 
     def test_normal_gap_and_zero_denominator_safety(self):
-        orders = {
-            "total_amt": 0,
-            "by_platform": [
-                ("iOS", {"cnt": 0, "pay": 0, "amt": 0, "pay_num": 0}),
-                ("Android", {"cnt": 10, "pay": 8, "amt": 800, "pay_num": 8}),
-            ],
-        }
-        html = platform_compare_html(orders)
+        normal = platform_compare_html(
+            {
+                "total_amt": 10000,
+                "by_platform": [
+                    ("iOS", {"cnt": 100, "pay": 65, "amt": 5000, "pay_num": 50}),
+                    ("Android", {"cnt": 100, "pay": 70, "amt": 5000, "pay_num": 50}),
+                ],
+            }
+        )
+        self.assertIn("差距正常范围", normal)
+        self.assertNotIn("显著低于", normal)
 
-        self.assertIn("差距正常范围", html)
-        self.assertIn("0.0%", html)
-        self.assertNotIn("inf", html.lower())
-        self.assertNotIn("nan", html.lower())
+        zero_cnt = platform_compare_html(
+            {
+                "total_amt": 5000,
+                "by_platform": [
+                    ("鸿蒙", {"cnt": 0, "pay": 0, "amt": 0, "pay_num": 0}),
+                    ("小程序", {"cnt": 10, "pay": 5, "amt": 5000, "pay_num": 5}),
+                ],
+            }
+        )
+        self.assertIn("0.0%", zero_cnt)
+        self.assertIn("¥0", zero_cnt)
+        self.assertNotIn("显著低于", zero_cnt)
+        self.assertNotIn("inf", zero_cnt.lower())
+        self.assertNotIn("nan", zero_cnt.lower())
 
 
 class TranscriptApiConfigTests(unittest.TestCase):
