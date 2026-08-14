@@ -6,7 +6,6 @@ not covered by open PRs #95/#99: nested dod defaults a missing previous key to
 the current value, product TOP/BOTTOM diagnosis bands, causal-chain bottleneck
 selection, and the inline 10-day trend window.
 """
-import math
 import unittest
 
 from generate_app_full_report import (
@@ -178,8 +177,10 @@ class ProductRankDiagnosisTests(unittest.TestCase):
         self.assertIn("适度差距", moderate)
         self.assertNotIn("差距显著", moderate)
 
+        # Three zero-amount SKUs occupy the tail so bot5[:3] includes a 0
+        # (zip third pair → 直播守护 / 星光特权, 99x sentinel, no ZeroDivision).
         zero_bot = [_app_row(
-            amt="399600",
+            amt="394000",
             zhenxin_member="200000",
             super_member_full="80000",
             live_guard="60000",
@@ -187,13 +188,13 @@ class ProductRankDiagnosisTests(unittest.TestCase):
             zhenai_coin="16000",
             super_remind="8000",
             star_privilege="0",
-            super_recommend="1600",
-            other="400",
+            super_recommend="0",
+            other="0",
         )]
         html = generate_html(zero_bot, [], [], "2026-02-27")
-        # zip(top3, bot3) third pair is 直播守护 / 星光特权=0 → 99x sentinel
         self.assertIn("99.0x", html)
-        self.assertTrue(math.isfinite(99.0))
+        self.assertNotIn("inf", html.lower())
+        self.assertNotIn("nan", html.lower())
 
 
 class CausalBottleneckTests(unittest.TestCase):
@@ -224,8 +225,9 @@ class TrendBarTests(unittest.TestCase):
     def test_empty_trends_show_placeholder(self):
         html = generate_html([_app_row()], [], [], "2026-02-27")
         self.assertIn("趋势数据加载中...", html)
-        self.assertNotIn("width:0%", html)
-        self.assertNotIn("%付", html)
+        # Trend date gutter is unique to rendered bars; product tables do not use it.
+        self.assertNotIn("width:50px", html)
+        self.assertNotIn("%付</div>", html)
 
     def test_last_ten_window_today_highlight_and_zero_max_rev(self):
         days = [
