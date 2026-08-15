@@ -103,8 +103,8 @@ class JianxinDodAlertTests(unittest.TestCase):
         self.assertIn("▲0.0%", html)
         self.assertNotIn("▼", html)
         self.assertNotIn("🚨", html)
-        self.assertNotIn("inf", html.lower())
-        self.assertNotIn("nan", html.lower())
+        self.assertNotRegex(html, r"(?i)(?<![A-Za-z])inf(?![A-Za-z])")
+        self.assertNotRegex(html, r"(?i)(?<![A-Za-z])nan(?![A-Za-z])")
 
     def test_rise_is_green_without_alert(self):
         html = jx_generate_html(
@@ -134,16 +134,18 @@ class JianxinDodAlertTests(unittest.TestCase):
             "2026-02-27",
         )
         self.assertIn("▼10.0% 🚨", html)
-        self.assertEqual(html.count("🚨"), 1)
+        # Header 环比 + KPI 卡片各渲染一次 pay_amt DoD。
+        self.assertEqual(html.count("🚨"), 2)
 
-    def test_steeper_drop_keeps_single_alert(self):
+    def test_steeper_drop_keeps_pay_amt_alerts_only(self):
         html = jx_generate_html(
             [_jx_row(pay_1d_amt="80000")],
             [_jx_row(pay_1d_amt="100000")],
             "2026-02-27",
         )
         self.assertIn("▼20.0% 🚨", html)
-        self.assertEqual(html.count("🚨"), 1)
+        self.assertEqual(html.count("🚨"), 2)
+        self.assertNotIn("▼20.0%</span>", html.replace("▼20.0% 🚨", ""))
 
 
 class HongniangRefundInvertTests(unittest.TestCase):
@@ -184,11 +186,10 @@ class HongniangRefundInvertTests(unittest.TestCase):
             [],
             "2026-02-27",
         )
-        # Revenue / 安排率 / 人均 stay flat → ▲0.0%; refund prv==0 is blank.
-        self.assertIn("▲0.0%", html)
-        self.assertNotIn("▼", html)
-        self.assertNotIn("inf", html.lower())
-        self.assertNotIn("nan", html.lower())
+        # prv refund_rate == 0 → nested dod returns blank (no fake ▲/▼ on 退费).
+        self.assertIn("退费¥0.4万 </div>", html)
+        self.assertNotRegex(html, r"(?i)(?<![A-Za-z])inf(?![A-Za-z])")
+        self.assertNotRegex(html, r"(?i)(?<![A-Za-z])nan(?![A-Za-z])")
 
 
 if __name__ == "__main__":

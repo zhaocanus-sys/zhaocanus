@@ -7,8 +7,10 @@ These paths are not covered by open PRs #73/#74 (exporter / DataExpert SMTP):
 - transcript_api_client.is_api_configured treats blank URLs as unconfigured
   and fetch_transcripts stays a local stub (no network).
 """
+import email
 import tempfile
 import unittest
+from email import policy
 from pathlib import Path
 from unittest.mock import patch
 
@@ -84,8 +86,12 @@ class EmailDeliveryGateTests(unittest.TestCase):
         self.assertEqual(fake.login_args, ("sender@example.com", "test-auth"))
         self.assertEqual(fake.sent[0], "sender@example.com")
         self.assertEqual(fake.sent[1], {"to@example.com", "cc@example.com"})
-        self.assertIn("模板正文", fake.sent[2])
-        self.assertNotIn("会被模板覆盖", fake.sent[2])
+        parsed = email.message_from_string(fake.sent[2], policy=policy.default)
+        html_part = parsed.get_body(preferencelist=("html",))
+        self.assertIsNotNone(html_part)
+        body = html_part.get_content()
+        self.assertIn("模板正文", body)
+        self.assertNotIn("会被模板覆盖", body)
 
     def test_send_email_returns_false_when_smtp_raises(self):
         with patch(
