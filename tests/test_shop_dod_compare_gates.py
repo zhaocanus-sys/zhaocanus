@@ -92,34 +92,51 @@ class ShopDodTests(unittest.TestCase):
             [_shop_row(total_realpay="0", sg_num="10", deptsale_shop_num="4")],
             "2026-02-27",
         )
-        # sign_rate unchanged → ▲0.0%, but total_rev prv==0 stays blank.
-        self.assertIn("▲0.0%", html)
-        self.assertNotIn("▼", html)
+        # prv total_rev==0 → nested dod returns blank (no fake ▲/▼ on 日营收).
+        self.assertIn("月累¥8万 </div>", html)
+        self.assertNotIn("▲", html)
+        # 持平指标走 chg>0 为假 → ▼0.0%（红色），不是 ▲0.0%。
+        self.assertIn('color:#dc2626">▼0.0%</span>', html)
         self.assertIsNone(_INF_NAN.search(html))
 
-    def test_sign_rate_rise_is_green_without_crash_flag(self):
-        # 8/20=40% vs 4/20=20% → ▲100.0%
+    def test_flat_dod_is_red_down_arrow(self):
+        html = generate_html([_shop_row()], [_shop_row()], "2026-02-27")
+        self.assertIn('color:#dc2626">▼0.0%</span>', html)
+        self.assertNotIn("▲", html)
+
+    def test_sign_rate_rise_is_green(self):
+        # 8/20=40% vs 4/20=20% → ▲100.0%；营收同步上升避免持平 ▼0.0% 干扰。
         html = generate_html(
-            [_shop_row(sg_num="20", deptsale_shop_num="8", link_num="40")],
-            [_shop_row(sg_num="20", deptsale_shop_num="4", link_num="40")],
+            [_shop_row(
+                sg_num="20", deptsale_shop_num="8", link_num="40",
+                total_realpay="30000",
+            )],
+            [_shop_row(
+                sg_num="20", deptsale_shop_num="4", link_num="80",
+                total_realpay="20000",
+            )],
             "2026-02-27",
         )
-        self.assertIn("▲100.0%", html)
         self.assertIn('color:#16a34a">▲100.0%</span>', html)
-        self.assertNotIn("▼", html)
-        self.assertNotIn("🚨", html)
+        self.assertIn('color:#16a34a">▲50.0%</span>', html)  # 营收 3万 vs 2万
+        self.assertNotIn('color:#dc2626">▲', html)
 
-    def test_sign_rate_drop_is_red_without_crash_flag(self):
+    def test_sign_rate_drop_is_red(self):
         # 4/20=20% vs 8/20=40% → ▼50.0%
         html = generate_html(
-            [_shop_row(sg_num="20", deptsale_shop_num="4", link_num="40")],
-            [_shop_row(sg_num="20", deptsale_shop_num="8", link_num="40")],
+            [_shop_row(
+                sg_num="20", deptsale_shop_num="4", link_num="80",
+                total_realpay="20000",
+            )],
+            [_shop_row(
+                sg_num="20", deptsale_shop_num="8", link_num="40",
+                total_realpay="30000",
+            )],
             "2026-02-27",
         )
-        self.assertIn("▼50.0%", html)
         self.assertIn('color:#dc2626">▼50.0%</span>', html)
         self.assertNotIn('color:#16a34a">▼50.0%</span>', html)
-        self.assertNotIn("🚨", html)
+        # 门店 nested dod 本身不带 🚨；诊断区的 🚨 来自签单率色带，不在此断言。
 
 
 class ShopWhyGoodAndCompareTests(unittest.TestCase):
@@ -199,12 +216,12 @@ class ShopWhyGoodAndCompareTests(unittest.TestCase):
 
 class ShopDiagnosisBandTests(unittest.TestCase):
     def test_sign_rate_bands_and_invite_bottleneck(self):
-        # 2/10=20% → 🚨；5/40=12.5% → 邀约瓶颈
+        # 2/10=20% → 🚨签单；10/80=12.5% → 🚨邀约 + 邀约瓶颈
         html = generate_html(
             [_shop_row(
                 deptsale_shop_num="2",
                 sg_num="10",
-                link_num="40",
+                link_num="80",
                 refund_money_d="200",
             )],
             [],
@@ -236,12 +253,12 @@ class ShopDiagnosisBandTests(unittest.TestCase):
         self.assertIn("最大瓶颈：到店→签单转化", html)
 
     def test_mid_bands_warn_without_crash_copy(self):
-        # 7/25=28% ⚠；8/32=25% ⚠；1200/20000=6% ⚠；3/10=30% ⚠
+        # 7/25=28% ⚠；25/100=25% ⚠；1200/20000=6% ⚠；3/10=30% ⚠
         html = generate_html(
             [_shop_row(
                 deptsale_shop_num="7",
                 sg_num="25",
-                link_num="32",
+                link_num="100",
                 total_realpay="20000",
                 refund_money_d="1200",
                 leads_xyzout_1day="10",
